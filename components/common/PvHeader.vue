@@ -2,30 +2,8 @@
 	<header class="header">
 		<div class="header-middle sticky-header mobile-sticky">
 			<div class="container-fluid">
-				<div class="header-left d-none d-lg-flex">
-					<div class="header-dropdown">
-						<a href="javascript:;">USD</a>
-						<div class="header-menu">
-							<ul>
-								<li><a href="javascript:;">EUR</a></li>
-								<li><a href="javascript:;">USD</a></li>
-							</ul>
-						</div>
-					</div>
-
-					<div class="header-dropdown">
-						<a href="javascript:;"><i class="flag-us flag"></i>ENG</a>
-						<div class="header-menu">
-							<ul>
-								<li><a href="javascript:;"><i class="flag-us flag mr-2"></i>ENG</a>
-								</li>
-								<li><a href="javascript:;"><i class="flag-fr flag mr-2"></i>FRA</a></li>
-							</ul>
-						</div>
-					</div>
-				</div>
-
-				<div class="header-center ml-0 ml-lg-auto">
+				<div class="d-flex"></div>
+				<div class="d-flex">
 					<button
 						class="mobile-menu-toggler"
 						type="button"
@@ -36,19 +14,33 @@
 
 					<nuxt-link
 						to="/"
-						class="logo"
+						class="logo mt-3"
 					>
 						<img
-							src="~/static/images/home/logo.png"
-							width="113"
-							height="48"
+							src="~/static/images/home/Logo_Holis.svg"
 							alt="Porto Logo"
+							style="height: 70px; max-width: none;"
 						/>
 					</nuxt-link>
 				</div>
 
-				<div class="header-right">
-					<nuxt-link
+				<div class="d-flex mr-4">
+					<a class="contact-us pr-4 pb-1">Follow us : 
+						<i class="icon-facebook pr-2"></i>
+						<i class="bi bi-line pr-2"></i>
+						<i class="bi bi-tiktok"></i>
+					</a>
+					<div class="header-dropdown custom-header">
+						<a href="javascript:;">ไทย</a>
+						<div class="header-menu">
+							<ul>
+								<li><a href="javascript:;"><i></i>ไทย</a>
+								</li>
+								<li><a href="javascript:;"><i></i>English</a></li>
+							</ul>
+						</div>
+					</div>
+					<!-- <nuxt-link
 						to="/pages/login"
 						class="header-icon d-lg-block d-none"
 					>
@@ -67,31 +59,31 @@
 						title="wishlist"
 					>
 						<i class="icon-wishlist-2"></i>
-					</nuxt-link>
+					</nuxt-link> -->
 
-					<pv-cart-menu></pv-cart-menu>
+					<!-- <pv-cart-menu></pv-cart-menu> -->
 				</div>
 			</div>
 		</div>
 
 		<div class="header-bottom sticky-header desktop-sticky">
 			<div class="container-fluid">
-				<div class="header-left d-flex">
+				<!-- <div class="header-left d-flex">
 					<nav class="main-nav">
 						<ul class="menu">
 							<li><a href="javascript:;">Outlet</a></li>
 							<li><a href="javascript:;">Buy Porto</a></li>
 						</ul>
 					</nav>
-				</div>
+				</div> -->
 
-				<div class="header-center w-auto">
+				<div class="header-center d-flex justify-content-center">
 					<pv-main-menu></pv-main-menu>
 				</div>
 
-				<div class="header-right d-flex pr-0">
+				<!-- <div class="header-right d-flex pr-0">
 					<pv-header-search></pv-header-search>
-				</div>
+				</div> -->
 			</div>
 		</div>
 	</header>
@@ -131,3 +123,19 @@ export default {
 	}
 };
 </script>
+<style>
+.header .header-middle{
+	border-bottom: 0px;
+	padding-bottom: 0;
+}
+
+.header .header-right .contact-us{
+	font-family: 'porto';
+	font-weight: 400;
+	margin-left: .5rem;
+}
+
+.header .header-right .custom-header{
+	font-weight: bold;
+}
+</style>

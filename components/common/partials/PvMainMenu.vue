@@ -10,7 +10,7 @@
 					to="/shop"
 					class="sub-menu-link menu-with-ul"
 					:class="{active: $route.path.indexOf('/shop') > -1}"
-				>Categories</nuxt-link>
+				>Products</nuxt-link>
 
 				<div class="megamenu megamenu-fixed-width megamenu-3cols">
 					<div class="row">
@@ -36,7 +36,7 @@
 							</ul>
 						</div>
 
-						<div class="col-lg-4">
+						<!-- <div class="col-lg-4">
 							<a
 								href="javascript:;"
 								class="nolink"
@@ -75,12 +75,16 @@
 									>SHOP NOW</nuxt-link>
 								</div>
 							</div>
-						</div>
+						</div> -->
 					</div>
 				</div>
 			</li>
 
-			<li>
+			<li><a href="javascript:;">News & Activities</a></li>
+
+			<li><a href="javascript:;">Our Story</a></li>
+
+			<!-- <li>
 				<nuxt-link
 					to="/product/default/baby-sport-shoes"
 					class="sub-menu-link menu-with-ul"
@@ -187,16 +191,15 @@
 						</ul>
 					</li>
 				</ul>
-			</li>
+			</li> -->
 
-			<li>
+			<!-- <li>
 				<nuxt-link
 					to="/pages/blog"
 					:class="{active: $route.path.indexOf('/pages/blog') > -1}"
-				>Blog</nuxt-link>
-			</li>
-
-			<li><a href="javascript:;">Elements</a></li>
+				>News & Activities</nuxt-link>
+			</li> -->
+			
 		</ul>
 	</nav>
 </template>

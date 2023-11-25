@@ -1,7 +1,7 @@
 <template>
 	<div @click="hideMobileSearch">
 		<div class="page-wrapper">
-			<div
+			<!-- <div
 				class="top-notice"
 				:class="{'d-none' : isHide}"
 			>
@@ -19,7 +19,7 @@
 					class="mfp-close"
 					@click="hideTopNotice"
 				>×</button>
-			</div>
+			</div> -->
 
 			<pv-header></pv-header>
 			<nuxt></nuxt>
@@ -54,6 +54,7 @@ import PvFooter from '~/components/common/PvFooter';
 import PvCartPopup from '~/components/common/partials/PvCartPopup';
 import PvMobileMenu from '~/components/common/partials/PvMobileMenu';
 import PvStickyFooter from '~/components/common/partials/PvStickyFooter';
+import 'bootstrap-icons/font/bootstrap-icons.css'
 import {
 	scrollTopHandler,
 	stickyHeaderHandler,

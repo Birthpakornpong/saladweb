@@ -90,7 +90,7 @@ export default {
         '~/static/css/porto-icons.min.css',
         '~/static/vendor/fontawesome-free/css/all.min.css',
         '~/static/vendor/simple-line-icons/css/simple-line-icons.min.css',
-        '~/static/sass/style.scss'
+        '~/static/sass/style.scss',
     ],
 
     plugins: [
@@ -110,13 +110,13 @@ export default {
     modules: [ '@nuxtjs/axios' ],
 
     router: {
-        base: '/vue/porto/demo-23/',
+        base: '/index',
         linkActiveClass: '',
         linkExactActiveClass: 'active'
     },
 
     build: {
-        publicPath: "http://d-themes.com/vue/porto/demo-23/"
+        publicPath: "http://d-themes.com/index/"
     },
 
     generate: {
