@@ -1,7 +1,7 @@
 <template>
-	<section class="welcome-section">
-		<div class="container">
-			<h2
+  <section class="welcome-section">
+    <div class="container">
+      <!-- <h2
 				class="section-title text-center text-uppercase appear-animate"
 				data-animation-name="fadeInUpShorter"
 				data-animation-delay="200"
@@ -211,54 +211,57 @@
 						</div>
 					</div>
 				</div>
-			</div>
+			</div> -->
+      <div class="d-flex" style="justify-content: center;">
+        <h3>BEST SELLER</h3>
+      </div>
 
-			<div
-				class="row appear-animate"
-				data-animation-name="fadeInUpShorter"
-				data-animation-delay="400"
-				v-animate
-				v-if="products.length === 0"
-			>
-				<div
-					class="col-6 col-md-4 col-xl-3"
-					v-for="index in [1,2,3,4]"
-					:key="'wel-skel-' + index"
-				>
-					<div class="product-loading-overlay"></div>
-				</div>
-			</div>
+      <div
+        class="row appear-animate"
+        data-animation-name="fadeInUpShorter"
+        data-animation-delay="400"
+        v-animate
+        v-if="products.length === 0"
+      >
+        <div
+          class="col-6 col-md-4 col-xl-3"
+          v-for="index in [1, 2, 3, 4]"
+          :key="'wel-skel-' + index"
+        >
+          <div class="product-loading-overlay"></div>
+        </div>
+      </div>
 
-			<div
-				class="row appear-animate"
-				data-animation-name="fadeInUpShorter"
-				data-animation-delay="400"
-				v-animate
-				v-if="products.length > 0"
-			>
-				<div
-					class="col-6 col-md-4 col-xl-3"
-					v-for="(product,index) in products.slice(0,4)"
-					:key="'wel-' + index"
-				>
-					<pv-product-one :product="product"></pv-product-one>
-				</div>
-			</div>
-		</div>
-	</section>
+      <div
+        class="row appear-animate"
+        data-animation-name="fadeInUpShorter"
+        data-animation-delay="400"
+        v-animate
+        v-if="products.length > 0"
+      >
+        <div
+          class="col-6 col-md-4 col-xl-3"
+          v-for="(product, index) in products.slice(0, 4)"
+          :key="'wel-' + index"
+        >
+          <pv-product-one :product="product"></pv-product-one>
+        </div>
+      </div>
+    </div>
+  </section>
 </template>
 
 <script>
-import PvCarousel from '~/components/features/PvCarousel';
-import PvProductOne from '~/components/features/product/PvProductOne';
+import PvCarousel from "~/components/features/PvCarousel";
+import PvProductOne from "~/components/features/product/PvProductOne";
 
 export default {
-	components: {
-		PvCarousel,
-		PvProductOne
-	},
-	props: {
-		products: Array
-	}
-}
+  components: {
+    PvCarousel,
+    PvProductOne,
+  },
+  props: {
+    products: Array,
+  },
+};
 </script>
