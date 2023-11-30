@@ -212,8 +212,11 @@
 					</div>
 				</div>
 			</div> -->
-      <div class="d-flex" style="justify-content: center;">
-        <h3>BEST SELLER</h3>
+
+      <div class="category-section mb-4">
+        <div class="header-text">
+          <div>BEST SELLER</div>
+        </div>
       </div>
 
       <div
@@ -265,3 +268,12 @@ export default {
   },
 };
 </script>
+<style>
+.category-section .header-text {
+  text-align: center;
+  font-weight: bold;
+  font-size: x-large;
+  color: #ab0011;
+  position: relative;
+}
+</style>

@@ -5,11 +5,11 @@
         <img
           v-for="(item, index) in product.large_pictures.slice(0, 2)"
           :key="`related-large-${index}`"
-          v-lazy="`${baseUrl}${item.url}`"
           alt="large-picture"
           :width="item.width"
           :height="item.height"
           :class="{ 'last-image': index === 1 }"
+          src="~/static/images/imgmock1.png"
         />
       </nuxt-link>
 

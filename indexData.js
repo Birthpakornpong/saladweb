@@ -36,19 +36,19 @@ export const indexData = {
         {
           width: "800",
           height: "800",
-          url: "/uploads/product_16_1_27c032e0ec.jpg",
+          url: "~/static/images/imgmock1.png",
           pivot: { related_id: "323", upload_file_id: "1642" },
         },
         {
           width: "800",
           height: "800",
-          url: "/uploads/product_16_2_7f9575405f.jpg",
+          url: "~/static/images/imgmock1.png",
           pivot: { related_id: "323", upload_file_id: "1644" },
         },
         {
           width: "800",
           height: "800",
-          url: "/uploads/product_16_3_8050d5961f.jpg",
+          url: "~/static/images/imgmock1.png",
           pivot: { related_id: "323", upload_file_id: "1643" },
         },
       ],
@@ -589,7 +589,7 @@ export const indexData = {
     },
     {
       id: 329,
-      name: "Casual Brown Shoes",
+      name: "HOLIS by SCGP IM-MU Cap",
       slug: "casual-brown-shoes",
       price: 108,
       sku: "PT0003-1",
@@ -623,19 +623,19 @@ export const indexData = {
         {
           width: "800",
           height: "800",
-          url: "/uploads/product_15_1_8d85997d92.jpg",
+          url: "~/static/images/imgmock1.png",
           pivot: { related_id: "329", upload_file_id: "1635" },
         },
         {
           width: "800",
           height: "800",
-          url: "/uploads/product_15_2_e6163c764b.jpg",
+          url: "~/static/images/imgmock1.png",
           pivot: { related_id: "329", upload_file_id: "1636" },
         },
         {
           width: "800",
           height: "800",
-          url: "/uploads/product_15_3_e2418df7f5.jpg",
+          url: "~/static/images/imgmock1.png",
           pivot: { related_id: "329", upload_file_id: "1634" },
         },
       ],
@@ -643,13 +643,13 @@ export const indexData = {
         {
           width: "150",
           height: "150",
-          url: "/uploads/product_15_1_150x150_2a7567c46b.jpg",
+          url: "~/static/images/imgmock1.png",
           pivot: { related_id: "329", upload_file_id: "1638" },
         },
         {
           width: "150",
           height: "150",
-          url: "/uploads/product_15_2_150x150_c39e1d202a.jpg",
+          url: "~/static/images/imgmock1.png",
           pivot: { related_id: "329", upload_file_id: "1637" },
         },
       ],
@@ -657,7 +657,7 @@ export const indexData = {
     },
     {
       id: 330,
-      name: "Pink Baby Caps",
+      name: "HOLIS by SCGP IM-MU Cap",
       slug: "pink-baby-caps",
       price: 199,
       sku: null,
@@ -725,7 +725,7 @@ export const indexData = {
     },
     {
       id: 331,
-      name: "Pink Baby Spring Shoes",
+      name: "HOLIS by SCGP IM-MU Cap",
       slug: "pink-baby-spring-shoes",
       price: 299,
       sku: "654111995-1-1-2",
@@ -800,7 +800,7 @@ export const indexData = {
     },
     {
       id: 332,
-      name: "Pink Girl Overshoes",
+      name: "HOLIS by SCGP IM-MU Cap",
       slug: "pink-girl-overshoes",
       price: 1999,
       sku: "654613612",
@@ -875,7 +875,7 @@ export const indexData = {
     },
     {
       id: 333,
-      name: "Pink Winter Girl Shoes",
+      name: "HOLIS by SCGP CHO-LESS Cap",
       slug: "pink-winter-girl-shoes",
       price: null,
       sku: "PT0003-2",
@@ -1643,7 +1643,7 @@ export const indexData = {
     },
     {
       id: 338,
-      name: "White Girl Shoes",
+      name: "HOLIS by SCGP B Cap",
       slug: "white-girl-shoes",
       price: 299,
       sku: "654111995-1-1-1",
