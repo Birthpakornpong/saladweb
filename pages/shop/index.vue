@@ -1,22 +1,19 @@
 <template>
   <main class="main skeleton-body">
-    <!-- <pv-shop-banner></pv-shop-banner>
+    <!-- <pv-shop-banner></pv-shop-banner> -->
 
-		<nav
-			aria-label="breadcrumb"
-			class="breadcrumb-nav"
-		>
-			<div class="container">
-				<ol class="breadcrumb">
-					<li class="breadcrumb-item">
-						<nuxt-link to="/">
-							Home
-						</nuxt-link>
-					</li>
-					<li class="breadcrumb-item active">Shop</li>
-				</ol>
-			</div>
-		</nav> -->
+    <nav aria-label="breadcrumb" class="breadcrumb-nav">
+      <div class="container">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item">
+            <nuxt-link to="/">
+              Home
+            </nuxt-link>
+          </li>
+          <li class="breadcrumb-item active">Shop</li>
+        </ol>
+      </div>
+    </nav>
 
     <div class="container">
       <div class="row">

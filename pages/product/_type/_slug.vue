@@ -53,19 +53,19 @@
         <div class="tab-content col-lg-12"></div>
       </div>
 
-      <pv-desc-one :product="product" v-if="product"></pv-desc-one>
+      <!-- <pv-desc-one :product="product" v-if="product"></pv-desc-one> -->
 
       <pv-related-products
         :products="relatedProducts"
         class="pb-3"
       ></pv-related-products>
 
-      <pv-small-collection
+      <!-- <pv-small-collection
         :featured-products="featuredProducts"
         :best-products="bestProducts"
         :latest-products="latestProducts"
         :top-rated-products="topRatedProducts"
-      ></pv-small-collection>
+      ></pv-small-collection> -->
     </div>
   </main>
 </template>
