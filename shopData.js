@@ -3,7 +3,7 @@ export const shopData = {
   products: [
     {
       id: 323,
-      name: "Baby Sport Shoes",
+      name: "Holis by SCGP อิม-มู แคป ชนิดซอฟต์เจล 10 เม็ด",
       slug: "baby-sport-shoes",
       price: 96,
       sku: "654613612-1-1-1",
@@ -73,7 +73,7 @@ export const shopData = {
     },
     {
       id: 324,
-      name: "Baby Summer Underclothes",
+      name: "Holis by SCGP อิม-มู แคป ชนิดซอฟต์เจล 10 เม็ด",
       slug: "baby-summer-underclothes",
       price: 299,
       sku: "654111995-1-2",
@@ -150,7 +150,7 @@ export const shopData = {
     },
     {
       id: 325,
-      name: "Blue Baby Winter Shoes",
+      name: "Holis by SCGP อิม-มู แคป ชนิดซอฟต์เจล 10 เม็ด",
       slug: "blue-baby-winter-shoes",
       price: 199,
       sku: null,
@@ -220,7 +220,7 @@ export const shopData = {
     },
     {
       id: 326,
-      name: "Blue Boy Shoes",
+      name: "Holis by SCGP อิม-มู แคป ชนิดซอฟต์เจล 10 เม็ด",
       slug: "blue-boy-shoes",
       price: 100,
       sku: "654613612-1-1",
@@ -297,7 +297,7 @@ export const shopData = {
     },
     {
       id: 327,
-      name: "Blue Boy Spring Shoes",
+      name: "Holis by SCGP อิม-มู แคป ชนิดซอฟต์เจล 10 เม็ด",
       slug: "blue-boy-spring-shoes",
       price: 59,
       sku: "654613612-2",
@@ -374,7 +374,7 @@ export const shopData = {
     },
     {
       id: 328,
-      name: "Blue Child Overshoes",
+      name: "Holis by SCGP อิม-มู แคป ชนิดซอฟต์เจล 10 เม็ด",
       slug: "blue-child-overshoes",
       price: 39,
       sku: "N/A",
@@ -602,7 +602,7 @@ export const shopData = {
     },
     {
       id: 329,
-      name: "Casual Brown Shoes",
+      name: "Holis by SCGP อิม-มู แคป ชนิดซอฟต์เจล 10 เม็ด",
       slug: "casual-brown-shoes",
       price: 108,
       sku: "PT0003-1",
@@ -672,7 +672,7 @@ export const shopData = {
     },
     {
       id: 330,
-      name: "Pink Baby Caps",
+      name: "Holis by SCGP อิม-มู แคป ชนิดซอฟต์เจล 10 เม็ด",
       slug: "pink-baby-caps",
       price: 199,
       sku: null,

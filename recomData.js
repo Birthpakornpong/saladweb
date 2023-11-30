@@ -3,7 +3,7 @@ export const recomData = {
   products: [
     {
       id: 323,
-      name: "Baby Sport Shoes",
+      name: "Holis by SCGP อิม-มู แคป ชนิดซอฟต์เจล 10 เม็ด",
       slug: "baby-sport-shoes",
       price: 96,
       sku: "654613612-1-1-1",
@@ -73,7 +73,7 @@ export const recomData = {
     },
     {
       id: 324,
-      name: "Baby Summer Underclothes",
+      name: "Holis by SCGP อิม-มู แคป ชนิดซอฟต์เจล 10 เม็ด",
       slug: "baby-summer-underclothes",
       price: 299,
       sku: "654111995-1-2",
@@ -150,7 +150,7 @@ export const recomData = {
     },
     {
       id: 325,
-      name: "Blue Baby Winter Shoes",
+      name: "Holis by SCGP อิม-มู แคป ชนิดซอฟต์เจล 10 เม็ด",
       slug: "blue-baby-winter-shoes",
       price: 199,
       sku: null,
@@ -220,7 +220,7 @@ export const recomData = {
     },
     {
       id: 326,
-      name: "Blue Boy Shoes",
+      name: "Holis by SCGP อิม-มู แคป ชนิดซอฟต์เจล 10 เม็ด",
       slug: "blue-boy-shoes",
       price: 100,
       sku: "654613612-1-1",
@@ -297,7 +297,7 @@ export const recomData = {
     },
     {
       id: 327,
-      name: "Blue Boy Spring Shoes",
+      name: "Holis by SCGP อิม-มู แคป ชนิดซอฟต์เจล 10 เม็ด",
       slug: "blue-boy-spring-shoes",
       price: 59,
       sku: "654613612-2",
@@ -374,7 +374,7 @@ export const recomData = {
     },
     {
       id: 328,
-      name: "Blue Child Overshoes",
+      name: "Holis by SCGP อิม-มู แคป ชนิดซอฟต์เจล 10 เม็ด",
       slug: "blue-child-overshoes",
       price: 39,
       sku: "N/A",
@@ -602,7 +602,7 @@ export const recomData = {
     },
     {
       id: 329,
-      name: "Casual Brown Shoes",
+      name: "Holis by SCGP อิม-มู แคป ชนิดซอฟต์เจล 10 เม็ด",
       slug: "casual-brown-shoes",
       price: 108,
       sku: "PT0003-1",
@@ -672,7 +672,7 @@ export const recomData = {
     },
     {
       id: 330,
-      name: "Pink Baby Caps",
+      name: "Holis by SCGP อิม-มู แคป ชนิดซอฟต์เจล 10 เม็ด",
       slug: "pink-baby-caps",
       price: 199,
       sku: null,
@@ -742,7 +742,7 @@ export const recomData = {
     },
     {
       id: 331,
-      name: "Pink Baby Spring Shoes",
+      name: "Holis by SCGP อิม-มู แคป ชนิดซอฟต์เจล 10 เม็ด",
       slug: "pink-baby-spring-shoes",
       price: 299,
       sku: "654111995-1-1-2",
@@ -819,7 +819,7 @@ export const recomData = {
     },
     {
       id: 332,
-      name: "Pink Girl Overshoes",
+      name: "Holis by SCGP อิม-มู แคป ชนิดซอฟต์เจล 10 เม็ด",
       slug: "pink-girl-overshoes",
       price: 1999,
       sku: "654613612",
@@ -896,7 +896,7 @@ export const recomData = {
     },
     {
       id: 333,
-      name: "Pink Winter Girl Shoes",
+      name: "Holis by SCGP อิม-มู แคป ชนิดซอฟต์เจล 10 เม็ด",
       slug: "pink-winter-girl-shoes",
       price: null,
       sku: "PT0003-2",
@@ -1094,7 +1094,7 @@ export const recomData = {
     },
     {
       id: 334,
-      name: "First Aid Kit for Kids",
+      name: "Holis by SCGP อิม-มู แคป ชนิดซอฟต์เจล 10 เม็ด",
       slug: "first-aid-kit-for-kids",
       price: 599,
       sku: "PT0007",

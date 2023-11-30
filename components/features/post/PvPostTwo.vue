@@ -9,7 +9,7 @@
         v-if="post.type === 'image'"
       >
         <img
-          v-lazy="`${baseUrl}${post.small_picture[0].url}`"
+          src="~/static/images/blog/blogmock.png"
           alt="blog"
           :width="post.small_picture[0].width"
           :height="post.small_picture[0].height"
@@ -17,7 +17,7 @@
         />
         <template v-else>
           <img
-            v-lazy="`${baseUrl}${post.picture[0].url}`"
+            src="~/static/images/blog/blogmock.png"
             alt="blog"
             :width="post.picture[0].width"
             :height="post.picture[0].height"
@@ -27,7 +27,7 @@
 
       <template v-else-if="post.type === 'video'">
         <img
-          v-lazy="`${baseUrl}${post.picture[0].url}`"
+          src="~/static/images/blog/blogmock.png"
           alt="blog"
           :width="post.picture[0].width"
           :height="post.picture[0].height"
@@ -49,7 +49,7 @@
         >
           <img
             v-for="(img, index) in post.small_picture"
-            v-lazy="`${baseUrl}${img.url}`"
+            src="~/static/images/blog/blogmock.png"
             :key="'post-gallery' + index"
             :width="post.small_picture[0].width"
             :height="post.small_picture[0].height"
@@ -61,7 +61,7 @@
           <pv-carousel class :options="baseSlider1">
             <img
               v-for="(img, index) in post.picture"
-              v-lazy="`${baseUrl}${img.url}`"
+              src="~/static/images/blog/blogmock.png"
               :key="'post-gallery' + index"
               :width="post.picture[0].width"
               :height="post.picture[0].height"

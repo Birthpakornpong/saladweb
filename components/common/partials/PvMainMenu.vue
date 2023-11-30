@@ -16,7 +16,7 @@
         <div class="megamenu megamenu-fixed-width megamenu-3cols">
           <div class="row">
             <div class="col-lg-4">
-              <a href="javascript:;" class="nolink">VARIATION 1</a>
+              <a href="javascript:;" class="nolink">Shop</a>
 
               <ul class="submenu">
                 <li v-for="item in mainMenu.shop.variation1" :key="item.id">

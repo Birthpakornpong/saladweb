@@ -13,7 +13,11 @@
           <li class="breadcrumb-item active">Shop</li>
         </ol>
       </nav> -->
-
+      <div class="category-section mb-4">
+        <div class="header-textblack">
+          <div>RECOMMENDED PRODUCTS</div>
+        </div>
+      </div>
       <div class="row">
         <div class="col-12">
           <pv-product-list-two></pv-product-list-two>
@@ -56,3 +60,12 @@ export default {
   },
 };
 </script>
+<style>
+.category-section .header-textblack {
+  text-align: center;
+  font-weight: bold;
+  font-size: x-large;
+  color: black;
+  position: relative;
+}
+</style>

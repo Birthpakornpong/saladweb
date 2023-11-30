@@ -5,10 +5,11 @@ export const dataBlog = {
       author: "John Doe",
       comments: "0",
       content:
-        "Proin ut ante vitae magna cursus porta. Aenean rutrum faucibus augue eu convallis. Phasellus condimentum elit id cursus sodales. Vivamus nec est consectetur, tincidunt augue at, tempor libero.",
+        "SCGP ผสานความร่วมมือมหาวิทยาลัยศรีนครินทรวิโรฒ วิจัยโพรไบโอติก 3 สายพันธุ์พิเศษที่มีคุณสมบัติโดดเด่น",
       date: "2021-04-07",
       slug: "post-format-image-type",
-      title: "Post Format Image Type",
+      title:
+        "SCGP ผสานความร่วมมือมหาวิทยาลัยศรีนครินทรวิโรฒ วิจัยโพรไบโอติก 3 สายพันธุ์พิเศษที่มีคุณสมบัติโดดเด่น",
       type: "image",
       blog_categories: [
         {
