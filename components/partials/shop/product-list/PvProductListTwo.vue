@@ -1,6 +1,6 @@
 <template>
-	<div>
-		<nav class="toolbox sticky-header horizontal-filter filter-sorts">
+  <div>
+    <!-- <nav class="toolbox sticky-header horizontal-filter filter-sorts">
 			<div
 				class="sidebar-overlay d-lg-none"
 				@click="toggleSidebar"
@@ -138,171 +138,175 @@
 					<i class="icon-mode-list"></i>
 				</nuxt-link>
 			</div>
-		</nav>
+		</nav> -->
+    <h3 class="mb-3">Recommended Products</h3>
 
-		<div class="row">
-			<template v-if="products && products.length > 0">
-				<div
-					class="col-6 col-sm-4 col-md-3"
-					v-for="(product,index) in products"
-					:key="'shop-product' + index"
-				>
-					<pv-product-one :product="product"></pv-product-one>
-				</div>
-			</template>
+    <div class="row">
+      <template v-if="products && products.length > 0">
+        <div
+          class="col-6 col-sm-4 col-md-3"
+          v-for="(product, index) in products"
+          :key="'shop-product' + index"
+        >
+          <pv-product-one :product="product"></pv-product-one>
+        </div>
+      </template>
 
-			<template v-if="products && products.length === 0">
-				<div class="info-box with-icon p-0 shop-info mb-2">
-					<p>No products were found matching your selection.</p>
-				</div>
-			</template>
+      <template v-if="products && products.length === 0">
+        <div class="info-box with-icon p-0 shop-info mb-2">
+          <p>No products were found matching your selection.</p>
+        </div>
+      </template>
 
-			<template v-if="!products">
-				<div
-					class="col-6 col-sm-4 col-md-3"
-					v-for="(item,index) in repeatCount.slice(0,12)"
-					:key="'skel-shop' + index"
-				>
-					<div class="skel-pro"></div>
-				</div>
-			</template>
-		</div>
+      <template v-if="!products">
+        <div
+          class="col-6 col-sm-4 col-md-3"
+          v-for="(item, index) in repeatCount.slice(0, 12)"
+          :key="'skel-shop' + index"
+        >
+          <div class="skel-pro"></div>
+        </div>
+      </template>
+    </div>
 
-		<nav class="toolbox toolbox-pagination">
-			<div class="toolbox-item toolbox-show mb-0">
-				<label>Show:</label>
+    <nav class="toolbox toolbox-pagination">
+      <div class="toolbox-item toolbox-show mb-0">
+        <label>Show:</label>
 
-				<div class="select-custom">
-					<select
-						name="count"
-						class="form-control"
-						@change="getProducts"
-						v-model="itemsPerPage"
-					>
-						<option value="12">12</option>
-						<option value="24">24</option>
-						<option value="36">36</option>
-					</select>
-				</div>
-			</div>
+        <div class="select-custom">
+          <select
+            name="count"
+            class="form-control"
+            @change="getProducts"
+            v-model="itemsPerPage"
+          >
+            <option value="12">12</option>
+            <option value="24">24</option>
+            <option value="36">36</option>
+          </select>
+        </div>
+      </div>
 
-			<pv-pagination
-				:total-count="totalCount"
-				:items-per-page="itemsPerPage"
-				v-if="totalCount"
-			></pv-pagination>
-		</nav>
-	</div>
+      <pv-pagination
+        :total-count="totalCount"
+        :items-per-page="itemsPerPage"
+        v-if="totalCount"
+      ></pv-pagination>
+    </nav>
+  </div>
 </template>
 
 <script>
-import PvProductOne from '~/components/features/product/PvProductOne';
-import PvPagination from '~/components/features/PvPagination';
-import PvSidebarFilterTwo from '~/components/partials/shop/sidebar-filter/PvSidebarFilterTwo';
-import { scrollTopHandler } from '~/utils';
-import Api, { baseUrl, currentDemo } from '~/api';
+import PvProductOne from "~/components/features/product/PvProductOne";
+import PvPagination from "~/components/features/PvPagination";
+import PvSidebarFilterTwo from "~/components/partials/shop/sidebar-filter/PvSidebarFilterTwo";
+import { scrollTopHandler } from "~/utils";
+import Api, { baseUrl, currentDemo } from "~/api";
 
 export default {
-	components: {
-		PvProductOne,
-		PvPagination,
-		PvSidebarFilterTwo
-	},
-	data: function () {
-		return {
-			products: null,
-			repeatCount: new Array( 100 ),
-			orderBy: 'default',
-			itemsPerPage: 12,
-			totalCount: null
-		};
-	},
-	watch: {
-		$route: function () {
-			this.getProducts();
-		}
-	},
-	created: function () {
-		this.getProducts( false );
-	},
-	methods: {
-		getProducts: function ( isScroll = true ) {
-			document.querySelector( 'body' ).classList.add( 'sidebar-opened' );
-			this.products = null;
-			this.totalCount = 0;
-			Api.get( `${ baseUrl }/shop`, {
-				params: {
-					...this.$route.query,
-					demo: currentDemo,
-					order_by: this.orderBy,
-					per_page: this.itemsPerPage
-				}
-			} )
-				.then( response => {
-					this.products = response.data.products;
-					this.totalCount = response.data.totalCount;
-					if ( isScroll ) scrollTopHandler();
-				} )
-				.catch( error => ( { error: JSON.stringify( error ) } ) );
-		},
-		colorFilterRoute: function ( item ) {
-			let selectedColors = this.$route.query.color
-				? this.$route.query.color.split( ',' )
-				: [];
-			let index = selectedColors.indexOf( item.name );
-			if ( index > -1 ) {
-				selectedColors.splice( index, 1 );
-			} else {
-				selectedColors.push( item.name );
-			}
+  components: {
+    PvProductOne,
+    PvPagination,
+    PvSidebarFilterTwo,
+  },
+  data: function () {
+    return {
+      products: null,
+      repeatCount: new Array(100),
+      orderBy: "default",
+      itemsPerPage: 12,
+      totalCount: null,
+    };
+  },
+  watch: {
+    $route: function () {
+      this.getProducts();
+    },
+  },
+  created: function () {
+    this.getProducts(false);
+  },
+  methods: {
+    getProducts: function (isScroll = true) {
+      document.querySelector("body").classList.add("sidebar-opened");
+      this.products = null;
+      this.totalCount = 0;
+      Api.get(`${baseUrl}/shop`, {
+        params: {
+          ...this.$route.query,
+          demo: currentDemo,
+          order_by: this.orderBy,
+          per_page: this.itemsPerPage,
+        },
+      })
+        .then((response) => {
+          this.products = response.data.products;
+          this.totalCount = response.data.totalCount;
+          if (isScroll) scrollTopHandler();
+        })
+        .catch((error) => ({ error: JSON.stringify(error) }));
+    },
+    colorFilterRoute: function (item) {
+      let selectedColors = this.$route.query.color
+        ? this.$route.query.color.split(",")
+        : [];
+      let index = selectedColors.indexOf(item.name);
+      if (index > -1) {
+        selectedColors.splice(index, 1);
+      } else {
+        selectedColors.push(item.name);
+      }
 
-			return {
-				path: this.$route.path,
-				query: {
-					...this.$route.query,
-					color: selectedColors.toString()
-				}
-			};
-		},
-		sizeFilterRoute: function ( item ) {
-			let selectedSizes = this.$route.query.size
-				? this.$route.query.size.split( ',' )
-				: [];
-			let index = selectedSizes.indexOf( item.size );
-			if ( index > -1 ) {
-				selectedSizes.splice( index, 1 );
-			} else {
-				selectedSizes.push( item.size );
-			}
+      return {
+        path: this.$route.path,
+        query: {
+          ...this.$route.query,
+          color: selectedColors.toString(),
+        },
+      };
+    },
+    sizeFilterRoute: function (item) {
+      let selectedSizes = this.$route.query.size
+        ? this.$route.query.size.split(",")
+        : [];
+      let index = selectedSizes.indexOf(item.size);
+      if (index > -1) {
+        selectedSizes.splice(index, 1);
+      } else {
+        selectedSizes.push(item.size);
+      }
 
-			return {
-				path: this.$route.path,
-				query: { ...this.$route.query, size: selectedSizes.toString() }
-			};
-		},
-		isActivedColor: function ( item ) {
-			return (
-				this.$route.query.color &&
-				this.$route.query.color.split( ',' ).includes( item.name )
-			);
-		},
-		isActivedSize: function ( item ) {
-			return (
-				this.$route.query.size &&
-				this.$route.query.size.split( ',' ).includes( item.size )
-			);
-		},
-		toggleSidebar: function () {
-			let body = document.querySelector( 'body' );
-			if ( body.classList.contains( 'sidebar-opened' ) ) {
-				body.classList.remove( 'sidebar-opened' );
-			} else {
-				body.classList.add( 'sidebar-opened' );
-			}
-		},
-		changePerPage: function () {
-			this.$router.push( { ...this.$route, query: { ...this.$route.query, per_page: this.itemsPerPage, page: 1 } } );
-		}
-	}
+      return {
+        path: this.$route.path,
+        query: { ...this.$route.query, size: selectedSizes.toString() },
+      };
+    },
+    isActivedColor: function (item) {
+      return (
+        this.$route.query.color &&
+        this.$route.query.color.split(",").includes(item.name)
+      );
+    },
+    isActivedSize: function (item) {
+      return (
+        this.$route.query.size &&
+        this.$route.query.size.split(",").includes(item.size)
+      );
+    },
+    toggleSidebar: function () {
+      let body = document.querySelector("body");
+      if (body.classList.contains("sidebar-opened")) {
+        body.classList.remove("sidebar-opened");
+      } else {
+        body.classList.add("sidebar-opened");
+      }
+    },
+    changePerPage: function () {
+      this.$router.push({
+        ...this.$route,
+        query: { ...this.$route.query, per_page: this.itemsPerPage, page: 1 },
+      });
+    },
+  },
 };
 </script>
