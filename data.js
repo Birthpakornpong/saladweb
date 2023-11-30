@@ -1,13 +1,13 @@
 export const mockData = {
   product: {
     id: 323,
-    name: "Baby Sport Shoes",
+    name: "Holis by SCGP อิม-มู แคป ชนิดซอฟต์เจล 10 เม็ด",
     slug: "baby-sport-shoes",
     price: 96,
     sku: "654613612-1-1-1",
     stock: 50,
     short_description:
-      "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.",
+      "[Free Gift] Holis Hol Im-mu Cap 10 Capsules ผลิตภัณฑ์เสริมอาหาร จากโฮลิส ที่มี 3 สารสกัดธรรมชาติอย่าง Astaxanthin, Beta Glucan และ Cordycepin ช่วยเสริมสร้างภูมิคุ้มกันและปรับสมดุลร่างกายแบบองค์รวม ",
     sale_price: 68,
     sale_count: 0,
     ratings: 0,

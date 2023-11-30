@@ -5,7 +5,7 @@
         <img
           v-for="(item, index) in product.large_pictures.slice(0, 2)"
           :key="`related-large-${index}`"
-          v-lazy="`${baseUrl}${item.url}`"
+          src="~/static/images/imgmock1.png"
           alt="large-picture"
           :width="item.width"
           :height="item.height"

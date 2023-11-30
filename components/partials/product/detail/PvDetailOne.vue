@@ -285,7 +285,7 @@
         <span>Go to Wishlist</span>
       </nuxt-link>
 
-      <a
+      <!-- <a
         href="javascript:;"
         class="btn-icon-wish add-wishlist"
         title="Add to Wishlist"
@@ -294,7 +294,7 @@
       >
         <i class="icon-wishlist-2"></i>
         <span>Add to Wishlist</span>
-      </a>
+      </a> -->
     </div>
   </div>
 </template>

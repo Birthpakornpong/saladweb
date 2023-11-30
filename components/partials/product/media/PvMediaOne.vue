@@ -24,7 +24,7 @@
         >
           <img
             class="product-single-image"
-            v-lazy="`${baseUrl}${item.url}`"
+            src="~/static/images/imgmock1.png"
             :width="item.width"
             :height="item.height"
             alt="lgPicture"
@@ -50,7 +50,7 @@
         :class="{ active: index === 0 }"
       >
         <img
-          v-lazy="`${baseUrl}${item.url}`"
+          src="~/static/images/imgmock1.png"
           :width="item.width"
           :height="item.height"
           alt="product-thumbnail"

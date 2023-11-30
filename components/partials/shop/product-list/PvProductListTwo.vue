@@ -139,7 +139,6 @@
 				</nuxt-link>
 			</div>
 		</nav> -->
-    <h3 class="mb-3">Recommended Products</h3>
 
     <div class="row">
       <template v-if="products && products.length > 0">
