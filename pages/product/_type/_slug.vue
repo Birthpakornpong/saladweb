@@ -78,6 +78,7 @@ import PvRelatedProducts from "~/components/partials/product/PvRelatedProducts";
 import PvSmallCollection from "~/components/partials/product/PvSmallCollection";
 import PvBrandSection from "~/components/partials/home/PvBrandSection";
 import Api, { baseUrl, currentDemo } from "~/api";
+import { mockData } from "~/data";
 
 export default {
   components: {
@@ -104,31 +105,22 @@ export default {
   },
   created: function () {
     this.getProduct();
+    console.log("data check", mockData);
   },
   methods: {
     getProduct: function () {
       this.loaded = false;
 
-      Api.get(`${baseUrl}/products/${this.$route.params.slug}`, {
-        params: { demo: currentDemo },
-      })
-        .then((response) => {
-          this.product = response.data.product;
-          this.relatedProducts = response.data.relatedProducts;
-          this.featuredProducts = response.data.featuredProducts;
-          this.bestProducts = response.data.bestSellingProducts;
-          this.latestProducts = response.data.latestProducts;
-          this.topRatedProducts = response.data.topRatedProducts;
-          this.prevProduct = response.data.prevProduct;
-          this.nextProduct = response.data.nextProduct;
+      this.product = mockData.product;
+      this.relatedProducts = mockData.relatedProducts;
+      this.featuredProducts = mockData.featuredProducts;
+      this.bestProducts = mockData.bestSellingProducts;
+      this.latestProducts = mockData.latestProducts;
+      this.topRatedProducts = mockData.topRatedProducts;
+      this.prevProduct = mockData.prevProduct;
+      this.nextProduct = mockData.nextProduct;
 
-          this.product.product_categories.map((item) => {
-            this.productCategory.push(item);
-          });
-
-          this.loaded = true;
-        })
-        .catch((error) => ({ error: JSON.stringify(error) }));
+      this.loaded = true;
     },
   },
 };
