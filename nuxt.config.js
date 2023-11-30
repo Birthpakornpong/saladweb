@@ -12,7 +12,7 @@ export default {
                 hid: 'description',
                 name: 'description',
                 content:
-                    'Porto - Multi-purpose eCommerce Vue Template'
+                    'By SCG Packaging'
             },
             {
                 name: 'author',
@@ -116,7 +116,7 @@ export default {
     },
 
     build: {
-        publicPath: "holisbrand.pappplanner.com/"
+        publicPath: "https://holisbrand.pappplanner.com/"
     },
 
     generate: {
