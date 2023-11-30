@@ -1,7 +1,7 @@
 export default {
     head: {
-        titleTemplate: 'Porto - Multi-purpose Ecomerce template with Vue.js',
-        title: 'Porto - Multi-purpose Ecomerce template with Vue.js',
+        titleTemplate: 'HolisBrand',
+        title: 'HolisBrand',
         meta: [
             { charset: 'utf-8' },
             {
@@ -110,13 +110,13 @@ export default {
     modules: [ '@nuxtjs/axios' ],
 
     router: {
-        base: '/index',
+        base: '/',
         linkActiveClass: '',
         linkExactActiveClass: 'active'
     },
 
     build: {
-        publicPath: "http://d-themes.com/index/"
+        publicPath: "holisbrand.pappplanner.com/"
     },
 
     generate: {
