@@ -202,6 +202,7 @@ import PvPagination from "~/components/features/PvPagination";
 import PvSidebarFilterTwo from "~/components/partials/shop/sidebar-filter/PvSidebarFilterTwo";
 import { scrollTopHandler } from "~/utils";
 import Api, { baseUrl, currentDemo } from "~/api";
+import { recomData } from "~/recomData.js";
 
 export default {
   components: {
@@ -228,23 +229,8 @@ export default {
   },
   methods: {
     getProducts: function (isScroll = true) {
-      document.querySelector("body").classList.add("sidebar-opened");
-      this.products = null;
-      this.totalCount = 0;
-      Api.get(`${baseUrl}/shop`, {
-        params: {
-          ...this.$route.query,
-          demo: currentDemo,
-          order_by: this.orderBy,
-          per_page: this.itemsPerPage,
-        },
-      })
-        .then((response) => {
-          this.products = response.data.products;
-          this.totalCount = response.data.totalCount;
-          if (isScroll) scrollTopHandler();
-        })
-        .catch((error) => ({ error: JSON.stringify(error) }));
+      this.products = recomData.products;
+      this.totalCount = recomData.totalCount;
     },
     colorFilterRoute: function (item) {
       let selectedColors = this.$route.query.color

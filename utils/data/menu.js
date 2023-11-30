@@ -32,7 +32,7 @@ export const mainMenu = {
       //   },
       {
         title: "Recommended Products",
-        url: "/shop/horizontal-filter-2",
+        url: "/shop/recommended-products",
       },
     ],
     variation2: [
