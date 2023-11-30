@@ -102,7 +102,7 @@ import PvBlogSidebar from "~/components/partials/page/PvBlogSidebar";
 import PvPostOne from "~/components/features/post/PvPostOne";
 import PvPagination from "~/components/features/PvPagination";
 import { scrollTopHandler } from "~/utils";
-
+import { dataBlog } from "~/blogData.js";
 export default {
   components: {
     PvBlogSidebar,
@@ -142,25 +142,12 @@ export default {
     getBlog: function (isScroll = true) {
       this.loaded = false;
 
-      let params = {
-        page: this.$route.query.page ? this.$route.query.page : this.page,
-        per_page: this.itemsPerPage,
-        demo: currentDemo,
-      };
+      this.posts = dataBlog.posts;
+      this.recentPosts = dataBlog.recentPosts;
+      this.blogCategoryList = dataBlog.blogCategoryList;
+      this.totalCount = dataBlog.totalCount;
 
-      Api.get(`${baseUrl}/blog`, {
-        params: { ...params, category: this.$route.query.category },
-      })
-        .then((response) => {
-          this.posts = response.data.posts;
-          this.recentPosts = response.data.recentPosts;
-          this.blogCategoryList = response.data.blogCategoryList;
-          this.totalCount = response.data.totalCount;
-
-          this.loaded = true;
-          if (isScroll) scrollTopHandler();
-        })
-        .catch((error) => ({ error: JSON.stringify(error) }));
+      this.loaded = true;
     },
     toggleSidebar: function () {
       let body = document.querySelector("body");

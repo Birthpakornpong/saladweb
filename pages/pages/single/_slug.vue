@@ -76,6 +76,7 @@ import Api, { baseUrl, currentDemo } from "~/api";
 import PvBlogSidebar from "~/components/partials/page/PvBlogSidebar";
 import PvPostTwo from "~/components/features/post/PvPostTwo";
 import PvRelatedPosts from "~/components/partials/page/PvRelatedPosts";
+import { blogDesData } from "~/blogDesData.js";
 
 export default {
   components: {
@@ -111,22 +112,16 @@ export default {
     getBlog: function () {
       this.loaded = false;
 
-      Api.get(`${baseUrl}/single/${this.$route.params.slug}`, {
-        params: { demo: currentDemo },
-      })
-        .then((response) => {
-          this.post = response.data.post;
-          this.recentPosts = response.data.recentPosts;
-          this.blogCategoryList = response.data.blogCategoryList;
-          this.relatedPosts = response.data.relatedPosts;
+      this.post = blogDesData.post;
+      this.recentPosts = blogDesData.recentPosts;
+      this.blogCategoryList = blogDesData.blogCategoryList;
+      this.relatedPosts = blogDesData.relatedPosts;
 
-          this.post.blog_categories.map((item) => {
-            this.blogCategory.push(item);
-          });
+      this.post.blog_categories.map((item) => {
+        this.blogCategory.push(item);
+      });
 
-          this.loaded = true;
-        })
-        .catch((error) => ({ error: JSON.stringify(error) }));
+      this.loaded = true;
     },
     toggleSidebar: function () {
       let body = document.querySelector("body");

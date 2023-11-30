@@ -57,6 +57,7 @@ import PvSidebarFilterOne from "~/components/partials/shop/sidebar-filter/PvSide
 import PvProductListOne from "~/components/partials/shop/product-list/PvProductListOne";
 import PvShopBanner from "~/components/partials/shop/PvShopBanner";
 import Api, { baseUrl, currentDemo } from "~/api";
+import { sidebarShop } from "~/sidebarShop.js";
 
 export default {
   components: {
@@ -86,14 +87,8 @@ export default {
   },
   methods: {
     getCategoryLists: function () {
-      Api.get(`${baseUrl}/shop/sidebar-list`, {
-        params: { demo: currentDemo },
-      })
-        .then((response) => {
-          this.categoryList = response.data.sidebarList;
-          this.featuredProducts = response.data.featuredProducts;
-        })
-        .catch((error) => ({ error: JSON.stringify(error) }));
+      this.categoryList = sidebarShop.sidebarList;
+      this.featuredProducts = sidebarShop.featuredProducts;
     },
     resizeHandler: function () {
       this.isSticky = window.innerWidth > 991 ? true : false;
