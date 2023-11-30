@@ -14,7 +14,7 @@
           height="575"
         />
 
-        <div class="banner-layer banner-layer-middle banner-layer-left">
+        <!-- <div class="banner-layer banner-layer-middle banner-layer-left">
           <div class="container-fluid">
             <div
               class="appear-animate"
@@ -30,7 +30,7 @@
               ></nuxt-link>
             </div>
           </div>
-        </div>
+        </div> -->
       </div>
     </div>
 
@@ -44,7 +44,7 @@
           style="width: 100%;"
         />
 
-        <div class="banner-layer banner-layer-middle banner-layer-right w-100">
+        <!-- <div class="banner-layer banner-layer-middle banner-layer-right w-100">
           <div class="container-fluid">
             <div
               class="col-6 offset-6 appear-animate"
@@ -60,7 +60,7 @@
               ></nuxt-link>
             </div>
           </div>
-        </div>
+        </div> -->
       </div>
     </div>
   </pv-carousel>
