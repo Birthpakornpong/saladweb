@@ -215,7 +215,7 @@
 
       <div class="category-section mb-4">
         <div class="header-text">
-          <div>BEST SELLER</div>
+          <div>BEST SELLERS</div>
         </div>
       </div>
 
