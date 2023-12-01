@@ -75,7 +75,7 @@ a.btn.disabled {
 // 4. Skin
 
 .btn-primary {
-	@include button-variant(#fff, $primary-color, $primary-color);
+	@include button-variant(#fff, #7b0d0f, $primary-color);
 }
 
 .btn-secondary {
