@@ -17,6 +17,7 @@
         "@nuxtjs/vuetify": "^1.12.3",
         "babel-eslint": "^10.1.0",
         "bootstrap-icons": "^1.11.1",
+        "bootstrap-vue": "^2.23.1",
         "cookie-universal-nuxt": "^2.1.5",
         "cookieparser": "^0.1.0",
         "imagesloaded": "^4.1.4",

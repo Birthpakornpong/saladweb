@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const baseDonmain = 'http://localhost:3000';
+const baseDonmain = 'https://apiholisbrand.pappplanner.com';
 
 export const customHeader = {
     'Content-Type': 'application/json',

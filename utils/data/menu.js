@@ -192,5 +192,25 @@ export const mainMenu = {
             title: 'Login',
             url: '/admin/login-admin',
         },
+        {
+            title: 'Product',
+            url: '/admin/product-admin',
+        },
+        {
+            title: 'Banner',
+            url: '/admin/banner-admin',
+        },
+        {
+            title: 'News',
+            url: '/admin/news-admin',
+        },
+        {
+            title: 'Review',
+            url: '/admin/review-admin',
+        },
+        {
+            title: 'User',
+            url: '/admin/user-admin',
+        },
     ],
 };

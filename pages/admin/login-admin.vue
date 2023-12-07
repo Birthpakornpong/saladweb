@@ -20,6 +20,7 @@
                         type="email"
                         class="form-control"
                         id="floatingInput"
+                        v-model="email"
                         placeholder="name@example.com"
                     />
                 </div>
@@ -37,6 +38,7 @@
                         type="password"
                         class="form-control"
                         id="floatingPassword"
+                        v-model="password"
                         placeholder="Password"
                     />
                 </div>
@@ -52,7 +54,7 @@
                         &nbsp;&nbsp;Remember
                     </label>
                 </div>
-                <button class="btn btn-primary w-100 py-2" type="submit">
+                <button class="btn btn-primary w-100 py-2" type="button" @click="login()">
                     Login
                 </button>
             </form>
@@ -60,8 +62,29 @@
     </div>
 </template>
 <script>
+import Api, { baseUrl } from "~/api";
 export default {
     layout: 'default-manual',
+    data: function () {
+		return {
+			email: '',
+			password: '',
+		};
+	},
+    methods: {
+		login: function(){
+            let payload = {
+                email: this.email,
+                password: this.password,
+            }
+            Api.post(`${baseUrl}/api/User/login`, payload)
+                .then((res) => {
+                    if (res.status == 200){
+                        this.$router.push("/admin/product-admin");
+                    }
+                });
+        }
+	}
 };
 </script>
 
