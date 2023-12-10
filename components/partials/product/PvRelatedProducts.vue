@@ -3,12 +3,29 @@
     <h2
       class="section-title font1"
       v-if="products"
-      style="margin-bottom: 2.4rem;"
+      style="margin-bottom: 2.4rem; display: flex; justify-content: center;"
     >
       Recommended Products
     </h2>
 
-    <pv-carousel
+    <div
+      class="row appear-animate"
+      data-animation-name="fadeInUpShorter"
+      data-animation-delay="400"
+      v-animate
+      v-if="products.length > 0"
+      style="display: flex; justify-content: center;"
+    >
+      <div
+        class="col-6 col-md-4 col-xl-3"
+        v-for="(product, index) in products.slice(0, 3)"
+        :key="'wel-' + index"
+      >
+        <pv-product-one :product="product"></pv-product-one>
+      </div>
+    </div>
+
+    <!-- <pv-carousel
       class="skel-carousel dots-top dots-small"
       :options="baseSlider9"
       v-if="!products"
@@ -39,7 +56,7 @@
       style="margin-bottom: 2.4rem;"
     >
       <p>No products were found matching your selection.</p>
-    </div>
+    </div> -->
   </div>
 </template>
 

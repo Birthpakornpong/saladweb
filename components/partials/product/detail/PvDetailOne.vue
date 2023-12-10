@@ -28,15 +28,49 @@
 
     <hr class="short-divider" />
 
-    <div class="price-box" v-if="product.price" key="singlePrice">
-      <template v-if="!product.is_sale">
-        <span class="new-price">${{ product.price | priceFormat }}</span>
-      </template>
+    <div
+      class="price-box"
+      v-if="product.price"
+      key="singlePrice"
+      style="display: flex; justify-content: space-between;"
+    >
+      <div>
+        <template v-if="!product.is_sale">
+          <span class="new-price">${{ product.price | priceFormat }}</span>
+        </template>
 
-      <template v-else>
-        <span class="new-price">${{ product.sale_price | priceFormat }}</span>
-        <span class="old-price">${{ product.price | priceFormat }}</span>
-      </template>
+        <template v-else>
+          <span class="new-price">${{ product.sale_price | priceFormat }}</span>
+          <span class="old-price">${{ product.price | priceFormat }}</span>
+        </template>
+      </div>
+      <div style="display: flex; align-items: center;">
+        <label class="mr-3">Share:</label>
+
+        <div class="social-icons mr-2" v-if="isShare">
+          <a
+            href="javascript:;"
+            class="social-icon social-facebook icon-facebook"
+            title="Facebook"
+          ></a>
+
+          <a
+            href="javascript:;"
+            class="social-icon social-linkedin fab fa-linkedin-in"
+            title="Linkedin"
+          ></a>
+          <a
+            href="javascript:;"
+            class="social-icon social-gplus fab fa-google-plus-g"
+            title="Google +"
+          ></a>
+          <a
+            href="javascript:;"
+            class="social-icon social-mail icon-mail-alt"
+            title="Mail"
+          ></a>
+        </div>
+      </div>
     </div>
 
     <div class="price-box" v-else>
@@ -79,119 +113,7 @@
           </nuxt-link>
         </strong>
       </li>
-
-      <li v-if="product.product_tags.length > 0">
-        TAGS:
-        <strong>
-          <nuxt-link
-            :to="{ path: '/shop', query: { tag: item.slug } }"
-            class="product-category"
-            v-for="(item, index) in product.product_tags"
-            :key="'product-category-' + index"
-          >
-            {{ item.name }}
-            <template v-if="index < product.product_tags.length - 1"
-              >,</template
-            >
-          </nuxt-link>
-        </strong>
-      </li>
     </ul>
-
-    <div class="product-filters-container" v-if="product.variants.length > 0">
-      <div class="product-single-filter" v-if="vColors.length > 0">
-        <label>Color:</label>
-
-        <ul class="config-size-list config-color-list config-filter-list">
-          <li
-            v-for="(item, index) in vColors"
-            :key="'variant-color-' + index"
-            @click="toggleColorItem(item)"
-            :class="{
-              disabled: isDisabled(item, curSize),
-              active: curColor === item,
-            }"
-          >
-            <a
-              href="javascript:;"
-              class="filter-thumb p-0"
-              :class="{ disabled: isDisabled(item, curSize) }"
-              v-if="item.image[0]"
-              key="thumbForm"
-            >
-              <img
-                :src="`${baseUrl}${item.image[0].url}`"
-                :width="item.image[0].width"
-                :height="item.image[0].height"
-                alt="color thumb"
-              />
-            </a>
-            <a
-              href="javascript:;"
-              class="filter-color border-0"
-              :style="{ backgroundColor: item.text }"
-              :class="{ disabled: isDisabled(item, curSize) }"
-              v-else
-              key="colorForm"
-            ></a>
-          </li>
-        </ul>
-      </div>
-
-      <div class="product-single-filter" v-if="vSizes.length > 0">
-        <label>Size:</label>
-
-        <ul class="config-size-list">
-          <li
-            v-for="(item, index) in vSizes"
-            :key="'variant-size-' + index"
-            @click="toggleSizeItem(item)"
-            :class="{
-              disabled: isDisabled(curColor, item),
-              active: curSize === item,
-            }"
-          >
-            <a
-              href="javascript:;"
-              class="filter-thumb p-0"
-              :class="{ disabled: isDisabled(item, curSize) }"
-              v-if="item.image[0]"
-              key="thumbSizeForm"
-            >
-              <img
-                :src="`${baseUrl}${item.image[0].url}`"
-                :width="item.image[0].width"
-                :height="item.image[0].height"
-                alt="size thumb"
-              />
-            </a>
-            <a
-              href="javascript:;"
-              class="d-flex align-items-center justify-content-center"
-              :class="{ disabled: isDisabled(curColor, item) }"
-              v-else
-            >
-              <template v-if="item.text">{{ item.text }}</template>
-              <img v-else :src="`${baseUrl}${item.thumbnail[0]}`" />
-            </a>
-          </li>
-        </ul>
-      </div>
-
-      <div class="product-single-filter">
-        <vue-slide-toggle
-          :open="curColor.name !== null || curSize.name !== null"
-        >
-          <label></label>
-          <a
-            class="font1 text-uppercase clear-btn"
-            href="javascript:;"
-            @click="resetValue"
-            >Clear</a
-          >
-        </vue-slide-toggle>
-      </div>
-    </div>
 
     <div class="product-action">
       <vue-slide-toggle :open="isPriceShow" v-if="product.variants.length > 0">
@@ -244,7 +166,7 @@
 
     <!-- <hr class="divider mb-0 mt-0" /> -->
 
-    <div class="product-single-share mb-3">
+    <!-- <div class="product-single-share mb-3">
       <label class="sr-only">Share:</label>
 
       <div class="social-icons mr-2" v-if="isShare">
@@ -285,17 +207,8 @@
         <span>Go to Wishlist</span>
       </nuxt-link>
 
-      <!-- <a
-        href="javascript:;"
-        class="btn-icon-wish add-wishlist"
-        title="Add to Wishlist"
-        @click="addWishlist($event)"
-        v-if="!isWishlisted"
-      >
-        <i class="icon-wishlist-2"></i>
-        <span>Add to Wishlist</span>
-      </a> -->
-    </div>
+     
+    </div> -->
   </div>
 </template>
 
