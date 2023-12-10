@@ -241,10 +241,11 @@
         data-animation-delay="400"
         v-animate
         v-if="products.length > 0"
+        style="display: flex; justify-content: center;"
       >
         <div
           class="col-6 col-md-4 col-xl-3"
-          v-for="(product, index) in products.slice(0, 4)"
+          v-for="(product, index) in products.slice(0, 3)"
           :key="'wel-' + index"
         >
           <pv-product-one :product="product"></pv-product-one>

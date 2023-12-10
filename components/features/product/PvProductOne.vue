@@ -95,7 +95,10 @@
       </div>
 
       <div class="title-wrap">
-        <h3 class="product-title">
+        <h3
+          class="product-title"
+          style="display: flex; justify-content: center;"
+        >
           <nuxt-link :to="'/product/default/' + product.slug">{{
             product.name
           }}</nuxt-link>
