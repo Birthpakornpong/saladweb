@@ -75,13 +75,20 @@
       <li>
         <nuxt-link
           to="/pages/blog"
-          class="sub-menu-link menu-with-ul"
+          class="menu-with-ul"
           :class="{ active: $route.path.indexOf('/pages/blog') > -1 }"
           >News & Activities</nuxt-link
         >
       </li>
 
-      <li><a href="javascript:;">Our Story</a></li>
+      <li>
+        <nuxt-link
+          to="/pages/ourstory/post-format-image-gallery"
+          class="menu-with-ul"
+          :class="{ active: $route.path.indexOf('/pages/ourstory') > -1 }"
+          >Our Story</nuxt-link
+        >
+      </li>
 
       <!-- <li>
 				<nuxt-link
