@@ -7,10 +7,10 @@
         <ol class="breadcrumb">
           <li class="breadcrumb-item">
             <nuxt-link to="/">
-              Home
+              หน้าแรก
             </nuxt-link>
           </li>
-          <li class="breadcrumb-item active">Shop</li>
+          <li class="breadcrumb-item active">ผลิตภัณฑ์</li>
         </ol>
       </div>
     </nav>
