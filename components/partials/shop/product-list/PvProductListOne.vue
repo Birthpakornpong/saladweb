@@ -231,7 +231,7 @@ export default {
   props: {
     itemsPerRow: {
       type: Number,
-      default: 4,
+      default: 3,
     },
   },
   data: function () {
