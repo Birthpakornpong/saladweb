@@ -115,7 +115,7 @@
       </li>
     </ul>
 
-    <div class="product-action">
+    <!-- <div class="product-action">
       <vue-slide-toggle :open="isPriceShow" v-if="product.variants.length > 0">
         <div
           class="price-box product-filtered-price"
@@ -142,72 +142,6 @@
           </template>
         </div>
       </vue-slide-toggle>
-
-      <!-- <div class="product-single-qty">
-        <pv-quantity-input
-          :product="product"
-          :qty="1"
-          @changeCurrentQty="changeQty"
-        ></pv-quantity-input>
-      </div>
-      <a
-        href="javascript:;"
-        class="btn btn-dark add-cart mr-2"
-        title="Add to Cart"
-        @click="addCart"
-        :class="{ disabled: !isCartActive }"
-        >Add to Carts</a
-      >
-
-      <nuxt-link to="/pages/cart" class="btn btn-gray view-cart d-none"
-        >View cart</nuxt-link
-      > -->
-    </div>
-
-    <!-- <hr class="divider mb-0 mt-0" /> -->
-
-    <!-- <div class="product-single-share mb-3">
-      <label class="sr-only">Share:</label>
-
-      <div class="social-icons mr-2" v-if="isShare">
-        <a
-          href="javascript:;"
-          class="social-icon social-facebook icon-facebook"
-          title="Facebook"
-        ></a>
-        <a
-          href="javascript:;"
-          class="social-icon social-twitter icon-twitter"
-          title="Twitter"
-        ></a>
-        <a
-          href="javascript:;"
-          class="social-icon social-linkedin fab fa-linkedin-in"
-          title="Linkedin"
-        ></a>
-        <a
-          href="javascript:;"
-          class="social-icon social-gplus fab fa-google-plus-g"
-          title="Google +"
-        ></a>
-        <a
-          href="javascript:;"
-          class="social-icon social-mail icon-mail-alt"
-          title="Mail"
-        ></a>
-      </div>
-
-      <nuxt-link
-        to="/pages/wishlist"
-        class="btn-icon-wish add-wishlist added-wishlist"
-        title="Go to Wishlist"
-        v-if="isWishlisted"
-      >
-        <i class="icon-wishlist-2"></i>
-        <span>Go to Wishlist</span>
-      </nuxt-link>
-
-     
     </div> -->
   </div>
 </template>

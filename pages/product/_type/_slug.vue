@@ -1,35 +1,5 @@
 <template>
   <main class="main">
-    <!-- <nav aria-label="breadcrumb" class="breadcrumb-nav">
-      <div class="container">
-        <ol class="breadcrumb">
-          <li class="breadcrumb-item">
-            <nuxt-link to="/">
-              Home
-            </nuxt-link>
-          </li>
-          <li class="breadcrumb-item">
-            <nuxt-link to="/shop">Shop</nuxt-link>
-          </li>
-          <li class="breadcrumb-item" v-if="loaded">
-            <nuxt-link
-              :to="{ path: '/shop', query: { category: category.slug } }"
-              v-for="(category, index) in productCategory"
-              :key="`product-category-${index}`"
-              >{{
-                index === productCategory.length - 1
-                  ? category.name
-                  : category.name + ", "
-              }}</nuxt-link
-            >
-          </li>
-          <li class="breadcrumb-item active" aria-current="page" v-if="loaded">
-            {{ product.name }}
-          </li>
-        </ol>
-      </div>
-    </nav> -->
-
     <div class="container skeleton-body">
       <div class="product-single-container product-single-default">
         <div class="row" v-if="product">
@@ -43,6 +13,13 @@
               :prev-product="prevProduct"
               :next-product="nextProduct"
             ></pv-detail-one>
+            <div class="category-custom">
+              <pv-desc-custom
+                :category-list="categoryList"
+                :featured-products="featuredProducts"
+                v-if="featuredProducts.length > 0"
+              ></pv-desc-custom>
+            </div>
           </div>
         </div>
       </div>
@@ -53,19 +30,10 @@
         <div class="tab-content col-lg-12"></div>
       </div>
 
-      <!-- <pv-desc-one :product="product" v-if="product"></pv-desc-one> -->
-
       <pv-related-products
         :products="relatedProducts"
         class="pb-3"
       ></pv-related-products>
-
-      <!-- <pv-small-collection
-        :featured-products="featuredProducts"
-        :best-products="bestProducts"
-        :latest-products="latestProducts"
-        :top-rated-products="topRatedProducts"
-      ></pv-small-collection> -->
     </div>
   </main>
 </template>
@@ -79,6 +47,8 @@ import PvSmallCollection from "~/components/partials/product/PvSmallCollection";
 import PvBrandSection from "~/components/partials/home/PvBrandSection";
 import Api, { baseUrl, currentDemo } from "~/api";
 import { mockData } from "~/data";
+import PvDescCustom from "~/components/partials/product/description/PvDescCustom";
+import { sidebarShop } from "~/sidebarShop.js";
 
 export default {
   components: {
@@ -88,6 +58,7 @@ export default {
     PvRelatedProducts,
     PvSmallCollection,
     PvBrandSection,
+    PvDescCustom,
   },
   data: function () {
     return {
@@ -101,6 +72,8 @@ export default {
       prevProduct: null,
       loaded: false,
       productCategory: [],
+      categoryList: [],
+      featuredProducts: [],
     };
   },
   created: function () {
@@ -119,7 +92,8 @@ export default {
       this.topRatedProducts = mockData.topRatedProducts;
       this.prevProduct = mockData.prevProduct;
       this.nextProduct = mockData.nextProduct;
-
+      this.categoryList = sidebarShop.sidebarList;
+      this.featuredProducts = sidebarShop.featuredProducts;
       this.loaded = true;
     },
   },

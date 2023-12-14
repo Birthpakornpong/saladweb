@@ -1,75 +1,77 @@
 <template>
-  <div
-    class="sidebar-wrapper"
-    style="
-      border: solid 1px rgba(231, 231, 231, 1);
-      padding: 2rem;
-      padding-top: 0rem;
-    "
-  >
-    <div class="sidebar-content skeleton-body" v-if="categoryList.length === 0">
-      <aside class="widget"></aside>
-    </div>
-
-    <div class="widget widget-size">
-      <h3 class="widget-title">
-        <a
-          href="javascript:;"
-          @click="catOpened = !catOpened"
-          :class="{ collapsed: !catOpened }"
-          >Categories</a
-        >
-      </h3>
-
-      <vue-slide-toggle :open="catOpened">
-        <div class="widget-body" style="padding-top: 2rem;">
-          <ul class="cat-list">
-            <li
-              v-for="(item, index) in shopSizes"
-              :key="'size-filter' + index"
-              :class="{ active: isActivedSize(item) }"
-            >
-              <nuxt-link :to="sizeFilterRoute(item)">{{ item.name }}</nuxt-link>
-            </li>
-          </ul>
-        </div>
-      </vue-slide-toggle>
-    </div>
-
-    <div class="widget widget-size">
-      <h3 class="widget-title">
-        <a
-          href="javascript:;"
-          @click="sizeOpened = !sizeOpened"
-          :class="{ collapsed: !sizeOpened }"
-          >Product HOLIS by SCGP</a
-        >
-      </h3>
-
-      <vue-slide-toggle :open="sizeOpened">
-        <div class="widget-body" style="padding-top: 2rem;">
-          <ul class="cat-list">
-            <li
-              v-for="(item, index) in shopSizes"
-              :key="'size-filter' + index"
-              :class="{ active: isActivedSize(item) }"
-            >
-              <nuxt-link :to="sizeFilterRoute(item)">{{ item.name }}</nuxt-link>
-            </li>
-          </ul>
-        </div>
-      </vue-slide-toggle>
-    </div>
-
-    <vue-slide-toggle :open="!isEmptyQuery">
-      <div class="widget mb-3 ml-4 border-bottom-0">
-        <nuxt-link
-          :to="{ path: $router.path }"
-          class="btn btn-primary reset-filter-btn router-link-active"
-          >Reset All Filters</nuxt-link
-        >
+  <div>
+    <div class="sidebar-wrapper">
+      <div
+        class="sidebar-content skeleton-body"
+        v-if="categoryList.length === 0"
+      >
+        <aside class="widget"></aside>
       </div>
-    </vue-slide-toggle>
+
+      <div class="widget widget-size">
+        <h3 class="widget-title">
+          <a
+            href="javascript:;"
+            @click="catOpened = !catOpened"
+            :class="{ collapsed: !catOpened }"
+            >Categories</a
+          >
+        </h3>
+
+        <vue-slide-toggle :open="catOpened">
+          <div class="widget-body" style="padding-top: 2rem;">
+            <ul class="cat-list">
+              <li
+                v-for="(item, index) in shopSizes"
+                :key="'size-filter' + index"
+                :class="{ active: isActivedSize(item) }"
+              >
+                <nuxt-link :to="sizeFilterRoute(item)">{{
+                  item.name
+                }}</nuxt-link>
+              </li>
+            </ul>
+          </div>
+        </vue-slide-toggle>
+      </div>
+
+      <div class="widget widget-size">
+        <h3 class="widget-title">
+          <a
+            href="javascript:;"
+            @click="sizeOpened = !sizeOpened"
+            :class="{ collapsed: !sizeOpened }"
+            >Product HOLIS by SCGP</a
+          >
+        </h3>
+
+        <vue-slide-toggle :open="sizeOpened">
+          <div class="widget-body" style="padding-top: 2rem;">
+            <ul class="cat-list">
+              <li
+                v-for="(item, index) in shopSizes"
+                :key="'size-filter' + index"
+                :class="{ active: isActivedSize(item) }"
+              >
+                <nuxt-link :to="sizeFilterRoute(item)">{{
+                  item.name
+                }}</nuxt-link>
+              </li>
+            </ul>
+          </div>
+        </vue-slide-toggle>
+      </div>
+
+      <vue-slide-toggle :open="!isEmptyQuery">
+        <div class="widget mb-3 ml-4 border-bottom-0">
+          <nuxt-link
+            :to="{ path: $router.path }"
+            class="btn btn-primary reset-filter-btn router-link-active"
+            >Reset All Filters</nuxt-link
+          >
+        </div>
+      </vue-slide-toggle>
+    </div>
   </div>
 </template>
 
@@ -233,3 +235,4 @@ export default {
   },
 };
 </script>
+<style scoped></style>
