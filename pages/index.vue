@@ -4,6 +4,12 @@
       <pv-intro-section></pv-intro-section>
     </section>
 
+    <div style="display: flex; justify-content: center;">
+      <video ref="videoPlayer" muted controls>
+        <source src="videotest.mp4" type="video/mp4" />
+      </video>
+    </div>
+
     <pv-category-section :products="products"></pv-category-section>
 
     <!-- <pv-best-collection :products="products"></pv-best-collection> -->
