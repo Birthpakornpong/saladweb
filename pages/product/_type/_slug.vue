@@ -30,6 +30,10 @@
         <div class="tab-content col-lg-12"></div>
       </div>
 
+      <div>
+        <PvReviewCustom></PvReviewCustom>
+      </div>
+
       <pv-related-products
         :products="relatedProducts"
         class="pb-3"
@@ -44,6 +48,7 @@ import PvDetailOne from "~/components/partials/product/detail/PvDetailOne";
 import PvDescOne from "~/components/partials/product/description/PvDescOne";
 import PvRelatedProducts from "~/components/partials/product/PvRelatedProducts";
 import PvSmallCollection from "~/components/partials/product/PvSmallCollection";
+import PvReviewCustom from "~/components/common/partials/PvReviewCustom";
 import PvBrandSection from "~/components/partials/home/PvBrandSection";
 import Api, { baseUrl, currentDemo } from "~/api";
 import { mockData } from "~/data";
@@ -59,6 +64,7 @@ export default {
     PvSmallCollection,
     PvBrandSection,
     PvDescCustom,
+    PvReviewCustom,
   },
   data: function () {
     return {

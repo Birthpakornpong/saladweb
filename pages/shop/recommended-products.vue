@@ -13,7 +13,7 @@
           <li class="breadcrumb-item active">Shop</li>
         </ol>
       </nav> -->
-      <div class="category-section mb-4">
+      <div class="category-section mb-4 mt-3">
         <div class="header-textblack">
           <div>RECOMMENDED PRODUCTS</div>
         </div>
@@ -25,7 +25,9 @@
       </div>
     </div>
 
-    <div class="mb-4"></div>
+    <div>
+      <PvReviewCustom></PvReviewCustom>
+    </div>
   </main>
 </template>
 
@@ -36,12 +38,14 @@ import PvProductListTwo from "~/components/partials/shop/product-list/PvProductL
 import PvShopBanner from "~/components/partials/shop/PvShopBanner";
 import Api, { baseUrl, currentDemo } from "~/api";
 import { recomData } from "~/recomData.js";
+import PvReviewCustom from "~/components/common/partials/PvReviewCustom";
 
 export default {
   components: {
     PvSidebarFilterOne,
     PvProductListTwo,
     PvShopBanner,
+    PvReviewCustom,
   },
   data: function () {
     return {

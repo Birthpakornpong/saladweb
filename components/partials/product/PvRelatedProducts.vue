@@ -1,7 +1,7 @@
 <template>
-  <div class="products-section p-0">
+  <div>
     <h2
-      class="section-title font1"
+      class="headers-text"
       v-if="products"
       style="margin-bottom: 2.4rem; display: flex; justify-content: center;"
     >
@@ -80,3 +80,12 @@ export default {
   },
 };
 </script>
+<style>
+.headers-text {
+  text-align: center;
+  font-weight: bold;
+  font-size: 2.5rem;
+  color: #ab0011;
+  position: relative;
+}
+</style>
