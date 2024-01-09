@@ -14,6 +14,8 @@
             alt="body shape"
             class="w-auto bg-transparent"
           />
+
+          <!-- <inner-image-zoom :src="'./review.png'" /> -->
         </div>
       </div>
     </div>
@@ -22,9 +24,11 @@
 
 <script>
 import Api, { baseUrl, currentDemo } from "~/api";
+import "vue-inner-image-zoom/lib/vue-inner-image-zoom.css";
+import InnerImageZoom from "vue-inner-image-zoom";
 
 export default {
-  components: {},
+  components: { InnerImageZoom },
   data: function () {
     return {
       baseUrl: baseUrl,
