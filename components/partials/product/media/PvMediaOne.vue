@@ -1,17 +1,6 @@
 <template>
   <div>
     <div class="product-slider-container">
-      <!-- <div class="label-group">
-				<div
-					class="product-label label-hot"
-					v-if="product.is_hot"
-				>HOT</div>
-				<div
-					class="product-label label-sale"
-					v-if="product.is_sale"
-				>Sale</div>
-			</div> -->
-
       <PvCarousel
         ref="mediaRef"
         class="product-single-carousel show-nav-hover"
@@ -22,19 +11,20 @@
           v-for="item in product.large_pictures"
           :key="item.name"
         >
-          <img
+          <!-- <img
             class="product-single-image"
             src="~/static/images/imgmock1.png"
             :width="item.width"
             :height="item.height"
             alt="lgPicture"
-          />
+          /> -->
+          <inner-image-zoom :src="'./images/imgmock1.png'" />
         </div>
       </PvCarousel>
 
-      <span class="prod-full-screen" @click="openLightBox" v-if="isMagnify">
+      <!-- <span class="prod-full-screen" @click="openLightBox" v-if="isMagnify">
         <i class="icon-plus"></i>
-      </span>
+      </span> -->
     </div>
 
     <PvCarousel
@@ -67,11 +57,14 @@ import LightBox from "vue-image-lightbox";
 import { baseUrl } from "~/api";
 import { baseSlider1, baseSlider2 } from "~/utils/data/carousel";
 import "vue-image-lightbox/dist/vue-image-lightbox.min.css";
+import "vue-inner-image-zoom/lib/vue-inner-image-zoom.css";
+import InnerImageZoom from "vue-inner-image-zoom";
 
 export default {
   components: {
     PvCarousel,
     LightBox,
+    InnerImageZoom,
   },
   props: {
     product: Object,

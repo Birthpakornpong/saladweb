@@ -29,7 +29,18 @@
         <div class="summary entry-summary col-lg-7 col-md-6"></div>
         <div class="tab-content col-lg-12"></div>
       </div>
+      <div class="row main-content">
+        <div class="col-12">
+          <img
+            style="width: 100%;"
+            :src="'./detailproduct.jpg'"
+            alt="body shape"
+            class="w-auto bg-transparent"
+          />
 
+          <!-- <inner-image-zoom :src="'./review.png'" /> -->
+        </div>
+      </div>
       <div>
         <PvReviewCustom></PvReviewCustom>
       </div>
