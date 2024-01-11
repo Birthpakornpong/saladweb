@@ -40,7 +40,7 @@
         :class="{ active: index === 0 }"
       >
         <img
-          src="~/static/images/HOLIS17715_0.jpg"
+          src="~/static/images/IMMU Cap (1).jpg"
           :width="item.width"
           :height="item.height"
           alt="product-thumbnail"
