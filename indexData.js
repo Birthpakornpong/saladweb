@@ -43,7 +43,7 @@ export const indexData = {
           width: "800",
           height: "800",
           url: "~/static/images/imgmock1.png",
-          pivot: { related_id: "323", upload_file_id: "1644" },
+          pivot: { related_id: "323", upload_file_id: "1644" }, 
         },
         {
           width: "800",

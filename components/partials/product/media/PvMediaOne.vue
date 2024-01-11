@@ -18,7 +18,7 @@
             :height="item.height"
             alt="lgPicture"
           /> -->
-          <inner-image-zoom :src="'./images/imgmock1.png'" />
+          <inner-image-zoom :src="'./images/HOLIS17715_0.jpg'" />
         </div>
       </PvCarousel>
 
@@ -40,7 +40,7 @@
         :class="{ active: index === 0 }"
       >
         <img
-          src="~/static/images/imgmock1.png"
+          src="~/static/images/HOLIS17715_0.jpg"
           :width="item.width"
           :height="item.height"
           alt="product-thumbnail"

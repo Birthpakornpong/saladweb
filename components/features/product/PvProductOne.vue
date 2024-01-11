@@ -9,7 +9,7 @@
           :width="item.width"
           :height="item.height"
           :class="{ 'last-image': index === 1 }"
-          src="~/static/images/imgmock1.png"
+          src="~/static/images/HOLIS17715_0.jpg"
         />
       </nuxt-link>
 
