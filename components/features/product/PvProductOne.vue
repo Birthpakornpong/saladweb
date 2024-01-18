@@ -7,55 +7,20 @@
           :key="`related-large-${index}`"
           alt="large-picture"
           :width="item.width"
+          style="height: 25em;"
+          :class="{ 'last-image': index === 1 }"
+          :src="product.imgUrl"
+        />
+        <!-- <img
+          v-for="(item, index) in product.large_pictures.slice(0, 2)"
+          :key="`related-large-${index}`"
+          alt="large-picture"
+          :width="item.width"
           :height="item.height"
           :class="{ 'last-image': index === 1 }"
-          src="~/static/images/HOLIS17715_0.jpg"
-        />
+          src="https://apiholisbrand.pappplanner.com//Uploads//1704903547_1_cat%20chrismas.jpeg"
+        /> -->
       </nuxt-link>
-
-      <!-- <div class="label-group">
-				<div
-					class="product-label label-hot"
-					v-if="product.is_hot"
-				>HOT</div>
-				<div
-					class="product-label label-sale"
-					v-if="product.is_sale && !product.price"
-				>Sale</div>
-				<div
-					class="product-label label-sale"
-					v-if="product.is_sale && product.price"
-				>-{{ discount }}%</div>
-			</div> -->
-
-      <!-- <a
-        href="javascript:;"
-        class="btn-quickview"
-        title="Quick View"
-        @click="openQuickview"
-      >
-        Quick View
-      </a> -->
-
-      <!-- <div class="btn-icon-group">
-        <nuxt-link
-          :to="'/product/default/' + product.slug"
-          class="btn-icon btn-add-cart"
-          v-if="product.variants.length > 0"
-          key="variantProduct"
-        >
-          <i class="fa fa-arrow-right"></i>
-        </nuxt-link>
-
-        <a
-          href="javascript:;"
-          class="btn-icon btn-add-cart product-type-simple"
-          v-else
-          @click="addCart"
-        >
-          <i class="icon-shopping-cart"></i>
-        </a>
-      </div> -->
     </figure>
 
     <div class="product-details">

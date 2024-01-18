@@ -91,6 +91,97 @@ export default {
       productCategory: [],
       categoryList: [],
       featuredProducts: [],
+
+      productTemp: {
+        id: 323,
+        name: "Holis by SCGP อิม-มู แคป ชนิดซอฟต์เจล 10 เม็ด",
+        slug: "baby-sport-shoes",
+        price: 96,
+        sku: "654613612-1-1-1",
+        stock: 50,
+        short_description:
+          "[Free Gift] Holis Hol Im-mu Cap 10 Capsules ผลิตภัณฑ์เสริมอาหาร จากโฮลิส ที่มี 3 สารสกัดธรรมชาติอย่าง Astaxanthin, Beta Glucan และ Cordycepin ช่วยเสริมสร้างภูมิคุ้มกันและปรับสมดุลร่างกายแบบองค์รวม ",
+        sale_price: 68,
+        sale_count: 0,
+        ratings: 0,
+        reviews: "0",
+        is_hot: null,
+        is_sale: true,
+        is_new: null,
+        is_out_of_stock: null,
+        release_date: null,
+        developer: null,
+        publisher: null,
+        game_mode: null,
+        rated: null,
+        until: null,
+        product_categories: [
+          {
+            name: "Babies",
+            slug: "babies",
+            parent_name: null,
+            disabled: true,
+            pivot: { product_id: "323", "product-category_id": "50" },
+          },
+        ],
+        product_brands: [],
+        product_tags: [],
+        large_pictures: [
+          {
+            width: "800",
+            height: "800",
+            url: "/uploads/product_16_1_27c032e0ec.jpg",
+            pivot: { related_id: "323", upload_file_id: "1642" },
+          },
+          {
+            width: "800",
+            height: "800",
+            url: "/uploads/product_16_2_7f9575405f.jpg",
+            pivot: { related_id: "323", upload_file_id: "1644" },
+          },
+          {
+            width: "800",
+            height: "800",
+            url: "/uploads/product_16_3_8050d5961f.jpg",
+            pivot: { related_id: "323", upload_file_id: "1643" },
+          },
+        ],
+        pictures: [
+          {
+            width: "300",
+            height: "340",
+            url: "/uploads/product_16_1_300x340_d499c88efd.jpg",
+            pivot: { related_id: "323", upload_file_id: "1648" },
+          },
+          {
+            width: "300",
+            height: "340",
+            url: "/uploads/product_16_2_300x340_2b2de25664.jpg",
+            pivot: { related_id: "323", upload_file_id: "1649" },
+          },
+          {
+            width: "300",
+            height: "340",
+            url: "/uploads/product_16_3_300x340_9475179c1e.jpg",
+            pivot: { related_id: "323", upload_file_id: "1647" },
+          },
+        ],
+        small_pictures: [
+          {
+            width: "150",
+            height: "150",
+            url: "/uploads/product_16_1_150x150_847ceac2f2.jpg",
+            pivot: { related_id: "323", upload_file_id: "1646" },
+          },
+          {
+            width: "150",
+            height: "150",
+            url: "/uploads/product_16_2_150x150_42c25a276a.jpg",
+            pivot: { related_id: "323", upload_file_id: "1645" },
+          },
+        ],
+        variants: [],
+      },
     };
   },
   created: function () {
