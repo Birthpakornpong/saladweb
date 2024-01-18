@@ -1,12 +1,15 @@
 <template>
   <main class="main home-page">
     <section class="intro-section mb-3">
-      <pv-intro-section></pv-intro-section>
+      <pv-intro-section :introIMG="introIMG"></pv-intro-section>
     </section>
 
-    <div style="display: flex; justify-content: center;">
+    <div
+      style="display: flex; justify-content: center;"
+      v-if="video.length > 0"
+    >
       <video ref="videoPlayer" muted controls>
-        <source src="videotest.mp4" type="video/mp4" />
+        <source :src="video[0].url" type="video/mp4" />
       </video>
     </div>
 
@@ -54,6 +57,8 @@ export default {
       bestProducts: [],
       topRatedProducts: [],
       timerId: 0,
+      video: [],
+      introIMG: [],
       tempProduct: {
         id: 0,
         name: "Baby Sport Shoes",
@@ -144,9 +149,7 @@ export default {
           Accept: "application/json",
         },
       };
-      // const params = {
-      //   year: this.selected,
-      // };
+
       axios
         .get(`${baseUrl}/api/Home/get-home`, optionAxios)
         .then((response) => {
@@ -159,22 +162,26 @@ export default {
                 slug: item.id,
               });
             });
-            console.log("check", this.products);
+            response.data.bannerList.forEach((item) => {
+              this.introIMG.push({
+                ...item,
+                url: item.link_file_upload,
+              });
+            });
+            response.data.productVideoList.forEach((item) => {
+              this.video.push({
+                ...item,
+                url: item.link_file_upload,
+              });
+            });
+            // console.log("check", this.products);
           } else {
           }
         })
         .catch((error) => {});
     },
   },
-  watch: {
-    // selected: {
-    //   handler(val) {
-    //     console.log("checn");
-    //     this.handlerGet();
-    //   },
-    //   deep: true,
-    // },
-  },
+  watch: {},
   destroyed: function () {
     clearTimeout(this.timerId);
   },
