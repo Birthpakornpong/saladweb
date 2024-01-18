@@ -3,23 +3,19 @@
     <figure>
       <nuxt-link :to="`/product/default/${product.slug}`">
         <img
-          v-for="(item, index) in product.large_pictures.slice(0, 2)"
-          :key="`related-large-${index}`"
+          v-if="product.imgUrl"
           alt="large-picture"
-          :width="item.width"
+          width="800"
           style="height: 25em;"
-          :class="{ 'last-image': index === 1 }"
           :src="product.imgUrl"
         />
-        <!-- <img
-          v-for="(item, index) in product.large_pictures.slice(0, 2)"
-          :key="`related-large-${index}`"
+        <img
+          v-else
           alt="large-picture"
-          :width="item.width"
-          :height="item.height"
-          :class="{ 'last-image': index === 1 }"
-          src="https://apiholisbrand.pappplanner.com//Uploads//1704903547_1_cat%20chrismas.jpeg"
-        /> -->
+          width="800"
+          style="height: 25em;"
+          src="~/static/images/HOLIS17715_0.jpg"
+        />
       </nuxt-link>
     </figure>
 
@@ -135,6 +131,7 @@ export default {
       minPrice: 0,
       maxPrice: 0,
       discount: 0,
+      defalutImg: "~/static/images/HOLIS17715_0.jpg",
     };
   },
   computed: {

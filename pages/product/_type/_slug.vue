@@ -61,10 +61,12 @@ import PvRelatedProducts from "~/components/partials/product/PvRelatedProducts";
 import PvSmallCollection from "~/components/partials/product/PvSmallCollection";
 import PvReviewCustom from "~/components/common/partials/PvReviewCustom";
 import PvBrandSection from "~/components/partials/home/PvBrandSection";
-import Api, { baseUrl, currentDemo } from "~/api";
+
 import { mockData } from "~/data";
 import PvDescCustom from "~/components/partials/product/description/PvDescCustom";
 import { sidebarShop } from "~/sidebarShop.js";
+import axios from "axios";
+import Api, { baseUrl } from "~/api";
 
 export default {
   components: {
@@ -186,13 +188,14 @@ export default {
   },
   created: function () {
     this.getProduct();
+    this.handlerGet();
     console.log("data check", mockData);
   },
   methods: {
     getProduct: function () {
       this.loaded = false;
 
-      this.product = mockData.product;
+      // this.product = mockData.product;
       this.relatedProducts = mockData.relatedProducts;
       this.featuredProducts = mockData.featuredProducts;
       this.bestProducts = mockData.bestSellingProducts;
@@ -203,6 +206,31 @@ export default {
       this.categoryList = sidebarShop.sidebarList;
       this.featuredProducts = sidebarShop.featuredProducts;
       this.loaded = true;
+    },
+    async handlerGet() {
+      var optionAxios = {
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+      };
+
+      axios
+        .get(
+          `${baseUrl}/api/Home/product-get-by-id?productId=${this.$route.params.slug}`,
+          optionAxios
+        )
+        .then((response) => {
+          if (response.status == 200) {
+            console.log("check", response);
+            this.productTemp.name = response.data.product_name;
+            this.productTemp.sku = response.data.product_sku;
+
+            this.product = this.productTemp;
+          } else {
+          }
+        })
+        .catch((error) => {});
     },
   },
 };
