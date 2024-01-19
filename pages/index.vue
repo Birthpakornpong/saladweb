@@ -17,7 +17,7 @@
 
     <!-- <pv-best-collection :products="products"></pv-best-collection> -->
 
-    <pv-brand-section></pv-brand-section>
+    <pv-brand-section :categorys="categorys"></pv-brand-section>
 
     <!-- <pv-banner-section></pv-banner-section> -->
   </main>
@@ -57,6 +57,7 @@ export default {
       bestProducts: [],
       topRatedProducts: [],
       timerId: 0,
+      categorys: [],
       video: [],
       introIMG: [],
       tempProduct: {
@@ -172,6 +173,12 @@ export default {
               this.video.push({
                 ...item,
                 url: item.link_file_upload,
+              });
+            });
+            response.data.productCategory.forEach((item) => {
+              this.categorys.push({
+                categoryName: item.category_name,
+                categoryLink: item.category_link,
               });
             });
             // console.log("check", this.products);

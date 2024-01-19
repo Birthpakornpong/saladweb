@@ -1,30 +1,63 @@
 <template>
-	<div class="category-section">
-	  <div class="header-text">
-		<div>
-		  <span class="icon">🎉</span> SHOP BY CATEGORY
-		</div>
-	  </div>
-	  <div class="grid-container">
-		<div class="grid-items" @mouseover="slideText('Immunity')">Immunity</div>
-		<div class="grid-items" @mouseenter="slideText(true)" @mouseleave="slideText(false)">
-			<span class="icon">🧠</span> Brain
-		</div>
-		<div class="grid-items" @mouseover="slideText('Cholesterol Blood Sugar control')">Cholesterol <br /> Blood Sugar control</div>
-		<div class="grid-items" @mouseover="slideText('Digestive System')">Digestive System</div>
-		<div class="grid-items" @mouseover="slideText('Skin Health')">Skin Health</div>
-		<div class="grid-items" @mouseover="slideText('Relaxation')">Relaxation</div>
-	  </div>
-	</div>
-  </template>
+  <div class="category-section">
+    <div class="header-text">
+      <div><span class="icon">🎉</span> SHOP BY CATEGORY</div>
+    </div>
+    <div class="grid-container" v-if="categorys.length > 0">
+      <a :href="categorys[0].categoryLink" target="_blank">
+        <div class="grid-items" @mouseover="slideText('Immunity')">
+          {{ categorys[0].categoryName }}
+        </div>
+      </a>
+
+      <a :href="categorys[1].categoryLink" target="_blank">
+        <div
+          class="grid-items"
+          @mouseenter="slideText(true)"
+          @mouseleave="slideText(false)"
+        >
+          <span class="icon">🧠</span> {{ categorys[1].categoryName }}
+        </div></a
+      >
+      <a :href="categorys[2].categoryLink" target="_blank">
+        <div
+          class="grid-items"
+          @mouseover="slideText('Cholesterol Blood Sugar control')"
+        >
+          {{ categorys[2].categoryName }}
+        </div></a
+      >
+      <a :href="categorys[3].categoryLink" target="_blank">
+        <div class="grid-items" @mouseover="slideText('Digestive System')">
+          {{ categorys[3].categoryName }}
+        </div></a
+      >
+
+      <a :href="categorys[4].categoryLink" target="_blank">
+        <div class="grid-items" @mouseover="slideText('Skin Health')">
+          {{ categorys[4].categoryName }}
+        </div></a
+      >
+
+      <a :href="categorys[5].categoryLink" target="_blank"
+        ><div class="grid-items" @mouseover="slideText('Relaxation')">
+          {{ categorys[5].categoryName }}
+        </div></a
+      >
+    </div>
+  </div>
+</template>
 
 <script>
-import PvCarousel from '~/components/features/PvCarousel';
-import { brandSlider } from '~/utils/data/carousel';
+import PvCarousel from "~/components/features/PvCarousel";
+import { brandSlider } from "~/utils/data/carousel";
 
 export default {
   components: {
     PvCarousel,
+  },
+  props: {
+    categorys: Array,
   },
   data: function () {
     return {
@@ -80,7 +113,7 @@ export default {
 }
 
 .category-section .grid-container .grid-items::before {
-  content: 'บำรุงสมองและระบบประสาท';
+  content: "บำรุงสมองและระบบประสาท";
   position: absolute;
   top: 0;
   left: 0;
@@ -110,4 +143,3 @@ export default {
   color: #771219;
 }
 </style>
-  
