@@ -1,49 +1,60 @@
 <template>
-  <div class="category-section">
-    <div class="header-text">
-      <div><span class="icon">🎉</span> SHOP BY CATEGORY</div>
-    </div>
-    <div class="grid-container" v-if="categorys.length > 0">
-      <a :href="categorys[0].categoryLink" target="_blank">
-        <div class="grid-items" @mouseover="slideText('Immunity')">
-          {{ categorys[0].categoryName }}
+  <div class="row">
+    <div class="col-12">
+      <div class="category-section">
+        <div class="header-text">
+          <div>SHOP BY CATEGORY</div>
         </div>
-      </a>
+        <div class="grid-container" v-if="categorys.length > 0">
+          <a :href="categorys[0].categoryLink" target="_blank">
+            <div class="grid-items" @mouseover="slideText('Immunity')">
+              <img :src="categorys[0].categoryLink" style="height: 5em;" />
+              {{ categorys[0].categoryName }}
+            </div>
+          </a>
 
-      <a :href="categorys[1].categoryLink" target="_blank">
-        <div
-          class="grid-items"
-          @mouseenter="slideText(true)"
-          @mouseleave="slideText(false)"
-        >
-          <span class="icon">🧠</span> {{ categorys[1].categoryName }}
-        </div></a
-      >
-      <a :href="categorys[2].categoryLink" target="_blank">
-        <div
-          class="grid-items"
-          @mouseover="slideText('Cholesterol Blood Sugar control')"
-        >
-          {{ categorys[2].categoryName }}
-        </div></a
-      >
-      <a :href="categorys[3].categoryLink" target="_blank">
-        <div class="grid-items" @mouseover="slideText('Digestive System')">
-          {{ categorys[3].categoryName }}
-        </div></a
-      >
+          <a :href="categorys[1].categoryLink" target="_blank">
+            <div
+              class="grid-items"
+              @mouseenter="slideText(true)"
+              @mouseleave="slideText(false)"
+            >
+              <img :src="categorys[1].categoryLink" style="height: 5em;" />{{
+                categorys[1].categoryName
+              }}
+            </div></a
+          >
+          <a :href="categorys[2].categoryLink" target="_blank">
+            <div
+              class="grid-items"
+              @mouseover="slideText('Cholesterol Blood Sugar control')"
+            >
+              <img :src="categorys[2].categoryLink" style="height: 5em;" />
+              {{ categorys[2].categoryName }}
+            </div></a
+          >
+          <a :href="categorys[3].categoryLink" target="_blank">
+            <div class="grid-items" @mouseover="slideText('Digestive System')">
+              <img :src="categorys[3].categoryLink" style="height: 5em;" />
+              {{ categorys[3].categoryName }}
+            </div></a
+          >
 
-      <a :href="categorys[4].categoryLink" target="_blank">
-        <div class="grid-items" @mouseover="slideText('Skin Health')">
-          {{ categorys[4].categoryName }}
-        </div></a
-      >
+          <a :href="categorys[4].categoryLink" target="_blank">
+            <div class="grid-items" @mouseover="slideText('Skin Health')">
+              <img :src="categorys[4].categoryLink" style="height: 5em;" />
+              {{ categorys[4].categoryName }}
+            </div></a
+          >
 
-      <a :href="categorys[5].categoryLink" target="_blank"
-        ><div class="grid-items" @mouseover="slideText('Relaxation')">
-          {{ categorys[5].categoryName }}
-        </div></a
-      >
+          <a :href="categorys[5].categoryLink" target="_blank"
+            ><div class="grid-items" @mouseover="slideText('Relaxation')">
+              <img :src="categorys[5].categoryLink" style="height: 5em;" />
+              {{ categorys[5].categoryName }}
+            </div></a
+          >
+        </div>
+      </div>
     </div>
   </div>
 </template>

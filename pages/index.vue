@@ -4,13 +4,113 @@
       <pv-intro-section :introIMG="introIMG"></pv-intro-section>
     </section>
 
-    <div
-      style="display: flex; justify-content: center;"
-      v-if="video.length > 0"
-    >
-      <video ref="videoPlayer" muted controls>
-        <source :src="video[0].url" type="video/mp4" />
-      </video>
+    <div class="header-text mb-3">
+      <div>HOLIS by SCG</div>
+    </div>
+    <div v-if="video.length > 0 && positionContent == 'center'">
+      <div class="row">
+        <div class="col-3" style="justify-content: end; display: flex;">
+          <div>
+            <div class="d-flex mr-1" style="justify-content: end;">
+              <h3 class="text-headicon mr-3 mt-1">
+                วิตามิน A
+              </h3>
+              <div class="icon-border">
+                <div
+                  style="
+                    background-color: rgba(87, 29, 40, 1);
+                    font-size: 1.5em;
+                    border-radius: 50%;
+                    height: 2em;
+                    width: 2em;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    color: white;
+                    border: 1px dotted white;
+                  "
+                >
+                  A
+                </div>
+              </div>
+            </div>
+
+            <p class="textcus-left">
+              เพิ่มเม็ดเลือดขาว
+            </p>
+            <p class="textcus-left">
+              เสริมภูมิต้านทาน
+            </p>
+            <p class="textcus-left">
+              ต่อการติดเชื้อในทางเดินหายใจ
+            </p>
+          </div>
+        </div>
+        <div class="col-6">
+          <video ref="videoPlayer" muted controls style="width: 100%;">
+            <source :src="video[0].url" type="video/mp4" />
+          </video>
+        </div>
+        <div class="col-3">
+          <div class="d-flex ml-2">
+            <div class="icon-border">
+              <div
+                style="
+                  background-color: rgba(87, 29, 40, 1);
+                  font-size: 1.5em;
+                  border-radius: 50%;
+                  height: 2em;
+                  width: 2em;
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+                  color: white;
+                  border: 1px dotted white;
+                "
+              >
+                A
+              </div>
+            </div>
+            <h3 class="ml-3 text-headicon mt-1">
+              วิตามิน A
+            </h3>
+          </div>
+
+          <p class="textcus-right">
+            เพิ่มเม็ดเลือดขาว
+          </p>
+          <p class="textcus-right">
+            เสริมภูมิต้านทาน
+          </p>
+          <p class="textcus-right">
+            ต่อการติดเชื้อในทางเดินหายใจ
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div v-if="video.length > 0 && positionContent == 'left'">
+      <div class="row">
+        <div class="col-8" style="justify-content: end; display: flex;">
+          <video ref="videoPlayer" muted controls style="width: 50em;">
+            <source :src="video[0].url" type="video/mp4" />
+          </video>
+        </div>
+        <div class="col-4"><h1>text</h1></div>
+      </div>
+    </div>
+
+    <div v-if="video.length > 0 && positionContent == 'right'">
+      <div class="row">
+        <div class="col-4" style="justify-content: end; display: flex;">
+          <h1>text</h1>
+        </div>
+        <div class="col-8">
+          <video ref="videoPlayer" muted controls style="width: 50em;">
+            <source :src="video[0].url" type="video/mp4" />
+          </video>
+        </div>
+      </div>
     </div>
 
     <pv-category-section :products="products"></pv-category-section>
@@ -50,6 +150,7 @@ export default {
   },
   data: function () {
     return {
+      positionContent: "center",
       products: [],
       posts: [],
       featuredProducts: [],
@@ -194,3 +295,39 @@ export default {
   },
 };
 </script>
+<style lang="css" scoped>
+.header-text {
+  text-align: center;
+  font-weight: bold;
+  font-size: x-large;
+  color: #ab0011;
+  position: relative;
+}
+.text-headicon {
+  color: rgba(172, 43, 43, 1);
+  font-weight: 900;
+  border-bottom: 1px solid rgba(135, 135, 135, 0.2);
+}
+.icon-border {
+  background-color: rgba(255, 46, 107, 1);
+  border-radius: 50%;
+  height: 3.2em;
+  width: 3.2em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.textcus-left {
+  font-size: 1.3em;
+  justify-content: flex-end;
+  display: flex;
+  padding-right: 2em;
+}
+.textcus-right {
+  font-size: 1.3em;
+  justify-content: flex-start;
+  display: flex;
+  padding-left: 2em;
+}
+</style>
