@@ -1,145 +1,5 @@
 <template>
   <div>
-    <!-- <nav class="toolbox sticky-header horizontal-filter filter-sorts">
-			<div
-				class="sidebar-overlay d-lg-none"
-				@click="toggleSidebar"
-			></div>
-
-			<a
-				href="javascript:;"
-				class="sidebar-toggle border-0"
-				@click="toggleSidebar"
-			>
-				<svg
-					data-name="Layer 3"
-					id="Layer_3"
-					viewBox="0 0 32 32"
-					xmlns="http://www.w3.org/2000/svg"
-				>
-					<line
-						x1="15"
-						x2="26"
-						y1="9"
-						y2="9"
-						class="cls-1"
-					/>
-					<line
-						x1="6"
-						x2="9"
-						y1="9"
-						y2="9"
-						class="cls-1"
-					/>
-					<line
-						x1="23"
-						x2="26"
-						y1="16"
-						y2="16"
-						class="cls-1"
-					/>
-					<line
-						x1="6"
-						x2="17"
-						y1="16"
-						y2="16"
-						class="cls-1"
-					/>
-					<line
-						x1="17"
-						x2="26"
-						y1="23"
-						y2="23"
-						class="cls-1"
-					/>
-					<line
-						x1="6"
-						x2="11"
-						y1="23"
-						y2="23"
-						class="cls-1"
-					/>
-					<path
-						d="M14.5,8.92A2.6,2.6,0,0,1,12,11.5,2.6,2.6,0,0,1,9.5,8.92a2.5,2.5,0,0,1,5,0Z"
-						class="cls-2"
-					/>
-					<path
-						d="M22.5,15.92a2.5,2.5,0,1,1-5,0,2.5,2.5,0,0,1,5,0Z"
-						class="cls-2"
-					/>
-					<path
-						d="M21,16a1,1,0,1,1-2,0,1,1,0,0,1,2,0Z"
-						class="cls-3"
-					/>
-					<path
-						d="M16.5,22.92A2.6,2.6,0,0,1,14,25.5a2.6,2.6,0,0,1-2.5-2.58,2.5,2.5,0,0,1,5,0Z"
-						class="cls-2"
-					/>
-				</svg>
-				<span>Filter</span>
-			</a>
-
-			<pv-sidebar-filter-two></pv-sidebar-filter-two>
-
-			<div class="toolbox-item toolbox-sort select-custom">
-				<label class="d-none">Sort By:</label>
-
-				<div class="select-custom">
-					<select
-						name="orderby"
-						class="form-control"
-						v-model="orderBy"
-						@change="getProducts"
-					>
-						<option
-							value="default"
-							selected="default"
-						>Default sorting</option>
-						<option value="featured">Sort by popularity</option>
-						<option value="rating">Sort by average rating</option>
-						<option value="new">Sort by newness</option>
-						<option value="price-asc">Sort by price: low to high</option>
-						<option value="price-dec">Sort by price: high to low</option>
-					</select>
-				</div>
-			</div>
-
-			<div class="toolbox-item toolbox-show ml-auto">
-				<label>Show:</label>
-
-				<div class="select-custom">
-					<select
-						name="count"
-						class="form-control"
-						@change="changePerPage"
-						v-model="itemsPerPage"
-					>
-						<option :value="9">9</option>
-						<option :value="12">12</option>
-						<option :value="24">24</option>
-						<option :value="36">36</option>
-					</select>
-				</div>
-			</div>
-
-			<div class="toolbox-item layout-modes">
-				<nuxt-link
-					:to="{path: '/shop', query: $route.query}"
-					class="layout-btn btn-grid active"
-					title="Grid"
-				>
-					<i class="icon-mode-grid"></i>
-				</nuxt-link>
-				<nuxt-link
-					:to="{path: '/shop/list', query: $route.query}"
-					class="layout-btn btn-list"
-					title="List"
-				>
-					<i class="icon-mode-list"></i>
-				</nuxt-link>
-			</div>
-		</nav> -->
-
     <div class="row">
       <template v-if="products && products.length > 0">
         <div
@@ -176,7 +36,7 @@
           <select
             name="count"
             class="form-control"
-            @change="getProducts"
+            @change="handlerGet"
             v-model="itemsPerPage"
           >
             <option value="12">12</option>
@@ -200,7 +60,8 @@ import PvProductOne from "~/components/features/product/PvProductOne";
 import PvPagination from "~/components/features/PvPagination";
 import PvSidebarFilterTwo from "~/components/partials/shop/sidebar-filter/PvSidebarFilterTwo";
 import { scrollTopHandler } from "~/utils";
-import Api, { baseUrl, currentDemo } from "~/api";
+import axios from "axios";
+import Api, { baseUrl } from "~/api";
 import { recomData } from "~/recomData.js";
 
 export default {
@@ -211,20 +72,91 @@ export default {
   },
   data: function () {
     return {
-      products: null,
+      products: [],
       repeatCount: new Array(100),
       orderBy: "default",
       itemsPerPage: 12,
       totalCount: null,
+      tempProduct: {
+        id: 323,
+        name: "Holis by SCGP อิม-มู แคป ชนิดซอฟต์เจล 10 เม็ด",
+        slug: "baby-sport-shoes",
+        price: 96,
+        sku: "654613612-1-1-1",
+        stock: 50,
+        short_description:
+          "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.",
+        sale_price: 68,
+        sale_count: 0,
+        ratings: 0,
+        reviews: "0",
+        is_hot: null,
+        is_sale: true,
+        is_new: null,
+        is_out_of_stock: null,
+        release_date: null,
+        developer: null,
+        publisher: null,
+        game_mode: null,
+        rated: null,
+        until: null,
+        product_categories: [
+          {
+            name: "Babies",
+            slug: "babies",
+            parent_name: null,
+            disabled: true,
+            pivot: { product_id: "323", "product-category_id": "50" },
+          },
+        ],
+        product_brands: [],
+        product_tags: [],
+        large_pictures: [
+          {
+            width: "800",
+            height: "800",
+            url: "/uploads/product_16_1_27c032e0ec.jpg",
+            pivot: { related_id: "323", upload_file_id: "1642" },
+          },
+          {
+            width: "800",
+            height: "800",
+            url: "/uploads/product_16_2_7f9575405f.jpg",
+            pivot: { related_id: "323", upload_file_id: "1644" },
+          },
+          {
+            width: "800",
+            height: "800",
+            url: "/uploads/product_16_3_8050d5961f.jpg",
+            pivot: { related_id: "323", upload_file_id: "1643" },
+          },
+        ],
+        small_pictures: [
+          {
+            width: "150",
+            height: "150",
+            url: "/uploads/product_16_1_150x150_847ceac2f2.jpg",
+            pivot: { related_id: "323", upload_file_id: "1646" },
+          },
+          {
+            width: "150",
+            height: "150",
+            url: "/uploads/product_16_2_150x150_42c25a276a.jpg",
+            pivot: { related_id: "323", upload_file_id: "1645" },
+          },
+        ],
+        variants: [],
+      },
     };
   },
   watch: {
     $route: function () {
-      this.getProducts();
+      // this.getProducts();
     },
   },
   created: function () {
-    this.getProducts(false);
+    // this.getProducts(false);
+    this.handlerGet();
   },
   methods: {
     getProducts: function (isScroll = true) {
@@ -291,6 +223,34 @@ export default {
         ...this.$route,
         query: { ...this.$route.query, per_page: this.itemsPerPage, page: 1 },
       });
+    },
+    async handlerGet() {
+      var optionAxios = {
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+      };
+      console.log("this.", this.products);
+      axios
+        .get(`${baseUrl}/api/Home/get-product-recommended`, optionAxios)
+        .then((response) => {
+          if (response.status == 200) {
+            this.products = [];
+            response.data.forEach((item) => {
+              this.products.push({
+                ...this.tempProduct,
+                name: item.product_name,
+                // imgUrl: item.productProfileLink,
+                slug: item.id,
+              });
+            });
+
+            this.totalCount = response.data.length;
+          } else {
+          }
+        })
+        .catch((error) => {});
     },
   },
 };
