@@ -25,7 +25,7 @@
         <div class="widget-body" style="padding-top: 2rem;">
           <ul class="cat-list">
             <li
-              v-for="(item, index) in shopSizes"
+              v-for="(item, index) in categorys"
               :key="'size-filter' + index"
               :class="{ active: isActivedSize(item) }"
             >
@@ -50,11 +50,13 @@
         <div class="widget-body" style="padding-top: 2rem;">
           <ul class="cat-list">
             <li
-              v-for="(item, index) in shopSizes"
+              v-for="(item, index) in productNames"
               :key="'size-filter' + index"
-              :class="{ active: isActivedSize(item) }"
+              :class="{ active: isActivedColor(item) }"
             >
-              <nuxt-link :to="sizeFilterRoute(item)">{{ item.name }}</nuxt-link>
+              <nuxt-link :to="colorFilterRoute(item)">{{
+                item.nameShow
+              }}</nuxt-link>
             </li>
           </ul>
         </div>
@@ -78,6 +80,8 @@ import { VueSlideToggle } from "vue-slide-toggle";
 import { VueTreeList, Tree } from "vue-tree-list";
 import PvSmallProduct from "~/components/features/product/PvSmallProduct";
 import { shopColors, shopSizes } from "~/utils/data/shop";
+import axios from "axios";
+import Api, { baseUrl } from "~/api";
 
 export default {
   components: {
@@ -115,6 +119,8 @@ export default {
       isFeatured: true,
       priceReset: true,
       currentCategory: "",
+      categorys: [],
+      productNames: [],
     };
   },
   watch: {
@@ -139,9 +145,10 @@ export default {
       });
     },
   },
-  created: function () {
+  created: async function () {
     this.getFlag();
-
+    this.handlerGet();
+    this.handlerGetProduct();
     if (this.$route.query.min_price) {
       this.prices = [this.$route.query.min_price, this.$route.query.max_price];
     } else {
@@ -217,7 +224,7 @@ export default {
     isActivedColor: function (item) {
       return (
         this.$route.query.color &&
-        this.$route.query.color.split(",").includes(item.name)
+        this.$route.query.color.split(",").includes(item.size)
       );
     },
     isActivedSize: function (item) {
@@ -226,9 +233,75 @@ export default {
         this.$route.query.size.split(",").includes(item.size)
       );
     },
+
     getFlag: function () {
       if (this.$route.path.includes("horizontal-filter-1"))
         this.isFeatured = false;
+    },
+    async handlerGet() {
+      var optionAxios = {
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+      };
+
+      axios
+        .get(`${baseUrl}/api/Home/get-category-name`, optionAxios)
+        .then((response) => {
+          if (response.status == 200) {
+            let productsData = response.data;
+
+            this.categorys = [];
+
+            productsData.forEach((item) => {
+              this.categorys.push({
+                ...item,
+                name: item.category_name,
+
+                size: String(item.id),
+              });
+            });
+
+            console.log("this.cate", this.shopSizes);
+            this.$forceUpdate();
+          } else {
+          }
+        })
+        .catch((error) => {});
+    },
+    async handlerGetProduct() {
+      var optionAxios = {
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+      };
+
+      axios
+        .get(`${baseUrl}/api/Home/get-product-name`, optionAxios)
+        .then((response) => {
+          if (response.status == 200) {
+            let productsData = response.data;
+
+            this.productNames = [];
+
+            productsData.forEach((item) => {
+              this.productNames.push({
+                ...item,
+                name: String(item.id),
+                nameShow: item.product_name,
+                size: String(item.id),
+              });
+            });
+
+            console.log("checprod", this.productNames);
+
+            this.$forceUpdate();
+          } else {
+          }
+        })
+        .catch((error) => {});
     },
   },
 };
