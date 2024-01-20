@@ -374,21 +374,23 @@ export default {
           Accept: "application/json",
         },
       };
+      console.log("rou", this.$router.currentRoute.query.page);
       let payload = {
         key: "",
-        category_id: 0,
-        product_id: 0,
-        sort: 1,
+        category_id: [],
+        product_id: [],
+        sort: 0,
+        pageNumber: this.$router.currentRoute.query.page || 1,
+        pageSize: this.itemsPerPage,
       };
       axios
         .post(`${baseUrl}/api/Home/product-list`, payload, optionAxios)
         .then((response) => {
           if (response.status == 200) {
             console.log("check", response);
-            let productsData = response.data;
+            let productsData = response.data.data;
             this.products = [];
             productsData.forEach((item) => {
-              console.log("titem", item);
               this.products.push({
                 ...this.tempProduct,
                 name: item.product_name,
@@ -399,7 +401,7 @@ export default {
 
             console.log("this.products", productsData);
 
-            this.totalCount = response.data.length;
+            this.totalCount = response.data.totalCount;
           } else {
           }
         })
