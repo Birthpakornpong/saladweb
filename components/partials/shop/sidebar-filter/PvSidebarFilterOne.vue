@@ -182,8 +182,8 @@ export default {
   },
   methods: {
     colorFilterRoute: function (item) {
-      let selectedColors = this.$route.query.color
-        ? this.$route.query.color.split(",")
+      let selectedColors = this.$route.query.product
+        ? this.$route.query.product.split(",")
         : [];
       let index = selectedColors.indexOf(item.name);
       if (index > -1) {
@@ -197,13 +197,13 @@ export default {
         query: {
           ...this.$route.query,
           page: 1,
-          color: selectedColors.toString(),
+          product: selectedColors.toString(),
         },
       };
     },
     sizeFilterRoute: function (item) {
-      let selectedSizes = this.$route.query.size
-        ? this.$route.query.size.split(",")
+      let selectedSizes = this.$route.query.category
+        ? this.$route.query.category.split(",")
         : [];
       let index = selectedSizes.indexOf(item.size);
       if (index > -1) {
@@ -216,21 +216,22 @@ export default {
         path: this.$route.path,
         query: {
           ...this.$route.query,
-          size: selectedSizes.toString(),
+
+          category: selectedSizes.toString(),
           page: 1,
         },
       };
     },
     isActivedColor: function (item) {
       return (
-        this.$route.query.color &&
-        this.$route.query.color.split(",").includes(item.size)
+        this.$route.query.product &&
+        this.$route.query.product.split(",").includes(item.size)
       );
     },
     isActivedSize: function (item) {
       return (
-        this.$route.query.size &&
-        this.$route.query.size.split(",").includes(item.size)
+        this.$route.query.category &&
+        this.$route.query.category.split(",").includes(item.size)
       );
     },
 
