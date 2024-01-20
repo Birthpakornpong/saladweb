@@ -131,7 +131,7 @@
       <template v-if="products && products.length > 0">
         <div
           :class="gridCols[itemsPerRow]"
-          v-for="(product, index) in products"
+          v-for="(product, index) in products.slice(0, itemsPerPage)"
           :key="'shop-product' + index"
         >
           <template v-if="type !== 'list'">
@@ -336,7 +336,8 @@ export default {
       this.itemsPerPage = this.$route.query["per_page"]
         ? parseInt(this.$route.query["per_page"])
         : 8;
-      this.getProducts();
+      // this.getProducts();
+      this.handlerGet();
       this.isOffCanvas = this.$route.path.includes("off-canvas") ? true : false;
       this.type = this.$route.path.includes("list") ? "list" : "grid";
     },
@@ -347,14 +348,13 @@ export default {
       : 8;
 
     this.handlerGet();
-    this.getProducts(false);
+    // this.getProducts(false);
     this.isOffCanvas = this.$route.path.includes("off-canvas") ? true : false;
     this.type = this.$route.path.includes("list") ? "list" : "grid";
   },
   methods: {
     getProducts: function (isScrll = true) {
-      this.products = null;
-
+      // this.products = null;
       // this.products = shopData.products;
       // this.totalCount = shopData.totalCount;
     },
@@ -376,6 +376,9 @@ export default {
       };
       let payload = {
         key: "",
+        category_id: 0,
+        product_id: 0,
+        sort: 1,
       };
       axios
         .post(`${baseUrl}/api/Home/product-list`, payload, optionAxios)
@@ -383,6 +386,7 @@ export default {
           if (response.status == 200) {
             console.log("check", response);
             let productsData = response.data;
+            this.products = [];
             productsData.forEach((item) => {
               console.log("titem", item);
               this.products.push({
