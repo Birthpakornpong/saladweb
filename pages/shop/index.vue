@@ -1,7 +1,5 @@
 <template>
   <main class="main skeleton-body">
-    <!-- <pv-shop-banner></pv-shop-banner> -->
-
     <nav aria-label="breadcrumb" class="breadcrumb-nav">
       <div class="container">
         <ol class="breadcrumb">
