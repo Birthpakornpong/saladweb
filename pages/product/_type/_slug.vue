@@ -31,7 +31,7 @@
         <div class="tab-content col-lg-12"></div>
       </div>
       <div class="row main-content" v-if="product">
-        <div class="col-12 d-flex" style="justify-content: center;">
+        <div class="col-12 d-flex" style="justify-content: center;" v-if="product.productBannerLink">
           <img
             style="width: 100%; height: 75em;"
             :src="product.productBannerLink"
@@ -101,7 +101,200 @@ export default {
       productCategory: [],
       categoryList: [],
       featuredProducts: [],
-
+      nextProductTemp: {
+        id: 2,
+        name: "Blue Boy Shoes",
+        slug: "blue-boy-shoes",
+        price: 100,
+        sku: "654613612-1-1",
+        stock: 50,
+        short_description:
+          "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.",
+        sale_price: 68,
+        sale_count: 10,
+        ratings: 0,
+        reviews: "0",
+        is_hot: null,
+        is_sale: true,
+        is_new: null,
+        is_out_of_stock: null,
+        release_date: null,
+        developer: null,
+        publisher: null,
+        game_mode: null,
+        rated: null,
+        until: null,
+        product_categories: [
+          {
+            name: "Babies",
+            slug: "babies",
+            parent_name: null,
+            disabled: true,
+            pivot: { product_id: "326", "product-category_id": "50" },
+          },
+          {
+            name: "Toys",
+            slug: "toys-3",
+            parent_name: "Babies",
+            disabled: true,
+            pivot: { product_id: "326", "product-category_id": "52" },
+          },
+        ],
+        product_brands: [],
+        product_tags: [],
+        large_pictures: [
+          {
+            width: "800",
+            height: "800",
+            url: "/uploads/product_10_1_fc0ded50bb.jpg",
+            pivot: { related_id: "326", upload_file_id: "1667" },
+          },
+          {
+            width: "800",
+            height: "800",
+            url: "/uploads/product_10_2_3834176c36.jpg",
+            pivot: { related_id: "326", upload_file_id: "1668" },
+          },
+          {
+            width: "800",
+            height: "800",
+            url: "/uploads/product_10_3_37906c0947.jpg",
+            pivot: { related_id: "326", upload_file_id: "1666" },
+          },
+        ],
+        pictures: [
+          {
+            width: "300",
+            height: "340",
+            url: "/uploads/product_10_1_300x340_6b596c29b7.jpg",
+            pivot: { related_id: "326", upload_file_id: "1671" },
+          },
+          {
+            width: "300",
+            height: "340",
+            url: "/uploads/product_10_2_300x340_eceac74299.jpg",
+            pivot: { related_id: "326", upload_file_id: "1673" },
+          },
+          {
+            width: "300",
+            height: "340",
+            url: "/uploads/product_10_3_300x340_e4cb46f47e.jpg",
+            pivot: { related_id: "326", upload_file_id: "1672" },
+          },
+        ],
+        small_pictures: [
+          {
+            width: "150",
+            height: "150",
+            url: "/uploads/product_10_1_150x150_c828abc984.jpg",
+            pivot: { related_id: "326", upload_file_id: "1670" },
+          },
+          {
+            width: "150",
+            height: "150",
+            url: "/uploads/product_10_2_150x150_4b2020e663.jpg",
+            pivot: { related_id: "326", upload_file_id: "1669" },
+          },
+        ],
+        variants: [],
+      },
+      preProductTemp: {
+        id: 2,
+        name: "Blue Boy Shoes",
+        slug: "blue-boy-shoes",
+        price: 100,
+        sku: "654613612-1-1",
+        stock: 50,
+        short_description:
+          "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.",
+        sale_price: 68,
+        sale_count: 10,
+        ratings: 0,
+        reviews: "0",
+        is_hot: null,
+        is_sale: true,
+        is_new: null,
+        is_out_of_stock: null,
+        release_date: null,
+        developer: null,
+        publisher: null,
+        game_mode: null,
+        rated: null,
+        until: null,
+        product_categories: [
+          {
+            name: "Babies",
+            slug: "babies",
+            parent_name: null,
+            disabled: true,
+            pivot: { product_id: "326", "product-category_id": "50" },
+          },
+          {
+            name: "Toys",
+            slug: "toys-3",
+            parent_name: "Babies",
+            disabled: true,
+            pivot: { product_id: "326", "product-category_id": "52" },
+          },
+        ],
+        product_brands: [],
+        product_tags: [],
+        large_pictures: [
+          {
+            width: "800",
+            height: "800",
+            url: "/uploads/product_10_1_fc0ded50bb.jpg",
+            pivot: { related_id: "326", upload_file_id: "1667" },
+          },
+          {
+            width: "800",
+            height: "800",
+            url: "/uploads/product_10_2_3834176c36.jpg",
+            pivot: { related_id: "326", upload_file_id: "1668" },
+          },
+          {
+            width: "800",
+            height: "800",
+            url: "/uploads/product_10_3_37906c0947.jpg",
+            pivot: { related_id: "326", upload_file_id: "1666" },
+          },
+        ],
+        pictures: [
+          {
+            width: "300",
+            height: "340",
+            url: "/uploads/product_10_1_300x340_6b596c29b7.jpg",
+            pivot: { related_id: "326", upload_file_id: "1671" },
+          },
+          {
+            width: "300",
+            height: "340",
+            url: "/uploads/product_10_2_300x340_eceac74299.jpg",
+            pivot: { related_id: "326", upload_file_id: "1673" },
+          },
+          {
+            width: "300",
+            height: "340",
+            url: "/uploads/product_10_3_300x340_e4cb46f47e.jpg",
+            pivot: { related_id: "326", upload_file_id: "1672" },
+          },
+        ],
+        small_pictures: [
+          {
+            width: "150",
+            height: "150",
+            url: "/uploads/product_10_1_150x150_c828abc984.jpg",
+            pivot: { related_id: "326", upload_file_id: "1670" },
+          },
+          {
+            width: "150",
+            height: "150",
+            url: "/uploads/product_10_2_150x150_4b2020e663.jpg",
+            pivot: { related_id: "326", upload_file_id: "1669" },
+          },
+        ],
+        variants: [],
+      },
       productTemp: {
         productChannelModels: [],
         productVideoLink: "",
@@ -315,8 +508,8 @@ export default {
       this.bestProducts = mockData.bestSellingProducts;
       this.latestProducts = mockData.latestProducts;
       this.topRatedProducts = mockData.topRatedProducts;
-      this.prevProduct = mockData.prevProduct;
-      this.nextProduct = mockData.nextProduct;
+      // this.prevProduct = mockData.prevProduct;
+      // this.nextProduct = mockData.nextProduct;
       this.categoryList = sidebarShop.sidebarList;
       this.featuredProducts = sidebarShop.featuredProducts;
       this.loaded = true;
@@ -379,6 +572,13 @@ export default {
         .then((response) => {
           if (response.status == 200) {
             console.log("check", response);
+            // response.data.homeNextProductId
+            this.nextProductTemp.slug = response.data.homeNextProductId;
+            this.nextProduct = this.nextProductTemp;
+            if (response.data.homePreviosProductId) {
+              this.preProductTemp.slug = response.data.homePreviosProductId;
+              this.prevProduct = this.preProductTemp;
+            }
             this.productTemp.name = response.data.product_name;
             this.productTemp.sku = response.data.product_sku;
             this.productTemp.short_description =
