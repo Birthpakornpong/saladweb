@@ -278,6 +278,7 @@ export default {
             });
             response.data.productCategory.forEach((item) => {
               this.categorys.push({
+                id: item.id,
                 categoryName: item.category_name,
                 categoryLink: item.category_link,
               });

@@ -6,14 +6,19 @@
           <div>SHOP BY CATEGORY</div>
         </div>
         <div class="grid-container" v-if="categorys.length > 0">
-          <a :href="categorys[0].categoryLink" target="_blank">
+          <nuxt-link
+            v-for="(item, index) in categorys"
+            :key="index"
+            :to="{ path: '/shop', query: { category: item.id } }"
+            target="_blank"
+          >
             <div class="grid-items" @mouseover="slideText('Immunity')">
-              <img :src="categorys[0].categoryLink" style="height: 5em;" />
-              {{ categorys[0].categoryName }}
+              <img :src="item.categoryLink" style="height: 5em;" />
+              {{ item.categoryName }}
             </div>
-          </a>
+          </nuxt-link>
 
-          <a :href="categorys[1].categoryLink" target="_blank">
+          <!-- <a :href="categorys[1].categoryLink" target="_blank">
             <div
               class="grid-items"
               @mouseenter="slideText(true)"
@@ -52,7 +57,7 @@
               <img :src="categorys[5].categoryLink" style="height: 5em;" />
               {{ categorys[5].categoryName }}
             </div></a
-          >
+          > -->
         </div>
       </div>
     </div>
