@@ -43,7 +43,7 @@
         </div>
       </div>
       <div class="row main-content" v-if="product">
-        <div class="col-12 d-flex" style="justify-content: center;">
+        <div class="col-12 d-flex" style="justify-content: center;" v-if="product.videourl">
           <video ref="videoPlayer" muted controls style="width: 100%;">
             <source :src="product.videourl" type="video/mp4" />
           </video>
