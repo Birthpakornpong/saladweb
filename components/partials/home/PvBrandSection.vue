@@ -6,15 +6,247 @@
           <div>SHOP BY CATEGORY</div>
         </div>
         <div class="grid-container" v-if="categorys.length > 0">
-          <nuxt-link
+          <!-- <nuxt-link
             v-for="(item, index) in categorys"
             :key="index"
             :to="{ path: '/shop', query: { category: item.id } }"
             target="_blank"
           >
-            <div class="grid-items" @mouseover="slideText('Immunity')">
+            <div
+              class="grid-items"
+              @mouseover="show = true"
+              @mouseleave="show = false"
+            >
+              <Transition name="slide-fade">
+                
+                <div
+                  v-if="show"
+                  style="
+                    width: 100%;
+                    height: 7em;
+                    background-color: white;
+                    border-bottom-right-radius: 30px;
+                    border-bottom-left-radius: 30px;
+                  "
+                >
+                  hello
+                </div>
+              </Transition>
               <img :src="item.categoryLink" style="height: 5em;" />
               {{ item.categoryName }}
+            </div>
+          </nuxt-link> -->
+          <nuxt-link
+            :to="{ path: '/shop', query: { category: categorys[0].id } }"
+            target="_blank"
+          >
+            <div
+              class="grid-items"
+              @mouseover="show = true"
+              @mouseleave="show = false"
+            >
+              <Transition name="slide-fade">
+                <!-- <p v-if="show">hello</p> -->
+                <div
+                  v-if="show"
+                  style="
+                    width: 100%;
+                    height: 7em;
+
+                    border-bottom-right-radius: 30px;
+                    border-bottom-left-radius: 30px;
+                    color: black;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                  "
+                  class="bg-custom"
+                >
+                  {{ categorys[0].categoryName }}
+                </div>
+              </Transition>
+              <div>
+                <img :src="categorys[0].categoryLink" style="height: 5em;" />
+                {{ categorys[0].categoryName }}
+              </div>
+            </div>
+          </nuxt-link>
+          <nuxt-link
+            :to="{ path: '/shop', query: { category: categorys[1].id } }"
+            target="_blank"
+          >
+            <div
+              class="grid-items"
+              @mouseover="show1 = true"
+              @mouseleave="show1 = false"
+            >
+              <Transition name="slide-fade">
+                <!-- <p v-if="show">hello</p> -->
+                <div
+                  v-if="show1"
+                  style="
+                    width: 100%;
+                    height: 7em;
+
+                    border-bottom-right-radius: 30px;
+                    border-bottom-left-radius: 30px;
+                    color: black;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                  "
+                  class="bg-custom"
+                >
+                  {{ categorys[1].categoryName }}
+                </div>
+              </Transition>
+              <div>
+                <img :src="categorys[1].categoryLink" style="height: 5em;" />
+                {{ categorys[1].categoryName }}
+              </div>
+            </div>
+          </nuxt-link>
+
+          <nuxt-link
+            :to="{ path: '/shop', query: { category: categorys[2].id } }"
+            target="_blank"
+          >
+            <div
+              class="grid-items"
+              @mouseover="show2 = true"
+              @mouseleave="show2 = false"
+            >
+              <Transition name="slide-fade">
+                <!-- <p v-if="show">hello</p> -->
+                <div
+                  v-if="show2"
+                  style="
+                    width: 100%;
+                    height: 7em;
+
+                    border-bottom-right-radius: 30px;
+                    border-bottom-left-radius: 30px;
+                    color: black;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                  "
+                  class="bg-custom"
+                >
+                  {{ categorys[2].categoryName }}
+                </div>
+              </Transition>
+
+              <img :src="categorys[2].categoryLink" style="height: 5em;" />
+              {{ categorys[2].categoryName }}
+            </div>
+          </nuxt-link>
+
+          <nuxt-link
+            :to="{ path: '/shop', query: { category: categorys[3].id } }"
+            target="_blank"
+          >
+            <div
+              class="grid-items"
+              @mouseover="show3 = true"
+              @mouseleave="show3 = false"
+            >
+              <Transition name="slide-fade">
+                <!-- <p v-if="show">hello</p> -->
+                <div
+                  v-if="show3"
+                  style="
+                    width: 100%;
+                    height: 7em;
+
+                    border-bottom-right-radius: 30px;
+                    border-bottom-left-radius: 30px;
+                    color: black;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                  "
+                  class="bg-custom"
+                >
+                  {{ categorys[3].categoryName }}
+                </div>
+              </Transition>
+              <div>
+                <img :src="categorys[3].categoryLink" style="height: 5em;" />
+                {{ categorys[3].categoryName }}
+              </div>
+            </div>
+          </nuxt-link>
+
+          <nuxt-link
+            :to="{ path: '/shop', query: { category: categorys[4].id } }"
+            target="_blank"
+          >
+            <div
+              class="grid-items"
+              @mouseover="show4 = true"
+              @mouseleave="show4 = false"
+            >
+              <Transition name="slide-fade">
+                <!-- <p v-if="show">hello</p> -->
+                <div
+                  v-if="show4"
+                  style="
+                    width: 100%;
+                    height: 7em;
+
+                    border-bottom-right-radius: 30px;
+                    border-bottom-left-radius: 30px;
+                    color: black;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                  "
+                  class="bg-custom"
+                >
+                  {{ categorys[4].categoryName }}
+                </div>
+              </Transition>
+              <div>
+                <img :src="categorys[4].categoryLink" style="height: 5em;" />
+                {{ categorys[4].categoryName }}
+              </div>
+            </div>
+          </nuxt-link>
+
+          <nuxt-link
+            :to="{ path: '/shop', query: { category: categorys[5].id } }"
+            target="_blank"
+          >
+            <div
+              class="grid-items"
+              @mouseover="show5 = true"
+              @mouseleave="show5 = false"
+            >
+              <Transition name="slide-fade">
+                <!-- <p v-if="show">hello</p> -->
+                <div
+                  v-if="show5"
+                  style="
+                    width: 100%;
+                    height: 7em;
+
+                    border-bottom-right-radius: 30px;
+                    border-bottom-left-radius: 30px;
+                    color: black;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                  "
+                  class="bg-custom"
+                >
+                  {{ categorys[5].categoryName }}
+                </div>
+              </Transition>
+              <div>
+                <img :src="categorys[5].categoryLink" style="height: 5em;" />
+                {{ categorys[5].categoryName }}
+              </div>
             </div>
           </nuxt-link>
 
@@ -79,6 +311,13 @@ export default {
     return {
       brandSlider: brandSlider,
       isHovered: false,
+      show1: false,
+      show2: false,
+      show3: false,
+      show4: false,
+      show5: false,
+      show6: false,
+      show: false,
     };
   },
   methods: {
@@ -90,6 +329,29 @@ export default {
 </script>
 
 <style>
+.bg-custom {
+  background: linear-gradient(
+    45deg,
+    rgba(209, 209, 209, 1),
+    rgba(255, 255, 255, 1)
+  );
+}
+.slide-fade-hover-active {
+  transition: all 0.5s ease-out;
+}
+
+.slide-fade-leave-active {
+  transition: all 0.5s ease-in;
+}
+
+.slide-fade-leave-to {
+  transform: translateY(-20px);
+  opacity: 1;
+}
+.slide-fade-hover-from {
+  transform: translateY(20px);
+  opacity: 1;
+}
 .category-section .header-text {
   text-align: center;
   font-weight: bold;
@@ -128,7 +390,7 @@ export default {
   overflow: hidden;
 }
 
-.category-section .grid-container .grid-items::before {
+/* .category-section .grid-container .grid-items::before {
   content: "บำรุงสมองและระบบประสาท";
   position: absolute;
   top: 0;
@@ -144,7 +406,7 @@ export default {
   font-size: 20px;
   border-bottom-left-radius: 20px;
   border-bottom-right-radius: 20px;
-}
+} */
 
 .category-section .grid-container .grid-items:hover::before {
   transform: translateY(0);
