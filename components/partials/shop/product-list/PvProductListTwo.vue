@@ -28,7 +28,7 @@
       </template>
     </div>
 
-    <nav class="toolbox toolbox-pagination">
+    <!-- <nav class="toolbox toolbox-pagination">
       <div class="toolbox-item toolbox-show mb-0">
         <label>Show:</label>
 
@@ -51,7 +51,7 @@
         :items-per-page="itemsPerPage"
         v-if="totalCount"
       ></pv-pagination>
-    </nav>
+    </nav> -->
   </div>
 </template>
 
@@ -232,8 +232,20 @@ export default {
         },
       };
       console.log("this.", this.products);
+      let payload = {
+        key: "",
+        category_id: [],
+        product_id: [],
+        sort: 0,
+        pageNumber: 1,
+        pageSize: 8,
+      };
       axios
-        .get(`${baseUrl}/api/Home/get-product-recommended`, optionAxios)
+        .post(
+          `${baseUrl}/api/Home/get-product-recommended`,
+          payload,
+          optionAxios
+        )
         .then((response) => {
           if (response.status == 200) {
             this.products = [];
@@ -241,7 +253,7 @@ export default {
               this.products.push({
                 ...this.tempProduct,
                 name: item.product_name,
-                // imgUrl: item.productProfileLink,
+                imgUrl: item.productProfileLink,
                 slug: item.id,
               });
             });
