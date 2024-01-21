@@ -46,7 +46,7 @@
           <span class="old-price">฿ {{ product.price | priceFormat }}</span>
         </template>
       </div>
-      <div style="display: flex; align-items: center;">
+      <!-- <div style="display: flex; align-items: center;">
         <label class="mr-3">Share:</label>
 
         <div class="social-icons mr-2" v-if="isShare">
@@ -81,7 +81,7 @@
             title="Mail"
           ></a>
         </div>
-      </div>
+      </div> -->
     </div>
 
     <div class="price-box" v-else>
