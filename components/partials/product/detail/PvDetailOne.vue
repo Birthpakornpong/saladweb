@@ -36,12 +36,14 @@
     >
       <div>
         <template v-if="!product.is_sale">
-          <span class="new-price">${{ product.price | priceFormat }}</span>
+          <span class="new-price">฿ {{ product.price | priceFormat }}</span>
         </template>
 
         <template v-else>
-          <span class="new-price">${{ product.sale_price | priceFormat }}</span>
-          <span class="old-price">${{ product.price | priceFormat }}</span>
+          <span class="new-price"
+            >฿ {{ product.sale_price | priceFormat }}</span
+          >
+          <span class="old-price">฿ {{ product.price | priceFormat }}</span>
         </template>
       </div>
       <div style="display: flex; align-items: center;">
@@ -92,14 +94,22 @@
     </div>
 
     <ul class="single-info-list">
+      <li v-if="product.quantity">
+        ขนาดบรรจุ:
+        <strong class="ml-1">{{ product.quantity }}</strong>
+      </li>
+      <li v-if="product.expired">
+        อายุสินค้า:
+        <strong class="ml-1">{{ product.expired }}</strong>
+      </li>
       <li v-if="product.sku">
         SKU:
-        <strong>{{ product.sku }}</strong>
+        <strong class="ml-1">{{ product.sku }}</strong>
       </li>
 
-      <li>
+      <li v-if="product.category">
         CATEGORY:
-        <strong>
+        <!-- <strong class="ml-1">
           <nuxt-link
             :to="{ path: '/shop', query: { category: item.slug } }"
             class="product-category"
@@ -111,38 +121,10 @@
               >,</template
             >
           </nuxt-link>
-        </strong>
+        </strong> -->
+        <strong class="ml-1">{{ product.category }}</strong>
       </li>
     </ul>
-
-    <!-- <div class="product-action">
-      <vue-slide-toggle :open="isPriceShow" v-if="product.variants.length > 0">
-        <div
-          class="price-box product-filtered-price"
-          v-if="minPrice === maxPrice || product.price"
-          key="samePrice"
-        >
-          <span class="product-stock">{{ product.stock }} in stock</span>
-        </div>
-
-        <div class="price-box product-filtered-price" v-else>
-          <template v-if="product.variants[curIndex].sale_price">
-            <del class="old-price">
-              <span>${{ product.variants[curIndex].price | priceFormat }}</span>
-            </del>
-            <span class="product-price"
-              >${{ product.variants[curIndex].sale_price | priceFormat }}</span
-            >
-          </template>
-
-          <template v-else>
-            <span class="product-price"
-              >${{ product.variants[curIndex].price | priceFormat }}</span
-            >
-          </template>
-        </div>
-      </vue-slide-toggle>
-    </div> -->
   </div>
 </template>
 

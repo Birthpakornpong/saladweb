@@ -95,6 +95,9 @@ export default {
       featuredProducts: [],
 
       productTemp: {
+        category: "",
+        quantity: "",
+        expired: "",
         id: 323,
         name: "Holis by SCGP อิม-มู แคป ชนิดซอฟต์เจล 10 เม็ด",
         slug: "baby-sport-shoes",
@@ -103,12 +106,12 @@ export default {
         stock: 50,
         short_description:
           "[Free Gift] Holis Hol Im-mu Cap 10 Capsules ผลิตภัณฑ์เสริมอาหาร จากโฮลิส ที่มี 3 สารสกัดธรรมชาติอย่าง Astaxanthin, Beta Glucan และ Cordycepin ช่วยเสริมสร้างภูมิคุ้มกันและปรับสมดุลร่างกายแบบองค์รวม ",
-        sale_price: 68,
+        sale_price: 70,
         sale_count: 0,
         ratings: 0,
         reviews: "0",
         is_hot: null,
-        is_sale: true,
+        is_sale: false,
         is_new: null,
         is_out_of_stock: null,
         release_date: null,
@@ -225,6 +228,13 @@ export default {
             console.log("check", response);
             this.productTemp.name = response.data.product_name;
             this.productTemp.sku = response.data.product_sku;
+            this.productTemp.short_description =
+              response.data.product_description;
+            this.productTemp.ratings = response.data.product_rating;
+            this.productTemp.price = response.data.product_price;
+            this.productTemp.quantity = response.data.product_quantity_th;
+            this.productTemp.expired = response.data.product_expired_th;
+            this.productTemp.category = response.data.product_category;
 
             this.product = this.productTemp;
           } else {
