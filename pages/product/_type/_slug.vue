@@ -90,7 +90,7 @@ export default {
   data: function () {
     return {
       product: null,
-      relatedProducts: null,
+      relatedProducts: [],
       featuredProducts: null,
       bestProducts: null,
       latestProducts: null,
@@ -200,11 +200,109 @@ export default {
         ],
         variants: [],
       },
+      relateTemp: {
+        id: 326,
+        name: "Blue Boy Shoes",
+        slug: "blue-boy-shoes",
+        price: 100,
+        sku: "654613612-1-1",
+        stock: 50,
+        short_description:
+          "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.",
+        sale_price: 68,
+        sale_count: 10,
+        ratings: 0,
+        reviews: "0",
+        is_hot: null,
+        is_sale: true,
+        is_new: null,
+        is_out_of_stock: null,
+        release_date: null,
+        developer: null,
+        publisher: null,
+        game_mode: null,
+        rated: null,
+        until: null,
+        product_categories: [
+          {
+            name: "Babies",
+            slug: "babies",
+            parent_name: null,
+            disabled: true,
+            pivot: { product_id: "326", "product-category_id": "50" },
+          },
+          {
+            name: "Toys",
+            slug: "toys-3",
+            parent_name: "Babies",
+            disabled: true,
+            pivot: { product_id: "326", "product-category_id": "52" },
+          },
+        ],
+        product_brands: [],
+        product_tags: [],
+        large_pictures: [
+          {
+            width: "800",
+            height: "800",
+            url: "/uploads/product_10_1_fc0ded50bb.jpg",
+            pivot: { related_id: "326", upload_file_id: "1667" },
+          },
+          {
+            width: "800",
+            height: "800",
+            url: "/uploads/product_10_2_3834176c36.jpg",
+            pivot: { related_id: "326", upload_file_id: "1668" },
+          },
+          {
+            width: "800",
+            height: "800",
+            url: "/uploads/product_10_3_37906c0947.jpg",
+            pivot: { related_id: "326", upload_file_id: "1666" },
+          },
+        ],
+        pictures: [
+          {
+            width: "300",
+            height: "340",
+            url: "/uploads/product_10_1_300x340_6b596c29b7.jpg",
+            pivot: { related_id: "326", upload_file_id: "1671" },
+          },
+          {
+            width: "300",
+            height: "340",
+            url: "/uploads/product_10_2_300x340_eceac74299.jpg",
+            pivot: { related_id: "326", upload_file_id: "1673" },
+          },
+          {
+            width: "300",
+            height: "340",
+            url: "/uploads/product_10_3_300x340_e4cb46f47e.jpg",
+            pivot: { related_id: "326", upload_file_id: "1672" },
+          },
+        ],
+        small_pictures: [
+          {
+            width: "150",
+            height: "150",
+            url: "/uploads/product_10_1_150x150_c828abc984.jpg",
+            pivot: { related_id: "326", upload_file_id: "1670" },
+          },
+          {
+            width: "150",
+            height: "150",
+            url: "/uploads/product_10_2_150x150_4b2020e663.jpg",
+            pivot: { related_id: "326", upload_file_id: "1669" },
+          },
+        ],
+        variants: [],
+      },
     };
   },
   created: function () {
     this.getProduct();
     this.handlerGet();
+    this.handlerGetRecom();
     console.log("data check", mockData);
   },
   methods: {
@@ -212,7 +310,7 @@ export default {
       this.loaded = false;
 
       // this.product = mockData.product;
-      this.relatedProducts = mockData.relatedProducts;
+      // this.relatedProducts = mockData.relatedProducts;
       this.featuredProducts = mockData.featuredProducts;
       this.bestProducts = mockData.bestSellingProducts;
       this.latestProducts = mockData.latestProducts;
@@ -222,6 +320,48 @@ export default {
       this.categoryList = sidebarShop.sidebarList;
       this.featuredProducts = sidebarShop.featuredProducts;
       this.loaded = true;
+    },
+    async handlerGetRecom() {
+      var optionAxios = {
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+      };
+
+      let payload = {
+        key: "",
+        category_id: [],
+        product_id: [],
+        sort: 0,
+        pageNumber: 1,
+        pageSize: 8,
+      };
+      axios
+        .post(
+          `${baseUrl}/api/Home/get-product-recommended`,
+          payload,
+          optionAxios
+        )
+        .then((response) => {
+          if (response.status == 200) {
+            this.relatedProducts = [];
+            response.data.forEach((item) => {
+              this.relatedProducts.push({
+                ...this.relateTemp,
+                name: item.product_name,
+                imgUrl: item.productProfileLink,
+                slug: item.id,
+              });
+            });
+
+            console.log("this.relatedProducts", this.relatedProducts);
+
+            // this.totalCount = response.data.length;
+          } else {
+          }
+        })
+        .catch((error) => {});
     },
     async handlerGet() {
       var optionAxios = {

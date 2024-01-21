@@ -258,7 +258,7 @@ export default {
               });
             });
 
-            this.totalCount = response.data.length;
+            // this.totalCount = response.data.length;
           } else {
           }
         })
