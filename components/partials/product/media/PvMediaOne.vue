@@ -21,10 +21,6 @@
           <inner-image-zoom :src="'./images/HOLIS17715_0.jpg'" />
         </div>
       </PvCarousel>
-
-      <!-- <span class="prod-full-screen" @click="openLightBox" v-if="isMagnify">
-        <i class="icon-plus"></i>
-      </span> -->
     </div>
 
     <PvCarousel

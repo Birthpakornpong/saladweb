@@ -15,6 +15,7 @@
             ></pv-detail-one>
             <div class="category-custom">
               <pv-desc-custom
+                :product="product"
                 :category-list="categoryList"
                 :featured-products="featuredProducts"
                 v-if="featuredProducts.length > 0"
@@ -42,7 +43,7 @@
         </div>
       </div>
       <div>
-        <PvReviewCustom></PvReviewCustom>
+        <PvReviewCustom :product="product"></PvReviewCustom>
       </div>
 
       <pv-related-products
@@ -95,6 +96,8 @@ export default {
       featuredProducts: [],
 
       productTemp: {
+        instruction: "",
+        precautionary: "",
         category: "",
         quantity: "",
         expired: "",
@@ -235,7 +238,13 @@ export default {
             this.productTemp.quantity = response.data.product_quantity_th;
             this.productTemp.expired = response.data.product_expired_th;
             this.productTemp.category = response.data.product_category;
+            this.productTemp.reviews = response.data.productReviewModels.length;
+            this.productTemp.instruction =
+              response.data.product_storage_instruction_th;
+            this.productTemp.precautionary =
+              response.data.product_precautionary_th;
 
+            console.log("check pro", this.productTemp);
             this.product = this.productTemp;
           } else {
           }

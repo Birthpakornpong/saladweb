@@ -8,61 +8,59 @@
         <aside class="widget"></aside>
       </div>
 
-      <div class="widget widget-size">
+      <div class="widget widget-size" v-if="product.instruction">
         <h3 class="widget-title">
           <a
             href="javascript:;"
             @click="catOpened = !catOpened"
             :class="{ collapsed: !catOpened }"
-            >Categories</a
+            style="font-size: 1.5em;"
+            >วิธีหรือคำแนะนำในการรับประทาน/เก็บรักษา</a
           >
         </h3>
 
         <vue-slide-toggle :open="catOpened">
           <div class="widget-body" style="padding-top: 2rem;">
-            <ul class="cat-list">
+            <!-- <ul class="cat-list">
               <li
                 v-for="(item, index) in shopSizes"
                 :key="'size-filter' + index"
-                :class="{ active: isActivedSize(item) }"
               >
-                <nuxt-link :to="sizeFilterRoute(item)">{{
-                  item.name
-                }}</nuxt-link>
+                {{ item.name }}
               </li>
-            </ul>
+            </ul> -->
+            <div v-html="product.instruction"></div>
           </div>
         </vue-slide-toggle>
       </div>
 
-      <div class="widget widget-size">
+      <div class="widget widget-size" v-if="product.precautionary">
         <h3 class="widget-title">
           <a
             href="javascript:;"
             @click="sizeOpened = !sizeOpened"
             :class="{ collapsed: !sizeOpened }"
-            >Product HOLIS by SCGP</a
+            style="font-size: 1.5em;"
+            >คำแนะนำและข้อควรระวัง</a
           >
         </h3>
 
         <vue-slide-toggle :open="sizeOpened">
           <div class="widget-body" style="padding-top: 2rem;">
-            <ul class="cat-list">
+            <!-- <ul class="cat-list">
               <li
                 v-for="(item, index) in shopSizes"
                 :key="'size-filter' + index"
-                :class="{ active: isActivedSize(item) }"
               >
-                <nuxt-link :to="sizeFilterRoute(item)">{{
-                  item.name
-                }}</nuxt-link>
+                {{ item.name }}
               </li>
-            </ul>
+            </ul> -->
+            <div v-html="product.precautionary"></div>
           </div>
         </vue-slide-toggle>
       </div>
 
-      <vue-slide-toggle :open="!isEmptyQuery">
+      <!-- <vue-slide-toggle :open="!isEmptyQuery">
         <div class="widget mb-3 ml-4 border-bottom-0">
           <nuxt-link
             :to="{ path: $router.path }"
@@ -70,7 +68,7 @@
             >Reset All Filters</nuxt-link
           >
         </div>
-      </vue-slide-toggle>
+      </vue-slide-toggle> -->
     </div>
   </div>
 </template>
@@ -90,6 +88,7 @@ export default {
   props: {
     categoryList: Array,
     featuredProducts: Array,
+    product: Object,
   },
   data: function () {
     return {
@@ -149,6 +148,7 @@ export default {
     } else {
       this.prices = [0, 1000];
     }
+    console.log("check pro", this.product);
   },
   computed: {
     categoryTree: function () {
