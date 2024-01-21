@@ -31,7 +31,11 @@
         <div class="tab-content col-lg-12"></div>
       </div>
       <div class="row main-content" v-if="product">
-        <div class="col-12 d-flex" style="justify-content: center;" v-if="product.productBannerLink">
+        <div
+          class="col-12 d-flex"
+          style="justify-content: center;"
+          v-if="product.productBannerLink"
+        >
           <img
             style="width: 100%; height: 75em;"
             :src="product.productBannerLink"
@@ -43,7 +47,11 @@
         </div>
       </div>
       <div class="row main-content" v-if="product">
-        <div class="col-12 d-flex" style="justify-content: center;" v-if="product.videourl">
+        <div
+          class="col-12 d-flex"
+          style="justify-content: center;"
+          v-if="product.videourl"
+        >
           <video ref="videoPlayer" muted controls style="width: 100%;">
             <source :src="product.videourl" type="video/mp4" />
           </video>
@@ -539,13 +547,15 @@ export default {
         .then((response) => {
           if (response.status == 200) {
             this.relatedProducts = [];
-            response.data.forEach((item) => {
-              this.relatedProducts.push({
-                ...this.relateTemp,
-                name: item.product_name,
-                imgUrl: item.productProfileLink,
-                slug: item.id,
-              });
+            response.data.data.forEach((item) => {
+              if (item.id !== Number(this.$route.params.slug)) {
+                this.relatedProducts.push({
+                  ...this.relateTemp,
+                  name: item.product_name,
+                  imgUrl: item.productProfileLink,
+                  slug: item.id,
+                });
+              }
             });
 
             console.log("this.relatedProducts", this.relatedProducts);

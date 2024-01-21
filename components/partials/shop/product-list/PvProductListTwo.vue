@@ -249,7 +249,7 @@ export default {
         .then((response) => {
           if (response.status == 200) {
             this.products = [];
-            response.data.forEach((item) => {
+            response.data.data.forEach((item) => {
               this.products.push({
                 ...this.tempProduct,
                 name: item.product_name,
