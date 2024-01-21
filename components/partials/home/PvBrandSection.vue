@@ -171,10 +171,9 @@
                   {{ categorys[3].categoryName }}
                 </div>
               </Transition>
-              <div>
-                <img :src="categorys[3].categoryLink" style="height: 5em;" />
-                {{ categorys[3].categoryName }}
-              </div>
+
+              <img :src="categorys[3].categoryLink" style="height: 5em;" />
+              {{ categorys[3].categoryName }}
             </div>
           </nuxt-link>
 
@@ -207,10 +206,9 @@
                   {{ categorys[4].categoryName }}
                 </div>
               </Transition>
-              <div>
-                <img :src="categorys[4].categoryLink" style="height: 5em;" />
-                {{ categorys[4].categoryName }}
-              </div>
+
+              <img :src="categorys[4].categoryLink" style="height: 5em;" />
+              {{ categorys[4].categoryName }}
             </div>
           </nuxt-link>
 
@@ -243,10 +241,9 @@
                   {{ categorys[5].categoryName }}
                 </div>
               </Transition>
-              <div>
-                <img :src="categorys[5].categoryLink" style="height: 5em;" />
-                {{ categorys[5].categoryName }}
-              </div>
+
+              <img :src="categorys[5].categoryLink" style="height: 5em;" />
+              {{ categorys[5].categoryName }}
             </div>
           </nuxt-link>
 
