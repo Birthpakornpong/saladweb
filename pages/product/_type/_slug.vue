@@ -30,16 +30,23 @@
         <div class="summary entry-summary col-lg-7 col-md-6"></div>
         <div class="tab-content col-lg-12"></div>
       </div>
-      <div class="row main-content">
-        <div class="col-12">
+      <div class="row main-content" v-if="product">
+        <div class="col-12 d-flex" style="justify-content: center;">
           <img
-            style="width: 100%;"
-            :src="'./detailproduct.jpg'"
+            style="width: 100%; height: 75em;"
+            :src="product.productBannerLink"
             alt="body shape"
             class="w-auto bg-transparent"
           />
 
           <!-- <inner-image-zoom :src="'./review.png'" /> -->
+        </div>
+      </div>
+      <div class="row main-content" v-if="product">
+        <div class="col-12 d-flex" style="justify-content: center;">
+          <video ref="videoPlayer" muted controls style="width: 100%;">
+            <source :src="product.videourl" type="video/mp4" />
+          </video>
         </div>
       </div>
       <div>
@@ -96,6 +103,8 @@ export default {
       featuredProducts: [],
 
       productTemp: {
+        productVideoLink: "",
+        productBannerLink: "",
         instruction: "",
         precautionary: "",
         category: "",
@@ -135,44 +144,44 @@ export default {
         product_brands: [],
         product_tags: [],
         large_pictures: [
-          {
-            width: "800",
-            height: "800",
-            url: "/uploads/product_16_1_27c032e0ec.jpg",
-            pivot: { related_id: "323", upload_file_id: "1642" },
-          },
-          {
-            width: "800",
-            height: "800",
-            url: "/uploads/product_16_2_7f9575405f.jpg",
-            pivot: { related_id: "323", upload_file_id: "1644" },
-          },
-          {
-            width: "800",
-            height: "800",
-            url: "/uploads/product_16_3_8050d5961f.jpg",
-            pivot: { related_id: "323", upload_file_id: "1643" },
-          },
+          // {
+          //   width: "800",
+          //   height: "800",
+          //   url: "/uploads/product_16_1_27c032e0ec.jpg",
+          //   pivot: { related_id: "323", upload_file_id: "1642" },
+          // },
+          // {
+          //   width: "800",
+          //   height: "800",
+          //   url: "/uploads/product_16_2_7f9575405f.jpg",
+          //   pivot: { related_id: "323", upload_file_id: "1644" },
+          // },
+          // {
+          //   width: "800",
+          //   height: "800",
+          //   url: "/uploads/product_16_3_8050d5961f.jpg",
+          //   pivot: { related_id: "323", upload_file_id: "1643" },
+          // },
         ],
         pictures: [
-          {
-            width: "300",
-            height: "340",
-            url: "/uploads/product_16_1_300x340_d499c88efd.jpg",
-            pivot: { related_id: "323", upload_file_id: "1648" },
-          },
-          {
-            width: "300",
-            height: "340",
-            url: "/uploads/product_16_2_300x340_2b2de25664.jpg",
-            pivot: { related_id: "323", upload_file_id: "1649" },
-          },
-          {
-            width: "300",
-            height: "340",
-            url: "/uploads/product_16_3_300x340_9475179c1e.jpg",
-            pivot: { related_id: "323", upload_file_id: "1647" },
-          },
+          // {
+          //   width: "300",
+          //   height: "340",
+          //   url: "/uploads/product_16_1_300x340_d499c88efd.jpg",
+          //   pivot: { related_id: "323", upload_file_id: "1648" },
+          // },
+          // {
+          //   width: "300",
+          //   height: "340",
+          //   url: "/uploads/product_16_2_300x340_2b2de25664.jpg",
+          //   pivot: { related_id: "323", upload_file_id: "1649" },
+          // },
+          // {
+          //   width: "300",
+          //   height: "340",
+          //   url: "/uploads/product_16_3_300x340_9475179c1e.jpg",
+          //   pivot: { related_id: "323", upload_file_id: "1647" },
+          // },
         ],
         small_pictures: [
           {
@@ -243,6 +252,26 @@ export default {
               response.data.product_storage_instruction_th;
             this.productTemp.precautionary =
               response.data.product_precautionary_th;
+            this.productTemp.productBannerLink =
+              response.data.productBannerLink;
+            this.productTemp.productVideoLink = response.data.productVideoLink;
+            this.productTemp.videourl = response.data.productVideoLink;
+            response.data.homeProductImageLinks.forEach((item) => {
+              this.productTemp.large_pictures.push({
+                width: "800",
+                height: "800",
+                url: item,
+                pivot: { related_id: "323", upload_file_id: "1642" },
+              });
+            });
+            response.data.homeProductImageLinks.forEach((item) => {
+              this.productTemp.pictures.push({
+                width: "300",
+                height: "340",
+                url: item,
+                pivot: { related_id: "323", upload_file_id: "1648" },
+              });
+            });
 
             console.log("check pro", this.productTemp);
             this.product = this.productTemp;

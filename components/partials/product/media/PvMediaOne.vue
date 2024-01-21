@@ -18,7 +18,7 @@
             :height="item.height"
             alt="lgPicture"
           /> -->
-          <inner-image-zoom :src="'./images/HOLIS17715_0.jpg'" />
+          <inner-image-zoom :src="item.url" />
         </div>
       </PvCarousel>
     </div>
@@ -36,7 +36,7 @@
         :class="{ active: index === 0 }"
       >
         <img
-          src="~/static/images/IMMU Cap (1).jpg"
+          :src="item.url"
           :width="item.width"
           :height="item.height"
           alt="product-thumbnail"
