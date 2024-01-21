@@ -4,8 +4,8 @@
       <pv-intro-section :introIMG="introIMG"></pv-intro-section>
     </section>
 
-    <div class="header-text mb-3">
-      <div>HOLIS by SCG</div>
+    <div class="header-text mb-3" v-if="video.length > 0">
+      <div>{{ video[0].headText }}</div>
     </div>
     <div v-if="video.length > 0 && positionContent == 'center'">
       <div class="row">
@@ -274,6 +274,7 @@ export default {
               this.video.push({
                 ...item,
                 url: item.link_file_upload,
+                headText: item.media_main_title_eng,
               });
             });
             response.data.productCategory.forEach((item) => {
@@ -281,6 +282,7 @@ export default {
                 id: item.id,
                 categoryName: item.category_name,
                 categoryLink: item.category_link,
+                categoryTH: item.category_name_th,
               });
             });
             // console.log("check", this.products);

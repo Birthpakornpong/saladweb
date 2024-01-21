@@ -62,7 +62,7 @@
                   "
                   class="bg-custom"
                 >
-                  {{ categorys[0].categoryName }}
+                  {{ categorys[0].categoryTH }}
                 </div>
               </Transition>
               <div>
@@ -97,7 +97,7 @@
                   "
                   class="bg-custom"
                 >
-                  {{ categorys[1].categoryName }}
+                  {{ categorys[1].categoryTH }}
                 </div>
               </Transition>
               <div>
@@ -133,7 +133,7 @@
                   "
                   class="bg-custom"
                 >
-                  {{ categorys[2].categoryName }}
+                  {{ categorys[2].categoryTH }}
                 </div>
               </Transition>
 
@@ -168,7 +168,7 @@
                   "
                   class="bg-custom"
                 >
-                  {{ categorys[3].categoryName }}
+                  {{ categorys[3].categoryTH }}
                 </div>
               </Transition>
 
@@ -203,7 +203,7 @@
                   "
                   class="bg-custom"
                 >
-                  {{ categorys[4].categoryName }}
+                  {{ categorys[4].categoryTH }}
                 </div>
               </Transition>
 
@@ -238,7 +238,7 @@
                   "
                   class="bg-custom"
                 >
-                  {{ categorys[5].categoryName }}
+                  {{ categorys[5].categoryTH }}
                 </div>
               </Transition>
 
