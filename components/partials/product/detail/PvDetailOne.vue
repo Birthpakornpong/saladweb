@@ -58,13 +58,12 @@
             quote="The hot reload is so fast it\'s near instant. - Evan You"
             hashtags="vuejs,vite"
           >
-            Share on Facebook
+            <a
+              href="javascript:;"
+              class="social-icon social-facebook icon-facebook"
+              title="Facebook"
+            ></a>
           </ShareNetwork>
-          <a
-            href="javascript:;"
-            class="social-icon social-facebook icon-facebook"
-            title="Facebook"
-          ></a>
 
           <a
             href="javascript:;"
