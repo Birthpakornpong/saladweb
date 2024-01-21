@@ -50,6 +50,16 @@
         <label class="mr-3">Share:</label>
 
         <div class="social-icons mr-2" v-if="isShare">
+          <ShareNetwork
+            network="facebook"
+            url="https://news.vuejs.org/issues/180"
+            title="Say hi to Vite! A brand new, extremely fast development setup for Vue."
+            description="This week, I’d like to introduce you to 'Vite', which means 'Fast'. It’s a brand new development setup created by Evan You."
+            quote="The hot reload is so fast it\'s near instant. - Evan You"
+            hashtags="vuejs,vite"
+          >
+            Share on Facebook
+          </ShareNetwork>
           <a
             href="javascript:;"
             class="social-icon social-facebook icon-facebook"
@@ -94,15 +104,15 @@
     </div>
 
     <ul class="single-info-list">
-      <li v-if="product.quantity" style="font-size: 1.2em">
+      <li v-if="product.quantity" style="font-size: 1.2em;">
         ขนาดบรรจุ:
         <strong class="ml-1">{{ product.quantity }}</strong>
       </li>
-      <li v-if="product.expired" style="font-size: 1.2em">
+      <li v-if="product.expired" style="font-size: 1.2em;">
         อายุสินค้า:
         <strong class="ml-1">{{ product.expired }}</strong>
       </li>
-      <li v-if="product.sku" style="font-size: 1.2em">
+      <li v-if="product.sku" style="font-size: 1.2em;">
         SKU:
         <strong class="ml-1">{{ product.sku }}</strong>
       </li>
