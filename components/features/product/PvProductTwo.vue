@@ -2,7 +2,7 @@
   <div class="product-default left-details product-list">
     <figure>
       <nuxt-link :to="`/product/default/${product.slug}`">
-        <img
+        <!-- <img
           v-for="(item, index) in product.large_pictures.slice(0, 2)"
           :key="`related-large-${index}`"
           src="~/static/images/imgmock1.png"
@@ -10,40 +10,25 @@
           :width="item.width"
           :height="item.height"
           :class="{ 'last-image': index === 1 }"
+        /> -->
+        <img
+          v-if="product.imgUrl"
+          alt="large-picture"
+          width="800"
+          style="height: 25em;"
+          :src="product.imgUrl"
+        />
+        <img
+          v-else
+          alt="large-picture"
+          width="800"
+          style="height: 25em;"
+          src="~/static/images/HOLIS17715_0.jpg"
         />
       </nuxt-link>
-
-      <!-- <div class="label-group">
-				<div
-					class="product-label label-hot"
-					v-if="product.is_hot"
-				>HOT</div>
-				<div
-					class="product-label label-sale"
-					v-if="product.is_sale && !product.price"
-				>Sale</div>
-				<div
-					class="product-label label-sale"
-					v-if="product.is_sale && product.price"
-				>{{ discount }}%</div>
-			</div> -->
     </figure>
 
     <div class="product-details">
-      <!-- <div class="category-list">
-        <span
-          v-for="(cat, index) in product.product_categories"
-          :key="`product-category-${index}`"
-        >
-          <nuxt-link :to="{ path: '/shop', query: { category: cat.slug } }">{{
-            cat.name
-          }}</nuxt-link>
-          <template v-if="index < product.product_categories.length - 1"
-            >,</template
-          >
-        </span>
-      </div> -->
-
       <h3 class="product-title">
         <nuxt-link :to="'/product/default/' + product.slug">{{
           product.name
@@ -62,9 +47,9 @@
         </div>
       </div> -->
 
-      <div class="product-description" v-if="product.short_description">
+      <!-- <div class="product-description" v-if="product.short_description">
         <p class="mb-0">{{ product.short_description }}</p>
-      </div>
+      </div> -->
       <!-- <div class="price-box" v-if="product.price" key="singlePrice">
         <template v-if="!product.is_sale">
           <span class="product-price">${{ product.price | priceFormat }}</span>

@@ -50,16 +50,13 @@
               name="orderby"
               class="form-control"
               v-model="orderBy"
-              @change="getProducts"
+              @change="handlerGet"
             >
-              <option value="default" selected="default"
+              <!-- <option value="default" selected="default"
                 >Default sorting</option
-              >
-              <option value="featured">Sort by popularity</option>
-              <option value="rating">Sort by average rating</option>
-              <option value="new">Sort by newness</option>
-              <option value="price-asc">Sort by price: low to high</option>
-              <option value="price-dec">Sort by price: high to low</option>
+              > -->
+              <option value="0">ASC</option>
+              <option value="1">DESC</option>
             </select>
           </div>
         </div>
@@ -74,16 +71,10 @@
               name="orderby"
               class="form-control"
               v-model="orderBy"
-              @change="getProducts"
+              @change="handlerGet"
             >
-              <option value="default" selected="default"
-                >Default sorting</option
-              >
-              <option value="featured">Sort by popularity</option>
-              <option value="rating">Sort by average rating</option>
-              <option value="new">Sort by newness</option>
-              <option value="price-asc">Sort by price: low to high</option>
-              <option value="price-dec">Sort by price: high to low</option>
+              <option value="0">ASC</option>
+              <option value="1">DESC</option>
             </select>
           </div>
         </div>
@@ -239,7 +230,7 @@ export default {
     return {
       products: [],
       repeatCount: new Array(100),
-      orderBy: "default",
+      orderBy: 0,
       itemsPerPage: 8,
       totalCount: 0,
       tempProduct: {
@@ -332,12 +323,13 @@ export default {
     };
   },
   watch: {
-    $route: function () {
+    $route: async function () {
+      await this.handlerGet();
       this.itemsPerPage = this.$route.query["per_page"]
         ? parseInt(this.$route.query["per_page"])
         : 8;
       // this.getProducts();
-      this.handlerGet();
+
       this.isOffCanvas = this.$route.path.includes("off-canvas") ? true : false;
       this.type = this.$route.path.includes("list") ? "list" : "grid";
     },
@@ -374,12 +366,21 @@ export default {
           Accept: "application/json",
         },
       };
-      console.log("rou", this.$router.currentRoute.query.page);
+
+      let category =
+        this.$router.currentRoute.query.category?.length > 0
+          ? this.$router.currentRoute.query.category?.split(",")
+          : [];
+      let product =
+        this.$router.currentRoute.query.product?.length > 0
+          ? this.$router.currentRoute.query.product?.split(",")
+          : [];
+      console.log("rou", this.orderBy);
       let payload = {
         key: "",
-        category_id: [],
-        product_id: [],
-        sort: 0,
+        category_id: category || [],
+        product_id: product || [],
+        sort: this.orderBy,
         pageNumber: this.$router.currentRoute.query.page || 1,
         pageSize: this.itemsPerPage,
       };
@@ -388,6 +389,8 @@ export default {
         .then((response) => {
           if (response.status == 200) {
             console.log("check", response);
+            this.totalCount = response.data.totalCount;
+            this.$forceUpdate();
             let productsData = response.data.data;
             this.products = [];
             productsData.forEach((item) => {
@@ -399,9 +402,7 @@ export default {
               });
             });
 
-            console.log("this.products", productsData);
-
-            this.totalCount = response.data.totalCount;
+            console.log("this.products", this.totalCount);
           } else {
           }
         })
