@@ -59,7 +59,25 @@
           </div>
         </vue-slide-toggle>
       </div>
-
+      <ul
+        class="single-info-list"
+        v-if="product.productChannelModels.length > 0"
+      >
+        <li v-if="product.quantity" style="font-size: 1.5em;">
+          <div class="d-flex" style="align-items: center;">
+            สั่งซื้อได้ที่:
+            <a
+              v-for="(item, index) in product.productChannelModels"
+              :key="index"
+              :href="item.channel_link"
+              target="_blank"
+              class="ml-4"
+            >
+              <img style="height: 2em;" :src="item.product_channel_path" />
+            </a>
+          </div>
+        </li>
+      </ul>
       <!-- <vue-slide-toggle :open="!isEmptyQuery">
         <div class="widget mb-3 ml-4 border-bottom-0">
           <nuxt-link

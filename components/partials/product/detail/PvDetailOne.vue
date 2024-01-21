@@ -94,15 +94,15 @@
     </div>
 
     <ul class="single-info-list">
-      <li v-if="product.quantity">
+      <li v-if="product.quantity" style="font-size: 1.2em">
         ขนาดบรรจุ:
         <strong class="ml-1">{{ product.quantity }}</strong>
       </li>
-      <li v-if="product.expired">
+      <li v-if="product.expired" style="font-size: 1.2em">
         อายุสินค้า:
         <strong class="ml-1">{{ product.expired }}</strong>
       </li>
-      <li v-if="product.sku">
+      <li v-if="product.sku" style="font-size: 1.2em">
         SKU:
         <strong class="ml-1">{{ product.sku }}</strong>
       </li>

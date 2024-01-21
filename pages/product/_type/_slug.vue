@@ -103,6 +103,7 @@ export default {
       featuredProducts: [],
 
       productTemp: {
+        productChannelModels: [],
         productVideoLink: "",
         productBannerLink: "",
         instruction: "",
@@ -255,6 +256,8 @@ export default {
             this.productTemp.productBannerLink =
               response.data.productBannerLink;
             this.productTemp.productVideoLink = response.data.productVideoLink;
+            this.productTemp.productChannelModels =
+              response.data.productChannelModels;
             this.productTemp.videourl = response.data.productVideoLink;
             response.data.homeProductImageLinks.forEach((item) => {
               this.productTemp.large_pictures.push({
