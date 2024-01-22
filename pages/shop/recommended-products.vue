@@ -26,7 +26,7 @@
     </div>
 
     <div>
-      <PvReviewCustom></PvReviewCustom>
+      <PvReviewCustom :reviews="reviews"></PvReviewCustom>
     </div>
   </main>
 </template>
@@ -50,6 +50,7 @@ export default {
   },
   data: function () {
     return {
+      reviews: [],
       categoryList: [],
       featuredProducts: [],
       tempProduct: {

@@ -1,16 +1,21 @@
 <template>
   <main>
     <div class="container">
-      <div class="row main-content">
-        <div class="category-section mb-4">
+      <div class="row main-content" v-if="reviews.length > 0">
+        <div class="category-section mb-4 col-12">
           <div class="header-text" style="color: black;">
             <div>Review</div>
           </div>
         </div>
-        <div class="col-12">
+        <div
+          class="col-6"
+          style="display: flex; justify-content: center;"
+          v-for="(item, index) in reviews"
+          :key="index"
+        >
           <img
-            style="width: 100%;"
-            :src="'./review.png'"
+            style="width: 100%; height: 30em;"
+            :src="item.product_review_link"
             alt="body shape"
             class="w-auto bg-transparent"
           />
@@ -29,6 +34,9 @@ import InnerImageZoom from "vue-inner-image-zoom";
 
 export default {
   components: { InnerImageZoom },
+  props: {
+    reviews: Array,
+  },
   data: function () {
     return {
       baseUrl: baseUrl,

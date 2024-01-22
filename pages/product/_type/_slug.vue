@@ -58,7 +58,7 @@
         </div>
       </div>
       <div>
-        <PvReviewCustom :product="product"></PvReviewCustom>
+        <PvReviewCustom :reviews="reviews"></PvReviewCustom>
       </div>
 
       <pv-related-products
@@ -97,6 +97,7 @@ export default {
   },
   data: function () {
     return {
+      reviews: [],
       product: null,
       relatedProducts: [],
       featuredProducts: null,
@@ -585,8 +586,8 @@ export default {
             // response.data.homeNextProductId
             this.nextProductTemp.slug = response.data.homeNextProductId;
             this.nextProduct = this.nextProductTemp;
-            if (response.data.homePreviosProductId) {
-              this.preProductTemp.slug = response.data.homePreviosProductId;
+            if (response.data.homePreviousProductId) {
+              this.preProductTemp.slug = response.data.homePreviousProductId;
               this.prevProduct = this.preProductTemp;
             }
             this.productTemp.name = response.data.product_name;
@@ -609,6 +610,8 @@ export default {
             this.productTemp.productChannelModels =
               response.data.productChannelModels;
             this.productTemp.videourl = response.data.productVideoLink;
+
+            this.reviews = response.data.productReviewModels;
             response.data.homeProductImageLinks.forEach((item) => {
               this.productTemp.large_pictures.push({
                 width: "800",
