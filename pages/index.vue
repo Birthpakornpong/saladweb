@@ -9,9 +9,16 @@
     </div>
     <div v-if="video.length > 0 && positionContent == 'center'">
       <div class="row">
-        <div class="col-3" style="justify-content: end; display: flex;">
+        <b-col
+          cols="12"
+          class="d-flex col-lg-3 col-md-3"
+          style="justify-content: end; display: flex;"
+        >
           <img :src="video[0].imgLeft" style="height: 33em;" />
-          <!-- <div>
+        </b-col>
+        <!-- <div class="col-3" style="justify-content: end; display: flex;"> -->
+
+        <!-- <div>
             <div class="d-flex mr-1" style="justify-content: end;">
               <h3 class="text-headicon mr-3 mt-1">
                 วิตามิน A
@@ -46,15 +53,27 @@
               ต่อการติดเชื้อในทางเดินหายใจ
             </p>
           </div> -->
-        </div>
-        <div class="col-6">
+        <!-- </div> -->
+        <b-col
+          cols="12"
+          class="d-flex col-lg-6 col-md-6"
+          style="justify-content: end; display: flex;"
+        >
           <video ref="videoPlayer" muted controls style="width: 100%;">
             <source :src="video[0].url" type="video/mp4" />
           </video>
-        </div>
-        <div class="col-3">
+        </b-col>
+
+        <b-col
+          cols="12"
+          class="d-flex col-lg-3 col-md-3"
+          style="justify-content: end; display: flex;"
+        >
           <img :src="video[0].imgRight" style="height: 33em;" />
-          <!-- <div class="d-flex ml-2">
+        </b-col>
+        <!-- <div class="col-3">
+          <img :src="video[0].imgRight" style="height: 33em;" /> -->
+        <!-- <div class="d-flex ml-2">
             <div class="icon-border">
               <div
                 style="
@@ -87,7 +106,7 @@
           <p class="textcus-right">
             ต่อการติดเชื้อในทางเดินหายใจ
           </p>-->
-        </div>
+        <!-- </div> -->
       </div>
     </div>
 

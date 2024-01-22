@@ -369,6 +369,16 @@ export default {
   padding: 40px;
   justify-content: center;
 }
+@media only screen and (max-width: 600px) {
+  .category-section .grid-container {
+    display: grid;
+    grid: none;
+    grid-gap: 50px;
+    background-color: white;
+    padding: 40px;
+    justify-content: center;
+  }
+}
 
 .category-section .grid-container .grid-items {
   background-color: #771219;
