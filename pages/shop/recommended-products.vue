@@ -127,11 +127,30 @@ export default {
   },
   mounted: function () {
     this.getCategoryLists();
+    this.handlerGet();
   },
   methods: {
     getCategoryLists: function () {
       this.categoryList = recomData.sidebarList;
       this.featuredProducts = recomData.featuredProducts;
+    },
+    async handlerGet() {
+      var optionAxios = {
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+      };
+
+      axios
+        .post(`${baseUrl}/api/Home/get-review`, optionAxios)
+        .then((response) => {
+          if (response.status == 200) {
+            this.reviews = response.data;
+          } else {
+          }
+        })
+        .catch((error) => {});
     },
   },
 };

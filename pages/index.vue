@@ -10,7 +10,8 @@
     <div v-if="video.length > 0 && positionContent == 'center'">
       <div class="row">
         <div class="col-3" style="justify-content: end; display: flex;">
-          <div>
+          <img :src="video[0].imgLeft" style="height: 33em;" />
+          <!-- <div>
             <div class="d-flex mr-1" style="justify-content: end;">
               <h3 class="text-headicon mr-3 mt-1">
                 วิตามิน A
@@ -44,7 +45,7 @@
             <p class="textcus-left">
               ต่อการติดเชื้อในทางเดินหายใจ
             </p>
-          </div>
+          </div> -->
         </div>
         <div class="col-6">
           <video ref="videoPlayer" muted controls style="width: 100%;">
@@ -52,7 +53,8 @@
           </video>
         </div>
         <div class="col-3">
-          <div class="d-flex ml-2">
+          <img :src="video[0].imgRight" style="height: 33em;" />
+          <!-- <div class="d-flex ml-2">
             <div class="icon-border">
               <div
                 style="
@@ -84,7 +86,7 @@
           </p>
           <p class="textcus-right">
             ต่อการติดเชื้อในทางเดินหายใจ
-          </p>
+          </p>-->
         </div>
       </div>
     </div>
@@ -96,14 +98,16 @@
             <source :src="video[0].url" type="video/mp4" />
           </video>
         </div>
-        <div class="col-4"><h1>text</h1></div>
+        <div class="col-4">
+          <img :src="video[0].imgRight" style="height: 33em;" />
+        </div>
       </div>
     </div>
 
     <div v-if="video.length > 0 && positionContent == 'right'">
       <div class="row">
         <div class="col-4" style="justify-content: end; display: flex;">
-          <h1>text</h1>
+          <img :src="video[0].imgLeft" style="height: 33em;" />
         </div>
         <div class="col-8">
           <video ref="videoPlayer" muted controls style="width: 50em;">
@@ -275,6 +279,8 @@ export default {
                 ...item,
                 url: item.link_file_upload,
                 headText: item.media_main_title_eng,
+                imgLeft: item.link_image_left_th,
+                imgRight: item.link_image_right_th,
               });
             });
             response.data.productCategory.forEach((item) => {
