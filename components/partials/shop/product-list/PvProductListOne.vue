@@ -89,9 +89,9 @@
               @change="changePerPage"
               v-model="itemsPerPage"
             >
-              <option :value="8">8</option>
-              <option :value="12">12</option>
-              <option :value="24">24</option>
+              <option :value="9">9</option>
+              <option :value="18">18</option>
+              <option :value="27">27</option>
               <option :value="36">36</option>
             </select>
           </div>
@@ -180,9 +180,9 @@
             @change="changePerPage"
             v-model="itemsPerPage"
           >
-            <option :value="8">8</option>
-            <option :value="12">12</option>
-            <option :value="24">24</option>
+            <option :value="9">9</option>
+            <option :value="18">18</option>
+            <option :value="27">27</option>
             <option :value="36">36</option>
           </select>
         </div>
@@ -231,7 +231,7 @@ export default {
       products: [],
       repeatCount: new Array(100),
       orderBy: 0,
-      itemsPerPage: 8,
+      itemsPerPage: 9,
       totalCount: 0,
       tempProduct: {
         id: 323,
@@ -327,7 +327,7 @@ export default {
       await this.handlerGet();
       this.itemsPerPage = this.$route.query["per_page"]
         ? parseInt(this.$route.query["per_page"])
-        : 8;
+        : 9;
       // this.getProducts();
 
       this.isOffCanvas = this.$route.path.includes("off-canvas") ? true : false;
@@ -337,7 +337,7 @@ export default {
   created: function () {
     this.itemsPerPage = this.$route.query["per_page"]
       ? parseInt(this.$route.query["per_page"])
-      : 8;
+      : 9;
 
     this.handlerGet();
     // this.getProducts(false);
