@@ -84,33 +84,6 @@
             </div>
           </div>
         </div>
-        <!-- <div class="col-lg-6 col-xl-2">
-					<div class="widget">
-						<h4 class="widget-title">Newsletter</h4>
-						<div class="widget-newsletter">
-							<div class="widget-newsletter-info">
-								<p class="widget-newsletter-content m-b-4">Get all the latest
-									information on
-									Events, Sales and Offers. Sign up for newsletter today</p>
-							</div>
-							<form action="#">
-								<div class="footer-submit-wrapper d-flex">
-									<input
-										type="email"
-										class="form-control mb-0"
-										placeholder="Email Address"
-										size="40"
-										required
-									>
-									<button
-										type="submit"
-										class="btn btn-primary btn-sm ls-0"
-									>Subscribe</button>
-								</div>
-							</form>
-						</div>
-					</div>
-				</div> -->
       </div>
     </div>
 

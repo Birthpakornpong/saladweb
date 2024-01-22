@@ -98,7 +98,7 @@ export default {
 
   buildModules: ["@nuxtjs/style-resources", "cookie-universal-nuxt"],
 
-  modules: ["@nuxtjs/axios", "vue-social-sharing/nuxt"],
+  modules: ["@nuxtjs/axios"],
 
   router: {
     base: "/",

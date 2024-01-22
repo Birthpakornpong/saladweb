@@ -193,6 +193,7 @@ export default {
           Accept: "application/json",
         },
       };
+      this.loaded = false;
       let payload = {
         key: "",
         category_id: [],
@@ -220,6 +221,7 @@ export default {
                 thumbnailLink: item.thumbnailLink,
               });
             });
+            this.loaded = true;
           } else {
           }
         })
