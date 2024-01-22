@@ -390,7 +390,7 @@ export default {
           if (response.status == 200) {
             console.log("check", response);
             this.totalCount = response.data.totalCount;
-            this.$forceUpdate();
+
             let productsData = response.data.data;
             this.products = [];
             productsData.forEach((item) => {
@@ -401,7 +401,7 @@ export default {
                 slug: item.id,
               });
             });
-
+            this.$forceUpdate();
             console.log("this.products", this.totalCount);
           } else {
           }

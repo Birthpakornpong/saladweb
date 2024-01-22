@@ -93,7 +93,8 @@ export default {
   },
   watch: {
     $route: function () {
-      this.getBlog();
+      // location.reload();
+      // this.getBlog();
       this.handlerGet();
     },
   },
@@ -207,6 +208,7 @@ export default {
           if (response.status == 200) {
             this.posts = [];
             this.totalCount = response.data.totalCount;
+            this.$forceUpdate();
             // console.log("check", this.products);
             response.data.data.forEach((item) => {
               this.posts.push({
