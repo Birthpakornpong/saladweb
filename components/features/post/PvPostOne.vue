@@ -6,6 +6,7 @@
     >
       <a
         :href="`https://www.scgpackaging.com/${post.urlRewrite}`"
+        target="_blank"
         v-if="post.type === 'image'"
       >
         <img
@@ -26,7 +27,10 @@
       </a>
 
       <template v-else-if="post.type === 'video'">
-        <a :href="`https://www.scgpackaging.com/${post.urlRewrite}`">
+        <a
+          :href="`https://www.scgpackaging.com/${post.urlRewrite}`"
+          target="_blank"
+        >
           <img
             src="~/static/images/blog/blogmock.png"
             alt="blog"
@@ -84,9 +88,11 @@
 
     <div class="post-body">
       <h2 class="post-title">
-        <nuxt-link :to="'/pages/single/' + post.slug">{{
-          post.title
-        }}</nuxt-link>
+        <a
+          :href="`https://www.scgpackaging.com/${post.urlRewrite}`"
+          target="_blank"
+          >{{ post.title }}</a
+        >
       </h2>
 
       <div class="post-content" v-if="isContent">
