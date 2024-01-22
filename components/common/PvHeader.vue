@@ -28,7 +28,7 @@
             <i class="bi bi-line pr-2"></i>
             <i class="bi bi-tiktok"></i>
           </a>
-          <div class="header-dropdown custom-header">
+          <!-- <div class="header-dropdown custom-header">
             <a href="javascript:;">ไทย</a>
             <div class="header-menu">
               <ul>
@@ -40,7 +40,7 @@
                 </li>
               </ul>
             </div>
-          </div>
+          </div> -->
           <!-- <nuxt-link
 						to="/pages/login"
 						class="header-icon d-lg-block d-none"
