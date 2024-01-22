@@ -59,7 +59,7 @@
           class="d-flex col-lg-6 col-md-6"
           style="justify-content: end; display: flex;"
         >
-          <video ref="videoPlayer" muted controls style="width: 100%;">
+          <video ref="videoPlayers" controls autoplay style="width: 100%;">
             <source :src="video[0].url" type="video/mp4" />
           </video>
         </b-col>
@@ -113,7 +113,7 @@
     <div v-if="video.length > 0 && positionContent == 'left'">
       <div class="row">
         <div class="col-8" style="justify-content: end; display: flex;">
-          <video ref="videoPlayer" muted controls style="width: 50em;">
+          <video ref="videoPlayerrd" controls autoplay style="width: 50em;">
             <source :src="video[0].url" type="video/mp4" />
           </video>
         </div>
@@ -129,7 +129,7 @@
           <img :src="video[0].imgLeft" style="height: 33em;" />
         </div>
         <div class="col-8">
-          <video ref="videoPlayer" muted controls style="width: 50em;">
+          <video ref="videoPlayersc" controls autoplay style="width: 50em;">
             <source :src="video[0].url" type="video/mp4" />
           </video>
         </div>

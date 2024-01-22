@@ -52,7 +52,7 @@
           style="justify-content: center;"
           v-if="product.videourl"
         >
-          <video ref="videoPlayer" muted controls style="width: 100%;">
+          <video ref="videoPlayer" muted controls autoplay style="width: 100%;">
             <source :src="product.videourl" type="video/mp4" />
           </video>
         </div>
