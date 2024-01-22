@@ -219,6 +219,7 @@ export default {
                 date: item.contentDatetimeFull,
                 title: item.attachmentTitle,
                 thumbnailLink: item.thumbnailLink,
+                urlRewrite: item.urlRewrite,
               });
             });
             this.loaded = true;

@@ -4,8 +4,8 @@
       class="post-media"
       :class="post.type === 'video' ? 'post-video' : ''"
     >
-      <nuxt-link
-        :to="`/pages/single/${post.slug}`"
+      <a
+        :href="`https://www.scgpackaging.com/${post.urlRewrite}`"
         v-if="post.type === 'image'"
       >
         <img
@@ -23,17 +23,17 @@
             :height="post.picture[0].height"
           />
         </template>
-      </nuxt-link>
+      </a>
 
       <template v-else-if="post.type === 'video'">
-        <nuxt-link :to="`/pages/single/${post.slug}`">
+        <a :href="`https://www.scgpackaging.com/${post.urlRewrite}`">
           <img
             src="~/static/images/blog/blogmock.png"
             alt="blog"
             :width="post.picture[0].width"
             :height="post.picture[0].height"
           />
-        </nuxt-link>
+        </a>
         <a
           href="https://www.youtube.com/watch?v=vBPgmASQ1A0"
           @click.prevent="openVideoModal"

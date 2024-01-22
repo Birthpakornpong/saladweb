@@ -1,5 +1,5 @@
 <template>
-  <div @click="hideMobileSearch">
+  <div @click="hideMobileSearch" style="font-family: 'SCG' !important;">
     <div class="page-wrapper">
       <pv-header></pv-header>
       <nuxt></nuxt>

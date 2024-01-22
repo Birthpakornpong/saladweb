@@ -2,7 +2,7 @@
   <footer class="footer">
     <div class="container-fluid">
       <div class="row">
-        <b-col cols="12" class="col-lg-5 col-md-5">
+        <div class="col-12 col-lg-5 col-md-5">
           <a href="javascript:;">
             <img
               class="logo logo-header ml-4 mt-2 mb-2"
@@ -17,9 +17,9 @@
               <div>แขวงบางซื่อ เขตบางซื่อ กรุงเทพมหานคร 10800</div>
             </div>
           </div>
-        </b-col>
+        </div>
 
-        <b-col cols="6" class="col-lg-2 col-md-2" style="width: auto;">
+        <div class="col-6 col-lg-2 col-md-2" style="width: auto;">
           <div class="widget">
             <h4 class="widget-title">Sitemap</h4>
             <div class="row link-lg link-parts">
@@ -33,9 +33,9 @@
               </div>
             </div>
           </div>
-        </b-col>
+        </div>
 
-        <b-col cols="6" class="col-lg-2 col-md-2" style="width: auto;">
+        <div class="col-6 col-lg-2 col-md-2" style="width: auto;">
           <div class="widget">
             <h4 class="widget-title">Category</h4>
             <div class="row">
@@ -51,9 +51,9 @@
               </div>
             </div>
           </div>
-        </b-col>
+        </div>
 
-        <b-col cols="12" class="col-lg-3 col-md-3">
+        <div class="col-12 col-lg-3 col-md-3">
           <div class="widget">
             <h4 class="widget-title">Contact Channel</h4>
             <div class="row">
@@ -84,7 +84,7 @@
               </div>
             </div>
           </div>
-        </b-col>
+        </div>
       </div>
     </div>
 

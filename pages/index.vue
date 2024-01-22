@@ -1,5 +1,5 @@
 <template>
-  <main class="main home-page">
+  <main class="main home-page" style="font-family: 'SCG' !important;">
     <section
       class="intro-section mb-3"
       data-animation-name="fadeInUpShorter"
@@ -19,13 +19,12 @@
       v-animate
     >
       <div class="row">
-        <b-col
-          cols="12"
-          class="d-flex col-lg-3 col-md-3"
+        <div
+          class="d-flex col-12 col-lg-3 col-md-3"
           style="justify-content: end; display: flex;"
         >
           <img :src="video[0].imgLeft" style="height: 33em;" />
-        </b-col>
+        </div>
         <!-- <div class="col-3" style="justify-content: end; display: flex;"> -->
 
         <!-- <div>
@@ -64,23 +63,21 @@
             </p>
           </div> -->
         <!-- </div> -->
-        <b-col
-          cols="12"
-          class="d-flex col-lg-6 col-md-6"
+        <div
+          class="col-12 d-flex col-lg-6 col-md-6"
           style="justify-content: end; display: flex;"
         >
           <video ref="videoPlayers" controls autoplay style="width: 100%;">
             <source :src="video[0].url" type="video/mp4" />
           </video>
-        </b-col>
+        </div>
 
-        <b-col
-          cols="12"
-          class="d-flex col-lg-3 col-md-3"
+        <div
+          class="col-12 d-flex col-lg-3 col-md-3"
           style="justify-content: end; display: flex;"
         >
           <img :src="video[0].imgRight" style="height: 33em;" />
-        </b-col>
+        </div>
         <!-- <div class="col-3">
           <img :src="video[0].imgRight" style="height: 33em;" /> -->
         <!-- <div class="d-flex ml-2">

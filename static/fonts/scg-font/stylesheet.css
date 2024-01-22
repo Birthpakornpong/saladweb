@@ -1,0 +1,13 @@
+@font-face {
+    font-family: 'SCG';
+    src: url('SCG-Regular.eot');
+    src: url('SCG-Regular.eot?#iefix') format('embedded-opentype'),
+        url('SCG-Regular.woff2') format('woff2'),
+        url('SCG-Regular.woff') format('woff'),
+        url('SCG-Regular.ttf') format('truetype'),
+        url('SCG-Regular.svg#SCG-Regular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+

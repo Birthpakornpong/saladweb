@@ -1,5 +1,5 @@
 <template>
-  <header class="header">
+  <header class="header" style="font-family: 'SCG' !important;">
     <div class="header-middle sticky-header mobile-sticky">
       <div class="container-fluid">
         <div class="d-flex"></div>
@@ -125,7 +125,7 @@ export default {
 }
 
 .header .header-right .contact-us {
-  font-family: "porto";
+  font-family: "SCG";
   font-weight: 400;
   margin-left: 0.5rem;
 }
