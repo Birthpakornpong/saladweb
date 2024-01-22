@@ -26,7 +26,7 @@
     </div>
 
     <div>
-      <PvReviewCustom :reviews="reviews"></PvReviewCustom>
+      <PvReviewCustom :reviews="reviews.slice(0, 2)"></PvReviewCustom>
     </div>
   </main>
 </template>
