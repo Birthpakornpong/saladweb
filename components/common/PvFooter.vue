@@ -2,7 +2,7 @@
   <footer class="footer">
     <div class="container-fluid">
       <div class="row">
-        <div class="col-5 mt-2">
+        <b-col cols="12" class="col-lg-5 col-md-5">
           <a href="javascript:;">
             <img
               class="logo logo-header ml-4 mt-2 mb-2"
@@ -17,8 +17,9 @@
               <div>แขวงบางซื่อ เขตบางซื่อ กรุงเทพมหานคร 10800</div>
             </div>
           </div>
-        </div>
-        <div class="col-2">
+        </b-col>
+
+        <b-col cols="6" class="col-lg-2 col-md-2" style="width: auto;">
           <div class="widget">
             <h4 class="widget-title">Sitemap</h4>
             <div class="row link-lg link-parts">
@@ -32,9 +33,9 @@
               </div>
             </div>
           </div>
-        </div>
+        </b-col>
 
-        <div class="col-2">
+        <b-col cols="6" class="col-lg-2 col-md-2" style="width: auto;">
           <div class="widget">
             <h4 class="widget-title">Category</h4>
             <div class="row">
@@ -50,9 +51,9 @@
               </div>
             </div>
           </div>
-        </div>
+        </b-col>
 
-        <div class="col-3">
+        <b-col cols="12" class="col-lg-3 col-md-3">
           <div class="widget">
             <h4 class="widget-title">Contact Channel</h4>
             <div class="row">
@@ -83,13 +84,13 @@
               </div>
             </div>
           </div>
-        </div>
+        </b-col>
       </div>
     </div>
 
     <div class="footer-bottom-custom pt-3 pb-3">
       <div class="d-flex justify-content-center">
-        <div class="footer-left">
+        <div class="footer-left" style="font-size: 0.9em;">
           <span class="footer-copyright"
             >© Copyright 2023 by SCG Packaging Co.Ltd. All Right Reserved.</span
           >
