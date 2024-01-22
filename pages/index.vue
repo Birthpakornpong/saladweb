@@ -1,13 +1,23 @@
 <template>
   <main class="main home-page">
-    <section class="intro-section mb-3">
+    <section
+      class="intro-section mb-3"
+      data-animation-name="fadeInUpShorter"
+      data-animation-delay="400"
+      v-animate
+    >
       <pv-intro-section :introIMG="introIMG"></pv-intro-section>
     </section>
 
     <div class="header-text mb-3" v-if="video.length > 0">
       <div>{{ video[0].headText }}</div>
     </div>
-    <div v-if="video.length > 0 && positionContent == 'center'">
+    <div
+      v-if="video.length > 0 && positionContent == 'center'"
+      data-animation-name="fadeInUpShorter"
+      data-animation-delay="400"
+      v-animate
+    >
       <div class="row">
         <b-col
           cols="12"
@@ -110,7 +120,12 @@
       </div>
     </div>
 
-    <div v-if="video.length > 0 && positionContent == 'left'">
+    <div
+      v-if="video.length > 0 && positionContent == 'left'"
+      data-animation-name="fadeInUpShorter"
+      data-animation-delay="400"
+      v-animate
+    >
       <div class="row">
         <div class="col-8" style="justify-content: end; display: flex;">
           <video ref="videoPlayerrd" controls autoplay style="width: 50em;">
@@ -123,7 +138,12 @@
       </div>
     </div>
 
-    <div v-if="video.length > 0 && positionContent == 'right'">
+    <div
+      v-if="video.length > 0 && positionContent == 'right'"
+      data-animation-name="fadeInUpShorter"
+      data-animation-delay="400"
+      v-animate
+    >
       <div class="row">
         <div class="col-4" style="justify-content: end; display: flex;">
           <img :src="video[0].imgLeft" style="height: 33em;" />
@@ -136,11 +156,21 @@
       </div>
     </div>
 
-    <pv-category-section :products="products"></pv-category-section>
+    <pv-category-section
+      :products="products"
+      data-animation-name="fadeInUpShorter"
+      data-animation-delay="400"
+      v-animate
+    ></pv-category-section>
 
     <!-- <pv-best-collection :products="products"></pv-best-collection> -->
 
-    <pv-brand-section :categorys="categorys"></pv-brand-section>
+    <pv-brand-section
+      :categorys="categorys"
+      data-animation-name="fadeInUpShorter"
+      data-animation-delay="400"
+      v-animate
+    ></pv-brand-section>
 
     <!-- <pv-banner-section></pv-banner-section> -->
   </main>
