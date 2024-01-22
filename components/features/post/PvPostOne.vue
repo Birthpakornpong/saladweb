@@ -9,10 +9,10 @@
         v-if="post.type === 'image'"
       >
         <img
-          src="~/static/images/blog/blogmock.png"
+          :src="post.thumbnailLink"
           alt="blog"
           :width="post.small_picture[0].width"
-          :height="post.small_picture[0].height"
+          style="height: 15em;"
           v-if="post.small_picture.length > 0"
         />
         <template v-else>
@@ -92,10 +92,10 @@
       <div class="post-content" v-if="isContent">
         <p>{{ post.content }}</p>
       </div>
-
+      <!-- 
       <nuxt-link :to="'/pages/single/' + post.slug" class="post-comment"
         >{{ post.comments }} Comments</nuxt-link
-      >
+      > -->
     </div>
   </article>
 </template>

@@ -1,24 +1,5 @@
 <template>
   <main class="main">
-    <!-- <nav
-			aria-label="breadcrumb"
-			class="breadcrumb-nav"
-		>
-			<div class="container">
-				<ol class="breadcrumb">
-					<li class="breadcrumb-item">
-						<nuxt-link to="/">
-							Home
-						</nuxt-link>
-					</li>
-					<li
-						class="breadcrumb-item active"
-						aria-current="page"
-					>Blog</li>
-				</ol>
-			</div>
-		</nav> -->
-
     <div class="container main-content">
       <div class="row">
         <div class="col-12">
@@ -57,12 +38,12 @@
                     <select
                       name="count"
                       class="form-control"
-                      @change="getBlog"
+                      @change="handlerGet"
                       v-model="itemsPerPage"
                     >
-                      <option value="6">6</option>
-                      <option value="9">9</option>
-                      <option value="12">12</option>
+                      <option :value="6">6</option>
+                      <option :value="9">9</option>
+                      <option :value="12">12</option>
                     </select>
                   </div>
                 </div>
@@ -97,7 +78,8 @@
 </template>
 
 <script>
-import Api, { baseUrl, currentDemo } from "~/api";
+import axios from "axios";
+import Api, { baseUrl } from "~/api";
 import PvBlogSidebar from "~/components/partials/page/PvBlogSidebar";
 import PvPostOne from "~/components/features/post/PvPostOne";
 import PvPagination from "~/components/features/PvPagination";
@@ -112,11 +94,12 @@ export default {
   watch: {
     $route: function () {
       this.getBlog();
+      this.handlerGet();
     },
   },
   data: function () {
     return {
-      posts: null,
+      posts: [],
       recentPosts: null,
       blogCategoryList: null,
       totalCount: 0,
@@ -124,10 +107,52 @@ export default {
       itemsPerPage: 6,
       isSidebar: false,
       loaded: false,
+      postTemp: {
+        id: 1,
+        author: "John Doe",
+        comments: "0",
+        content:
+          "SCGP ผสานความร่วมมือมหาวิทยาลัยศรีนครินทรวิโรฒ วิจัยโพรไบโอติก 3 สายพันธุ์พิเศษที่มีคุณสมบัติโดดเด่น",
+        date: "2021-04-07",
+        slug: "post-format-image-type",
+        title:
+          "SCGP ผสานความร่วมมือมหาวิทยาลัยศรีนครินทรวิโรฒ วิจัยโพรไบโอติก 3 สายพันธุ์พิเศษที่มีคุณสมบัติโดดเด่น",
+        type: "image",
+        blog_categories: [
+          {
+            Name: "News",
+            slug: "news",
+            pivot: { blog_id: "1", "blog-category_id": "1" },
+          },
+          {
+            Name: "Model",
+            slug: "model",
+            pivot: { blog_id: "1", "blog-category_id": "2" },
+          },
+        ],
+        video: null,
+        picture: [
+          {
+            width: "1280",
+            height: "500",
+            url: "/uploads/post_1_29b9758e1b.jpg",
+            pivot: { related_id: "1", upload_file_id: "40" },
+          },
+        ],
+        small_picture: [
+          {
+            width: "450",
+            height: "230",
+            url: "/uploads/post_1_450x230_e8ab17ad7f.jpg",
+            pivot: { related_id: "1", upload_file_id: "41" },
+          },
+        ],
+      },
     };
   },
   created: function () {
     this.getBlog(false);
+    this.handlerGet();
   },
   mounted: function () {
     this.resizeHandler();
@@ -142,10 +167,10 @@ export default {
     getBlog: function (isScroll = true) {
       this.loaded = false;
 
-      this.posts = dataBlog.posts;
+      // this.posts = dataBlog.posts;
       this.recentPosts = dataBlog.recentPosts;
       this.blogCategoryList = dataBlog.blogCategoryList;
-      this.totalCount = dataBlog.totalCount;
+      // this.totalCount = dataBlog.totalCount;
 
       this.loaded = true;
     },
@@ -159,6 +184,44 @@ export default {
     },
     resizeHandler: function () {
       this.isSidebar = window.innerWidth > 991 ? false : true;
+    },
+    async handlerGet() {
+      var optionAxios = {
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+      };
+      let payload = {
+        key: "",
+        category_id: [],
+        product_id: [],
+        sort: 0,
+        pageNumber: this.$route.query.page ? this.$route.query.page : 1,
+        pageSize: this.itemsPerPage,
+        lang: "th",
+      };
+      axios
+        .post(`${baseUrl}/api/Home/get-news-all`, payload, optionAxios)
+        .then((response) => {
+          if (response.status == 200) {
+            this.posts = [];
+            this.totalCount = response.data.totalCount;
+            // console.log("check", this.products);
+            response.data.data.forEach((item) => {
+              this.posts.push({
+                ...this.postTemp,
+                id: item.mainId,
+                content: item.attachmentAlt,
+                date: item.contentDatetimeFull,
+                title: item.attachmentTitle,
+                thumbnailLink: item.thumbnailLink,
+              });
+            });
+          } else {
+          }
+        })
+        .catch((error) => {});
     },
   },
 };
