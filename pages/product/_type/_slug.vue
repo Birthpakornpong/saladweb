@@ -593,7 +593,7 @@ export default {
             this.productTemp.name = response.data.product_name;
             this.productTemp.sku = response.data.product_sku;
             this.productTemp.short_description =
-              response.data.product_description;
+              response.data.product_detail_th;
             this.productTemp.ratings = response.data.product_rating;
             this.productTemp.price = response.data.product_price;
             this.productTemp.quantity = response.data.product_quantity_th;
