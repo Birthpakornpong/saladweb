@@ -20,7 +20,7 @@
         class="form-control"
         name="search_term"
         id="search_term"
-        placeholder="I'm searching for..."
+        placeholder="search"
         required
         v-model="search_term"
         @input="searchProducts"
@@ -72,7 +72,7 @@
           style="width: 23em; border-radius: 10px; left: 1em; top: 6em;"
         >
           <nuxt-link
-            :to="'/product/default/' + product.slug"
+            :to="product.imgUrl ? '/product/default/' + product.slug : '/shop'"
             class="search-suggest"
             data-index="0"
             v-for="product in suggestions"
@@ -80,6 +80,7 @@
           >
             <div class="search-media">
               <img
+                v-if="product.imgUrl"
                 :src="product.imgUrl"
                 alt="Product"
                 width="40"
@@ -274,14 +275,25 @@ export default {
                 if (response.status == 200) {
                   let productsData = response.data.data;
                   this.products = [];
-                  productsData.forEach((item) => {
+                  this.suggestions = [];
+                  if (productsData.length > 0) {
+                    productsData.forEach((item) => {
+                      this.suggestions.push({
+                        ...this.searchTemp,
+                        name: item.product_name,
+                        imgUrl: item.productProfileLink,
+                        slug: item.id,
+                      });
+                    });
+                  } else {
                     this.suggestions.push({
                       ...this.searchTemp,
-                      name: item.product_name,
-                      imgUrl: item.productProfileLink,
-                      slug: item.id,
+                      name: "ไม่พบสินค้าที่ค้นหา",
+                      imgUrl: "",
+                      slug: "",
                     });
-                  });
+                  }
+
                   // this.$forceUpdate();
                 } else {
                 }
