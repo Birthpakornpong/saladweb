@@ -377,7 +377,7 @@ export default {
           : [];
       console.log("rou", this.orderBy);
       let payload = {
-        key: "",
+        key: this.$router.currentRoute.query.search_term || "",
         category_id: category || [],
         product_id: product || [],
         sort: this.orderBy,
