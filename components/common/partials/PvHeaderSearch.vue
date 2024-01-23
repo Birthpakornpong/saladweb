@@ -26,38 +26,7 @@
         @input="searchProducts"
         style="width: 20em;"
       />
-      <!-- <div class="select-custom" @click.stop="showSearchForm($event)">
-        <select
-          id="cat"
-          name="searchCategory"
-          v-model="searchCategory"
-          @change="searchProducts"
-        >
-          <option value>All Categories</option>
-          <option value="fashion">Fashion</option>
-          <option value="women">- Women</option>
-          <option value="men">- Men</option>
-          <option value="jewellery">- Jewellery</option>
-          <option value="kids">- Kids Fashion</option>
-          <option value="electronics">Electronics</option>
-          <option value="smart-tvs">- Smart TVs</option>
-          <option value="cameras">- Cameras</option>
-          <option value="games">- Games</option>
-          <option value="home-garden">Home &amp; Garden</option>
-          <option value="motors">Motors</option>
-          <option value="cars-and-trucks">- Cars and Trucks</option>
-          <option value="motorcycles-powersports">
-            - Motorcycles &amp; Powersports
-          </option>
-          <option value="accessories">
-            - Parts &amp; Accessories
-          </option>
-          <option value="boats">- Boats</option>
-          <option value="supplies">
-            - Auto Tools &amp; Supplies
-          </option>
-        </select>
-      </div> -->
+
       <button
         class="btn icon-magnifier"
         title="search"
@@ -93,34 +62,6 @@
                 v-html="emphasizeMatchWord(product.name)"
               ></div>
             </div>
-
-            <!-- <div class="search-price">
-              <div
-                class="product-price mb-0"
-                v-if="product.minPrice == product.maxPrice"
-              >
-                ${{ product.minPrice | priceFormat }}
-              </div>
-
-              <template v-else>
-                <div
-                  class="product-price mb-0"
-                  v-if="product.variants.length == 0"
-                >
-                  <span class="new-price"
-                    >${{ product.minPrice | priceFormat }}</span
-                  >
-                  <span class="old-price"
-                    >${{ product.maxPrice | priceFormat }}</span
-                  >
-                </div>
-                <div class="product-price mb-0" v-else>
-                  ${{ product.minPrice | priceFormat }} - ${{
-                    product.maxPrice | priceFormat
-                  }}
-                </div>
-              </template>
-            </div> -->
           </nuxt-link>
         </div>
       </div>

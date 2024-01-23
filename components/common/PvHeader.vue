@@ -28,9 +28,18 @@
         <div class="d-flex mr-4" style="width: 20em; justify-content: end;">
           <a class="contact-us pr-4 pb-1"
             >Follow us :
-            <i class="icon-facebook pr-2"></i>
-            <i class="bi bi-line pr-2"></i>
-            <i class="bi bi-tiktok"></i>
+            <a href="https://www.facebook.com/HOLISbySCGP" target="_blank"
+              ><i class="icon-facebook pr-2"></i
+            ></a>
+            <a href="https://lin.ee/rhxdzsQ" target="_blank">
+              <i class="bi bi-line pr-2"></i
+            ></a>
+            <a
+              href="https://www.tiktok.com/@doozyonlinebyscgp?_t=8g3T6UGiEG9&_r=1"
+              target="_blank"
+            >
+              <i class="bi bi-tiktok"></i>
+            </a>
           </a>
           <!-- <div class="header-dropdown custom-header">
             <a href="javascript:;">ไทย</a>
@@ -45,26 +54,6 @@
               </ul>
             </div>
           </div> -->
-          <!-- <nuxt-link
-						to="/pages/login"
-						class="header-icon d-lg-block d-none"
-					>
-						<div class="header-user">
-							<i class="icon-user-2"></i>
-							<div class="header-userinfo">
-								<span class="d-inline-block font2 line-height-1">Hello!</span>
-								<h4 class="mb-0">My Account</h4>
-							</div>
-						</div>
-					</nuxt-link>
-
-					<nuxt-link
-						to="/pages/wishlist"
-						class="header-icon"
-						title="wishlist"
-					>
-						<i class="icon-wishlist-2"></i>
-					</nuxt-link> -->
 
           <!-- <pv-cart-menu></pv-cart-menu> -->
         </div>

@@ -25,10 +25,16 @@
             <div class="row link-lg link-parts">
               <div class="col-12 link-part">
                 <ul class="links mb-0">
-                  <li><a href="javascript:;">Home</a></li>
-                  <li><a href="javascript:;">Products</a></li>
-                  <li><a href="javascript:;">News & Activities</a></li>
-                  <li><a href="javascript:;">Our Story</a></li>
+                  <li><nuxt-link to="/">Home</nuxt-link></li>
+                  <li><nuxt-link to="/shop">Products</nuxt-link></li>
+                  <li>
+                    <nuxt-link to="/pages/blog">News & Activities</nuxt-link>
+                  </li>
+                  <li>
+                    <nuxt-link to="/pages/ourstory/post-format-image-gallery"
+                      >Our Story</nuxt-link
+                    >
+                  </li>
                 </ul>
               </div>
             </div>
@@ -41,12 +47,17 @@
             <div class="row">
               <div class="col-sm-6">
                 <ul class="links mb-0">
-                  <li><a href="javascript:;">Immunity</a></li>
+                  <!-- <li><a href="javascript:;">Immunity</a></li>
                   <li><a href="javascript:;">Brain</a></li>
                   <li><a href="javascript:;">Cholesterol</a></li>
                   <li><a href="javascript:;">Digestive System</a></li>
                   <li><a href="javascript:;">Skin Health</a></li>
-                  <li><a href="javascript:;">Relaxation</a></li>
+                  <li><a href="javascript:;">Relaxation</a></li> -->
+                  <li v-for="(item, index) in categorys" :key="index">
+                    <nuxt-link :to="`/shop?category=${item.size}`">
+                      {{ item.name }}
+                    </nuxt-link>
+                  </li>
                 </ul>
               </div>
             </div>
@@ -99,7 +110,52 @@
     </div>
   </footer>
 </template>
+<script>
+import axios from "axios";
+import Api, { baseUrl } from "~/api";
+export default {
+  setup() {},
+  data() {
+    return {
+      categorys: [],
+    };
+  },
+  mounted() {
+    this.handlerGet();
+  },
+  methods: {
+    async handlerGet() {
+      var optionAxios = {
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+      };
 
+      axios
+        .get(`${baseUrl}/api/Home/get-category-name`, optionAxios)
+        .then((response) => {
+          if (response.status == 200) {
+            let productsData = response.data;
+
+            this.categorys = [];
+
+            productsData.forEach((item) => {
+              this.categorys.push({
+                ...item,
+                name: item.category_name,
+
+                size: String(item.id),
+              });
+            });
+          } else {
+          }
+        })
+        .catch((error) => {});
+    },
+  },
+};
+</script>
 <style>
 .footer .container-fluid {
   background: linear-gradient(to right, #800000, #942626, #942626, #800000);
