@@ -2,12 +2,12 @@
   <header class="header" style="font-family: 'SCG' !important;">
     <div class="header-middle sticky-header mobile-sticky">
       <div class="container-fluid">
-        <div class="d-flex">
+        <div class="d-flex" style="width: 20em; justify-content: start;">
           <div class="header-right d-flex pr-0">
             <pv-header-search></pv-header-search>
           </div>
         </div>
-        <div class="d-flex" style="justify-content: center;">
+        <div class="d-flex" style="justify-content: center; width: 20em;">
           <button
             class="mobile-menu-toggler"
             type="button"
@@ -16,7 +16,7 @@
             <i class="fas fa-bars"></i>
           </button>
 
-          <nuxt-link to="/" class="logo mt-3">
+          <nuxt-link to="/" class="mt-3">
             <img
               src="~/static/images/home/Logo_Holis.svg"
               alt="Porto Logo"
@@ -25,7 +25,7 @@
           </nuxt-link>
         </div>
 
-        <div class="d-flex mr-4">
+        <div class="d-flex mr-4" style="width: 20em; justify-content: end;">
           <a class="contact-us pr-4 pb-1"
             >Follow us :
             <i class="icon-facebook pr-2"></i>
