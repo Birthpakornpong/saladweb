@@ -12,7 +12,7 @@
           :src="item.url"
           alt="slider image"
           width="1200"
-          style="height: 45em;"
+          style="max-height: 45em;"
         />
       </div>
     </div>
