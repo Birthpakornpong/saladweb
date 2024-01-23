@@ -2,8 +2,12 @@
   <header class="header" style="font-family: 'SCG' !important;">
     <div class="header-middle sticky-header mobile-sticky">
       <div class="container-fluid">
-        <div class="d-flex"></div>
         <div class="d-flex">
+          <div class="header-right d-flex pr-0">
+            <pv-header-search></pv-header-search>
+          </div>
+        </div>
+        <div class="d-flex" style="justify-content: center;">
           <button
             class="mobile-menu-toggler"
             type="button"
@@ -75,10 +79,6 @@
         <div class="header-center d-flex justify-content-center">
           <pv-main-menu></pv-main-menu>
         </div>
-
-        <!-- <div class="header-right d-flex pr-0">
-					<pv-header-search></pv-header-search>
-				</div> -->
       </div>
     </div>
   </header>
