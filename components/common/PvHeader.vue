@@ -1,8 +1,8 @@
 <template>
   <header class="header" style="font-family: 'SCG' !important;">
     <div class="header-middle sticky-header mobile-sticky">
-      <div class="container-fluid">
-        <div class="d-flex" style="width: 20em; justify-content: start;">
+      <div class="container-fluid centermobile">
+        <div class="hidemobile" style="width: 20em; justify-content: start;">
           <div class="header-right d-flex pr-0">
             <pv-header-search></pv-header-search>
           </div>
@@ -25,7 +25,7 @@
           </nuxt-link>
         </div>
 
-        <div class="d-flex mr-4" style="width: 20em; justify-content: end;">
+        <div class="mr-4 hidemobile" style="width: 20em; justify-content: end;">
           <a class="contact-us pr-4 pb-1"
             >Follow us :
             <a href="https://www.facebook.com/HOLISbySCGP" target="_blank"
@@ -121,5 +121,25 @@ export default {
 
 .header .header-right .custom-header {
   font-weight: bold;
+}
+
+.hidemobile {
+  display: flex;
+}
+
+@media only screen and (max-width: 600px) {
+  .hidemobile {
+    display: none;
+  }
+}
+
+.centermobile {
+  justify-content: space-between;
+}
+
+@media only screen and (max-width: 600px) {
+  .centermobile {
+    justify-content: center !important;
+  }
 }
 </style>

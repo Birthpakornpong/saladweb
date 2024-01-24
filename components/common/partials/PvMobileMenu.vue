@@ -126,6 +126,40 @@
             </li>
           </ul>
         </nav>
+
+        <form
+          class="search-wrapper mb-2"
+          action="#"
+          @submit.prevent="submitSearchForm"
+        >
+          <input
+            type="text"
+            class="form-control mb-0"
+            placeholder="Search..."
+            required
+            v-model="search_term"
+            style="color: white; font-size: 1.4em;"
+          />
+          <button
+            class="btn icon-search text-white bg-transparent p-0"
+            type="submit"
+          ></button>
+        </form>
+
+        <!-- <div class="social-icons">
+          <a
+            href="javascript:;"
+            class="social-icon social-facebook icon-facebook"
+          ></a>
+          <a
+            href="javascript:;"
+            class="social-icon social-twitter icon-twitter"
+          ></a>
+          <a
+            href="javascript:;"
+            class="social-icon social-instagram icon-instagram"
+          ></a>
+        </div> -->
       </div>
     </div>
   </div>
