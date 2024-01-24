@@ -1,5 +1,5 @@
 <template>
-  <main class="main home-page" style="font-family: 'SCG' !important;">
+  <main class="main home-page px-3" style="font-family: 'SCG' !important;">
     <section
       class="intro-section mb-3"
       data-animation-name="fadeInUpShorter"
@@ -20,10 +20,10 @@
     >
       <div class="row">
         <div
-          class="d-flex col-12 col-lg-3 col-md-3"
+          class="d-flex col-12 col-lg-3 col-md-12"
           style="justify-content: end; display: flex;"
         >
-          <img :src="video[0].imgLeft" style="height: 33em;" />
+          <img :src="video[0].imgLeft" style="max-height: 33em;" />
         </div>
         <!-- <div class="col-3" style="justify-content: end; display: flex;"> -->
 
@@ -64,17 +64,17 @@
           </div> -->
         <!-- </div> -->
         <div
-          class="col-12 d-flex col-lg-6 col-md-6"
-          style="justify-content: end; display: flex;"
+          class="col-12 d-flex col-lg-6 col-md-12"
+          style="display: flex; justify-content: center; align-items: center;"
         >
-          <video ref="videoPlayers" controls autoplay style="height: 33em;">
+          <video ref="videoPlayers" controls autoplay style="max-width: 100%;">
             <source :src="video[0].url" type="video/mp4" />
           </video>
         </div>
 
         <div
-          class="col-12 d-flex col-lg-3 col-md-3"
-          style="justify-content: end; display: flex;"
+          class="col-12 d-flex col-lg-3 col-md-12"
+          style="display: flex; justify-content: start;"
         >
           <img :src="video[0].imgRight" style="height: 33em;" />
         </div>
@@ -129,7 +129,7 @@
             ref="videoPlayerrd"
             controls
             autoplay
-            style="width: 50em; height: 33em;"
+            style="width: 50em; height: 33em; max-width: 100%;"
           >
             <source :src="video[0].url" type="video/mp4" />
           </video>
@@ -155,7 +155,7 @@
             ref="videoPlayersc"
             controls
             autoplay
-            style="width: 50em; height: 33em;"
+            style="width: 50em; height: 33em; max-width: 100%;"
           >
             <source :src="video[0].url" type="video/mp4" />
           </video>
