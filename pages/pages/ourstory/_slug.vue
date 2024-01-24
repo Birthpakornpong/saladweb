@@ -1,23 +1,6 @@
 <template>
   <main>
-    <div class="container">
-      <div class="row main-content">
-        <div class="col-12">
-          <template v-if="!loaded">
-            <div class="skeleton-body">
-              <div class="post"></div>
-              <div class="reply"></div>
-            </div>
-          </template>
-
-          <template v-else>
-            <pv-our-story :post="post" :ad-class="'zoom-effect'"></pv-our-story>
-
-            <hr class="mt-2 mb-1" />
-          </template>
-        </div>
-      </div>
-    </div>
+    <img src="~/static/our.png" />
   </main>
 </template>
 
