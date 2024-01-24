@@ -76,7 +76,7 @@
           class="col-12 d-flex col-lg-3 col-md-12"
           style="display: flex; justify-content: start;"
         >
-          <img :src="video[0].imgRight" style="height: 33em;" />
+          <img :src="video[0].imgRight" />
         </div>
         <!-- <div class="col-3">
           <img :src="video[0].imgRight" style="height: 33em;" /> -->
@@ -129,13 +129,13 @@
             ref="videoPlayerrd"
             controls
             autoplay
-            style="width: 50em; height: 33em; max-width: 100%;"
+            style="width: 50em; max-width: 100%;"
           >
             <source :src="video[0].url" type="video/mp4" />
           </video>
         </div>
         <div class="col-4">
-          <img :src="video[0].imgRight" style="height: 33em;" />
+          <img :src="video[0].imgRight" />
         </div>
       </div>
     </div>
@@ -148,14 +148,14 @@
     >
       <div class="row">
         <div class="col-4" style="justify-content: end; display: flex;">
-          <img :src="video[0].imgLeft" style="height: 33em;" />
+          <img :src="video[0].imgLeft" />
         </div>
         <div class="col-8">
           <video
             ref="videoPlayersc"
             controls
             autoplay
-            style="width: 50em; height: 33em; max-width: 100%;"
+            style="width: 50em; max-width: 100%;"
           >
             <source :src="video[0].url" type="video/mp4" />
           </video>
