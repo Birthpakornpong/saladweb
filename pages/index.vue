@@ -12,6 +12,15 @@
     <div class="header-text mb-3" v-if="video.length > 0">
       <div>{{ video[0].headText }}</div>
     </div>
+    <div ref="videoPlayerstest" style="display: none;">
+      <video v-show="variable" muted controls autoplay>
+        <source src="videotest.mp4" type="video/mp4" />
+      </video>
+      <video v-show="!variable" controls style="max-width: 100%;">
+        <source src="videotest.mp4" type="video/mp4" />
+      </video>
+    </div>
+
     <div
       v-if="video.length > 0 && positionContent == 'center'"
       data-animation-name="fadeInUpShorter"
@@ -67,7 +76,23 @@
           class="col-12 d-flex col-lg-6 col-md-12"
           style="display: flex; justify-content: center; align-items: center;"
         >
-          <video ref="videoPlayers" controls autoplay style="max-width: 100%;">
+          <video
+            v-show="variable"
+            ref="videoPlayers"
+            muted
+            controls
+            autoplay
+            style="max-width: 100%;"
+          >
+            <source :src="video[0].url" type="video/mp4" />
+          </video>
+          <video
+            v-show="!variable"
+            ref="videoPlayers"
+            muted
+            controls
+            style="max-width: 100%;"
+          >
             <source :src="video[0].url" type="video/mp4" />
           </video>
         </div>
@@ -126,10 +151,21 @@
       <div class="row">
         <div class="col-8" style="justify-content: end; display: flex;">
           <video
-            ref="videoPlayerrd"
+            v-show="variable"
+            ref="videoPlayers"
+            muted
             controls
             autoplay
-            style="width: 50em; max-width: 100%;"
+            style="max-width: 100%;"
+          >
+            <source :src="video[0].url" type="video/mp4" />
+          </video>
+          <video
+            v-show="!variable"
+            ref="videoPlayers"
+            muted
+            controls
+            style="max-width: 100%;"
           >
             <source :src="video[0].url" type="video/mp4" />
           </video>
@@ -152,10 +188,21 @@
         </div>
         <div class="col-8">
           <video
-            ref="videoPlayersc"
+            v-show="variable"
+            ref="videoPlayers"
+            muted
             controls
             autoplay
-            style="width: 50em; max-width: 100%;"
+            style="max-width: 100%;"
+          >
+            <source :src="video[0].url" type="video/mp4" />
+          </video>
+          <video
+            v-show="!variable"
+            ref="videoPlayers"
+            muted
+            controls
+            style="max-width: 100%;"
           >
             <source :src="video[0].url" type="video/mp4" />
           </video>
@@ -210,6 +257,8 @@ export default {
   },
   data: function () {
     return {
+      variable: false,
+      elementVideo: null,
       positionContent: "center",
       products: [],
       posts: [],
@@ -289,6 +338,8 @@ export default {
     this.bestProducts = getTopSellingProducts(indexData.products);
     this.topRatedProducts = getTopRatedProducts(indexData.products);
 
+    var videos = document.querySelector("video");
+    console.log("check", videos);
     // this.timerId = setTimeout( () => {
     // 	if (
     // 		this.$route.path === '/' &&
@@ -302,6 +353,31 @@ export default {
     // 		);
     // 	}
     // }, 10000 );
+    let observer = new IntersectionObserver(
+      (entries, observer) => {
+        console.log("pass", this.$refs.videoPlayers);
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            this.variable = true;
+            this.$nextTick(() => {
+              // this.$refs.videoPlayerstest.play().catch((e) => {
+              //   console.error("Error playing video:", e);
+              // // });
+              // videos.click();
+              this.variable = true;
+              this.$forceUpdate();
+            });
+          } else {
+            this.variable = false;
+            // this.$refs.videoPlayerstest.pause();
+          }
+        });
+      },
+      { threshold: 0.5 }
+    ); // threshold คือเปอร์เซ็นต์ขององค์ประกอบที่ต้องปรากฏในหน้าจอ
+    if (this.$refs.videoPlayerstest) {
+      observer.observe(this.$refs.videoPlayerstest);
+    }
   },
   methods: {
     async handlerGet() {

@@ -46,13 +46,41 @@
           <!-- <inner-image-zoom :src="'./review.png'" /> -->
         </div>
       </div>
+      <div ref="videoPlayerstest" style="display: none;">
+        <video v-show="!variable" muted controls autoplay>
+          <source src="videotest.mp4" type="video/mp4" />
+        </video>
+        <video v-show="variable" controls style="max-width: 100%;">
+          <source src="videotest.mp4" type="video/mp4" />
+        </video>
+      </div>
       <div class="row main-content" v-if="product">
         <div
           class="col-12 d-flex"
           style="justify-content: center;"
           v-if="product.videourl"
         >
-          <video ref="videoPlayer" muted controls autoplay style="width: 100%;">
+          <!-- <video ref="videoPlayer" muted controls autoplay style="width: 100%;">
+            <source :src="product.videourl" type="video/mp4" />
+          </video> -->
+
+          <video
+            v-show="!variable"
+            ref="videoPlayers"
+            muted
+            controls
+            autoplay
+            style="width: 100%;"
+          >
+            <source :src="product.videourl" type="video/mp4" />
+          </video>
+          <video
+            v-show="variable"
+            ref="videoPlayers"
+            muted
+            controls
+            style="width: 100%;"
+          >
             <source :src="product.videourl" type="video/mp4" />
           </video>
         </div>
@@ -97,6 +125,7 @@ export default {
   },
   data: function () {
     return {
+      variable: false,
       reviews: [],
       product: null,
       relatedProducts: [],
@@ -506,6 +535,48 @@ export default {
     this.handlerGet();
     this.handlerGetRecom();
     console.log("data check", mockData);
+  },
+  mounted() {
+    var videos = document.querySelector("video");
+    console.log("check", videos);
+    // this.timerId = setTimeout( () => {
+    // 	if (
+    // 		this.$route.path === '/' &&
+    // 		getCookie( 'newsletter' ) !== 'false'
+    // 	) {
+    // 		this.$modal.show(
+    // 			() =>
+    // 				import( '~/components/features/modal/PvNewsletterModal' ),
+    // 			{},
+    // 			{ width: '740', height: 'auto', adaptive: true, class: 'newsletter-modal' }
+    // 		);
+    // 	}
+    // }, 10000 );
+    let observer = new IntersectionObserver(
+      (entries, observer) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            this.variable = true;
+            this.$nextTick(() => {
+              // this.$refs.videoPlayerstest.play().catch((e) => {
+              //   console.error("Error playing video:", e);
+              // // });
+              // videos.click();
+              this.variable = true;
+              this.$forceUpdate();
+            });
+          } else {
+            this.variable = false;
+            // this.$refs.videoPlayerstest.pause();
+          }
+        });
+      },
+      { threshold: 0.5 }
+    ); // threshold คือเปอร์เซ็นต์ขององค์ประกอบที่ต้องปรากฏในหน้าจอ
+    if (this.$refs.videoPlayerstest) {
+      console.log("pass");
+      observer.observe(this.$refs.videoPlayerstest);
+    }
   },
   methods: {
     getProduct: function () {
