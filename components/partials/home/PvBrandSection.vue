@@ -372,10 +372,10 @@ export default {
 @media only screen and (max-width: 600px) {
   .category-section .grid-container {
     display: grid;
-    grid: none;
-    grid-gap: 50px;
+    /* grid: none; */
+    grid-gap: 2em;
     background-color: white;
-    padding: 40px;
+    padding: 1em;
     justify-content: center;
   }
 }
@@ -395,6 +395,25 @@ export default {
   font-weight: 600;
   position: relative;
   overflow: hidden;
+}
+
+@media only screen and (max-width: 600px) {
+  .category-section .grid-container .grid-items {
+    background-color: #771219;
+    color: white;
+    text-align: center;
+    height: 10em;
+    width: 7em;
+    font-size: 1em;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    position: relative;
+    overflow: hidden;
+  }
 }
 
 /* .category-section .grid-container .grid-items::before {
