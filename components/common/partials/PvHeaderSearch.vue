@@ -14,7 +14,7 @@
 
   <form action="#" method="get" @submit.prevent="submitSearchForm" class="mb-0">
     <div class="header-search-wrapper" style="position: unset;">
-      <label for="search_term" class="sr-only">Search</label>
+      <label for="search_term" class="sr-only">ค้นหา</label>
       <input
         type="text"
         class="form-control"

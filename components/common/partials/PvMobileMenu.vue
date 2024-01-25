@@ -14,9 +14,9 @@
               <nuxt-link to="/">Home</nuxt-link>
             </li>
 
-            <!-- <li :class="{ open: catOpened }">
+            <li :class="{ open: catOpened }">
               <nuxt-link to="/shop" class="sub-menu-link menu-with-ul">
-                Categories
+                Products
                 <span
                   class="mmenu-btn"
                   @click.prevent="catOpened = !catOpened"
@@ -31,13 +31,13 @@
                     :class="{ open: var1Opened }"
                   >
                     <a href="javascript:;">
-                      Variations1
+                      All Product
                       <span class="mmenu-btn"></span>
                     </a>
 
                     <vue-slide-toggle tag="ul" :open="var1Opened">
                       <li
-                        v-for="(item, index) in mainMenu.shop.variation1"
+                        v-for="(item, index) in productNames"
                         :key="'shop1' + index"
                       >
                         <nuxt-link :to="item.url">{{ item.title }}</nuxt-link>
@@ -53,13 +53,13 @@
                     :class="{ open: var2Opened }"
                   >
                     <a href="javascript:;">
-                      Variations2
+                      Product Category
                       <span class="mmenu-btn"></span>
                     </a>
 
                     <vue-slide-toggle tag="ul" :open="var2Opened">
                       <li
-                        v-for="(item, index) in mainMenu.shop.variation2"
+                        v-for="(item, index) in categorys"
                         :key="'shop2' + index"
                       >
                         <nuxt-link :to="item.url">{{ item.title }}</nuxt-link>
@@ -68,7 +68,7 @@
                   </li>
                 </ul>
               </vue-slide-toggle>
-            </li> -->
+            </li>
 
             <!-- <li :class="{ open: prodOpened }">
               <nuxt-link to="/shop" class="sub-menu-link menu-with-ul">
@@ -118,7 +118,7 @@
           </ul>
         </nav>
 
-        <form
+        <!-- <form
           class="search-wrapper mb-2"
           action="#"
           @submit.prevent="submitSearchForm"
@@ -135,22 +135,7 @@
             class="btn icon-search text-white bg-transparent p-0"
             type="submit"
           ></button>
-        </form>
-
-        <!-- <div class="social-icons">
-          <a
-            href="javascript:;"
-            class="social-icon social-facebook icon-facebook"
-          ></a>
-          <a
-            href="javascript:;"
-            class="social-icon social-twitter icon-twitter"
-          ></a>
-          <a
-            href="javascript:;"
-            class="social-icon social-instagram icon-instagram"
-          ></a>
-        </div> -->
+        </form> -->
       </div>
     </div>
   </div>
@@ -159,6 +144,8 @@
 <script>
 import { VueSlideToggle } from "vue-slide-toggle";
 import { mainMenu } from "~/utils/data/menu";
+import axios from "axios";
+import Api, { baseUrl } from "~/api";
 
 export default {
   components: {
@@ -175,7 +162,13 @@ export default {
       prod2Opened: false,
       pageOpened: false,
       search_term: "",
+      categorys: [],
+      productNames: [],
     };
+  },
+  mounted() {
+    this.handlerGet();
+    this.handlerGetProduct();
   },
   methods: {
     hideMobileMenu: function () {
@@ -188,6 +181,72 @@ export default {
           search_term: this.search_term,
         },
       });
+    },
+    async handlerGet() {
+      var optionAxios = {
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+      };
+
+      axios
+        .get(`${baseUrl}/api/Home/get-category-name`, optionAxios)
+        .then((response) => {
+          if (response.status == 200) {
+            let productsData = response.data;
+
+            this.categorys = [];
+
+            productsData.forEach((item) => {
+              this.categorys.push({
+                ...item,
+                title: item.category_name,
+                id: String(item.id),
+                size: String(item.id),
+                url: `/shop?category=${item.id}`,
+              });
+            });
+          } else {
+          }
+        })
+        .catch((error) => {});
+    },
+    async handlerGetProduct() {
+      var optionAxios = {
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+      };
+
+      axios
+        .get(`${baseUrl}/api/Home/get-product-name`, optionAxios)
+        .then((response) => {
+          if (response.status == 200) {
+            let productsData = response.data;
+
+            this.productNames = [];
+
+            productsData.forEach((item) => {
+              this.productNames.push({
+                ...item,
+                name: String(item.id),
+                nameShow: item.product_name,
+                title: item.product_name,
+                size: String(item.id),
+                id: String(item.id),
+                url: `/product/default/${item.id}`,
+              });
+            });
+
+            console.log("checprod", this.productNames);
+
+            this.$forceUpdate();
+          } else {
+          }
+        })
+        .catch((error) => {});
     },
   },
 };

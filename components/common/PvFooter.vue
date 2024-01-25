@@ -1,5 +1,5 @@
 <template>
-  <footer class="footer">
+  <footer class="footer mb-0">
     <div class="container-fluid">
       <div class="row">
         <div class="col-12 col-lg-5 col-md-5">
@@ -19,7 +19,7 @@
           </div>
         </div>
 
-        <div class="col-6 col-lg-2 col-md-2" style="width: auto;">
+        <div class="col-6 col-lg-2 col-md-2 hidemobile" style="width: auto;">
           <div class="widget">
             <h4 class="widget-title">Sitemap</h4>
             <div class="row link-lg link-parts">
@@ -41,7 +41,7 @@
           </div>
         </div>
 
-        <div class="col-6 col-lg-2 col-md-2" style="width: auto;">
+        <div class="col-6 col-lg-2 col-md-2 hidemobile" style="width: auto;">
           <div class="widget">
             <h4 class="widget-title">Category</h4>
             <div class="row">
@@ -187,5 +187,25 @@ export default {
 .widget .widget-title {
   color: white;
   margin-top: 3rem;
+}
+
+.hidemobile {
+  display: flex;
+}
+
+@media only screen and (max-width: 600px) {
+  .hidemobile {
+    display: none !important;
+  }
+}
+
+.showmobile {
+  display: none;
+}
+
+@media only screen and (max-width: 600px) {
+  .showmobile {
+    display: flex !important;
+  }
 }
 </style>

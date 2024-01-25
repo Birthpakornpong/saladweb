@@ -1,5 +1,5 @@
 <template>
-  <main class="main home-page px-3" style="font-family: 'SCG' !important;">
+  <main class="main home-page" style="font-family: 'SCG' !important;">
     <section
       class="intro-section mb-3"
       data-animation-name="fadeInUpShorter"
@@ -29,7 +29,7 @@
     >
       <div class="row">
         <div
-          class="d-flex col-12 col-lg-3 col-md-12"
+          class="d-flex col-12 col-lg-3 col-md-12 hidemobile"
           style="justify-content: end; display: flex;"
         >
           <img :src="video[0].imgLeft" style="max-height: 33em;" />
@@ -96,7 +96,12 @@
             <source :src="video[0].url" type="video/mp4" />
           </video>
         </div>
-
+        <div
+          class="d-flex col-12 col-lg-3 col-md-12 showmobile"
+          style="justify-content: end;"
+        >
+          <img :src="video[0].imgLeft" style="max-height: 33em;" />
+        </div>
         <div
           class="col-12 d-flex col-lg-3 col-md-12"
           style="display: flex; justify-content: start;"
@@ -470,5 +475,25 @@ export default {
   justify-content: flex-start;
   display: flex;
   padding-left: 2em;
+}
+
+.hidemobile {
+  display: flex;
+}
+
+@media only screen and (max-width: 600px) {
+  .hidemobile {
+    display: none !important;
+  }
+}
+
+.showmobile {
+  display: none !important;
+}
+
+@media only screen and (max-width: 600px) {
+  .showmobile {
+    display: flex !important;
+  }
 }
 </style>

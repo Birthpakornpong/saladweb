@@ -5,7 +5,7 @@
         <nuxt-link to="/">Home</nuxt-link>
       </li>
 
-      <!-- <li>
+      <li>
         <nuxt-link
           to="/shop"
           class="sub-menu-link menu-with-ul"
@@ -15,30 +15,42 @@
 
         <div class="megamenu megamenu-fixed-width megamenu-3cols">
           <div class="row">
-            <div class="col-lg-4">
-              <a href="javascript:;" class="nolink">Shop</a>
+            <div class="col-lg-6">
+              <a href="javascript:;" class="nolink">All Product</a>
 
               <ul class="submenu">
-                <li v-for="item in mainMenu.shop.variation1" :key="item.id">
+                <li v-for="item in productNames" :key="item.id">
                   <nuxt-link :to="item.url">
                     {{ item.title }}
-                    <span class="tip tip-hot" v-if="item.hot">Hot</span>
+                    <!-- <span class="tip tip-hot" v-if="item.hot">Hot</span> -->
+                  </nuxt-link>
+                </li>
+              </ul>
+            </div>
+            <div class="col-lg-6">
+              <a href="javascript:;" class="nolink">Product Catagory</a>
+
+              <ul class="submenu">
+                <li v-for="item in categorys" :key="item.id">
+                  <nuxt-link :to="item.url">
+                    {{ item.title }}
+                    <!-- <span class="tip tip-hot" v-if="item.hot">Hot</span> -->
                   </nuxt-link>
                 </li>
               </ul>
             </div>
           </div>
         </div>
-      </li> -->
+      </li>
 
-      <li>
+      <!-- <li>
         <nuxt-link
           to="/shop"
           class="menu-with-ul"
           :class="{ active: $route.path.indexOf('/shop') > -1 }"
           >Shop</nuxt-link
         >
-      </li>
+      </li> -->
 
       <li>
         <nuxt-link
@@ -62,11 +74,15 @@
 </template>
 <script>
 import { mainMenu } from "~/utils/data/menu";
+import axios from "axios";
+import Api, { baseUrl } from "~/api";
 
 export default {
   data: function () {
     return {
       mainMenu,
+      categorys: [],
+      productNames: [],
     };
   },
   computed: {
@@ -85,6 +101,78 @@ export default {
     isHome: function () {
       if (this.$route.path === "/") return true;
       return false;
+    },
+  },
+  mounted() {
+    this.handlerGet();
+    this.handlerGetProduct();
+  },
+  methods: {
+    async handlerGet() {
+      var optionAxios = {
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+      };
+
+      axios
+        .get(`${baseUrl}/api/Home/get-category-name`, optionAxios)
+        .then((response) => {
+          if (response.status == 200) {
+            let productsData = response.data;
+
+            this.categorys = [];
+
+            productsData.forEach((item) => {
+              this.categorys.push({
+                ...item,
+                title: item.category_name,
+                id: String(item.id),
+                size: String(item.id),
+                url: `/shop?category=${item.id}`,
+              });
+            });
+          } else {
+          }
+        })
+        .catch((error) => {});
+    },
+    async handlerGetProduct() {
+      var optionAxios = {
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+      };
+
+      axios
+        .get(`${baseUrl}/api/Home/get-product-name`, optionAxios)
+        .then((response) => {
+          if (response.status == 200) {
+            let productsData = response.data;
+
+            this.productNames = [];
+
+            productsData.forEach((item) => {
+              this.productNames.push({
+                ...item,
+                name: String(item.id),
+                nameShow: item.product_name,
+                title: item.product_name,
+                size: String(item.id),
+                id: String(item.id),
+                url: `/product/default/${item.id}`,
+              });
+            });
+
+            console.log("checprod", this.productNames);
+
+            this.$forceUpdate();
+          } else {
+          }
+        })
+        .catch((error) => {});
     },
   },
 };

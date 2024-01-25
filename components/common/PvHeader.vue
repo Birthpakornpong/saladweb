@@ -1,13 +1,8 @@
 <template>
   <header class="header" style="font-family: 'SCG' !important;">
-    <div class="header-middle sticky-header mobile-sticky">
-      <div class="container-fluid centermobile">
-        <div class="hidemobile" style="width: 20em; justify-content: start;">
-          <div class="header-right d-flex pr-0">
-            <pv-header-search></pv-header-search>
-          </div>
-        </div>
-        <div class="d-flex" style="justify-content: center; width: 20em;">
+    <div class="sticky-header mobile-sticky" style="background: #fff;">
+      <div class="container-fluid centermobile row">
+        <div class="col-4" style="justify-content: start; display: flex;">
           <button
             class="mobile-menu-toggler"
             type="button"
@@ -15,18 +10,22 @@
           >
             <i class="fas fa-bars"></i>
           </button>
-
+          <div class="d-flex pr-0 hidemobile">
+            <pv-header-search></pv-header-search>
+          </div>
+        </div>
+        <div class="d-flex col-4" style="justify-content: center; width: 20em;">
           <nuxt-link to="/" class="mt-3">
             <img
               src="~/static/images/home/Logo_Holis.svg"
               alt="Porto Logo"
-              style="height: 70px; max-width: none;"
+              style="height: 3em; max-width: none;"
             />
           </nuxt-link>
         </div>
 
-        <div class="mr-4 hidemobile" style="width: 20em; justify-content: end;">
-          <a class="contact-us pr-4 pb-1"
+        <div class="col-4 hidemobilelogo" style="justify-content: end;">
+          <a class="contact-us pb-1"
             >Follow us :
             <a href="https://www.facebook.com/HOLISbySCGP" target="_blank"
               ><i class="icon-facebook pr-2"></i
@@ -57,6 +56,13 @@
 
           <!-- <pv-cart-menu></pv-cart-menu> -->
         </div>
+        <div
+          class="col-12 d-flex mb-2 showmobile"
+          style="justify-content: center;"
+        >
+          <!-- <pv-header-search></pv-header-search> -->
+          <pv-header-search></pv-header-search>
+        </div>
       </div>
     </div>
 
@@ -86,6 +92,11 @@ export default {
     PvCartMenu,
     PvHeaderSearch,
   },
+  data() {
+    return {
+      search_term: "",
+    };
+  },
   methods: {
     openLoginModal: function () {
       this.$modal.show(
@@ -103,6 +114,14 @@ export default {
       headerSearch
         .querySelector(".header-search-wrapper")
         .classList.add("show");
+    },
+    submitSearchForm: function (e) {
+      this.$router.push({
+        path: "/shop",
+        query: {
+          search_term: this.search_term,
+        },
+      });
     },
   },
 };
@@ -123,13 +142,25 @@ export default {
   font-weight: bold;
 }
 
+.hidemobilelogo {
+  display: flex;
+}
+@media only screen and (max-width: 600px) {
+  .hidemobilelogo {
+    font-size: 0.5em;
+    display: flex;
+    margin-right: 0;
+    padding: 0;
+  }
+}
+
 .hidemobile {
   display: flex;
 }
 
 @media only screen and (max-width: 600px) {
   .hidemobile {
-    display: none;
+    display: none !important;
   }
 }
 
@@ -139,7 +170,17 @@ export default {
 
 @media only screen and (max-width: 600px) {
   .centermobile {
-    justify-content: center !important;
+    justify-content: space-between;
+  }
+}
+
+.showmobile {
+  display: none !important;
+}
+
+@media only screen and (max-width: 600px) {
+  .showmobile {
+    display: flex !important;
   }
 }
 </style>

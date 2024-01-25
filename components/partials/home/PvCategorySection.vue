@@ -1,7 +1,12 @@
 <template>
   <section class="welcome-section">
-    <div class="container">
-      <div class="category-section mb-4">
+    <div class="container" v-if="products.length > 0">
+      <div
+        class="category-section mb-4 appear-animate"
+        data-animation-name="fadeInUpShorter"
+        data-animation-delay="400"
+        v-animate
+      >
         <div class="header-text">
           <div>BEST SELLERS</div>
         </div>
@@ -24,16 +29,33 @@
       </div>
 
       <div
-        class="row appear-animate"
+        class="row appear-animate hidemobile"
         data-animation-name="fadeInUpShorter"
         data-animation-delay="400"
         v-animate
         v-if="products.length > 0"
-        style="display: flex; justify-content: center;"
+        style="justify-content: center;"
       >
         <div
           class="col-6 col-md-4 col-xl-3"
           v-for="(product, index) in products.slice(0, 3)"
+          :key="'wel-' + index"
+        >
+          <pv-product-one :product="product"></pv-product-one>
+        </div>
+      </div>
+
+      <div
+        class="row appear-animate showmobile"
+        data-animation-name="fadeInUpShorter"
+        data-animation-delay="400"
+        v-animate
+        v-if="products.length > 0"
+        style="justify-content: center;"
+      >
+        <div
+          class="col-6 col-md-4 col-xl-3"
+          v-for="(product, index) in products.slice(0, 2)"
           :key="'wel-' + index"
         >
           <pv-product-one :product="product"></pv-product-one>
@@ -64,5 +86,23 @@ export default {
   font-size: x-large;
   color: #ab0011;
   position: relative;
+}
+.hidemobile {
+  display: flex !important;
+}
+
+@media only screen and (max-width: 600px) {
+  .hidemobile {
+    display: none !important;
+  }
+}
+
+.showmobile {
+}
+
+@media only screen and (max-width: 600px) {
+  .showmobile {
+    display: flex;
+  }
 }
 </style>
