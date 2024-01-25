@@ -5,7 +5,7 @@
         <nuxt-link to="/">Home</nuxt-link>
       </li>
 
-      <li>
+      <!-- <li>
         <nuxt-link
           to="/shop"
           class="sub-menu-link menu-with-ul"
@@ -29,6 +29,15 @@
             </div>
           </div>
         </div>
+      </li> -->
+
+      <li>
+        <nuxt-link
+          to="/shop"
+          class="menu-with-ul"
+          :class="{ active: $route.path.indexOf('/shop') > -1 }"
+          >Shop</nuxt-link
+        >
       </li>
 
       <li>

@@ -70,7 +70,7 @@
               </vue-slide-toggle>
             </li> -->
 
-            <li :class="{ open: prodOpened }">
+            <!-- <li :class="{ open: prodOpened }">
               <nuxt-link to="/shop" class="sub-menu-link menu-with-ul">
                 Products
                 <span
@@ -88,18 +88,7 @@
                     <nuxt-link to="/shop">
                       Product Pages
                     </nuxt-link>
-                    <!-- <a href="javascript:;">
-                      Product Pages
-                    </a> -->
-
-                    <!-- <vue-slide-toggle tag="ul" :open="prod1Opened">
-                      <li
-                        v-for="(item, index) in mainMenu.product.pages"
-                        :key="'product1' + index"
-                      >
-                        <nuxt-link :to="item.url">{{ item.title }}</nuxt-link>
-                      </li>
-                    </vue-slide-toggle> -->
+                   
                   </li>
                 </ul>
 
@@ -114,8 +103,10 @@
                   </li>
                 </ul>
               </vue-slide-toggle>
+            </li> -->
+            <li>
+              <nuxt-link to="/shop">Shop</nuxt-link>
             </li>
-
             <li>
               <nuxt-link to="/pages/blog">Blog</nuxt-link>
             </li>
