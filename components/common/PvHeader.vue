@@ -11,7 +11,7 @@
             <i class="fas fa-bars"></i>
           </button>
           <div class="d-flex pr-0 hidemobile">
-            <pv-header-search></pv-header-search>
+            <pv-header-search-m></pv-header-search-m>
           </div>
         </div>
         <div class="d-flex col-4" style="justify-content: center; width: 20em;">

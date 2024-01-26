@@ -18,7 +18,7 @@
     @submit.prevent="submitSearchForm"
     class="mb-0 mt-1"
   >
-    <div style="position: unset;">
+    <div style="position: unset; display: flex;">
       <label for="search_term" class="sr-only">ค้นหา</label>
       <input
         type="text"
@@ -34,7 +34,7 @@
 
       <button
         style="border: 1px solid #dfdfdf;"
-        class="btn icon-magnifier px-4"
+        class="btn icon-magnifier px-4 py-0"
         title="search"
         type="submit"
       ></button>
