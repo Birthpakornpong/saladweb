@@ -1,7 +1,7 @@
 <template>
   <header class="header" style="font-family: 'SCG' !important;">
     <div class="sticky-header mobile-sticky" style="background: #fff;">
-      <div class="container-fluid centermobile row">
+      <div class="container-fluid centermobile row" style="margin: 0;">
         <div class="col-4" style="justify-content: start; display: flex;">
           <button
             class="mobile-menu-toggler"
@@ -28,10 +28,10 @@
           <a class="contact-us pb-1"
             >Follow us :
             <a href="https://www.facebook.com/HOLISbySCGP" target="_blank"
-              ><i class="icon-facebook pr-2"></i
+              ><i class="icon-facebook pr-1"></i
             ></a>
             <a href="https://lin.ee/rhxdzsQ" target="_blank">
-              <i class="bi bi-line pr-2"></i
+              <i class="bi bi-line pr-1"></i
             ></a>
             <a
               href="https://www.tiktok.com/@doozyonlinebyscgp?_t=8g3T6UGiEG9&_r=1"
@@ -61,7 +61,7 @@
           style="justify-content: center;"
         >
           <!-- <pv-header-search></pv-header-search> -->
-          <pv-header-search></pv-header-search>
+          <pv-header-search-m></pv-header-search-m>
         </div>
       </div>
     </div>
@@ -83,7 +83,7 @@
 import PvMainMenu from "~/components/common/partials/PvMainMenu";
 import PvCartMenu from "~/components/common/partials/PvCartMenu";
 import PvHeaderSearch from "~/components/common/partials/PvHeaderSearch";
-
+import PvHeaderSearchM from "~/components/common/partials/PvHeaderSearchM";
 document.querySelector("body").classList.add("loaded");
 
 export default {
@@ -91,6 +91,7 @@ export default {
     PvMainMenu,
     PvCartMenu,
     PvHeaderSearch,
+    PvHeaderSearchM,
   },
   data() {
     return {
@@ -147,7 +148,7 @@ export default {
 }
 @media only screen and (max-width: 600px) {
   .hidemobilelogo {
-    font-size: 0.5em;
+    font-size: 0.75em;
     display: flex;
     margin-right: 0;
     padding: 0;

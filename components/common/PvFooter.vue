@@ -86,9 +86,20 @@
                   <li>
                     <a class="pb-1" style="color: white;"
                       >Follow us :
-                      <i class="icon-facebook pr-1"></i>
-                      <i class="bi bi-line pr-1"></i>
-                      <i class="bi bi-tiktok"></i>
+                      <a
+                        href="https://www.facebook.com/HOLISbySCGP"
+                        target="_blank"
+                        ><i class="icon-facebook pr-1"></i
+                      ></a>
+                      <a href="https://lin.ee/rhxdzsQ" target="_blank">
+                        <i class="bi bi-line pr-1"></i
+                      ></a>
+                      <a
+                        href="https://www.tiktok.com/@doozyonlinebyscgp?_t=8g3T6UGiEG9&_r=1"
+                        target="_blank"
+                      >
+                        <i class="bi bi-tiktok"></i>
+                      </a>
                     </a>
                   </li>
                 </ul>
