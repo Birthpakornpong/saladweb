@@ -6,14 +6,12 @@
           v-if="product.imgUrl"
           alt="large-picture"
           width="800"
-          style="height: 25em;"
           :src="product.imgUrl"
         />
         <img
           v-else
           alt="large-picture"
           width="800"
-          style="height: 25em;"
           src="~/static/images/HOLIS17715_0.jpg"
         />
       </nuxt-link>
@@ -55,15 +53,10 @@
         </a> -->
       </div>
 
-      <div class="title-wrap">
-        <h3
-          class="product-title"
-          style="display: flex; justify-content: center;"
-        >
-          <nuxt-link :to="'/product/default/' + product.slug">{{
-            product.name
-          }}</nuxt-link>
-        </h3>
+      <div class="title-wrap" style="display: flex; justify-content: center;">
+        <nuxt-link :to="'/product/default/' + product.slug">{{
+          product.name
+        }}</nuxt-link>
       </div>
 
       <!-- <div class="ratings-container" v-if="type === 1">
