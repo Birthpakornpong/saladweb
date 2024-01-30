@@ -30,6 +30,7 @@
     style="text-shadow: 1px 1px 2px #333;"
     @sliding-start="onSlideStart"
     @sliding-end="onSlideEnd"
+    class="carouselCustom"
   >
     <!-- Slides with image only -->
     <b-carousel-slide
@@ -86,3 +87,13 @@ export default {
   },
 };
 </script>
+<style>
+.carouselCustom li {
+  border-radius: 60% !important;
+  background-clip: unset !important;
+  /* background: rgb(29, 28, 28) 818 !important; */
+  background: rgb(45, 45, 45);
+  width: 1.5em;
+  /* height: 1em; */
+}
+</style>
