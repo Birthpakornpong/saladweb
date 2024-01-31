@@ -96,4 +96,11 @@ export default {
   width: 1.5em;
   /* height: 1em; */
 }
+@media only screen and (max-width: 600px) {
+  .carouselCustom li {
+    width: 0.5em;
+    height: auto;
+    border-bottom: none;
+  }
+}
 </style>
