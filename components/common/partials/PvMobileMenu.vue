@@ -104,9 +104,9 @@
                 </ul>
               </vue-slide-toggle>
             </li> -->
-            <li>
+            <!-- <li>
               <nuxt-link to="/shop">Shop</nuxt-link>
-            </li>
+            </li> -->
             <li>
               <nuxt-link to="/pages/blog">Blog</nuxt-link>
             </li>
