@@ -1,6 +1,6 @@
 <template>
   <main class="main">
-    <div class="container main-content">
+    <div class="main-content custompadding">
       <div class="row">
         <div class="col-12">
           <div class="blog-section row">
@@ -216,3 +216,13 @@ export default {
   },
 };
 </script>
+<style scoped>
+.custompadding {
+  padding: 2em 5em;
+}
+@media only screen and (max-width: 600px) {
+  .custompadding {
+    padding: 1em 2em;
+  }
+}
+</style>
