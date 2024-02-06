@@ -170,7 +170,7 @@
             muted
             controls
             autoplay
-            style="max-width: 100%;"
+            style="max-width: 100%; width: 100%;"
           >
             <source :src="video[0].url" type="video/mp4" />
           </video>
@@ -179,7 +179,7 @@
             ref="videoPlayers"
             muted
             controls
-            style="max-width: 100%;"
+            style="max-width: 100%; width: 100%;"
           >
             <source :src="video[0].url" type="video/mp4" />
           </video>
@@ -210,7 +210,7 @@
             muted
             controls
             autoplay
-            style="max-width: 100%;"
+            style="max-width: 100%; width: 100%;"
           >
             <source :src="video[0].url" type="video/mp4" />
           </video>
@@ -219,7 +219,7 @@
             ref="videoPlayers"
             muted
             controls
-            style="max-width: 100%;"
+            style="max-width: 100%; width: 100%;"
           >
             <source :src="video[0].url" type="video/mp4" />
           </video>
@@ -457,7 +457,7 @@ export default {
 .header-text {
   text-align: center;
   font-weight: bold;
-  font-size: x-large;
+  font-size: 2.5em;
   color: #ab0011;
   position: relative;
 }

@@ -2,7 +2,7 @@
   <nav class="main-nav d-none d-lg-flex flex-wrap">
     <ul class="menu main-menu menu-arrow">
       <li>
-        <nuxt-link to="/">Home</nuxt-link>
+        <nuxt-link to="/" style="font-size: 1.3em !important;">Home</nuxt-link>
       </li>
 
       <li>
@@ -10,17 +10,26 @@
           to="/shop"
           class="sub-menu-link menu-with-ul"
           :class="{ active: $route.path.indexOf('/shop') > -1 }"
+          style="font-size: 1.3em !important;"
           >Products</nuxt-link
         >
 
         <div class="megamenu megamenu-fixed-width megamenu-3cols">
           <div class="row">
             <div class="col-lg-6">
-              <a href="javascript:;" class="nolink">All Product</a>
+              <a
+                href="javascript:;"
+                class="nolink"
+                style="font-size: 1.1em !important;"
+                >All Product</a
+              >
 
               <ul class="submenu">
                 <li v-for="item in productNames" :key="item.id">
-                  <nuxt-link :to="item.url">
+                  <nuxt-link
+                    :to="item.url"
+                    style="font-size: 1.1em !important;"
+                  >
                     {{ item.title }}
                     <!-- <span class="tip tip-hot" v-if="item.hot">Hot</span> -->
                   </nuxt-link>
@@ -28,11 +37,19 @@
               </ul>
             </div>
             <div class="col-lg-6">
-              <a href="javascript:;" class="nolink">Product Catagory</a>
+              <a
+                href="javascript:;"
+                class="nolink"
+                style="font-size: 1.1em !important;"
+                >Product Catagory</a
+              >
 
               <ul class="submenu">
                 <li v-for="item in categorys" :key="item.id">
-                  <nuxt-link :to="item.url">
+                  <nuxt-link
+                    :to="item.url"
+                    style="font-size: 1.1em !important;"
+                  >
                     {{ item.title }}
                     <!-- <span class="tip tip-hot" v-if="item.hot">Hot</span> -->
                   </nuxt-link>
@@ -57,6 +74,7 @@
           to="/pages/blog"
           class="menu-with-ul"
           :class="{ active: $route.path.indexOf('/pages/blog') > -1 }"
+          style="font-size: 1.3em !important;"
           >News & Activities</nuxt-link
         >
       </li>
@@ -66,6 +84,7 @@
           to="/pages/ourstory/post-format-image-gallery"
           class="menu-with-ul"
           :class="{ active: $route.path.indexOf('/pages/ourstory') > -1 }"
+          style="font-size: 1.3em !important;"
           >Our Story</nuxt-link
         >
       </li>

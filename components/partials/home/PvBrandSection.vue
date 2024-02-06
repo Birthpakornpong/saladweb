@@ -353,7 +353,7 @@ export default {
 .category-section .header-text {
   text-align: center;
   font-weight: bold;
-  font-size: x-large;
+  font-size: 2.5em;
   color: #ab0011;
   position: relative;
 }

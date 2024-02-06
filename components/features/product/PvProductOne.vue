@@ -53,7 +53,10 @@
         </a> -->
       </div>
 
-      <div class="title-wrap" style="display: flex; justify-content: center;">
+      <div
+        class="title-wrap"
+        style="display: flex; justify-content: center; font-size: 1.4em;"
+      >
         <nuxt-link :to="'/product/default/' + product.slug">{{
           product.name
         }}</nuxt-link>

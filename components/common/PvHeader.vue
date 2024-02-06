@@ -19,7 +19,7 @@
             <img
               src="~/static/images/home/Logo_Holis.svg"
               alt="Porto Logo"
-              style="height: 3em; max-width: none;"
+              style="height: 5em; max-width: none;"
             />
           </nuxt-link>
         </div>
