@@ -29,7 +29,7 @@
     >
       <div class="row">
         <div
-          class="d-flex col-12 col-lg-3 col-md-12 hidemobile"
+          class="d-flex col-12 col-lg-2 col-md-12 hidemobile"
           style="justify-content: end; display: flex;"
         >
           <img
@@ -76,7 +76,7 @@
           </div> -->
         <!-- </div> -->
         <div
-          class="col-12 d-flex col-lg-6 col-md-12"
+          class="col-12 d-flex col-lg-8 col-md-12"
           style="display: flex; justify-content: center; align-items: center;"
         >
           <video
@@ -85,7 +85,7 @@
             muted
             controls
             autoplay
-            style="max-width: 100%;"
+            style="max-width: 100%; width: 100%;"
           >
             <source :src="video[0].url" type="video/mp4" />
           </video>
@@ -94,13 +94,13 @@
             ref="videoPlayers"
             muted
             controls
-            style="max-width: 100%;"
+            style="max-width: 100%; width: 100%;"
           >
             <source :src="video[0].url" type="video/mp4" />
           </video>
         </div>
         <div
-          class="d-flex col-12 col-lg-3 col-md-12 showmobile"
+          class="d-flex col-12 col-lg-2 col-md-12 showmobile"
           style="justify-content: end;"
         >
           <img
@@ -109,7 +109,7 @@
           />
         </div>
         <div
-          class="col-12 d-flex col-lg-3 col-md-12"
+          class="col-12 d-flex col-lg-2 col-md-12"
           style="display: flex; justify-content: start;"
         >
           <img
