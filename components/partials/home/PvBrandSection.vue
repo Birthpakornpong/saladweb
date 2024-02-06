@@ -388,6 +388,16 @@ export default {
   padding: 40px;
   justify-content: center;
 }
+@media only screen and (max-width: 900px) {
+  .category-section .grid-container {
+    display: grid;
+    /* grid: none; */
+    grid-gap: 4em;
+    background-color: white;
+    padding: 1em;
+    justify-content: center;
+  }
+}
 @media only screen and (max-width: 600px) {
   .category-section .grid-container {
     display: grid;
@@ -414,6 +424,25 @@ export default {
   font-weight: 600;
   position: relative;
   overflow: hidden;
+}
+
+@media only screen and (max-width: 900px) {
+  .category-section .grid-container .grid-items {
+    background-color: #46292b;
+    color: white;
+    text-align: center;
+    height: 200px;
+    width: 170px;
+    font-size: 1em;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    position: relative;
+    overflow: hidden;
+  }
 }
 
 @media only screen and (max-width: 600px) {
