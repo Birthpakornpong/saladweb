@@ -51,7 +51,7 @@
                   v-if="show"
                   style="
                     width: 100%;
-                    height: 7em;
+                    height: 10em;
 
                     border-bottom-right-radius: 30px;
                     border-bottom-left-radius: 30px;
@@ -86,7 +86,7 @@
                   v-if="show1"
                   style="
                     width: 100%;
-                    height: 7em;
+                    height: 10em;
 
                     border-bottom-right-radius: 30px;
                     border-bottom-left-radius: 30px;
@@ -122,7 +122,7 @@
                   v-if="show2"
                   style="
                     width: 100%;
-                    height: 7em;
+                    height: 10em;
 
                     border-bottom-right-radius: 30px;
                     border-bottom-left-radius: 30px;
@@ -157,7 +157,7 @@
                   v-if="show3"
                   style="
                     width: 100%;
-                    height: 7em;
+                    height: 10em;
 
                     border-bottom-right-radius: 30px;
                     border-bottom-left-radius: 30px;
@@ -192,7 +192,7 @@
                   v-if="show4"
                   style="
                     width: 100%;
-                    height: 7em;
+                    height: 10em;
 
                     border-bottom-right-radius: 30px;
                     border-bottom-left-radius: 30px;
@@ -227,7 +227,7 @@
                   v-if="show5"
                   style="
                     width: 100%;
-                    height: 7em;
+                    height: 10em;
 
                     border-bottom-right-radius: 30px;
                     border-bottom-left-radius: 30px;
@@ -332,6 +332,7 @@ export default {
     rgba(209, 209, 209, 1),
     rgba(255, 255, 255, 1)
   );
+  font-size: 1.2em;
 }
 .slide-fade-hover-active {
   transition: all 0.5s ease-out;
@@ -364,7 +365,7 @@ export default {
 .category-section .grid-container {
   display: grid;
   grid: auto auto / auto auto auto;
-  grid-gap: 50px;
+  grid-gap: 60px;
   background-color: white;
   padding: 40px;
   justify-content: center;
@@ -384,9 +385,9 @@ export default {
   background-color: #771219;
   color: white;
   text-align: center;
-  height: 240px;
-  width: 200px;
-  font-size: 20px;
+  height: 360px;
+  width: 280px;
+  font-size: 25px;
   border-radius: 20px;
   display: flex;
   flex-direction: column;
@@ -399,7 +400,7 @@ export default {
 
 @media only screen and (max-width: 600px) {
   .category-section .grid-container .grid-items {
-    background-color: #771219;
+    background-color: #46292b;
     color: white;
     text-align: center;
     height: 10em;
