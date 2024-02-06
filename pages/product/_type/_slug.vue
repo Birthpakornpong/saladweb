@@ -37,7 +37,7 @@
           v-if="product.productBannerLink"
         >
           <img
-            style="width: 100%; height: 75em;"
+            style="width: 100%;"
             :src="product.productBannerLink"
             alt="body shape"
             class="w-auto bg-transparent"
