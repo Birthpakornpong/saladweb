@@ -57,21 +57,6 @@
             </template>
           </div>
         </div>
-
-        <!-- <div
-          class="custom-sidebar-toggle"
-          @click="toggleSidebar"
-          v-if="isSidebar"
-        >
-          <i class="fas fa-sliders-h"></i>
-        </div>
-        <div class="sidebar-overlay" @click="toggleSidebar"></div>
-
-        <pv-blog-sidebar
-          :blog-category-list="blogCategoryList"
-          :recent-posts="recentPosts"
-          :loaded="loaded"
-        ></pv-blog-sidebar> -->
       </div>
     </div>
   </main>

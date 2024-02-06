@@ -66,7 +66,10 @@
                 </div>
               </Transition>
               <div>
-                <img :src="categorys[0].categoryLink" style="height: 5em;" />
+                <img
+                  :src="categorys[0].categoryLink"
+                  style="height: 4em; margin-bottom: 1em;"
+                />
                 {{ categorys[0].categoryName }}
               </div>
             </div>
@@ -101,7 +104,10 @@
                 </div>
               </Transition>
               <div>
-                <img :src="categorys[1].categoryLink" style="height: 5em;" />
+                <img
+                  :src="categorys[1].categoryLink"
+                  style="height: 4em; margin-bottom: 1em;"
+                />
                 {{ categorys[1].categoryName }}
               </div>
             </div>
@@ -137,7 +143,10 @@
                 </div>
               </Transition>
 
-              <img :src="categorys[2].categoryLink" style="height: 5em;" />
+              <img
+                :src="categorys[2].categoryLink"
+                style="height: 4em; margin-bottom: 1em;"
+              />
               {{ categorys[2].categoryName }}
             </div>
           </nuxt-link>
@@ -172,7 +181,10 @@
                 </div>
               </Transition>
 
-              <img :src="categorys[3].categoryLink" style="height: 5em;" />
+              <img
+                :src="categorys[3].categoryLink"
+                style="height: 4em; margin-bottom: 1em;"
+              />
               {{ categorys[3].categoryName }}
             </div>
           </nuxt-link>
@@ -207,7 +219,10 @@
                 </div>
               </Transition>
 
-              <img :src="categorys[4].categoryLink" style="height: 5em;" />
+              <img
+                :src="categorys[4].categoryLink"
+                style="height: 4em; margin-bottom: 1em;"
+              />
               {{ categorys[4].categoryName }}
             </div>
           </nuxt-link>
@@ -242,7 +257,10 @@
                 </div>
               </Transition>
 
-              <img :src="categorys[5].categoryLink" style="height: 5em;" />
+              <img
+                :src="categorys[5].categoryLink"
+                style="height: 4em; margin-bottom: 1em;"
+              />
               {{ categorys[5].categoryName }}
             </div>
           </nuxt-link>
