@@ -37,7 +37,8 @@
         style="justify-content: center;"
       >
         <div
-          class="col-6 col-md-4 col-xl-3"
+          class="col-6 col-md-4 col-xl-4"
+          style="padding: 0em 3em;"
           v-for="(product, index) in products.slice(0, 3)"
           :key="'wel-' + index"
         >
@@ -54,7 +55,8 @@
         style="justify-content: center;"
       >
         <div
-          class="col-6 col-md-4 col-xl-3"
+          class="col-6 col-md-4 col-xl-4"
+          style="padding: 0em 4em;"
           v-for="(product, index) in products.slice(0, 2)"
           :key="'wel-' + index"
         >

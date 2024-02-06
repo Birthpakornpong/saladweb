@@ -51,7 +51,7 @@
                   v-if="show"
                   style="
                     width: 100%;
-                    height: 10em;
+                    height: 11em;
 
                     border-bottom-right-radius: 30px;
                     border-bottom-left-radius: 30px;
@@ -86,7 +86,7 @@
                   v-if="show1"
                   style="
                     width: 100%;
-                    height: 10em;
+                    height: 11em;
 
                     border-bottom-right-radius: 30px;
                     border-bottom-left-radius: 30px;
@@ -122,7 +122,7 @@
                   v-if="show2"
                   style="
                     width: 100%;
-                    height: 10em;
+                    height: 11em;
 
                     border-bottom-right-radius: 30px;
                     border-bottom-left-radius: 30px;
@@ -157,7 +157,7 @@
                   v-if="show3"
                   style="
                     width: 100%;
-                    height: 10em;
+                    height: 11em;
 
                     border-bottom-right-radius: 30px;
                     border-bottom-left-radius: 30px;
@@ -192,7 +192,7 @@
                   v-if="show4"
                   style="
                     width: 100%;
-                    height: 10em;
+                    height: 11em;
 
                     border-bottom-right-radius: 30px;
                     border-bottom-left-radius: 30px;
@@ -227,7 +227,7 @@
                   v-if="show5"
                   style="
                     width: 100%;
-                    height: 10em;
+                    height: 11em;
 
                     border-bottom-right-radius: 30px;
                     border-bottom-left-radius: 30px;
@@ -365,7 +365,7 @@ export default {
 .category-section .grid-container {
   display: grid;
   grid: auto auto / auto auto auto;
-  grid-gap: 60px;
+  grid-gap: 85px;
   background-color: white;
   padding: 40px;
   justify-content: center;
@@ -386,7 +386,7 @@ export default {
   color: white;
   text-align: center;
   height: 360px;
-  width: 280px;
+  width: 300px;
   font-size: 25px;
   border-radius: 20px;
   display: flex;

@@ -17,7 +17,7 @@
       style="display: flex; justify-content: center;"
     >
       <div
-        class="col-6 col-md-4 col-xl-3"
+        class="col-6 col-md-4 col-xl-4 px-5"
         v-for="(product, index) in products.slice(0, 3)"
         :key="'wel-' + index"
       >
