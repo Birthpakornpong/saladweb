@@ -12,7 +12,7 @@
     </div>
 
     <div class="widget widget-size">
-      <h3 class="widget-title">
+      <h3 class="widget-title" style="font-size: 1.3em !important;">
         <a
           href="javascript:;"
           @click="catOpened = !catOpened"
@@ -29,7 +29,11 @@
               :key="'size-filter' + index"
               :class="{ active: isActivedSize(item) }"
             >
-              <nuxt-link :to="sizeFilterRoute(item)">{{ item.name }}</nuxt-link>
+              <nuxt-link
+                :to="sizeFilterRoute(item)"
+                style="font-size: 1.2em !important;"
+                >{{ item.name }}</nuxt-link
+              >
             </li>
           </ul>
         </div>
@@ -37,7 +41,7 @@
     </div>
 
     <div class="widget widget-size">
-      <h3 class="widget-title">
+      <h3 class="widget-title" style="font-size: 1.3em !important;">
         <a
           href="javascript:;"
           @click="sizeOpened = !sizeOpened"
@@ -54,9 +58,11 @@
               :key="'size-filter' + index"
               :class="{ active: isActivedColor(item) }"
             >
-              <nuxt-link :to="colorFilterRoute(item)">{{
-                item.nameShow
-              }}</nuxt-link>
+              <nuxt-link
+                :to="colorFilterRoute(item)"
+                style="font-size: 1.2em !important;"
+                >{{ item.nameShow }}</nuxt-link
+              >
             </li>
           </ul>
         </div>

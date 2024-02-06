@@ -99,24 +99,24 @@
     </div>
 
     <div class="product-desc" v-if="product.short_description">
-      <p>{{ product.short_description }}</p>
+      <p style="font-size: 1.2em;">{{ product.short_description }}</p>
     </div>
 
     <ul class="single-info-list">
-      <li v-if="product.quantity" style="font-size: 1.2em;">
+      <li v-if="product.quantity" style="font-size: 1.4em;">
         ขนาดบรรจุ:
         <strong class="ml-1">{{ product.quantity }}</strong>
       </li>
-      <li v-if="product.expired" style="font-size: 1.2em;">
+      <li v-if="product.expired" style="font-size: 1.4em;">
         อายุสินค้า:
         <strong class="ml-1">{{ product.expired }}</strong>
       </li>
-      <li v-if="product.sku" style="font-size: 1.2em;">
+      <li v-if="product.sku" style="font-size: 1.4em;">
         SKU:
         <strong class="ml-1">{{ product.sku }}</strong>
       </li>
 
-      <li v-if="product.category">
+      <li v-if="product.category" style="font-size: 1.4em;">
         CATEGORY:
         <!-- <strong class="ml-1">
           <nuxt-link
