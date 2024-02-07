@@ -7,9 +7,7 @@
         </div>
         <div class="grid-container" v-if="categorys.length > 0">
           <!-- <nuxt-link
-            v-for="(item, index) in categorys"
-            :key="index"
-            :to="{ path: '/shop', query: { category: item.id } }"
+            :to="{ path: '/shop', query: { category: categorys[0].id } }"
             target="_blank"
           >
             <div
@@ -17,23 +15,31 @@
               @mouseover="show = true"
               @mouseleave="show = false"
             >
-              <Transition name="slide-fade">
-                
+              <transition name="slide-down">
                 <div
                   v-if="show"
                   style="
                     width: 100%;
-                    height: 7em;
-                    background-color: white;
+                    height: 11em;
                     border-bottom-right-radius: 30px;
                     border-bottom-left-radius: 30px;
+                    color: black;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
                   "
+                  class="bg-custom slide-down"
                 >
-                  hello
+                  {{ categorys[0].categoryTH }}
                 </div>
-              </Transition>
-              <img :src="item.categoryLink" style="height: 5em;" />
-              {{ item.categoryName }}
+              </transition>
+              <div>
+                <img
+                  :src="categorys[0].categoryLink"
+                  style="height: 4em; margin-bottom: 1em;"
+                />
+                {{ categorys[0].categoryName }}
+              </div>
             </div>
           </nuxt-link> -->
           <nuxt-link
@@ -46,7 +52,6 @@
               @mouseleave="show = false"
             >
               <Transition name="slide-fade">
-                <!-- <p v-if="show">hello</p> -->
                 <div
                   v-if="show"
                   style="
@@ -353,19 +358,19 @@ export default {
   font-size: 1.2em;
 }
 .slide-fade-hover-active {
-  transition: all 0.5s ease-out;
+  transition: all 1s ease-in;
 }
 
 .slide-fade-leave-active {
-  transition: all 0.5s ease-in;
+  transition: all 1s ease-in;
 }
 
 .slide-fade-leave-to {
-  transform: translateY(-20px);
+  transform: translateY(-100%);
   opacity: 1;
 }
 .slide-fade-hover-from {
-  transform: translateY(20px);
+  transform: translateY(100%);
   opacity: 1;
 }
 .category-section .header-text {
