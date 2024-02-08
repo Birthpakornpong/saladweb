@@ -1,5 +1,5 @@
 <template>
-  <div class="row">
+  <div class="row bgimgband">
     <div class="col-12">
       <div class="category-section">
         <div class="header-text">
@@ -349,6 +349,13 @@ export default {
 </script>
 
 <style>
+.bgimgband {
+  background-image: url("static/bgcolor.png");
+  padding-bottom: 5em;
+  padding-top: 7em;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
 .bg-custom {
   background: linear-gradient(
     45deg,
@@ -389,7 +396,7 @@ export default {
   display: grid;
   grid: auto auto / auto auto auto;
   grid-gap: 85px;
-  background-color: white;
+
   padding: 40px;
   justify-content: center;
 }
@@ -398,7 +405,7 @@ export default {
     display: grid;
     /* grid: none; */
     grid-gap: 4em;
-    background-color: white;
+
     padding: 1em;
     justify-content: center;
   }

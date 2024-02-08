@@ -1,5 +1,5 @@
 <template>
-  <section class="welcome-section">
+  <section class="welcome-section bg-cus">
     <div class="container" v-if="products.length > 0">
       <div
         class="category-section mb-4 appear-animate"
@@ -106,5 +106,12 @@ export default {
   .showmobile {
     display: flex;
   }
+}
+.bg-cus {
+  background: linear-gradient(
+    -180deg,
+    rgba(209, 209, 209, 1),
+    rgba(255, 255, 255, 1)
+  ) !important;
 }
 </style>

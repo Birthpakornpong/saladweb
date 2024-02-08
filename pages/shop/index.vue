@@ -1,5 +1,5 @@
 <template>
-  <main class="main skeleton-body">
+  <main class="main skeleton-body bgimgshop">
     <nav aria-label="breadcrumb" class="breadcrumb-nav">
       <div class="container">
         <ol class="breadcrumb">
@@ -103,3 +103,12 @@ export default {
   },
 };
 </script>
+<style lang="css" scoped>
+.bgimgshop {
+  background-image: url("static/bggrey.jpg");
+  padding-bottom: 12em;
+  background-position: center bottom;
+  background-size: 100% 20em;
+  background-repeat: no-repeat;
+}
+</style>
