@@ -99,7 +99,7 @@
     </div>
 
     <div class="product-desc" v-if="product.short_description">
-      <p style="font-size: 1.2em;">{{ product.short_description }}</p>
+      <div v-html="product.short_description" style="font-size: 1.2em;"></div>
     </div>
 
     <ul class="single-info-list">

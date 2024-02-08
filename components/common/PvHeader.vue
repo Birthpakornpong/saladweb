@@ -60,8 +60,7 @@
           class="col-12 d-flex mb-2 showmobile"
           style="justify-content: center;"
         >
-          <!-- <pv-header-search></pv-header-search> -->
-          <pv-header-search-m></pv-header-search-m>
+          <!-- <pv-header-search-m></pv-header-search-m> -->
         </div>
       </div>
     </div>

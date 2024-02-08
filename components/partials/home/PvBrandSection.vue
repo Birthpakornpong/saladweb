@@ -415,7 +415,7 @@ export default {
     display: grid;
     /* grid: none; */
     grid-gap: 2em;
-    background-color: white;
+    /* background-color: white; */
     padding: 1em;
     justify-content: center;
   }

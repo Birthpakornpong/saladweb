@@ -118,7 +118,7 @@
           </ul>
         </nav>
 
-        <!-- <form
+        <form
           class="search-wrapper mb-2"
           action="#"
           @submit.prevent="submitSearchForm"
@@ -135,7 +135,7 @@
             class="btn icon-search text-white bg-transparent p-0"
             type="submit"
           ></button>
-        </form> -->
+        </form>
       </div>
     </div>
   </div>
