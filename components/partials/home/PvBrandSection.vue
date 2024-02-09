@@ -42,7 +42,8 @@
               </div>
             </div>
           </nuxt-link> -->
-          <nuxt-link
+
+          <!-- <nuxt-link
             :to="{ path: '/shop', query: { category: categorys[0].id } }"
             target="_blank"
           >
@@ -71,6 +72,53 @@
                 </div>
               </Transition>
               <div>
+                <img
+                  :src="categorys[0].categoryLink"
+                  style="height: 4em; margin-bottom: 1em;"
+                />
+                {{ categorys[0].categoryName }}
+              </div>
+            </div>
+          </nuxt-link> -->
+
+          <nuxt-link
+            :to="{ path: '/shop', query: { category: categorys[0].id } }"
+            target="_blank"
+          >
+            <div
+              class="grid-items"
+              style="position: relative;"
+              @mouseover="show = true"
+              @mouseleave="show = false"
+            >
+              <Transition name="slide-fade">
+                <div
+                  v-if="show"
+                  style="
+                    width: 100%;
+                    height: 6em;
+                    border-bottom-right-radius: 30px;
+                    border-bottom-left-radius: 30px;
+                    color: black;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    position: absolute;
+                    top: 0px;
+                  "
+                  class="bgimgcardband"
+                >
+                  {{ categorys[0].categoryTH }}
+                </div>
+              </Transition>
+              <div v-if="show" style="position: absolute; top: 5em;">
+                <img
+                  :src="categorys[0].categoryLink"
+                  style="height: 4em; margin-bottom: 1em;"
+                />
+                {{ categorys[0].categoryName }}
+              </div>
+              <div v-else>
                 <img
                   :src="categorys[0].categoryLink"
                   style="height: 4em; margin-bottom: 1em;"
@@ -356,6 +404,12 @@ export default {
   background-size: 100% 100%;
   background-repeat: no-repeat;
 }
+.bgimgcardband {
+  background-image: url("static/bgcardbrand.png");
+  font-size: 1.2em;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
 .bg-custom {
   background: linear-gradient(
     45deg,
@@ -365,11 +419,11 @@ export default {
   font-size: 1.2em;
 }
 .slide-fade-hover-active {
-  transition: all 1s ease-in;
+  transition: all 2s ease-in;
 }
 
 .slide-fade-leave-active {
-  transition: all 1s ease-in;
+  transition: all 2s ease-in;
 }
 
 .slide-fade-leave-to {
@@ -428,7 +482,7 @@ export default {
   height: 360px;
   width: 300px;
   font-size: 25px;
-  border-radius: 20px;
+  border-radius: 40px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -446,7 +500,7 @@ export default {
     height: 200px;
     width: 170px;
     font-size: 1em;
-    border-radius: 20px;
+    border-radius: 40px;
     display: flex;
     flex-direction: column;
     align-items: center;
