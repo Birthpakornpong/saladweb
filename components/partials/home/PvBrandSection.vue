@@ -99,7 +99,8 @@
                     height: 6em;
                     border-bottom-right-radius: 30px;
                     border-bottom-left-radius: 30px;
-                    color: black;
+                    color: rgba(119, 119, 119, 1) !important;
+                    font-size: 1em;
                     display: flex;
                     align-items: center;
                     justify-content: center;
@@ -133,6 +134,7 @@
           >
             <div
               class="grid-items"
+              style="position: relative;"
               @mouseover="show1 = true"
               @mouseleave="show1 = false"
             >
@@ -142,21 +144,30 @@
                   v-if="show1"
                   style="
                     width: 100%;
-                    height: 11em;
-
+                    height: 6em;
                     border-bottom-right-radius: 30px;
                     border-bottom-left-radius: 30px;
-                    color: black;
+                    color: rgba(119, 119, 119, 1) !important;
+                    font-size: 1em;
                     display: flex;
                     align-items: center;
                     justify-content: center;
+                    position: absolute;
+                    top: 0px;
                   "
-                  class="bg-custom"
+                  class="bgimgcardband"
                 >
                   {{ categorys[1].categoryTH }}
                 </div>
               </Transition>
-              <div>
+              <div v-if="show1" style="position: absolute; top: 5em;">
+                <img
+                  :src="categorys[1].categoryLink"
+                  style="height: 4em; margin-bottom: 1em;"
+                />
+                {{ categorys[1].categoryName }}
+              </div>
+              <div v-else>
                 <img
                   :src="categorys[1].categoryLink"
                   style="height: 4em; margin-bottom: 1em;"
@@ -172,6 +183,7 @@
           >
             <div
               class="grid-items"
+              style="position: relative;"
               @mouseover="show2 = true"
               @mouseleave="show2 = false"
             >
@@ -181,20 +193,34 @@
                   v-if="show2"
                   style="
                     width: 100%;
-                    height: 11em;
-
+                    height: 6em;
                     border-bottom-right-radius: 30px;
                     border-bottom-left-radius: 30px;
-                    color: black;
+                    color: rgba(119, 119, 119, 1) !important;
+                    font-size: 1em;
                     display: flex;
                     align-items: center;
                     justify-content: center;
+                    position: absolute;
+                    top: 0px;
                   "
-                  class="bg-custom"
+                  class="bgimgcardband"
                 >
                   {{ categorys[2].categoryTH }}
                 </div>
               </Transition>
+
+              <img
+                v-if="show2"
+                style="
+                  position: absolute;
+                  top: 5em;
+                  height: 4em;
+                  margin-bottom: 1em;
+                "
+                :src="categorys[2].categoryLink"
+              />
+              <span v-if="show2">{{ categorys[2].categoryName }}</span>
 
               <img
                 :src="categorys[2].categoryLink"
@@ -210,6 +236,7 @@
           >
             <div
               class="grid-items"
+              style="position: relative;"
               @mouseover="show3 = true"
               @mouseleave="show3 = false"
             >
@@ -219,20 +246,34 @@
                   v-if="show3"
                   style="
                     width: 100%;
-                    height: 11em;
-
+                    height: 6em;
                     border-bottom-right-radius: 30px;
                     border-bottom-left-radius: 30px;
-                    color: black;
+                    color: rgba(119, 119, 119, 1) !important;
+                    font-size: 1em;
                     display: flex;
                     align-items: center;
                     justify-content: center;
+                    position: absolute;
+                    top: 0px;
                   "
-                  class="bg-custom"
+                  class="bgimgcardband"
                 >
                   {{ categorys[3].categoryTH }}
                 </div>
               </Transition>
+
+              <img
+                v-if="show3"
+                style="
+                  position: absolute;
+                  top: 5em;
+                  height: 4em;
+                  margin-bottom: 1em;
+                "
+                :src="categorys[3].categoryLink"
+              />
+              <span v-if="show3">{{ categorys[3].categoryName }}</span>
 
               <img
                 :src="categorys[3].categoryLink"
@@ -248,6 +289,7 @@
           >
             <div
               class="grid-items"
+              style="position: relative;"
               @mouseover="show4 = true"
               @mouseleave="show4 = false"
             >
@@ -257,20 +299,34 @@
                   v-if="show4"
                   style="
                     width: 100%;
-                    height: 11em;
-
+                    height: 6em;
                     border-bottom-right-radius: 30px;
                     border-bottom-left-radius: 30px;
-                    color: black;
+                    color: rgba(119, 119, 119, 1) !important;
+                    font-size: 1em;
                     display: flex;
                     align-items: center;
                     justify-content: center;
+                    position: absolute;
+                    top: 0px;
                   "
-                  class="bg-custom"
+                  class="bgimgcardband"
                 >
                   {{ categorys[4].categoryTH }}
                 </div>
               </Transition>
+
+              <img
+                v-if="show4"
+                style="
+                  position: absolute;
+                  top: 5em;
+                  height: 4em;
+                  margin-bottom: 1em;
+                "
+                :src="categorys[4].categoryLink"
+              />
+              <span v-if="show4">{{ categorys[4].categoryName }}</span>
 
               <img
                 :src="categorys[4].categoryLink"
@@ -286,6 +342,7 @@
           >
             <div
               class="grid-items"
+              style="position: relative;"
               @mouseover="show5 = true"
               @mouseleave="show5 = false"
             >
@@ -295,20 +352,33 @@
                   v-if="show5"
                   style="
                     width: 100%;
-                    height: 11em;
-
+                    height: 6em;
                     border-bottom-right-radius: 30px;
                     border-bottom-left-radius: 30px;
-                    color: black;
+                    color: rgba(119, 119, 119, 1) !important;
+                    font-size: 1em;
                     display: flex;
                     align-items: center;
                     justify-content: center;
+                    position: absolute;
+                    top: 0px;
                   "
-                  class="bg-custom"
+                  class="bgimgcardband"
                 >
                   {{ categorys[5].categoryTH }}
                 </div>
               </Transition>
+              <img
+                v-if="show5"
+                style="
+                  position: absolute;
+                  top: 5em;
+                  height: 4em;
+                  margin-bottom: 1em;
+                "
+                :src="categorys[5].categoryLink"
+              />
+              <span v-if="show5">{{ categorys[5].categoryName }}</span>
 
               <img
                 :src="categorys[5].categoryLink"
