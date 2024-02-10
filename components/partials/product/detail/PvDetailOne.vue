@@ -8,7 +8,7 @@
       :next-product="nextProduct"
     ></pv-product-nav>
 
-    <div class="ratings-container">
+    <!-- <div class="ratings-container">
       <div class="product-ratings">
         <span
           class="ratings"
@@ -24,7 +24,7 @@
       <a href="javascript:;" class="rating-link" v-else
         >( There is no review yet. )</a
       >
-    </div>
+    </div> -->
 
     <hr class="short-divider" />
 

@@ -20,7 +20,7 @@
               <a
                 href="javascript:;"
                 class="nolink"
-                style="font-size: 1.1em !important;"
+                style="font-size: 1.3em !important;"
                 >All Product</a
               >
 
@@ -40,7 +40,7 @@
               <a
                 href="javascript:;"
                 class="nolink"
-                style="font-size: 1.1em !important;"
+                style="font-size: 1.3em !important;"
                 >Product Catagory</a
               >
 
