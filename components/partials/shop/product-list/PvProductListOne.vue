@@ -126,18 +126,18 @@
           :key="'shop-product' + index"
         >
           <template v-if="type !== 'list'">
-            <pv-product-one
+            <pv-product-one2
               :product="product"
               :is-actions="false"
               v-if="itemsPerRow > 6"
               key="gridType"
-            ></pv-product-one>
+            ></pv-product-one2>
 
-            <pv-product-one
+            <pv-product-one2
               :product="product"
               key="gridType"
               v-else
-            ></pv-product-one>
+            ></pv-product-one2>
           </template>
 
           <pv-product-two :product="product" v-else></pv-product-two>
@@ -206,7 +206,7 @@
 </template>
 
 <script>
-import PvProductOne from "~/components/features/product/PvProductOne";
+import PvProductOne2 from "~/components/features/product/PvProductOne2";
 import PvProductTwo from "~/components/features/product/PvProductTwo";
 import PvPagination from "~/components/features/PvPagination";
 import { scrollTopHandler } from "~/utils";
@@ -216,7 +216,7 @@ import { shopData } from "~/shopData.js";
 
 export default {
   components: {
-    PvProductOne,
+    PvProductOne2,
     PvProductTwo,
     PvPagination,
   },
@@ -398,6 +398,7 @@ export default {
                 name: item.product_name,
                 imgUrl: item.productProfileLink,
                 slug: item.id,
+                short_description: item.product_quantity_th,
               });
             });
             // this.$forceUpdate();

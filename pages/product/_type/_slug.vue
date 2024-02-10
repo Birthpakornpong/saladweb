@@ -30,6 +30,8 @@
         <div class="summary entry-summary col-lg-7 col-md-6"></div>
         <div class="tab-content col-lg-12"></div>
       </div>
+    </div>
+    <div style="padding: 5em;">
       <div class="row main-content" v-if="product">
         <div
           class="col-12 d-flex"
@@ -46,6 +48,8 @@
           <!-- <inner-image-zoom :src="'./review.png'" /> -->
         </div>
       </div>
+    </div>
+    <div class="container skeleton-body">
       <div ref="videoPlayerstest" style="display: none;">
         <video v-show="!variable" muted controls autoplay>
           <source src="videotest.mp4" type="video/mp4" />
@@ -85,10 +89,11 @@
           </video>
         </div>
       </div>
-      <div>
-        <PvReviewCustom :reviews="reviews"></PvReviewCustom>
-      </div>
-
+    </div>
+    <div>
+      <PvReviewCustom :reviews="reviews"></PvReviewCustom>
+    </div>
+    <div class="container skeleton-body">
       <pv-related-products
         :products="relatedProducts"
         class="pb-3"
