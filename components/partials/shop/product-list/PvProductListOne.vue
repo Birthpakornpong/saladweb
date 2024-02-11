@@ -399,6 +399,7 @@ export default {
                 imgUrl: item.productProfileLink,
                 slug: item.id,
                 short_description: item.product_quantity_th,
+                price: item.product_price,
               });
             });
             // this.$forceUpdate();
