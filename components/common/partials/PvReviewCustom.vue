@@ -6,7 +6,7 @@
         v-if="reviews.length > 0"
         style="display: flex; justify-content: center; width: 100%;"
       >
-        <div class="category-section mb-4 col-12">
+        <div class="category-section mb-2 col-12">
           <div
             class="header-text"
             style="
@@ -26,7 +26,7 @@
             </div>
           </div>
         </div>
-        <div class="col-5 bgimgband">
+        <div class="col-12 col-md-5 bgimgband">
           <div class="row">
             <div class="col-5" style="padding-left: 3em;">
               <img
@@ -47,7 +47,7 @@
           <!-- <inner-image-zoom :src="'./review.png'" /> -->
         </div>
         <div
-          class="col-5 bgimgband2"
+          class="col-12 col-md-5 bgimgband2"
           style="margin-left: 3em;"
           v-if="reviews.length > 1"
         >
