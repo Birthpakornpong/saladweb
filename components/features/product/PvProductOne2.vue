@@ -81,7 +81,7 @@
       <div
         class="title-wrap"
         v-if="product.price"
-        key="singlePrice"
+        key="singlePriceTwo"
         style="
           display: flex;
           justify-content: center;

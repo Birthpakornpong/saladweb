@@ -31,7 +31,7 @@
     <div
       class="price-box"
       v-if="product.price"
-      key="singlePrice"
+      key="singlePricett"
       style="display: flex; justify-content: space-between;"
     >
       <div>
