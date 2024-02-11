@@ -92,13 +92,6 @@
         <template>
           <span class="product-price">{{ product.short_description }}</span>
         </template>
-
-        <!-- <template v-else>
-          <span class="product-price"
-            >${{ product.sale_price | priceFormat }}</span
-          >
-          <span class="old-price">${{ product.price | priceFormat }}</span>
-        </template> -->
       </div>
 
       <div
@@ -110,13 +103,6 @@
         <template>
           <span class="product-price">฿{{ product.price | priceFormat }}</span>
         </template>
-
-        <!-- <template v-else>
-          <span class="product-price"
-            >${{ product.sale_price | priceFormat }}</span
-          >
-          <span class="old-price">${{ product.price | priceFormat }}</span>
-        </template> -->
       </div>
 
       <!-- <div class="price-box" v-else>

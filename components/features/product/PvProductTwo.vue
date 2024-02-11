@@ -34,6 +34,32 @@
           product.name
         }}</nuxt-link>
       </h3>
+      <div
+        class="title-wrap"
+        v-if="product.price"
+        key="singlePriceTwo"
+        style="
+          display: flex;
+          justify-content: center;
+          font-size: 1.3em;
+          color: rgba(128, 128, 128, 1);
+        "
+      >
+        <template>
+          <span class="product-price">{{ product.short_description }}</span>
+        </template>
+      </div>
+
+      <div
+        class="price-box title-wrap mt-1"
+        v-if="product.price"
+        key="singlePrice"
+        style="display: flex; justify-content: center; font-size: 1.4em;"
+      >
+        <template>
+          <span class="product-price">฿{{ product.price | priceFormat }}</span>
+        </template>
+      </div>
 
       <!-- <div class="ratings-container">
         <div class="product-ratings">

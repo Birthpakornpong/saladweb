@@ -45,7 +45,7 @@
         <div class="toolbox-item toolbox-sort" v-if="!isOffCanvas">
           <label>Sort By:</label>
 
-          <div class="select-custom">
+          <div class="select-custom" style="min-width: 7em;">
             <select
               name="orderby"
               class="form-control"
@@ -55,8 +55,8 @@
               <!-- <option value="default" selected="default"
                 >Default sorting</option
               > -->
-              <option value="0">ASC</option>
-              <option value="1">DESC</option>
+              <option value="0">เรียง ก-ฮ</option>
+              <option value="1">เรียง ฮ-ก</option>
             </select>
           </div>
         </div>
@@ -66,15 +66,15 @@
         <div class="toolbox-item toolbox-sort" v-if="isOffCanvas">
           <label>Sort By:</label>
 
-          <div class="select-custom">
+          <div class="select-custom" style="min-width: 7em;">
             <select
               name="orderby"
               class="form-control"
               v-model="orderBy"
               @change="handlerGet"
             >
-              <option value="0">ASC</option>
-              <option value="1">DESC</option>
+              <option value="0">เรียง ก-ฮ</option>
+              <option value="1">เรียง ฮ-ก</option>
             </select>
           </div>
         </div>
