@@ -25,15 +25,14 @@
 
               <vue-slide-toggle :open="catOpened">
                 <ul :class="{ open: var1Opened }">
-                  <li
-                    class="sub-menu-link menu-with-ul"
-                    @click="var1Opened = !var1Opened"
-                    :class="{ open: var1Opened }"
-                  >
-                    <a href="javascript:;">
+                  <li :class="{ open: var1Opened }">
+                    <nuxt-link to="/shop" class="sub-menu-link menu-with-ul">
                       All Product
-                      <span class="mmenu-btn"></span>
-                    </a>
+                      <span
+                        class="mmenu-btn"
+                        @click="var1Opened = !var1Opened"
+                      ></span>
+                    </nuxt-link>
 
                     <vue-slide-toggle tag="ul" :open="var1Opened">
                       <li
@@ -47,15 +46,14 @@
                 </ul>
 
                 <ul :class="{ open: var2Opened }">
-                  <li
-                    class="sub-menu-link menu-with-ul"
-                    @click="var2Opened = !var2Opened"
-                    :class="{ open: var2Opened }"
-                  >
-                    <a href="javascript:;">
+                  <li :class="{ open: var2Opened }">
+                    <nuxt-link to="/shop" class="sub-menu-link menu-with-ul">
                       Product Category
-                      <span class="mmenu-btn"></span>
-                    </a>
+                      <span
+                        class="mmenu-btn"
+                        @click="var2Opened = !var2Opened"
+                      ></span>
+                    </nuxt-link>
 
                     <vue-slide-toggle tag="ul" :open="var2Opened">
                       <li

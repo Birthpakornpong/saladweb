@@ -17,18 +17,18 @@
         <div class="megamenu megamenu-fixed-width megamenu-3cols">
           <div class="row">
             <div class="col-lg-6">
-              <a
-                href="javascript:;"
+              <nuxt-link
+                to="/shop"
                 class="nolink"
                 style="font-size: 1.3em !important;"
-                >All Product</a
+                >All Product</nuxt-link
               >
 
               <ul class="submenu">
                 <li v-for="item in productNames" :key="item.id">
                   <nuxt-link
                     :to="item.url"
-                    style="font-size: 1.1em !important;"
+                    style="font-size: 1.1em !important; padding-left: 1em;"
                   >
                     {{ item.title }}
                     <!-- <span class="tip tip-hot" v-if="item.hot">Hot</span> -->
@@ -37,18 +37,18 @@
               </ul>
             </div>
             <div class="col-lg-6">
-              <a
-                href="javascript:;"
+              <nuxt-link
+                to="/shop"
                 class="nolink"
                 style="font-size: 1.3em !important;"
-                >Product Catagory</a
+                >Product Catagory</nuxt-link
               >
 
               <ul class="submenu">
                 <li v-for="item in categorys" :key="item.id">
                   <nuxt-link
                     :to="item.url"
-                    style="font-size: 1.1em !important;"
+                    style="font-size: 1.1em !important; padding-left: 1em;"
                   >
                     {{ item.title }}
                     <!-- <span class="tip tip-hot" v-if="item.hot">Hot</span> -->
