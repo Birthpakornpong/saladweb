@@ -55,8 +55,12 @@
               <!-- <option value="default" selected="default"
                 >Default sorting</option
               > -->
-              <option value="0">เรียง ก-ฮ</option>
-              <option value="1">เรียง ฮ-ก</option>
+              <option value="1">เรียง ก-ฮ</option>
+              <option value="2">เรียง ฮ-ก</option>
+              <option value="3">เรียงราคาน้อยไปมาก</option>
+              <option value="4">เรียงราคามากไปน้อย </option>
+              <option value="5">เรียง a-z</option>
+              <option value="6">เรียง z-a</option>
             </select>
           </div>
         </div>
@@ -73,8 +77,12 @@
               v-model="orderBy"
               @change="handlerGet"
             >
-              <option value="0">เรียง ก-ฮ</option>
-              <option value="1">เรียง ฮ-ก</option>
+              <option value="1">เรียง ก-ฮ</option>
+              <option value="2">เรียง ฮ-ก</option>
+              <option value="3">เรียงราคาน้อยไปมาก</option>
+              <option value="4">เรียงราคามากไปน้อย </option>
+              <option value="5">เรียง a-z</option>
+              <option value="6">เรียง z-a</option>
             </select>
           </div>
         </div>
@@ -230,7 +238,7 @@ export default {
     return {
       products: [],
       repeatCount: new Array(100),
-      orderBy: 0,
+      orderBy: 1,
       itemsPerPage: 9,
       totalCount: 0,
       tempProduct: {
