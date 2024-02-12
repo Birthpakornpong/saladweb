@@ -85,7 +85,7 @@
                   <br />
                   <li>
                     <a class="pb-1" style="color: white;"
-                      >Follow us:
+                      >ติดตามเรา:
                       <a
                         href="https://www.facebook.com/HOLISbySCGP"
                         target="_blank"

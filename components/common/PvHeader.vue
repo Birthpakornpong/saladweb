@@ -26,7 +26,7 @@
 
         <div class="col-4 hidemobilelogo" style="justify-content: end;">
           <a class="contact-us pb-1"
-            >Follow us:
+            >ติดตามเรา:
             <a href="https://www.facebook.com/HOLISbySCGP" target="_blank"
               ><i class="icon-facebook pr-1"></i
             ></a>

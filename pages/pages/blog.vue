@@ -32,7 +32,7 @@
                 v-if="totalCount > 0"
               >
                 <div class="toolbox-item toolbox-show mb-0">
-                  <label>Show:</label>
+                  <label>แสดง:</label>
 
                   <div class="select-custom">
                     <select

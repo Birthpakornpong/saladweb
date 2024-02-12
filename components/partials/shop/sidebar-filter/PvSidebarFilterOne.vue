@@ -17,7 +17,7 @@
           href="javascript:;"
           @click="catOpened = !catOpened"
           :class="{ collapsed: !catOpened }"
-          >Categories</a
+          >ประเภทสินค้า</a
         >
       </h3>
 
@@ -46,7 +46,7 @@
           href="javascript:;"
           @click="sizeOpened = !sizeOpened"
           :class="{ collapsed: !sizeOpened }"
-          >Product HOLIS by SCGP</a
+          >ผลิตภัณฑ์ โฮลิส บาย เอสซีจีพี</a
         >
       </h3>
 
@@ -264,7 +264,7 @@ export default {
             productsData.forEach((item) => {
               this.categorys.push({
                 ...item,
-                name: item.category_name,
+                name: item.category_name_th,
 
                 size: String(item.id),
               });
