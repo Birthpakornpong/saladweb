@@ -17,10 +17,7 @@
         <div class="megamenu megamenu-fixed-width megamenu-3cols">
           <div class="row">
             <div class="col-lg-6">
-              <nuxt-link
-                to="/shop"
-                class="nolink"
-                style="font-size: 1.3em !important;"
+              <nuxt-link to="/shop" style="font-size: 1.3em !important;"
                 >All Product</nuxt-link
               >
 
@@ -37,10 +34,7 @@
               </ul>
             </div>
             <div class="col-lg-6">
-              <nuxt-link
-                to="/shop"
-                class="nolink"
-                style="font-size: 1.3em !important;"
+              <nuxt-link to="/shop" style="font-size: 1.3em !important;"
                 >Product Catagory</nuxt-link
               >
 
