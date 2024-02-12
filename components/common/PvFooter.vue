@@ -21,18 +21,18 @@
 
         <div class="col-6 col-lg-2 col-md-2 hidemobile" style="width: auto;">
           <div class="widget">
-            <h4 class="widget-title">Sitemap</h4>
+            <h4 class="widget-title">แผนผังเว็ปไซต์</h4>
             <div class="row link-lg link-parts">
               <div class="col-12 link-part">
                 <ul class="links mb-0">
-                  <li><nuxt-link to="/">Home</nuxt-link></li>
-                  <li><nuxt-link to="/shop">Products</nuxt-link></li>
+                  <li><nuxt-link to="/">หน้าหลัก</nuxt-link></li>
+                  <li><nuxt-link to="/shop">สินค้า</nuxt-link></li>
                   <li>
-                    <nuxt-link to="/pages/blog">News & Activities</nuxt-link>
+                    <nuxt-link to="/pages/blog">ข่าวสารและกิจกรรม</nuxt-link>
                   </li>
                   <li>
                     <nuxt-link to="/pages/ourstory/post-format-image-gallery"
-                      >Our Story</nuxt-link
+                      >ประวัติของเรา</nuxt-link
                     >
                   </li>
                 </ul>
@@ -43,7 +43,7 @@
 
         <div class="col-6 col-lg-2 col-md-2 hidemobile" style="width: auto;">
           <div class="widget">
-            <h4 class="widget-title">Category</h4>
+            <h4 class="widget-title">ประเภทสินค้า</h4>
             <div class="row">
               <div class="col-sm-6">
                 <ul class="links mb-0">
@@ -66,7 +66,7 @@
 
         <div class="col-12 col-lg-3 col-md-3">
           <div class="widget">
-            <h4 class="widget-title">Contact Channel</h4>
+            <h4 class="widget-title">ช่องทางติดต่อ</h4>
             <div class="row">
               <div class="col-sm-6">
                 <ul class="links mb-0">
@@ -74,18 +74,18 @@
 										<nuxt-link to="/pages/about-us">About Porto</nuxt-link>
 									</li> -->
                   <li>
-                    <a style="color: white;" href="javascript:;">Email :</a>
+                    <a style="color: white;" href="javascript:;">อีเมล:</a>
                   </li>
                   <li><a href="javascript:;">scgphealthcare@gmail.com</a></li>
                   <li>
-                    <a style="color: white;" href="javascript:;">Phone :</a>
+                    <a style="color: white;" href="javascript:;">โทรศัพท์:</a>
                   </li>
                   <li><a href="javascript:;">+662 586 555</a></li>
                   <li></li>
                   <br />
                   <li>
                     <a class="pb-1" style="color: white;"
-                      >Follow us :
+                      >Follow us:
                       <a
                         href="https://www.facebook.com/HOLISbySCGP"
                         target="_blank"

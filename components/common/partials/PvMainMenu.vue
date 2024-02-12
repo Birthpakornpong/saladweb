@@ -2,7 +2,7 @@
   <nav class="main-nav d-none d-lg-flex flex-wrap">
     <ul class="menu main-menu menu-arrow">
       <li>
-        <nuxt-link to="/" style="font-size: 1.3em !important;">Home</nuxt-link>
+        <nuxt-link to="/" style="font-size: 1.3em !important;">หน้าหลัก</nuxt-link>
       </li>
 
       <li>
@@ -11,14 +11,14 @@
           class="sub-menu-link menu-with-ul"
           :class="{ active: $route.path.indexOf('/shop') > -1 }"
           style="font-size: 1.3em !important;"
-          >Products</nuxt-link
+          >สินค้า</nuxt-link
         >
 
         <div class="megamenu megamenu-fixed-width megamenu-3cols">
           <div class="row">
             <div class="col-lg-6">
               <nuxt-link to="/shop" style="font-size: 1.3em !important;"
-                >All Product</nuxt-link
+                >สินค้าทั้งหมด</nuxt-link
               >
 
               <ul class="submenu">
@@ -35,7 +35,7 @@
             </div>
             <div class="col-lg-6">
               <nuxt-link to="/shop" style="font-size: 1.3em !important;"
-                >Product Catagory</nuxt-link
+                >ประเภทสินค้า</nuxt-link
               >
 
               <ul class="submenu">
@@ -69,7 +69,7 @@
           class="menu-with-ul"
           :class="{ active: $route.path.indexOf('/pages/blog') > -1 }"
           style="font-size: 1.3em !important;"
-          >News & Activities</nuxt-link
+          >ข่าวสารและกิจกรรม</nuxt-link
         >
       </li>
 
@@ -79,7 +79,7 @@
           class="menu-with-ul"
           :class="{ active: $route.path.indexOf('/pages/ourstory') > -1 }"
           style="font-size: 1.3em !important;"
-          >Our Story</nuxt-link
+          >ประวัติของเรา</nuxt-link
         >
       </li>
     </ul>
