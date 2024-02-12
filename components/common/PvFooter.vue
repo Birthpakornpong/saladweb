@@ -154,7 +154,7 @@ export default {
             productsData.forEach((item) => {
               this.categorys.push({
                 ...item,
-                name: item.category_name,
+                name: item.category_name_th,
 
                 size: String(item.id),
               });
