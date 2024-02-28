@@ -1,7 +1,7 @@
 <template>
   <div class="row bgimgband">
     <div class="col-12">
-      <div class="category-section">
+      <div class="category-section" v-if="categorys.length > 0">
         <div class="header-text">
           <div>SHOP BY CATEGORY</div>
         </div>
@@ -115,14 +115,14 @@
               <div v-if="show" style="position: absolute; top: 5em;">
                 <img
                   :src="categorys[0].categoryLink"
-                  style="height: 4em; margin-bottom: 1em;"
+                  style="height: 5em; margin-bottom: 1em;"
                 />
                 {{ categorys[0].categoryName }}
               </div>
               <div v-else>
                 <img
                   :src="categorys[0].categoryLink"
-                  style="height: 4em; margin-bottom: 1em;"
+                  style="height: 5em; margin-bottom: 1em;"
                 />
                 {{ categorys[0].categoryName }}
               </div>
@@ -163,14 +163,14 @@
               <div v-if="show1" style="position: absolute; top: 5em;">
                 <img
                   :src="categorys[1].categoryLink"
-                  style="height: 4em; margin-bottom: 1em;"
+                  style="height: 5em; margin-bottom: 1em;"
                 />
                 {{ categorys[1].categoryName }}
               </div>
               <div v-else>
                 <img
                   :src="categorys[1].categoryLink"
-                  style="height: 4em; margin-bottom: 1em;"
+                  style="height: 5em; margin-bottom: 1em;"
                 />
                 {{ categorys[1].categoryName }}
               </div>
@@ -215,7 +215,7 @@
                 style="
                   position: absolute;
                   top: 5em;
-                  height: 4em;
+                  height: 5em;
                   margin-bottom: 1em;
                 "
                 :src="categorys[2].categoryLink"
@@ -224,7 +224,7 @@
 
               <img
                 :src="categorys[2].categoryLink"
-                style="height: 4em; margin-bottom: 1em;"
+                style="height: 5em; margin-bottom: 1em;"
               />
               {{ categorys[2].categoryName }}
             </div>
@@ -268,7 +268,7 @@
                 style="
                   position: absolute;
                   top: 5em;
-                  height: 4em;
+                  height: 5em;
                   margin-bottom: 1em;
                 "
                 :src="categorys[3].categoryLink"
@@ -277,7 +277,7 @@
 
               <img
                 :src="categorys[3].categoryLink"
-                style="height: 4em; margin-bottom: 1em;"
+                style="height: 5em; margin-bottom: 1em;"
               />
               {{ categorys[3].categoryName }}
             </div>
@@ -321,7 +321,7 @@
                 style="
                   position: absolute;
                   top: 5em;
-                  height: 4em;
+                  height: 5em;
                   margin-bottom: 1em;
                 "
                 :src="categorys[4].categoryLink"
@@ -330,7 +330,7 @@
 
               <img
                 :src="categorys[4].categoryLink"
-                style="height: 4em; margin-bottom: 1em;"
+                style="height: 5em; margin-bottom: 1em;"
               />
               {{ categorys[4].categoryName }}
             </div>
@@ -373,7 +373,7 @@
                 style="
                   position: absolute;
                   top: 5em;
-                  height: 4em;
+                  height: 5em;
                   margin-bottom: 1em;
                 "
                 :src="categorys[5].categoryLink"
@@ -382,7 +382,7 @@
 
               <img
                 :src="categorys[5].categoryLink"
-                style="height: 4em; margin-bottom: 1em;"
+                style="height: 5em; margin-bottom: 1em;"
               />
               {{ categorys[5].categoryName }}
             </div>
@@ -564,7 +564,7 @@ export default {
 
 @media only screen and (max-width: 900px) {
   .category-section .grid-container .grid-items {
-    background-color: #46292b;
+    background-color: #771219;
     color: white;
     text-align: center;
     height: 200px;
@@ -583,12 +583,12 @@ export default {
 
 @media only screen and (max-width: 600px) {
   .category-section .grid-container .grid-items {
-    background-color: #46292b;
+    background-color: #771219;
     color: white;
     text-align: center;
-    height: 10em;
-    width: 7em;
-    font-size: 1em;
+    height: 130px;
+    width: 100px;
+    font-size: 0.75em;
     border-radius: 20px;
     display: flex;
     flex-direction: column;

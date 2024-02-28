@@ -55,8 +55,7 @@
         style="justify-content: center;"
       >
         <div
-          class="col-6 col-md-4 col-xl-4"
-          style="padding: 0em 4em;"
+          class="col-6 col-md-4 col-xl-4 padding-mobile"
           v-for="(product, index) in products.slice(0, 2)"
           :key="'wel-' + index"
         >
@@ -113,5 +112,13 @@ export default {
     rgba(209, 209, 209, 1),
     rgba(255, 255, 255, 1)
   ) !important;
+}
+.padding-mobile {
+  padding: 0em 4em;
+}
+@media only screen and (max-width: 600px) {
+  .padding-mobile {
+    padding: 0em 1em;
+  }
 }
 </style>

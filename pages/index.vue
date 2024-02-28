@@ -30,12 +30,12 @@
       >
         <div class="row">
           <div
-            class="d-flex col-12 col-lg-2 col-md-12 hidemobile"
-            style="justify-content: end; display: flex;"
+            class="d-flex col-12 col-lg-3 col-md-12 hidemobile"
+            style="justify-content: end; display: flex; padding: 1em;"
           >
             <img
               :src="video[0].imgLeft"
-              style="max-height: 33em; max-width: none;"
+              style="max-height: 33em; max-width: 100%;"
             />
           </div>
           <!-- <div class="col-3" style="justify-content: end; display: flex;"> -->
@@ -77,7 +77,7 @@
           </div> -->
           <!-- </div> -->
           <div
-            class="col-12 d-flex col-lg-8 col-md-12"
+            class="col-12 d-flex col-lg-6 col-md-12"
             style="display: flex; justify-content: center; align-items: center;"
           >
             <video
@@ -101,21 +101,21 @@
             </video>
           </div>
           <div
-            class="d-flex col-12 col-lg-2 col-md-12 showmobile"
+            class="d-flex col-12 col-lg-3 col-md-12 showmobile"
             style="justify-content: end;"
           >
             <img
               :src="video[0].imgLeft"
-              style="max-height: 33em; max-width: none;"
+              style="max-height: 33em; max-width: 100%;"
             />
           </div>
           <div
-            class="col-12 d-flex col-lg-2 col-md-12"
+            class="col-12 d-flex col-lg-3 col-md-12 showmobilele"
             style="display: flex; justify-content: start;"
           >
             <img
               :src="video[0].imgRight"
-              style="max-height: 33em; max-width: none;"
+              style="max-height: 33em; max-width: 100%;"
             />
           </div>
           <!-- <div class="col-3">
@@ -188,7 +188,7 @@
           <div class="col-4">
             <img
               :src="video[0].imgRight"
-              style="max-height: 33em; max-width: none;"
+              style="max-height: 33em; max-width: 100%;"
             />
           </div>
         </div>
@@ -508,6 +508,28 @@ export default {
 @media only screen and (max-width: 600px) {
   .showmobile {
     display: flex !important;
+    padding: 2em;
+  }
+}
+.showmobilele {
+  padding: 1em;
+}
+
+@media only screen and (max-width: 600px) {
+  .showmobilele {
+    display: flex !important;
+    padding: 2em;
+    padding-top: 0;
+  }
+}
+.showmobile {
+  display: none !important;
+}
+
+@media only screen and (max-width: 600px) {
+  .showmobile {
+    display: flex !important;
+    padding: 2em;
   }
 }
 .bg-cusve {

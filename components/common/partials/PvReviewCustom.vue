@@ -4,7 +4,12 @@
       <div
         class="row main-content"
         v-if="reviews.length > 0"
-        style="display: flex; justify-content: center; width: 100%;"
+        style="
+          display: flex;
+          justify-content: center;
+          width: 100%;
+          padding: 10px;
+        "
       >
         <div class="category-section mb-2 col-12">
           <div
@@ -26,11 +31,12 @@
             </div>
           </div>
         </div>
+
         <div class="col-12 col-md-5 bgimgband">
           <div class="row">
-            <div class="col-5" style="padding-left: 3em;">
+            <div class="col-5 paddingmreview">
               <img
-                style="width: 100%; height: 20em;"
+                style="width: 100%;"
                 :src="reviews[0].product_review_link"
                 alt="body shape"
                 class="w-auto bg-transparent"
@@ -40,7 +46,10 @@
               <p style="font-size: 1.5em; font-weight: 900;">
                 {{ reviews[0].fullname_th }}
               </p>
-              <p style="font-size: 1.3em;">{{ reviews[0].review_detail_th }}</p>
+              <div
+                style="font-size: 1.3em;"
+                v-html="reviews[0].review_detail_th"
+              ></div>
             </div>
           </div>
 
@@ -52,9 +61,9 @@
           v-if="reviews.length > 1"
         >
           <div class="row">
-            <div class="col-5" style="padding-left: 3em;">
+            <div class="col-5 paddingmreview">
               <img
-                style="width: 100%; height: 20em;"
+                style="width: 100%;"
                 :src="reviews[1].product_review_link"
                 alt="body shape"
                 class="w-auto bg-transparent"
@@ -64,7 +73,10 @@
               <p style="font-size: 1.5em; font-weight: 900;">
                 {{ reviews[1].fullname_th }}
               </p>
-              <p style="font-size: 1.3em;">{{ reviews[1].review_detail_th }}</p>
+              <div
+                style="font-size: 1.3em;"
+                v-html="reviews[1].review_detail_th"
+              ></div>
             </div>
           </div>
 
@@ -136,5 +148,29 @@ export default {
   padding-top: 7em;
   background-size: 100% 100%;
   background-repeat: no-repeat;
+}
+.paddingmreview {
+  padding-left: 3em;
+  padding-bottom: 2em;
+}
+@media only screen and (max-width: 600px) {
+  .paddingmreview {
+    padding-left: 1em;
+    padding-bottom: 0em;
+  }
+  .bgimgband {
+    background-image: url("static/card1.png");
+    padding-bottom: 5em;
+    padding-top: 5em;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+  }
+  .bgimgband2 {
+    background-image: url("static/card2.png");
+    padding-bottom: 5em;
+    padding-top: 5em;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+  }
 }
 </style>

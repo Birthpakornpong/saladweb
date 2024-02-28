@@ -31,7 +31,7 @@
         <div class="tab-content col-lg-12"></div>
       </div>
     </div>
-    <div style="padding: 5em;">
+    <div class="mobilewidth">
       <div class="row main-content" v-if="product">
         <div
           class="col-12 d-flex"
@@ -715,3 +715,13 @@ export default {
   },
 };
 </script>
+<style>
+.mobilewidth {
+  padding: 5em;
+}
+@media only screen and (max-width: 600px) {
+  .mobilewidth {
+    padding: 1em;
+  }
+}
+</style>
