@@ -33,10 +33,13 @@
             class="d-flex col-12 col-lg-3 col-md-12 hidemobile"
             style="justify-content: end; display: flex; padding: 1em;"
           >
-            <img
+          <div> <img
               :src="video[0].imgLeft"
               style="max-height: 33em; max-width: 100%;"
             />
+            </div>
+
+           
           </div>
           <!-- <div class="col-3" style="justify-content: end; display: flex;"> -->
 
@@ -104,19 +107,25 @@
             class="d-flex col-12 col-lg-3 col-md-12 showmobile"
             style="justify-content: end;"
           >
-            <img
+          <div>
+             <img
               :src="video[0].imgLeft"
               style="max-height: 33em; max-width: 100%;"
             />
+          </div>
+           
           </div>
           <div
             class="col-12 d-flex col-lg-3 col-md-12 showmobilele"
             style="display: flex; justify-content: start;"
           >
-            <img
+          <div>
+             <img
               :src="video[0].imgRight"
               style="max-height: 33em; max-width: 100%;"
             />
+          </div>
+           
           </div>
           <!-- <div class="col-3">
           <img :src="video[0].imgRight" style="height: 33em;" /> -->
