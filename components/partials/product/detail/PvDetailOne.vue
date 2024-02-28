@@ -8,7 +8,7 @@
       :next-product="nextProduct"
     ></pv-product-nav>
 
-    <div class="ratings-container">
+    <!-- <div class="ratings-container">
       <div class="product-ratings">
         <span
           class="ratings"
@@ -24,14 +24,14 @@
       <a href="javascript:;" class="rating-link" v-else
         >( There is no review yet. )</a
       >
-    </div>
+    </div> -->
 
     <hr class="short-divider" />
 
     <div
       class="price-box"
       v-if="product.price"
-      key="singlePrice"
+      key="singlePricett"
       style="display: flex; justify-content: space-between;"
     >
       <div>
@@ -99,24 +99,24 @@
     </div>
 
     <div class="product-desc" v-if="product.short_description">
-      <p>{{ product.short_description }}</p>
+      <div v-html="product.short_description" style="font-size: 1.2em;"></div>
     </div>
 
     <ul class="single-info-list">
-      <li v-if="product.quantity" style="font-size: 1.2em;">
+      <li v-if="product.quantity" style="font-size: 1.4em;">
         ขนาดบรรจุ:
         <strong class="ml-1">{{ product.quantity }}</strong>
       </li>
-      <li v-if="product.expired" style="font-size: 1.2em;">
+      <li v-if="product.expired" style="font-size: 1.4em;">
         อายุสินค้า:
         <strong class="ml-1">{{ product.expired }}</strong>
       </li>
-      <li v-if="product.sku" style="font-size: 1.2em;">
+      <li v-if="product.sku" style="font-size: 1.4em;">
         SKU:
         <strong class="ml-1">{{ product.sku }}</strong>
       </li>
 
-      <li v-if="product.category">
+      <li v-if="product.category" style="font-size: 1.4em;">
         CATEGORY:
         <!-- <strong class="ml-1">
           <nuxt-link

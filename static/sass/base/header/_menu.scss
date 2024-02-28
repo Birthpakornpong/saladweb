@@ -98,7 +98,7 @@
 
 // 2. Menu
 .menu {
-	font-size: 12px;
+	font-size: 2em;
 	font-weight: 600;
 	line-height: 1.5;
 	@include clearfix;
@@ -146,7 +146,7 @@
 		// Anchor
 		> a {
 			padding: 1rem 0;
-			font-size: 13px;
+			font-size: 2em;
 			font-weight: 400;
 
 			@include css(color, menu, top, color);

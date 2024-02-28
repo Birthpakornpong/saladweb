@@ -14,7 +14,7 @@
             href="javascript:;"
             @click="catOpened = !catOpened"
             :class="{ collapsed: !catOpened }"
-            style="font-size: 1.5em;"
+            style="font-size: 1.6em;"
             >วิธีหรือคำแนะนำในการรับประทาน/เก็บรักษา</a
           >
         </h3>
@@ -29,7 +29,7 @@
                 {{ item.name }}
               </li>
             </ul> -->
-            <div v-html="product.instruction"></div>
+            <div v-html="product.instruction" style="font-size: 1.3em;"></div>
           </div>
         </vue-slide-toggle>
       </div>
@@ -40,7 +40,7 @@
             href="javascript:;"
             @click="sizeOpened = !sizeOpened"
             :class="{ collapsed: !sizeOpened }"
-            style="font-size: 1.5em;"
+            style="font-size: 1.6em;"
             >คำแนะนำและข้อควรระวัง</a
           >
         </h3>
@@ -55,7 +55,7 @@
                 {{ item.name }}
               </li>
             </ul> -->
-            <div v-html="product.precautionary"></div>
+            <div v-html="product.precautionary" style="font-size: 1.3em;"></div>
           </div>
         </vue-slide-toggle>
       </div>

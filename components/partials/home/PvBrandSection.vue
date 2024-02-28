@@ -1,15 +1,13 @@
 <template>
-  <div class="row">
+  <div class="row bgimgband">
     <div class="col-12">
-      <div class="category-section">
+      <div class="category-section" v-if="categorys.length > 0">
         <div class="header-text">
           <div>SHOP BY CATEGORY</div>
         </div>
         <div class="grid-container" v-if="categorys.length > 0">
           <!-- <nuxt-link
-            v-for="(item, index) in categorys"
-            :key="index"
-            :to="{ path: '/shop', query: { category: item.id } }"
+            :to="{ path: '/shop', query: { category: categorys[0].id } }"
             target="_blank"
           >
             <div
@@ -17,26 +15,35 @@
               @mouseover="show = true"
               @mouseleave="show = false"
             >
-              <Transition name="slide-fade">
-                
+              <transition name="slide-down">
                 <div
                   v-if="show"
                   style="
                     width: 100%;
-                    height: 7em;
-                    background-color: white;
+                    height: 11em;
                     border-bottom-right-radius: 30px;
                     border-bottom-left-radius: 30px;
+                    color: black;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
                   "
+                  class="bg-custom slide-down"
                 >
-                  hello
+                  {{ categorys[0].categoryTH }}
                 </div>
-              </Transition>
-              <img :src="item.categoryLink" style="height: 5em;" />
-              {{ item.categoryName }}
+              </transition>
+              <div>
+                <img
+                  :src="categorys[0].categoryLink"
+                  style="height: 4em; margin-bottom: 1em;"
+                />
+                {{ categorys[0].categoryName }}
+              </div>
             </div>
           </nuxt-link> -->
-          <nuxt-link
+
+          <!-- <nuxt-link
             :to="{ path: '/shop', query: { category: categorys[0].id } }"
             target="_blank"
           >
@@ -46,12 +53,11 @@
               @mouseleave="show = false"
             >
               <Transition name="slide-fade">
-                <!-- <p v-if="show">hello</p> -->
                 <div
                   v-if="show"
                   style="
                     width: 100%;
-                    height: 7em;
+                    height: 11em;
 
                     border-bottom-right-radius: 30px;
                     border-bottom-left-radius: 30px;
@@ -66,7 +72,58 @@
                 </div>
               </Transition>
               <div>
-                <img :src="categorys[0].categoryLink" style="height: 5em;" />
+                <img
+                  :src="categorys[0].categoryLink"
+                  style="height: 4em; margin-bottom: 1em;"
+                />
+                {{ categorys[0].categoryName }}
+              </div>
+            </div>
+          </nuxt-link> -->
+
+          <nuxt-link
+            :to="{ path: '/shop', query: { category: categorys[0].id } }"
+            target="_blank"
+          >
+            <div
+              class="grid-items"
+              style="position: relative;"
+              @mouseover="show = true"
+              @mouseleave="show = false"
+            >
+              <Transition name="slide-fade">
+                <div
+                  v-if="show"
+                  style="
+                    width: 100%;
+                    height: 6em;
+                    border-bottom-right-radius: 30px;
+                    border-bottom-left-radius: 30px;
+                    color: rgba(119, 119, 119, 1) !important;
+                    font-size: 1em;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    position: absolute;
+                    top: 0px;
+                  "
+                  class="bgimgcardband"
+                >
+                  {{ categorys[0].categoryTH }}
+                </div>
+              </Transition>
+              <div v-if="show" style="position: absolute; top: 5em;">
+                <img
+                  :src="categorys[0].categoryLink"
+                  style="height: 5em; margin-bottom: 1em;"
+                />
+                {{ categorys[0].categoryName }}
+              </div>
+              <div v-else>
+                <img
+                  :src="categorys[0].categoryLink"
+                  style="height: 5em; margin-bottom: 1em;"
+                />
                 {{ categorys[0].categoryName }}
               </div>
             </div>
@@ -77,6 +134,7 @@
           >
             <div
               class="grid-items"
+              style="position: relative;"
               @mouseover="show1 = true"
               @mouseleave="show1 = false"
             >
@@ -86,22 +144,34 @@
                   v-if="show1"
                   style="
                     width: 100%;
-                    height: 7em;
-
+                    height: 6em;
                     border-bottom-right-radius: 30px;
                     border-bottom-left-radius: 30px;
-                    color: black;
+                    color: rgba(119, 119, 119, 1) !important;
+                    font-size: 1em;
                     display: flex;
                     align-items: center;
                     justify-content: center;
+                    position: absolute;
+                    top: 0px;
                   "
-                  class="bg-custom"
+                  class="bgimgcardband"
                 >
                   {{ categorys[1].categoryTH }}
                 </div>
               </Transition>
-              <div>
-                <img :src="categorys[1].categoryLink" style="height: 5em;" />
+              <div v-if="show1" style="position: absolute; top: 5em;">
+                <img
+                  :src="categorys[1].categoryLink"
+                  style="height: 5em; margin-bottom: 1em;"
+                />
+                {{ categorys[1].categoryName }}
+              </div>
+              <div v-else>
+                <img
+                  :src="categorys[1].categoryLink"
+                  style="height: 5em; margin-bottom: 1em;"
+                />
                 {{ categorys[1].categoryName }}
               </div>
             </div>
@@ -113,6 +183,7 @@
           >
             <div
               class="grid-items"
+              style="position: relative;"
               @mouseover="show2 = true"
               @mouseleave="show2 = false"
             >
@@ -122,22 +193,39 @@
                   v-if="show2"
                   style="
                     width: 100%;
-                    height: 7em;
-
+                    height: 6em;
                     border-bottom-right-radius: 30px;
                     border-bottom-left-radius: 30px;
-                    color: black;
+                    color: rgba(119, 119, 119, 1) !important;
+                    font-size: 1em;
                     display: flex;
                     align-items: center;
                     justify-content: center;
+                    position: absolute;
+                    top: 0px;
                   "
-                  class="bg-custom"
+                  class="bgimgcardband"
                 >
                   {{ categorys[2].categoryTH }}
                 </div>
               </Transition>
 
-              <img :src="categorys[2].categoryLink" style="height: 5em;" />
+              <img
+                v-if="show2"
+                style="
+                  position: absolute;
+                  top: 5em;
+                  height: 5em;
+                  margin-bottom: 1em;
+                "
+                :src="categorys[2].categoryLink"
+              />
+              <span v-if="show2">{{ categorys[2].categoryName }}</span>
+
+              <img
+                :src="categorys[2].categoryLink"
+                style="height: 5em; margin-bottom: 1em;"
+              />
               {{ categorys[2].categoryName }}
             </div>
           </nuxt-link>
@@ -148,6 +236,7 @@
           >
             <div
               class="grid-items"
+              style="position: relative;"
               @mouseover="show3 = true"
               @mouseleave="show3 = false"
             >
@@ -157,22 +246,39 @@
                   v-if="show3"
                   style="
                     width: 100%;
-                    height: 7em;
-
+                    height: 6em;
                     border-bottom-right-radius: 30px;
                     border-bottom-left-radius: 30px;
-                    color: black;
+                    color: rgba(119, 119, 119, 1) !important;
+                    font-size: 1em;
                     display: flex;
                     align-items: center;
                     justify-content: center;
+                    position: absolute;
+                    top: 0px;
                   "
-                  class="bg-custom"
+                  class="bgimgcardband"
                 >
                   {{ categorys[3].categoryTH }}
                 </div>
               </Transition>
 
-              <img :src="categorys[3].categoryLink" style="height: 5em;" />
+              <img
+                v-if="show3"
+                style="
+                  position: absolute;
+                  top: 5em;
+                  height: 5em;
+                  margin-bottom: 1em;
+                "
+                :src="categorys[3].categoryLink"
+              />
+              <span v-if="show3">{{ categorys[3].categoryName }}</span>
+
+              <img
+                :src="categorys[3].categoryLink"
+                style="height: 5em; margin-bottom: 1em;"
+              />
               {{ categorys[3].categoryName }}
             </div>
           </nuxt-link>
@@ -183,6 +289,7 @@
           >
             <div
               class="grid-items"
+              style="position: relative;"
               @mouseover="show4 = true"
               @mouseleave="show4 = false"
             >
@@ -192,22 +299,39 @@
                   v-if="show4"
                   style="
                     width: 100%;
-                    height: 7em;
-
+                    height: 6em;
                     border-bottom-right-radius: 30px;
                     border-bottom-left-radius: 30px;
-                    color: black;
+                    color: rgba(119, 119, 119, 1) !important;
+                    font-size: 1em;
                     display: flex;
                     align-items: center;
                     justify-content: center;
+                    position: absolute;
+                    top: 0px;
                   "
-                  class="bg-custom"
+                  class="bgimgcardband"
                 >
                   {{ categorys[4].categoryTH }}
                 </div>
               </Transition>
 
-              <img :src="categorys[4].categoryLink" style="height: 5em;" />
+              <img
+                v-if="show4"
+                style="
+                  position: absolute;
+                  top: 5em;
+                  height: 5em;
+                  margin-bottom: 1em;
+                "
+                :src="categorys[4].categoryLink"
+              />
+              <span v-if="show4">{{ categorys[4].categoryName }}</span>
+
+              <img
+                :src="categorys[4].categoryLink"
+                style="height: 5em; margin-bottom: 1em;"
+              />
               {{ categorys[4].categoryName }}
             </div>
           </nuxt-link>
@@ -218,6 +342,7 @@
           >
             <div
               class="grid-items"
+              style="position: relative;"
               @mouseover="show5 = true"
               @mouseleave="show5 = false"
             >
@@ -227,22 +352,38 @@
                   v-if="show5"
                   style="
                     width: 100%;
-                    height: 7em;
-
+                    height: 6em;
                     border-bottom-right-radius: 30px;
                     border-bottom-left-radius: 30px;
-                    color: black;
+                    color: rgba(119, 119, 119, 1) !important;
+                    font-size: 1em;
                     display: flex;
                     align-items: center;
                     justify-content: center;
+                    position: absolute;
+                    top: 0px;
                   "
-                  class="bg-custom"
+                  class="bgimgcardband"
                 >
                   {{ categorys[5].categoryTH }}
                 </div>
               </Transition>
+              <img
+                v-if="show5"
+                style="
+                  position: absolute;
+                  top: 5em;
+                  height: 5em;
+                  margin-bottom: 1em;
+                "
+                :src="categorys[5].categoryLink"
+              />
+              <span v-if="show5">{{ categorys[5].categoryName }}</span>
 
-              <img :src="categorys[5].categoryLink" style="height: 5em;" />
+              <img
+                :src="categorys[5].categoryLink"
+                style="height: 5em; margin-bottom: 1em;"
+              />
               {{ categorys[5].categoryName }}
             </div>
           </nuxt-link>
@@ -326,33 +467,47 @@ export default {
 </script>
 
 <style>
+.bgimgband {
+  background-image: url("static/bgcolor.png");
+  padding-bottom: 5em;
+  padding-top: 7em;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+.bgimgcardband {
+  background-image: url("static/bgcardbrand.png");
+  font-size: 1.2em;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
 .bg-custom {
   background: linear-gradient(
     45deg,
     rgba(209, 209, 209, 1),
     rgba(255, 255, 255, 1)
   );
+  font-size: 1.2em;
 }
 .slide-fade-hover-active {
-  transition: all 0.5s ease-out;
+  transition: all 2s ease-in;
 }
 
 .slide-fade-leave-active {
-  transition: all 0.5s ease-in;
+  transition: all 2s ease-in;
 }
 
 .slide-fade-leave-to {
-  transform: translateY(-20px);
+  transform: translateY(-100%);
   opacity: 1;
 }
 .slide-fade-hover-from {
-  transform: translateY(20px);
+  transform: translateY(100%);
   opacity: 1;
 }
 .category-section .header-text {
   text-align: center;
   font-weight: bold;
-  font-size: x-large;
+  font-size: 2.5em;
   color: #ab0011;
   position: relative;
 }
@@ -364,17 +519,27 @@ export default {
 .category-section .grid-container {
   display: grid;
   grid: auto auto / auto auto auto;
-  grid-gap: 50px;
-  background-color: white;
+  grid-gap: 85px;
+
   padding: 40px;
   justify-content: center;
+}
+@media only screen and (max-width: 900px) {
+  .category-section .grid-container {
+    display: grid;
+    /* grid: none; */
+    grid-gap: 4em;
+
+    padding: 1em;
+    justify-content: center;
+  }
 }
 @media only screen and (max-width: 600px) {
   .category-section .grid-container {
     display: grid;
     /* grid: none; */
     grid-gap: 2em;
-    background-color: white;
+    /* background-color: white; */
     padding: 1em;
     justify-content: center;
   }
@@ -384,10 +549,10 @@ export default {
   background-color: #771219;
   color: white;
   text-align: center;
-  height: 240px;
-  width: 200px;
-  font-size: 20px;
-  border-radius: 20px;
+  height: 360px;
+  width: 300px;
+  font-size: 25px;
+  border-radius: 40px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -397,14 +562,33 @@ export default {
   overflow: hidden;
 }
 
+@media only screen and (max-width: 900px) {
+  .category-section .grid-container .grid-items {
+    background-color: #771219;
+    color: white;
+    text-align: center;
+    height: 200px;
+    width: 170px;
+    font-size: 1em;
+    border-radius: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    position: relative;
+    overflow: hidden;
+  }
+}
+
 @media only screen and (max-width: 600px) {
   .category-section .grid-container .grid-items {
     background-color: #771219;
     color: white;
     text-align: center;
-    height: 10em;
-    width: 7em;
-    font-size: 1em;
+    height: 130px;
+    width: 100px;
+    font-size: 0.75em;
     border-radius: 20px;
     display: flex;
     flex-direction: column;

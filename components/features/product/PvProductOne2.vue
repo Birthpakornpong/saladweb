@@ -55,7 +55,12 @@
 
       <div
         class="title-wrap"
-        style="display: flex; justify-content: center; font-size: 1.4em;"
+        style="
+          display: flex;
+          justify-content: center;
+          font-size: 1.4em;
+          color: black;
+        "
       >
         <nuxt-link :to="'/product/default/' + product.slug">{{
           product.name
@@ -72,22 +77,35 @@
             product.ratings | priceFormat
           }}</span>
         </div>
+      </div> -->
+      <div
+        class="title-wrap"
+        v-if="product.price"
+        key="singlePriceTwo"
+        style="
+          display: flex;
+          justify-content: center;
+          font-size: 1.3em;
+          color: rgba(128, 128, 128, 1);
+        "
+      >
+        <template>
+          <span class="product-price">{{ product.short_description }}</span>
+        </template>
       </div>
 
-      <div class="price-box" v-if="product.price" key="singlePrice">
-        <template v-if="!product.is_sale">
-          <span class="product-price">${{ product.price | priceFormat }}</span>
-        </template>
-
-        <template v-else>
-          <span class="product-price"
-            >${{ product.sale_price | priceFormat }}</span
-          >
-          <span class="old-price">${{ product.price | priceFormat }}</span>
+      <div
+        class="price-box title-wrap mt-1"
+        v-if="product.price"
+        key="singlePrice"
+        style="display: flex; justify-content: center; font-size: 1.4em;"
+      >
+        <template>
+          <span class="product-price">฿{{ product.price | priceFormat }}</span>
         </template>
       </div>
 
-      <div class="price-box" v-else>
+      <!-- <div class="price-box" v-else>
         <template v-if="minPrice !== maxPrice">
           <span class="product-price"
             >${{ minPrice | priceFormat }} &ndash; ${{

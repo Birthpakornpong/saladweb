@@ -25,7 +25,7 @@
         class="form-control mb-0"
         name="search_term"
         id="search_term"
-        placeholder="ค้นหา"
+        placeholder="ค้นหา..."
         required
         v-model="search_term"
         @input="searchProducts"

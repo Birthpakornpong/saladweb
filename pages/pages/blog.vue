@@ -1,6 +1,6 @@
 <template>
   <main class="main">
-    <div class="container main-content">
+    <div class="main-content custompadding">
       <div class="row">
         <div class="col-12">
           <div class="blog-section row">
@@ -32,7 +32,7 @@
                 v-if="totalCount > 0"
               >
                 <div class="toolbox-item toolbox-show mb-0">
-                  <label>Show:</label>
+                  <label>แสดง:</label>
 
                   <div class="select-custom">
                     <select
@@ -57,21 +57,6 @@
             </template>
           </div>
         </div>
-
-        <!-- <div
-          class="custom-sidebar-toggle"
-          @click="toggleSidebar"
-          v-if="isSidebar"
-        >
-          <i class="fas fa-sliders-h"></i>
-        </div>
-        <div class="sidebar-overlay" @click="toggleSidebar"></div>
-
-        <pv-blog-sidebar
-          :blog-category-list="blogCategoryList"
-          :recent-posts="recentPosts"
-          :loaded="loaded"
-        ></pv-blog-sidebar> -->
       </div>
     </div>
   </main>
@@ -231,3 +216,13 @@ export default {
   },
 };
 </script>
+<style scoped>
+.custompadding {
+  padding: 2em 5em;
+}
+@media only screen and (max-width: 600px) {
+  .custompadding {
+    padding: 1em 2em;
+  }
+}
+</style>

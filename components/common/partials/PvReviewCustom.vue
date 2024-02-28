@@ -1,24 +1,84 @@
 <template>
   <main>
-    <div class="container">
-      <div class="row main-content" v-if="reviews.length > 0">
-        <div class="category-section mb-4 col-12">
-          <div class="header-text" style="color: black;">
-            <div>Review</div>
+    <div style="display: flex; justify-content: center;" class="mb-2">
+      <div
+        class="row main-content"
+        v-if="reviews.length > 0"
+        style="
+          display: flex;
+          justify-content: center;
+          width: 100%;
+          padding: 10px;
+        "
+      >
+        <div class="category-section mb-2 col-12">
+          <div
+            class="header-text"
+            style="
+              color: black;
+              text-align: start;
+              padding-left: 4em;
+              padding-right: 4em;
+            "
+          >
+            <div
+              style="
+                border-bottom: 1px solid rgba(207, 207, 207, 1);
+                padding-bottom: 0.5em;
+              "
+            >
+              Review
+            </div>
           </div>
         </div>
+
+        <div class="col-12 col-md-5 bgimgband">
+          <div class="row">
+            <div class="col-5 paddingmreview">
+              <img
+                style="width: 100%;"
+                :src="reviews[0].product_review_link"
+                alt="body shape"
+                class="w-auto bg-transparent"
+              />
+            </div>
+            <div class="col-7" style="padding: 3em; padding-top: 2em;">
+              <p style="font-size: 1.5em; font-weight: 900;">
+                {{ reviews[0].fullname_th }}
+              </p>
+              <div
+                style="font-size: 1.3em;"
+                v-html="reviews[0].review_detail_th"
+              ></div>
+            </div>
+          </div>
+
+          <!-- <inner-image-zoom :src="'./review.png'" /> -->
+        </div>
         <div
-          class="col-6"
-          style="display: flex; justify-content: center;"
-          v-for="(item, index) in reviews"
-          :key="index"
+          class="col-12 col-md-5 bgimgband2"
+          style="margin-left: 3em;"
+          v-if="reviews.length > 1"
         >
-          <img
-            style="width: 100%; height: 30em;"
-            :src="item.product_review_link"
-            alt="body shape"
-            class="w-auto bg-transparent"
-          />
+          <div class="row">
+            <div class="col-5 paddingmreview">
+              <img
+                style="width: 100%;"
+                :src="reviews[1].product_review_link"
+                alt="body shape"
+                class="w-auto bg-transparent"
+              />
+            </div>
+            <div class="col-7" style="padding: 3em; padding-top: 2em;">
+              <p style="font-size: 1.5em; font-weight: 900;">
+                {{ reviews[1].fullname_th }}
+              </p>
+              <div
+                style="font-size: 1.3em;"
+                v-html="reviews[1].review_detail_th"
+              ></div>
+            </div>
+          </div>
 
           <!-- <inner-image-zoom :src="'./review.png'" /> -->
         </div>
@@ -74,3 +134,43 @@ export default {
   },
 };
 </script>
+<style scoped>
+.bgimgband {
+  background-image: url("static/card1.png");
+  padding-bottom: 5em;
+  padding-top: 7em;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+.bgimgband2 {
+  background-image: url("static/card2.png");
+  padding-bottom: 5em;
+  padding-top: 7em;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+.paddingmreview {
+  padding-left: 3em;
+  padding-bottom: 2em;
+}
+@media only screen and (max-width: 600px) {
+  .paddingmreview {
+    padding-left: 1em;
+    padding-bottom: 0em;
+  }
+  .bgimgband {
+    background-image: url("static/card1.png");
+    padding-bottom: 5em;
+    padding-top: 5em;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+  }
+  .bgimgband2 {
+    background-image: url("static/card2.png");
+    padding-bottom: 5em;
+    padding-top: 5em;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+  }
+}
+</style>

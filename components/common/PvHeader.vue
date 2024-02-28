@@ -19,14 +19,14 @@
             <img
               src="~/static/images/home/Logo_Holis.svg"
               alt="Porto Logo"
-              style="height: 3em; max-width: none;"
+              style="height: 4em; max-width: none;"
             />
           </nuxt-link>
         </div>
 
         <div class="col-4 hidemobilelogo" style="justify-content: end;">
           <a class="contact-us pb-1"
-            >Follow us :
+            >ติดตามเรา:
             <a href="https://www.facebook.com/HOLISbySCGP" target="_blank"
               ><i class="icon-facebook pr-1"></i
             ></a>
@@ -60,8 +60,7 @@
           class="col-12 d-flex mb-2 showmobile"
           style="justify-content: center;"
         >
-          <!-- <pv-header-search></pv-header-search> -->
-          <pv-header-search-m></pv-header-search-m>
+          <!-- <pv-header-search-m></pv-header-search-m> -->
         </div>
       </div>
     </div>

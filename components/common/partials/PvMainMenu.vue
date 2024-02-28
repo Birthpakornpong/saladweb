@@ -2,7 +2,7 @@
   <nav class="main-nav d-none d-lg-flex flex-wrap">
     <ul class="menu main-menu menu-arrow">
       <li>
-        <nuxt-link to="/">Home</nuxt-link>
+        <nuxt-link to="/" style="font-size: 1.3em !important;">หน้าหลัก</nuxt-link>
       </li>
 
       <li>
@@ -10,17 +10,23 @@
           to="/shop"
           class="sub-menu-link menu-with-ul"
           :class="{ active: $route.path.indexOf('/shop') > -1 }"
-          >Products</nuxt-link
+          style="font-size: 1.3em !important;"
+          >สินค้า</nuxt-link
         >
 
         <div class="megamenu megamenu-fixed-width megamenu-3cols">
           <div class="row">
             <div class="col-lg-6">
-              <a href="javascript:;" class="nolink">All Product</a>
+              <nuxt-link to="/shop" style="font-size: 1.3em !important;"
+                >สินค้าทั้งหมด</nuxt-link
+              >
 
               <ul class="submenu">
                 <li v-for="item in productNames" :key="item.id">
-                  <nuxt-link :to="item.url">
+                  <nuxt-link
+                    :to="item.url"
+                    style="font-size: 1.1em !important; padding-left: 1em;"
+                  >
                     {{ item.title }}
                     <!-- <span class="tip tip-hot" v-if="item.hot">Hot</span> -->
                   </nuxt-link>
@@ -28,11 +34,16 @@
               </ul>
             </div>
             <div class="col-lg-6">
-              <a href="javascript:;" class="nolink">Product Catagory</a>
+              <nuxt-link to="/shop" style="font-size: 1.3em !important;"
+                >ประเภทสินค้า</nuxt-link
+              >
 
               <ul class="submenu">
                 <li v-for="item in categorys" :key="item.id">
-                  <nuxt-link :to="item.url">
+                  <nuxt-link
+                    :to="item.url"
+                    style="font-size: 1.1em !important; padding-left: 1em;"
+                  >
                     {{ item.title }}
                     <!-- <span class="tip tip-hot" v-if="item.hot">Hot</span> -->
                   </nuxt-link>
@@ -57,7 +68,8 @@
           to="/pages/blog"
           class="menu-with-ul"
           :class="{ active: $route.path.indexOf('/pages/blog') > -1 }"
-          >News & Activities</nuxt-link
+          style="font-size: 1.3em !important;"
+          >ข่าวสารและกิจกรรม</nuxt-link
         >
       </li>
 
@@ -66,7 +78,8 @@
           to="/pages/ourstory/post-format-image-gallery"
           class="menu-with-ul"
           :class="{ active: $route.path.indexOf('/pages/ourstory') > -1 }"
-          >Our Story</nuxt-link
+          style="font-size: 1.3em !important;"
+          >ประวัติของเรา</nuxt-link
         >
       </li>
     </ul>
@@ -127,7 +140,7 @@ export default {
             productsData.forEach((item) => {
               this.categorys.push({
                 ...item,
-                title: item.category_name,
+                title: item.category_name_th,
                 id: String(item.id),
                 size: String(item.id),
                 url: `/shop?category=${item.id}`,

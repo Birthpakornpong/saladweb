@@ -9,37 +9,41 @@
       <pv-intro-section :introIMG="introIMG"></pv-intro-section>
     </section>
 
-    <div class="header-text mb-3" v-if="video.length > 0">
-      <div>{{ video[0].headText }}</div>
-    </div>
-    <div ref="videoPlayerstest" style="display: none;">
-      <video v-show="variable" muted controls autoplay>
-        <source src="videotest.mp4" type="video/mp4" />
-      </video>
-      <video v-show="!variable" controls style="max-width: 100%;">
-        <source src="videotest.mp4" type="video/mp4" />
-      </video>
-    </div>
+    <div class="bg-cusve">
+      <div class="header-text mb-3" v-if="video.length > 0">
+        <div>{{ video[0].headText }}</div>
+      </div>
+      <div ref="videoPlayerstest" style="display: none;">
+        <video v-show="variable" muted controls autoplay>
+          <source src="videotest.mp4" type="video/mp4" />
+        </video>
+        <video v-show="!variable" controls style="max-width: 100%;">
+          <source src="videotest.mp4" type="video/mp4" />
+        </video>
+      </div>
 
-    <div
-      v-if="video.length > 0 && positionContent == 'center'"
-      data-animation-name="fadeInUpShorter"
-      data-animation-delay="400"
-      v-animate
-    >
-      <div class="row">
-        <div
-          class="d-flex col-12 col-lg-3 col-md-12 hidemobile"
-          style="justify-content: end; display: flex;"
-        >
-          <img
-            :src="video[0].imgLeft"
-            style="max-height: 33em; max-width: none;"
-          />
-        </div>
-        <!-- <div class="col-3" style="justify-content: end; display: flex;"> -->
+      <div
+        v-if="video.length > 0 && positionContent == 'center'"
+        data-animation-name="fadeInUpShorter"
+        data-animation-delay="400"
+        v-animate
+      >
+        <div class="row">
+          <div
+            class="d-flex col-12 col-lg-3 col-md-12 hidemobile"
+            style="justify-content: end; display: flex; padding: 1em;"
+          >
+          <div> <img
+              :src="video[0].imgLeft"
+              style="max-height: 33em; max-width: 100%;"
+            />
+            </div>
 
-        <!-- <div>
+           
+          </div>
+          <!-- <div class="col-3" style="justify-content: end; display: flex;"> -->
+
+          <!-- <div>
             <div class="d-flex mr-1" style="justify-content: end;">
               <h3 class="text-headicon mr-3 mt-1">
                 วิตามิน A
@@ -74,52 +78,58 @@
               ต่อการติดเชื้อในทางเดินหายใจ
             </p>
           </div> -->
-        <!-- </div> -->
-        <div
-          class="col-12 d-flex col-lg-6 col-md-12"
-          style="display: flex; justify-content: center; align-items: center;"
-        >
-          <video
-            v-show="variable"
-            ref="videoPlayers"
-            muted
-            controls
-            autoplay
-            style="max-width: 100%;"
+          <!-- </div> -->
+          <div
+            class="col-12 d-flex col-lg-6 col-md-12"
+            style="display: flex; justify-content: center; align-items: center;"
           >
-            <source :src="video[0].url" type="video/mp4" />
-          </video>
-          <video
-            v-show="!variable"
-            ref="videoPlayers"
-            muted
-            controls
-            style="max-width: 100%;"
+            <video
+              v-show="variable"
+              ref="videoPlayers"
+              muted
+              controls
+              autoplay
+              style="max-width: 100%; width: 100%;"
+            >
+              <source :src="video[0].url" type="video/mp4" />
+            </video>
+            <video
+              v-show="!variable"
+              ref="videoPlayers"
+              muted
+              controls
+              style="max-width: 100%; width: 100%;"
+            >
+              <source :src="video[0].url" type="video/mp4" />
+            </video>
+          </div>
+          <div
+            class="d-flex col-12 col-lg-3 col-md-12 showmobile"
+            style="justify-content: end;"
           >
-            <source :src="video[0].url" type="video/mp4" />
-          </video>
-        </div>
-        <div
-          class="d-flex col-12 col-lg-3 col-md-12 showmobile"
-          style="justify-content: end;"
-        >
-          <img
-            :src="video[0].imgLeft"
-            style="max-height: 33em; max-width: none;"
-          />
-        </div>
-        <div
-          class="col-12 d-flex col-lg-3 col-md-12"
-          style="display: flex; justify-content: start;"
-        >
-          <img
-            :src="video[0].imgRight"
-            style="max-height: 33em; max-width: none;"
-          />
-        </div>
-        <!-- <div class="col-3">
+          <div>
+             <img
+              :src="video[0].imgLeft"
+              style="max-height: 33em; max-width: 100%;"
+            />
+          </div>
+           
+          </div>
+          <div
+            class="col-12 d-flex col-lg-3 col-md-12 showmobilele"
+            style="display: flex; justify-content: start;"
+          >
+          <div>
+             <img
+              :src="video[0].imgRight"
+              style="max-height: 33em; max-width: 100%;"
+            />
+          </div>
+           
+          </div>
+          <!-- <div class="col-3">
           <img :src="video[0].imgRight" style="height: 33em;" /> -->
-        <!-- <div class="d-flex ml-2">
+          <!-- <div class="d-flex ml-2">
             <div class="icon-border">
               <div
                 style="
@@ -152,77 +162,78 @@
           <p class="textcus-right">
             ต่อการติดเชื้อในทางเดินหายใจ
           </p>-->
-        <!-- </div> -->
-      </div>
-    </div>
-
-    <div
-      v-if="video.length > 0 && positionContent == 'left'"
-      data-animation-name="fadeInUpShorter"
-      data-animation-delay="400"
-      v-animate
-    >
-      <div class="row">
-        <div class="col-8" style="justify-content: end; display: flex;">
-          <video
-            v-show="variable"
-            ref="videoPlayers"
-            muted
-            controls
-            autoplay
-            style="max-width: 100%;"
-          >
-            <source :src="video[0].url" type="video/mp4" />
-          </video>
-          <video
-            v-show="!variable"
-            ref="videoPlayers"
-            muted
-            controls
-            style="max-width: 100%;"
-          >
-            <source :src="video[0].url" type="video/mp4" />
-          </video>
-        </div>
-        <div class="col-4">
-          <img
-            :src="video[0].imgRight"
-            style="max-height: 33em; max-width: none;"
-          />
+          <!-- </div> -->
         </div>
       </div>
-    </div>
 
-    <div
-      v-if="video.length > 0 && positionContent == 'right'"
-      data-animation-name="fadeInUpShorter"
-      data-animation-delay="400"
-      v-animate
-    >
-      <div class="row">
-        <div class="col-4" style="justify-content: end; display: flex;">
-          <img :src="video[0].imgLeft" />
+      <div
+        v-if="video.length > 0 && positionContent == 'left'"
+        data-animation-name="fadeInUpShorter"
+        data-animation-delay="400"
+        v-animate
+      >
+        <div class="row">
+          <div class="col-8" style="justify-content: end; display: flex;">
+            <video
+              v-show="variable"
+              ref="videoPlayers"
+              muted
+              controls
+              autoplay
+              style="max-width: 100%; width: 100%;"
+            >
+              <source :src="video[0].url" type="video/mp4" />
+            </video>
+            <video
+              v-show="!variable"
+              ref="videoPlayers"
+              muted
+              controls
+              style="max-width: 100%; width: 100%;"
+            >
+              <source :src="video[0].url" type="video/mp4" />
+            </video>
+          </div>
+          <div class="col-4">
+            <img
+              :src="video[0].imgRight"
+              style="max-height: 33em; max-width: 100%;"
+            />
+          </div>
         </div>
-        <div class="col-8">
-          <video
-            v-show="variable"
-            ref="videoPlayers"
-            muted
-            controls
-            autoplay
-            style="max-width: 100%;"
-          >
-            <source :src="video[0].url" type="video/mp4" />
-          </video>
-          <video
-            v-show="!variable"
-            ref="videoPlayers"
-            muted
-            controls
-            style="max-width: 100%;"
-          >
-            <source :src="video[0].url" type="video/mp4" />
-          </video>
+      </div>
+
+      <div
+        v-if="video.length > 0 && positionContent == 'right'"
+        data-animation-name="fadeInUpShorter"
+        data-animation-delay="400"
+        v-animate
+      >
+        <div class="row">
+          <div class="col-4" style="justify-content: end; display: flex;">
+            <img :src="video[0].imgLeft" />
+          </div>
+          <div class="col-8">
+            <video
+              v-show="variable"
+              ref="videoPlayers"
+              muted
+              controls
+              autoplay
+              style="max-width: 100%; width: 100%;"
+            >
+              <source :src="video[0].url" type="video/mp4" />
+            </video>
+            <video
+              v-show="!variable"
+              ref="videoPlayers"
+              muted
+              controls
+              style="max-width: 100%; width: 100%;"
+            >
+              <source :src="video[0].url" type="video/mp4" />
+            </video>
+          </div>
         </div>
       </div>
     </div>
@@ -457,7 +468,7 @@ export default {
 .header-text {
   text-align: center;
   font-weight: bold;
-  font-size: x-large;
+  font-size: 2.5em;
   color: #ab0011;
   position: relative;
 }
@@ -506,6 +517,35 @@ export default {
 @media only screen and (max-width: 600px) {
   .showmobile {
     display: flex !important;
+    padding: 2em;
   }
+}
+.showmobilele {
+  padding: 1em;
+}
+
+@media only screen and (max-width: 600px) {
+  .showmobilele {
+    display: flex !important;
+    padding: 2em;
+    padding-top: 0;
+  }
+}
+.showmobile {
+  display: none !important;
+}
+
+@media only screen and (max-width: 600px) {
+  .showmobile {
+    display: flex !important;
+    padding: 2em;
+  }
+}
+.bg-cusve {
+  background: linear-gradient(
+    360deg,
+    rgba(209, 209, 209, 1),
+    rgba(255, 255, 255, 1)
+  ) !important;
 }
 </style>

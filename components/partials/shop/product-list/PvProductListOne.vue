@@ -43,9 +43,9 @@
         </a>
 
         <div class="toolbox-item toolbox-sort" v-if="!isOffCanvas">
-          <label>Sort By:</label>
+          <label>จัดเรียงตาม:</label>
 
-          <div class="select-custom">
+          <div class="select-custom" style="min-width: 7em;">
             <select
               name="orderby"
               class="form-control"
@@ -55,8 +55,12 @@
               <!-- <option value="default" selected="default"
                 >Default sorting</option
               > -->
-              <option value="0">ASC</option>
-              <option value="1">DESC</option>
+              <option value="1">เรียง ก-ฮ</option>
+              <option value="2">เรียง ฮ-ก</option>
+              <option value="3">เรียงราคาน้อยไปมาก</option>
+              <option value="4">เรียงราคามากไปน้อย </option>
+              <option value="5">เรียง a-z</option>
+              <option value="6">เรียง z-a</option>
             </select>
           </div>
         </div>
@@ -64,23 +68,27 @@
 
       <div class="toolbox-right">
         <div class="toolbox-item toolbox-sort" v-if="isOffCanvas">
-          <label>Sort By:</label>
+          <label>จัดเรียงตาม:</label>
 
-          <div class="select-custom">
+          <div class="select-custom" style="min-width: 7em;">
             <select
               name="orderby"
               class="form-control"
               v-model="orderBy"
               @change="handlerGet"
             >
-              <option value="0">ASC</option>
-              <option value="1">DESC</option>
+              <option value="1">เรียง ก-ฮ</option>
+              <option value="2">เรียง ฮ-ก</option>
+              <option value="3">เรียงราคาน้อยไปมาก</option>
+              <option value="4">เรียงราคามากไปน้อย </option>
+              <option value="5">เรียง a-z</option>
+              <option value="6">เรียง z-a</option>
             </select>
           </div>
         </div>
 
         <div class="toolbox-item toolbox-show" v-if="totalCount > 0">
-          <label>Show:</label>
+          <label>แสดง:</label>
 
           <div class="select-custom">
             <select
@@ -126,18 +134,18 @@
           :key="'shop-product' + index"
         >
           <template v-if="type !== 'list'">
-            <pv-product-one
+            <pv-product-one2
               :product="product"
               :is-actions="false"
               v-if="itemsPerRow > 6"
               key="gridType"
-            ></pv-product-one>
+            ></pv-product-one2>
 
-            <pv-product-one
+            <pv-product-one2
               :product="product"
               key="gridType"
               v-else
-            ></pv-product-one>
+            ></pv-product-one2>
           </template>
 
           <pv-product-two :product="product" v-else></pv-product-two>
@@ -171,7 +179,7 @@
       v-if="products && products.length > 0"
     >
       <div class="toolbox-item toolbox-show mb-0">
-        <label>Show:</label>
+        <label>แสดง:</label>
 
         <div class="select-custom">
           <select
@@ -206,7 +214,7 @@
 </template>
 
 <script>
-import PvProductOne from "~/components/features/product/PvProductOne";
+import PvProductOne2 from "~/components/features/product/PvProductOne2";
 import PvProductTwo from "~/components/features/product/PvProductTwo";
 import PvPagination from "~/components/features/PvPagination";
 import { scrollTopHandler } from "~/utils";
@@ -216,7 +224,7 @@ import { shopData } from "~/shopData.js";
 
 export default {
   components: {
-    PvProductOne,
+    PvProductOne2,
     PvProductTwo,
     PvPagination,
   },
@@ -230,7 +238,7 @@ export default {
     return {
       products: [],
       repeatCount: new Array(100),
-      orderBy: 0,
+      orderBy: 1,
       itemsPerPage: 9,
       totalCount: 0,
       tempProduct: {
@@ -398,6 +406,8 @@ export default {
                 name: item.product_name,
                 imgUrl: item.productProfileLink,
                 slug: item.id,
+                short_description: item.product_quantity_th,
+                price: item.product_price,
               });
             });
             // this.$forceUpdate();

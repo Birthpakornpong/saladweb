@@ -1,5 +1,5 @@
 <template>
-  <section class="welcome-section">
+  <section class="welcome-section bg-cus">
     <div class="container" v-if="products.length > 0">
       <div
         class="category-section mb-4 appear-animate"
@@ -37,7 +37,8 @@
         style="justify-content: center;"
       >
         <div
-          class="col-6 col-md-4 col-xl-3"
+          class="col-6 col-md-4 col-xl-4"
+          style="padding: 0em 3em;"
           v-for="(product, index) in products.slice(0, 3)"
           :key="'wel-' + index"
         >
@@ -54,7 +55,7 @@
         style="justify-content: center;"
       >
         <div
-          class="col-6 col-md-4 col-xl-3"
+          class="col-6 col-md-4 col-xl-4 padding-mobile"
           v-for="(product, index) in products.slice(0, 2)"
           :key="'wel-' + index"
         >
@@ -83,7 +84,7 @@ export default {
 .category-section .header-text {
   text-align: center;
   font-weight: bold;
-  font-size: x-large;
+  font-size: 2.5em;
   color: #ab0011;
   position: relative;
 }
@@ -103,6 +104,21 @@ export default {
 @media only screen and (max-width: 600px) {
   .showmobile {
     display: flex;
+  }
+}
+.bg-cus {
+  background: linear-gradient(
+    -180deg,
+    rgba(209, 209, 209, 1),
+    rgba(255, 255, 255, 1)
+  ) !important;
+}
+.padding-mobile {
+  padding: 0em 4em;
+}
+@media only screen and (max-width: 600px) {
+  .padding-mobile {
+    padding: 0em 1em;
   }
 }
 </style>

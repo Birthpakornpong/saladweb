@@ -30,6 +30,8 @@
         <div class="summary entry-summary col-lg-7 col-md-6"></div>
         <div class="tab-content col-lg-12"></div>
       </div>
+    </div>
+    <div class="mobilewidth">
       <div class="row main-content" v-if="product">
         <div
           class="col-12 d-flex"
@@ -37,7 +39,7 @@
           v-if="product.productBannerLink"
         >
           <img
-            style="width: 100%; height: 75em;"
+            style="width: 100%;"
             :src="product.productBannerLink"
             alt="body shape"
             class="w-auto bg-transparent"
@@ -46,6 +48,8 @@
           <!-- <inner-image-zoom :src="'./review.png'" /> -->
         </div>
       </div>
+    </div>
+    <div class="container skeleton-body">
       <div ref="videoPlayerstest" style="display: none;">
         <video v-show="!variable" muted controls autoplay>
           <source src="videotest.mp4" type="video/mp4" />
@@ -85,10 +89,11 @@
           </video>
         </div>
       </div>
-      <div>
-        <PvReviewCustom :reviews="reviews"></PvReviewCustom>
-      </div>
-
+    </div>
+    <div>
+      <PvReviewCustom :reviews="reviews"></PvReviewCustom>
+    </div>
+    <div class="container skeleton-body">
       <pv-related-products
         :products="relatedProducts"
         class="pb-3"
@@ -710,3 +715,13 @@ export default {
   },
 };
 </script>
+<style>
+.mobilewidth {
+  padding: 5em;
+}
+@media only screen and (max-width: 600px) {
+  .mobilewidth {
+    padding: 1em;
+  }
+}
+</style>

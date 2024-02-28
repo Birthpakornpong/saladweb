@@ -9,7 +9,7 @@
     </h2>
 
     <div
-      class="row appear-animate"
+      class="row appear-animate hidemobile"
       data-animation-name="fadeInUpShorter"
       data-animation-delay="400"
       v-animate
@@ -17,8 +17,24 @@
       style="display: flex; justify-content: center;"
     >
       <div
-        class="col-6 col-md-4 col-xl-3"
+        class="col-6 col-md-4 col-xl-4 px-5"
         v-for="(product, index) in products.slice(0, 3)"
+        :key="'wel-' + index"
+      >
+        <pv-product-one :product="product"></pv-product-one>
+      </div>
+    </div>
+    <div
+      class="row appear-animate showmobile"
+      data-animation-name="fadeInUpShorter"
+      data-animation-delay="400"
+      v-animate
+      v-if="products.length > 0"
+      style="display: flex; justify-content: center;"
+    >
+      <div
+        class="col-6 col-md-4 col-xl-4 px-5"
+        v-for="(product, index) in products.slice(0, 2)"
         :key="'wel-' + index"
       >
         <pv-product-one :product="product"></pv-product-one>
@@ -84,8 +100,26 @@ export default {
 .headers-text {
   text-align: center;
   font-weight: bold;
-  font-size: 2.5rem;
+  font-size: 2.5em;
   color: #ab0011;
   position: relative;
+}
+.hidemobile {
+  display: flex !important;
+}
+
+@media only screen and (max-width: 600px) {
+  .hidemobile {
+    display: none !important;
+  }
+}
+
+.showmobile {
+}
+
+@media only screen and (max-width: 600px) {
+  .showmobile {
+    display: flex;
+  }
 }
 </style>

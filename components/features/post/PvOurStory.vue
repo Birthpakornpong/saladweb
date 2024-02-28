@@ -132,7 +132,7 @@ export default {
 .header-textblack {
   text-align: center;
   font-weight: bold;
-  font-size: x-large;
+  font-size: 2.5em;
   color: black;
   position: relative;
   margin-bottom: 2rem;

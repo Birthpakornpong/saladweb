@@ -156,10 +156,10 @@ export default {
 };
 </script>
 <style>
-.category-section .header-textblack {
+.header-textblack {
   text-align: center;
   font-weight: bold;
-  font-size: x-large;
+  font-size: 3em;
   color: black;
   position: relative;
 }
