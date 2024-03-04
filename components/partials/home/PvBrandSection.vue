@@ -82,8 +82,8 @@
           </nuxt-link> -->
 
           <nuxt-link
-            :to="{ path: '/shop', query: { category: categorys[0].id } }"
-            target="_blank"
+            :to="{ path: `/shop?category=${categorys[0].id}`}"
+            target="_new"
           >
             <div
               class="grid-items"
@@ -129,8 +129,8 @@
             </div>
           </nuxt-link>
           <nuxt-link
-            :to="{ path: '/shop', query: { category: categorys[1].id } }"
-            target="_blank"
+            :to="{ path: `/shop?category=${categorys[1].id}`}"
+            target="_new"
           >
             <div
               class="grid-items"
@@ -178,8 +178,8 @@
           </nuxt-link>
 
           <nuxt-link
-            :to="{ path: '/shop', query: { category: categorys[2].id } }"
-            target="_blank"
+            :to="{ path: `/shop?category=${categorys[2].id}`}"
+            target="_new"
           >
             <div
               class="grid-items"
@@ -231,8 +231,8 @@
           </nuxt-link>
 
           <nuxt-link
-            :to="{ path: '/shop', query: { category: categorys[3].id } }"
-            target="_blank"
+            :to="{ path: `/shop?category=${categorys[3].id}`}"
+            target="_new"
           >
             <div
               class="grid-items"
@@ -284,8 +284,8 @@
           </nuxt-link>
 
           <nuxt-link
-            :to="{ path: '/shop', query: { category: categorys[4].id } }"
-            target="_blank"
+            :to="{ path: `/shop?category=${categorys[4].id}`}"
+            target="_new"
           >
             <div
               class="grid-items"
@@ -337,8 +337,8 @@
           </nuxt-link>
 
           <nuxt-link
-            :to="{ path: '/shop', query: { category: categorys[5].id } }"
-            target="_blank"
+            :to="{ path: `/shop?category=${categorys[5].id}`}"
+            target="_new"
           >
             <div
               class="grid-items"
