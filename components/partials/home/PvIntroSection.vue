@@ -98,7 +98,7 @@ export default {
 }
 @media only screen and (max-width: 600px) {
   .carouselCustom li {
-    width: 0.5em;
+    width: 10px;
     height: auto;
     border-bottom: none;
   }
