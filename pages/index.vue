@@ -13,14 +13,7 @@
       <div class="header-text mb-3" v-if="video.length > 0">
         <div>{{ video[0].headText }}</div>
       </div>
-      <div ref="videoPlayerstest" style="display: none;">
-        <video v-show="variable" muted controls autoplay>
-          <source src="videotest.mp4" type="video/mp4" />
-        </video>
-        <video v-show="!variable" controls style="max-width: 100%;">
-          <source src="videotest.mp4" type="video/mp4" />
-        </video>
-      </div>
+      <div ref="videoPlayerstest" style="display: none;"></div>
 
       <div
         v-if="video.length > 0 && positionContent == 'center'"
@@ -114,7 +107,7 @@
             </div>
           </div>
           <div
-            class="col-6 d-flex col-lg-3 col-md-6 showmobile"
+            class="col-6 d-flex col-lg-3 col-md-6 showmobilele"
             style="display: flex; justify-content: start;"
           >
             <div>
@@ -520,12 +513,6 @@ export default {
   display: none !important;
 }
 
-@media only screen and (max-width: 600px) {
-  .showmobile {
-    display: flex !important;
-    padding: 0.5em;
-  }
-}
 .showmobilele {
   padding: 1em;
 }
@@ -533,8 +520,7 @@ export default {
 @media only screen and (max-width: 600px) {
   .showmobilele {
     display: flex !important;
-    padding: 2em;
-    padding-top: 0;
+    padding: 1em;
   }
 }
 .showmobile {
@@ -544,7 +530,7 @@ export default {
 @media only screen and (max-width: 600px) {
   .showmobile {
     display: flex !important;
-    padding: 2em;
+    padding: 1em;
   }
 }
 .bg-cusve {

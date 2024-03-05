@@ -33,8 +33,8 @@
       style="display: flex; justify-content: center;"
     >
       <div
-        class="col-6 col-md-4 col-xl-4 px-5"
-        v-for="(product, index) in products.slice(0, 2)"
+        class="col-4 col-md-4 col-xl-4"
+        v-for="(product, index) in products.slice(0, 3)"
         :key="'wel-' + index"
       >
         <pv-product-one :product="product"></pv-product-one>
@@ -111,6 +111,13 @@ export default {
 @media only screen and (max-width: 600px) {
   .hidemobile {
     display: none !important;
+  }
+  .headers-text {
+    text-align: center;
+    font-weight: bold;
+    font-size: 2em;
+    color: #ab0011;
+    position: relative;
   }
 }
 

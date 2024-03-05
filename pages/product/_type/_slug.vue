@@ -50,14 +50,7 @@
       </div>
     </div>
     <div class="container skeleton-body">
-      <div ref="videoPlayerstest" style="display: none;">
-        <video v-show="!variable" muted controls autoplay>
-          <source src="videotest.mp4" type="video/mp4" />
-        </video>
-        <video v-show="variable" controls style="max-width: 100%;">
-          <source src="videotest.mp4" type="video/mp4" />
-        </video>
-      </div>
+      <div ref="videoPlayerstest" style="display: none;"></div>
       <div class="row main-content" v-if="product">
         <div
           class="col-12 d-flex"

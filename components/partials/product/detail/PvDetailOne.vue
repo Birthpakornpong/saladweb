@@ -411,3 +411,10 @@ export default {
   },
 };
 </script>
+<style scoped>
+@media only screen and (max-width: 600px) {
+  .product-title {
+    font-size: 1.75em;
+  }
+}
+</style>
