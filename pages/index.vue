@@ -33,13 +33,12 @@
             class="d-flex col-12 col-lg-3 col-md-12 hidemobile"
             style="justify-content: end; display: flex; padding: 1em;"
           >
-          <div> <img
-              :src="video[0].imgLeft"
-              style="max-height: 33em; max-width: 100%;"
-            />
+            <div>
+              <img
+                :src="video[0].imgLeft"
+                style="max-height: 33em; max-width: 100%;"
+              />
             </div>
-
-           
           </div>
           <!-- <div class="col-3" style="justify-content: end; display: flex;"> -->
 
@@ -104,28 +103,26 @@
             </video>
           </div>
           <div
-            class="d-flex col-12 col-lg-3 col-md-12 showmobile"
+            class="d-flex col-6 col-lg-3 col-md-6 showmobile"
             style="justify-content: end;"
           >
-          <div>
-             <img
-              :src="video[0].imgLeft"
-              style="max-height: 33em; max-width: 100%;"
-            />
-          </div>
-           
+            <div>
+              <img
+                :src="video[0].imgLeft"
+                style="max-height: 33em; max-width: 100%;"
+              />
+            </div>
           </div>
           <div
-            class="col-12 d-flex col-lg-3 col-md-12 showmobilele"
+            class="col-6 d-flex col-lg-3 col-md-6 showmobile"
             style="display: flex; justify-content: start;"
           >
-          <div>
-             <img
-              :src="video[0].imgRight"
-              style="max-height: 33em; max-width: 100%;"
-            />
-          </div>
-           
+            <div>
+              <img
+                :src="video[0].imgRight"
+                style="max-height: 33em; max-width: 100%;"
+              />
+            </div>
           </div>
           <!-- <div class="col-3">
           <img :src="video[0].imgRight" style="height: 33em;" /> -->
@@ -472,6 +469,15 @@ export default {
   color: #ab0011;
   position: relative;
 }
+@media only screen and (max-width: 600px) {
+  .header-text {
+    text-align: center;
+    font-weight: bold;
+    font-size: 2em;
+    color: #ab0011;
+    position: relative;
+  }
+}
 .text-headicon {
   color: rgba(172, 43, 43, 1);
   font-weight: 900;
@@ -517,7 +523,7 @@ export default {
 @media only screen and (max-width: 600px) {
   .showmobile {
     display: flex !important;
-    padding: 2em;
+    padding: 0.5em;
   }
 }
 .showmobilele {

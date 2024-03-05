@@ -1,5 +1,5 @@
 <template>
-  <section class="welcome-section bg-cus">
+  <section class="welcome-section bg-cus paddingmo">
     <div class="container" v-if="products.length > 0">
       <div
         class="category-section mb-4 appear-animate"
@@ -55,8 +55,8 @@
         style="justify-content: center;"
       >
         <div
-          class="col-6 col-md-4 col-xl-4 padding-mobile"
-          v-for="(product, index) in products.slice(0, 2)"
+          class="col-4 col-md-4 col-xl-4 padding-mobile"
+          v-for="(product, index) in products.slice(0, 3)"
           :key="'wel-' + index"
         >
           <pv-product-one :product="product"></pv-product-one>
@@ -92,9 +92,14 @@ export default {
   display: flex !important;
 }
 
+.paddingmo {
+}
 @media only screen and (max-width: 600px) {
   .hidemobile {
     display: none !important;
+  }
+  .paddingmo {
+    padding: 1rem 0 0rem !important;
   }
 }
 
@@ -118,7 +123,7 @@ export default {
 }
 @media only screen and (max-width: 600px) {
   .padding-mobile {
-    padding: 0em 1em;
+    padding: 0em 0.5em;
   }
 }
 </style>

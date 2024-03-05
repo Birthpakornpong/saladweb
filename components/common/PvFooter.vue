@@ -116,6 +116,7 @@
                 class="logo logo-header ml-4 mt-2 mb-2"
                 src="~/static/images/home/Logo_Holis_Footer.svg"
                 alt="Porto Logo"
+                style="height: 45px;"
               />
             </a>
           </div>
@@ -177,8 +178,8 @@
         </div>
 
         <div class="col-12 col-lg-3 col-md-3">
-          <div class="widget" style="text-align: center;">
-            <h4 class="widget-title">ช่องทางติดต่อ</h4>
+          <div class="widget" style="text-align: center; margin-bottom: 1rem;">
+            <h4 class="widget-title" style="margin-top: 1rem;">ช่องทางติดต่อ</h4>
             <div class="row">
               <div class="col-sm-6">
                 <ul class="links mb-0">
@@ -186,17 +187,17 @@
 										<nuxt-link to="/pages/about-us">About Porto</nuxt-link>
 									</li> -->
                   <li>
-                    <a style="color: white;" href="javascript:;">อีเมล:</a>
+                    <a style="color: white;" href="javascript:;">อีเมล: </a
+                    ><a href="javascript:;">scgphealthcare@gmail.com</a>
                   </li>
-                  <li><a href="javascript:;">scgphealthcare@gmail.com</a></li>
+
                   <li>
-                    <a style="color: white;" href="javascript:;">โทรศัพท์:</a>
+                    <a style="color: white;" href="javascript:;">โทรศัพท์: </a
+                    ><a href="javascript:;">+662 586 555</a>
                   </li>
-                  <li><a href="javascript:;">+662 586 555</a></li>
-                  <li></li>
-                  <br />
+
                   <li>
-                    <a class="pb-1" style="color: white;"
+                    <a style="color: white;"
                       >ติดตามเรา:
                       <a
                         href="https://www.facebook.com/HOLISbySCGP"

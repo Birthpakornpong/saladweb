@@ -19,7 +19,7 @@
             <img
               src="~/static/images/home/Logo_Holis.svg"
               alt="Porto Logo"
-              style="height: 4em; max-width: none;"
+              class="sizelogo"
             />
           </nuxt-link>
         </div>
@@ -181,6 +181,16 @@ export default {
 @media only screen and (max-width: 600px) {
   .showmobile {
     display: flex !important;
+  }
+}
+.sizelogo {
+  max-width: none;
+  height: 4em;
+}
+
+@media only screen and (max-width: 600px) {
+  .sizelogo {
+    height: 3em;
   }
 }
 </style>

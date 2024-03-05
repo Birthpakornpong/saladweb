@@ -54,8 +54,8 @@
       </div>
 
       <div
-        class="title-wrap"
-        style="display: flex; justify-content: center; font-size: 1.4em;"
+        class="title-wrap fontmo"
+        style="display: flex; justify-content: center;"
       >
         <nuxt-link :to="'/product/default/' + product.slug">{{
           product.name
@@ -197,3 +197,13 @@ export default {
   },
 };
 </script>
+<style scoped>
+.fontmo {
+  font-size: 1.4em;
+}
+@media only screen and (max-width: 600px) {
+  .fontmo {
+    font-size: 1em;
+  }
+}
+</style>
