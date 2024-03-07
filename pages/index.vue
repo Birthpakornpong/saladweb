@@ -461,6 +461,7 @@ export default {
   font-size: 2.5em;
   color: #ab0011;
   position: relative;
+  font-family: "SCG";
 }
 @media only screen and (max-width: 600px) {
   .header-text {
@@ -469,6 +470,7 @@ export default {
     font-size: 1.5em;
     color: #ab0011;
     position: relative;
+    font-family: "SCG";
   }
 }
 .text-headicon {

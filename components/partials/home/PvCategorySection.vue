@@ -2,7 +2,7 @@
   <section class="welcome-section bg-cus paddingmo">
     <div class="container" v-if="products.length > 0">
       <div
-        class="category-section mb-4 appear-animate"
+        class="category-section mb-2 appear-animate"
         data-animation-name="fadeInUpShorter"
         data-animation-delay="400"
         v-animate
@@ -82,6 +82,7 @@ export default {
 </script>
 <style>
 .category-section .header-text {
+  font-family: "SCG";
   text-align: center;
   font-weight: bold;
   font-size: 2.5em;
@@ -90,6 +91,7 @@ export default {
 }
 @media only screen and (max-width: 600px) {
   .category-section .header-text {
+    font-family: "SCG";
     text-align: center;
     font-weight: bold;
     font-size: 1.5em;

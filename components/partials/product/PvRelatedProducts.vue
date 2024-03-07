@@ -103,6 +103,7 @@ export default {
   font-size: 2.5em;
   color: #ab0011;
   position: relative;
+  font-family: "SCG";
 }
 .hidemobile {
   display: flex !important;
@@ -118,6 +119,7 @@ export default {
     font-size: 2em;
     color: #ab0011;
     position: relative;
+    font-family: "SCG";
   }
 }
 
