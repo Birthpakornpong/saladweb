@@ -123,7 +123,11 @@
 
           <div class="row">
             <div class="custom-color-text col-12">
-              <div style="text-align: center;">บริษัท อินวีนิค จำกัด</div>
+              <div style="text-align: center;">
+                <h4 class="widget-title m-0" style="color: white;">
+                  บริษัท อินวีนิค จำกัด
+                </h4>
+              </div>
               <div style="text-align: center;">1 ถนนปูนซีเมนต์ไทย</div>
               <div style="text-align: center;">
                 แขวงบางซื่อ เขตบางซื่อ กรุงเทพมหานคร 10800
@@ -179,7 +183,9 @@
 
         <div class="col-12 col-lg-3 col-md-3">
           <div class="widget" style="text-align: center; margin-bottom: 1rem;">
-            <h4 class="widget-title" style="margin-top: 1rem;">ช่องทางติดต่อ</h4>
+            <h4 class="widget-title" style="margin-top: 1rem;">
+              ช่องทางติดต่อ
+            </h4>
             <div class="row">
               <div class="col-sm-6">
                 <ul class="links mb-0">
