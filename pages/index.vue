@@ -155,15 +155,18 @@
           <!-- </div> -->
         </div>
       </div>
-
+      <!-- && positionContent == 'left' -->
       <div
         v-if="video.length > 0 && positionContent == 'left'"
         data-animation-name="fadeInUpShorter"
         data-animation-delay="400"
         v-animate
       >
-        <div class="row">
-          <div class="col-8" style="justify-content: end; display: flex;">
+        <div class="row" style="justify-content: center; display: flex;">
+          <div
+            class="col-8 col-md-6"
+            style="justify-content: end; display: flex;"
+          >
             <video
               v-show="variable"
               ref="videoPlayers"
@@ -184,7 +187,7 @@
               <source :src="video[0].url" type="video/mp4" />
             </video>
           </div>
-          <div class="col-4">
+          <div class="col-3 p-0">
             <img
               :src="video[0].imgRight"
               style="max-height: 33em; max-width: 100%;"
@@ -192,18 +195,21 @@
           </div>
         </div>
       </div>
-
+      <!-- && positionContent == 'right' -->
       <div
         v-if="video.length > 0 && positionContent == 'right'"
         data-animation-name="fadeInUpShorter"
         data-animation-delay="400"
         v-animate
       >
-        <div class="row">
-          <div class="col-4" style="justify-content: end; display: flex;">
-            <img :src="video[0].imgLeft" />
+        <div class="row" style="justify-content: center; display: flex;">
+          <div class="col-3 col-md-3 p-0">
+            <img
+              :src="video[0].imgLeft"
+              style="max-height: 33em; max-width: 100%;"
+            />
           </div>
-          <div class="col-8">
+          <div class="col-8 col-md-6">
             <video
               v-show="variable"
               ref="videoPlayers"
