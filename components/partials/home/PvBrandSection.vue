@@ -82,7 +82,7 @@
           </nuxt-link> -->
 
           <nuxt-link
-            :to="{ path: `/shop?category=${categorys[0].id}`}"
+            :to="{ path: `/shop?category=${categorys[0].id}` }"
             target="_new"
           >
             <div
@@ -129,7 +129,7 @@
             </div>
           </nuxt-link>
           <nuxt-link
-            :to="{ path: `/shop?category=${categorys[1].id}`}"
+            :to="{ path: `/shop?category=${categorys[1].id}` }"
             target="_new"
           >
             <div
@@ -178,7 +178,7 @@
           </nuxt-link>
 
           <nuxt-link
-            :to="{ path: `/shop?category=${categorys[2].id}`}"
+            :to="{ path: `/shop?category=${categorys[2].id}` }"
             target="_new"
           >
             <div
@@ -231,7 +231,7 @@
           </nuxt-link>
 
           <nuxt-link
-            :to="{ path: `/shop?category=${categorys[3].id}`}"
+            :to="{ path: `/shop?category=${categorys[3].id}` }"
             target="_new"
           >
             <div
@@ -284,7 +284,7 @@
           </nuxt-link>
 
           <nuxt-link
-            :to="{ path: `/shop?category=${categorys[4].id}`}"
+            :to="{ path: `/shop?category=${categorys[4].id}` }"
             target="_new"
           >
             <div
@@ -337,7 +337,7 @@
           </nuxt-link>
 
           <nuxt-link
-            :to="{ path: `/shop?category=${categorys[5].id}`}"
+            :to="{ path: `/shop?category=${categorys[5].id}` }"
             target="_new"
           >
             <div
@@ -510,6 +510,16 @@ export default {
   font-size: 2.5em;
   color: #ab0011;
   position: relative;
+}
+
+@media only screen and (max-width: 600px) {
+  .category-section .header-text {
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.5em;
+    color: #ab0011;
+    position: relative;
+  }
 }
 
 .category-section .header-text .icon {

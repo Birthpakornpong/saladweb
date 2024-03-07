@@ -88,6 +88,15 @@ export default {
   color: #ab0011;
   position: relative;
 }
+@media only screen and (max-width: 600px) {
+  .category-section .header-text {
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.5em;
+    color: #ab0011;
+    position: relative;
+  }
+}
 .hidemobile {
   display: flex !important;
 }
