@@ -116,7 +116,7 @@ export default {
   .headers-text {
     text-align: center;
     font-weight: bold;
-    font-size: 2em;
+    font-size: 1.5em;
     color: #ab0011;
     position: relative;
     font-family: "SCG";
