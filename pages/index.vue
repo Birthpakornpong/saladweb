@@ -21,7 +21,7 @@
         data-animation-delay="400"
         v-animate
       >
-        <div class="row">
+        <div class="row" style="justify-content: center; display: flex;">
           <div
             class="d-flex col-12 col-lg-3 col-md-12 hidemobile"
             style="justify-content: end; display: flex; padding: 1em;"
@@ -72,7 +72,7 @@
           </div> -->
           <!-- </div> -->
           <div
-            class="col-12 d-flex col-lg-6 col-md-12"
+            class="col-11 d-flex col-lg-6 col-md-12 padding-move"
             style="display: flex; justify-content: center; align-items: center;"
           >
             <video
@@ -463,6 +463,8 @@ export default {
   position: relative;
   font-family: "SCG";
 }
+.padding-move {
+}
 @media only screen and (max-width: 600px) {
   .header-text {
     text-align: center;
@@ -471,6 +473,9 @@ export default {
     color: #ab0011;
     position: relative;
     font-family: "SCG";
+  }
+  .padding-move {
+    padding: 1rem !important;
   }
 }
 .text-headicon {
