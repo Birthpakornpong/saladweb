@@ -223,9 +223,11 @@
               <span v-if="show2">{{ categorys[2].categoryName }}</span>
 
               <img
+              v-else
                 :src="categorys[2].categoryLink"
                 style="height: 5em; margin-bottom: 1em;"
               />
+              <div  v-if="show2"  style="height: 5em; margin-bottom: 1em;"></div>
               {{ categorys[2].categoryName }}
             </div>
           </nuxt-link>
@@ -276,9 +278,11 @@
               <span v-if="show3">{{ categorys[3].categoryName }}</span>
 
               <img
+              v-else
                 :src="categorys[3].categoryLink"
                 style="height: 5em; margin-bottom: 1em;"
               />
+              <div  v-if="show3"  style="height: 5em; margin-bottom: 1em;"></div>
               {{ categorys[3].categoryName }}
             </div>
           </nuxt-link>
@@ -329,9 +333,11 @@
               <span v-if="show4">{{ categorys[4].categoryName }}</span>
 
               <img
+              v-else
                 :src="categorys[4].categoryLink"
                 style="height: 5em; margin-bottom: 1em;"
               />
+              <div  v-if="show4"  style="height: 5em; margin-bottom: 1em;"></div>
               {{ categorys[4].categoryName }}
             </div>
           </nuxt-link>
@@ -381,9 +387,11 @@
               <span v-if="show5">{{ categorys[5].categoryName }}</span>
 
               <img
+              v-else
                 :src="categorys[5].categoryLink"
                 style="height: 5em; margin-bottom: 1em;"
               />
+              <div  v-if="show5"  style="height: 5em; margin-bottom: 1em;"></div>
               {{ categorys[5].categoryName }}
             </div>
           </nuxt-link>
