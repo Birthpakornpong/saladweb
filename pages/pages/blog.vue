@@ -24,7 +24,12 @@
                 :key="index"
                 class="col-md-6 col-lg-4"
               >
-                <pv-post-one :post="post"></pv-post-one>
+                <pv-post-one
+                  data-animation-name="fadeInUpShorter"
+                  data-animation-delay="400"
+                  v-animate
+                  :post="post"
+                ></pv-post-one>
               </div>
 
               <nav

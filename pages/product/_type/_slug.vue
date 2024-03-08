@@ -1,6 +1,11 @@
 <template>
   <main class="main">
-    <div class="container skeleton-body">
+    <div
+      class="container skeleton-body"
+      data-animation-name="fadeInUpShorter"
+      data-animation-delay="400"
+      v-animate
+    >
       <div class="product-single-container product-single-default">
         <div class="row" v-if="product">
           <div class="col-lg-5 col-md-6 product-single-gallery">
@@ -31,7 +36,12 @@
         <div class="tab-content col-lg-12"></div>
       </div>
     </div>
-    <div class="mobilewidth">
+    <div
+      class="mobilewidth"
+      data-animation-name="fadeInRightShorter"
+      data-animation-delay="1000"
+      v-animate
+    >
       <div class="row main-content" v-if="product">
         <div
           class="col-12 d-flex"
@@ -49,7 +59,12 @@
         </div>
       </div>
     </div>
-    <div class="container skeleton-body">
+    <div
+      class="container skeleton-body"
+      data-animation-name="fadeInUpShorter"
+      data-animation-delay="400"
+      v-animate
+    >
       <div ref="videoPlayerstest" style="display: none;"></div>
       <div class="row main-content" v-if="product">
         <div
@@ -83,10 +98,19 @@
         </div>
       </div>
     </div>
-    <div>
+    <div
+      data-animation-name="fadeInUpShorter"
+      data-animation-delay="400"
+      v-animate
+    >
       <PvReviewCustom :reviews="reviews"></PvReviewCustom>
     </div>
-    <div class="container skeleton-body">
+    <div
+      class="container skeleton-body"
+      data-animation-name="fadeInLeftShorter"
+      data-animation-delay="2000"
+      v-animate
+    >
       <pv-related-products
         :products="relatedProducts"
         class="pb-3"

@@ -18,7 +18,12 @@
       </div>
     </nav>
 
-    <div class="container">
+    <div
+      class="container"
+      data-animation-name="fadeInUpShorter"
+      data-animation-delay="400"
+      v-animate
+    >
       <div class="row">
         <div class="col-lg-9 main-content">
           <pv-product-list-one></pv-product-list-one>
