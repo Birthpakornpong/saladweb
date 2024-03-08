@@ -8,8 +8,13 @@
     >
       <pv-intro-section :introIMG="introIMG"></pv-intro-section>
     </section>
-
-    <div class="bg-cusve">
+    <div style="height: 100vh;" v-if="introIMG.length == 0"></div>
+    <div
+      class="bg-cusve"
+      data-animation-name="fadeInUpShorter"
+      data-animation-delay="400"
+      v-animate
+    >
       <div class="header-text mb-3" v-if="video.length > 0">
         <div>{{ video[0].headText }}</div>
       </div>
@@ -18,7 +23,7 @@
       <div
         v-if="video.length > 0 && positionContent == 'center'"
         data-animation-name="fadeInUpShorter"
-        data-animation-delay="400"
+        data-animation-delay="1500"
         v-animate
       >
         <div class="row" style="justify-content: center; display: flex;">
@@ -159,7 +164,7 @@
       <div
         v-if="video.length > 0 && positionContent == 'left'"
         data-animation-name="fadeInUpShorter"
-        data-animation-delay="400"
+        data-animation-delay="1500"
         v-animate
       >
         <div class="row" style="justify-content: center; display: flex;">
@@ -199,7 +204,7 @@
       <div
         v-if="video.length > 0 && positionContent == 'right'"
         data-animation-name="fadeInUpShorter"
-        data-animation-delay="400"
+        data-animation-delay="1500"
         v-animate
       >
         <div class="row" style="justify-content: center; display: flex;">
@@ -234,19 +239,22 @@
       </div>
     </div>
 
-    <pv-category-section
-      :products="products"
-      data-animation-name="fadeInUpShorter"
-      data-animation-delay="400"
-      v-animate
-    ></pv-category-section>
-
+    <div class="bg-cus">
+      <div
+        data-animation-delay="1000"
+        ref="categorySection"
+        v-animate:fadeInLeftShorter="isAnimated"
+      >
+        <pv-category-section :products="products"></pv-category-section>
+      </div>
+    </div>
+    <div style="height: 30vh;" v-if="products == 0"></div>
     <!-- <pv-best-collection :products="products"></pv-best-collection> -->
 
     <pv-brand-section
       :categorys="categorys"
-      data-animation-name="fadeInUpShorter"
-      data-animation-delay="400"
+      data-animation-name="fadeInRightShorter"
+      data-animation-delay="2000"
       v-animate
     ></pv-brand-section>
 
@@ -281,10 +289,14 @@ export default {
   },
   data: function () {
     return {
+      isAnimated: false,
+      animationName: "",
+      showCate: false,
       variable: false,
       elementVideo: null,
       positionContent: "center",
       products: [],
+      productsData: [],
       posts: [],
       featuredProducts: [],
       newProducts: [],
@@ -353,6 +365,8 @@ export default {
       },
     };
   },
+
+  destroyed() {},
   mounted: function () {
     this.handlerGet();
     // this.products = indexData.products;
@@ -399,11 +413,72 @@ export default {
       },
       { threshold: 0.5 }
     ); // threshold คือเปอร์เซ็นต์ขององค์ประกอบที่ต้องปรากฏในหน้าจอ
+
+    let observerCate = new IntersectionObserver(
+      (entries, observer) => {
+        console.log("pass check");
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            console.log("entry", entry);
+            this.showCate = true;
+            this.$nextTick(() => {
+              // this.animationName = "fadeInLeftShorter";
+              this.showCate = true;
+
+              const animationNames = "fadeInLeftShorter";
+
+              this.$refs.categorySection.classList.add(
+                "animated",
+                animationNames
+              );
+
+              // window.addEventListener("scroll", this.handleScroll());
+            });
+
+            // this.animationName = "fadeInLeftShorter";
+            this.$forceUpdate();
+          } else {
+          }
+        });
+      },
+      { threshold: 0.5 }
+    ); // threshold คือเปอร์เซ็นต์ขององค์ประกอบที่ต้องปรากฏในหน้าจอ
+    const observerCateTwo = new IntersectionObserver(this.handleIntersection, {
+      threshold: 0.5, // Adjust threshold as needed
+    });
     if (this.$refs.videoPlayerstest) {
       observer.observe(this.$refs.videoPlayerstest);
     }
+    if (this.$refs.categorySection) {
+      console.log("this.$refs.categorySection", this.$refs.categorySection);
+      // observerCate.observe(this.$refs.categorySection);
+      observerCateTwo.observe(this.$refs.categorySection);
+    }
   },
   methods: {
+    handleIntersection(entries) {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const rect = this.$refs.categorySection.getBoundingClientRect();
+          const top = rect.top;
+          const windowHeight = window.innerHeight;
+          console.log("work addrect", rect);
+          console.log("window.innerHeight", window.innerHeight);
+          if (top < windowHeight) {
+            console.log("work add");
+            this.isAnimated = true;
+            this.products = this.productsData;
+            this.$refs.categorySection.classList.add("fadeInLeftShorter");
+          }
+          // console.log("work add");
+          // this.isAnimated = true;
+          // entry.target.classList.add("fadeInLeftShorter");
+          // this.products = this.productsData;
+        }
+      });
+      this.$forceUpdate();
+    },
+
     async handlerGet() {
       var optionAxios = {
         headers: {
@@ -417,7 +492,7 @@ export default {
         .then((response) => {
           if (response.status == 200) {
             response.data.productBestSellerList.forEach((item) => {
-              this.products.push({
+              this.productsData.push({
                 ...this.tempProduct,
                 name: item.product_name,
                 imgUrl: item.productProfileLink,
@@ -552,5 +627,36 @@ export default {
     rgba(209, 209, 209, 1),
     rgba(255, 255, 255, 1)
   ) !important;
+}
+.bg-cus {
+  background: linear-gradient(
+    -180deg,
+    rgba(209, 209, 209, 1),
+    rgba(255, 255, 255, 1)
+  ) !important;
+}
+.animated {
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.fadeIn {
+  opacity: 1;
+}
+
+@keyframes fadeInLeftShorter {
+  from {
+    opacity: 0;
+    transform: translate(50px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.fadeInLeftShorter {
+  animation-timing-function: ease-out;
+  animation-name: fadeInLeftShorter;
 }
 </style>

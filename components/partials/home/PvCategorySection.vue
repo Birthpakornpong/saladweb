@@ -1,5 +1,5 @@
 <template>
-  <section class="welcome-section bg-cus paddingmo">
+  <section class="welcome-section paddingmo">
     <div class="container" v-if="products.length > 0">
       <div
         class="category-section mb-2 appear-animate"
