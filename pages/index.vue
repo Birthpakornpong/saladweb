@@ -254,7 +254,7 @@
     <pv-brand-section
       :categorys="categorys"
       data-animation-name="fadeInRightShorter"
-      data-animation-delay="2000"
+      data-animation-delay="1000"
       v-animate
     ></pv-brand-section>
 

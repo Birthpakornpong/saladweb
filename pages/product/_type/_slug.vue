@@ -3,7 +3,7 @@
     <div
       class="container skeleton-body"
       data-animation-name="fadeInUpShorter"
-      data-animation-delay="2000"
+      data-animation-delay="1000"
       v-animate
     >
       <div class="product-single-container product-single-default">
@@ -108,7 +108,7 @@
     <div
       class="container skeleton-body"
       data-animation-name="fadeInUpShorter"
-      data-animation-delay="2000"
+      data-animation-delay="1000"
       v-animate
     >
       <pv-related-products
