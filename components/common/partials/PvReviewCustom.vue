@@ -176,6 +176,7 @@ export default {
     padding-top: 3em;
     background-size: 100% 100%;
     background-repeat: no-repeat;
+    margin-left: 0em !important;
   }
   .mobileText {
     padding: 0.5em !important;

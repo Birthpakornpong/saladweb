@@ -263,11 +263,11 @@ export default {
 }
 @media only screen and (max-width: 600px) {
   .margin-mobile {
-    margin-bottom: 0rem;
+    margin-bottom: 1.5rem !important;
     margin-top: 0rem;
   }
   .margin-headtext {
-    margin-top: 0rem;
+    margin-top: 0rem !important;
   }
 }
 </style>
