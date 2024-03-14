@@ -116,4 +116,13 @@ export default {
   background-size: 100% 20em;
   background-repeat: no-repeat;
 }
+@media only screen and (max-width: 600px) {
+  .bgimgshop {
+    background-image: url("static/bggrey.jpg");
+    padding-bottom: 4em;
+    background-position: center bottom;
+    background-size: 100% 20em;
+    background-repeat: no-repeat;
+  }
+}
 </style>
