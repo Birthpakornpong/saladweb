@@ -557,6 +557,7 @@ export default {
   }
   .padding-move {
     padding: 1rem !important;
+    padding-top: 0rem !important;
   }
 }
 .text-headicon {

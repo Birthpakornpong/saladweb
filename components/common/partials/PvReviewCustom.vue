@@ -1,6 +1,9 @@
 <template>
   <main>
-    <div style="display: flex; justify-content: center;" class="mb-2">
+    <div
+      style="display: flex; justify-content: center;"
+      class="mb-2 mobil-margincate"
+    >
       <div
         class="row main-content"
         v-if="reviews.length > 0"
@@ -11,16 +14,8 @@
           padding: 10px;
         "
       >
-        <div class="category-section mb-2 col-12">
-          <div
-            class="header-text"
-            style="
-              color: black;
-              text-align: start;
-              padding-left: 4em;
-              padding-right: 4em;
-            "
-          >
+        <div class="category-section mb-2 col-12 mobil-margincate">
+          <div class="header-text mobileText" style="">
             <div
               style="
                 border-bottom: 1px solid rgba(207, 207, 207, 1);
@@ -153,24 +148,41 @@ export default {
   padding-left: 3em;
   padding-bottom: 2em;
 }
+.mobileText {
+  color: black;
+  text-align: start;
+  padding-left: 4em;
+  padding-right: 4em;
+}
+.mobil-margincate {
+}
 @media only screen and (max-width: 600px) {
   .paddingmreview {
     padding-left: 1em;
     padding-bottom: 0em;
+    display: flex;
+    align-items: center;
   }
   .bgimgband {
     background-image: url("static/card1.png");
-    padding-bottom: 5em;
-    padding-top: 5em;
+    padding-bottom: 2em;
+    padding-top: 3em;
     background-size: 100% 100%;
     background-repeat: no-repeat;
   }
   .bgimgband2 {
     background-image: url("static/card2.png");
-    padding-bottom: 5em;
-    padding-top: 5em;
+    padding-bottom: 2em;
+    padding-top: 3em;
     background-size: 100% 100%;
     background-repeat: no-repeat;
+  }
+  .mobileText {
+    padding: 0.5em !important;
+  }
+  .mobil-margincate {
+    margin-bottom: 0rem !important;
+    margin-top: 0rem;
   }
 }
 </style>

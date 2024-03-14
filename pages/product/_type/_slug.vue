@@ -3,7 +3,7 @@
     <div
       class="container skeleton-body"
       data-animation-name="fadeInUpShorter"
-      data-animation-delay="400"
+      data-animation-delay="2000"
       v-animate
     >
       <div class="product-single-container product-single-default">
@@ -38,7 +38,7 @@
     </div>
     <div
       class="mobilewidth"
-      data-animation-name="fadeInRightShorter"
+      data-animation-name="fadeInUpShorter"
       data-animation-delay="1000"
       v-animate
     >
@@ -107,7 +107,7 @@
     </div>
     <div
       class="container skeleton-body"
-      data-animation-name="fadeInLeftShorter"
+      data-animation-name="fadeInUpShorter"
       data-animation-delay="2000"
       v-animate
     >
@@ -739,6 +739,10 @@ export default {
 @media only screen and (max-width: 600px) {
   .mobilewidth {
     padding: 1em;
+  }
+  .main-content {
+    padding-top: 0rem;
+    padding-bottom: 0rem;
   }
 }
 </style>

@@ -13,8 +13,8 @@
           <li class="breadcrumb-item active">Shop</li>
         </ol>
       </nav> -->
-      <div class="category-section mb-4 mt-3">
-        <div class="header-textblack">
+      <div class="category-section mb-4 mt-3 mobil-margincates">
+        <div class="header-textblack mobil-margincates">
           <div>RECOMMENDED PRODUCTS</div>
         </div>
       </div>
@@ -162,5 +162,15 @@ export default {
   font-size: 3em;
   color: black;
   position: relative;
+}
+.mobil-margincates {
+}
+@media only screen and (max-width: 600px) {
+  .mobil-margincates {
+    margin-bottom: 0rem !important;
+    margin-top: 0rem;
+  }
+  .headers-text {
+  }
 }
 </style>

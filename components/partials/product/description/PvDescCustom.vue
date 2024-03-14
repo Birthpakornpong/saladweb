@@ -8,8 +8,8 @@
         <aside class="widget"></aside>
       </div>
 
-      <div class="widget widget-size" v-if="product.instruction">
-        <h3 class="widget-title">
+      <div class="widget widget-size margin-mobile" v-if="product.instruction">
+        <h3 class="widget-title margin-headtext">
           <a
             href="javascript:;"
             @click="catOpened = !catOpened"
@@ -34,8 +34,11 @@
         </vue-slide-toggle>
       </div>
 
-      <div class="widget widget-size" v-if="product.precautionary">
-        <h3 class="widget-title">
+      <div
+        class="widget widget-size margin-mobile"
+        v-if="product.precautionary"
+      >
+        <h3 class="widget-title margin-headtext">
           <a
             href="javascript:;"
             @click="sizeOpened = !sizeOpened"
@@ -60,7 +63,7 @@
         </vue-slide-toggle>
       </div>
       <ul
-        class="single-info-list"
+        class="single-info-list margin-mobile"
         v-if="product.productChannelModels.length > 0"
       >
         <li v-if="product.quantity" style="font-size: 1.5em;">
@@ -253,4 +256,18 @@ export default {
   },
 };
 </script>
-<style scoped></style>
+<style scoped>
+.margin-mobile {
+}
+.margin-headtext {
+}
+@media only screen and (max-width: 600px) {
+  .margin-mobile {
+    margin-bottom: 0rem;
+    margin-top: 0rem;
+  }
+  .margin-headtext {
+    margin-top: 0rem;
+  }
+}
+</style>
