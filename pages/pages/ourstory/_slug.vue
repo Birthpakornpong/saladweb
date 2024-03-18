@@ -1,7 +1,7 @@
 <template>
   <main>
     <!-- <img src="~/static/our.png" /> -->
-    <img src="~/static/Our-Story.jpg" />
+    <img src="~/static/Our Story_4-01.jpg" />
   </main>
 </template>
 
