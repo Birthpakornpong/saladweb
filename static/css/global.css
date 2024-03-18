@@ -1,11 +1,11 @@
 @font-face {
     font-family: "SCG";
-    src: url('~/static/fonts/scg-font/SCG-Regular.eot');
-    src: url('~/static/fonts/scg-font/SCG-Regular.eot?#iefix') format('embedded-opentype'),
-        url('~/static/fonts/scg-font/SCG-Regular.woff2') format('woff2'),
-        url('~/static/fonts/scg-font/SCG-Regular.woff') format('woff'),
-        url('~/static/fonts/scg-font/SCG-Regular.ttf') format('truetype'),
-        url('~/static/fonts/scg-font/SCG-Regular.svg#SCG-Regular') format('svg');
+    src: url('~/static/fonts/scgp-font/SCGPSans-Regular.eot');
+    src: url('~/static/fonts/scgp-font/SCGPSans-Regular.eot?#iefix') format('embedded-opentype'),
+        url('~/static/fonts/scgp-font/SCGPSans-Regular.woff2') format('woff2'),
+        url('~/static/fonts/scgp-font/SCGPSans-Regular.woff') format('woff'),
+        url('~/static/fonts/scgp-font/SCGPSans-Regular.ttf') format('truetype'),
+        url('~/static/fonts/scgp-font/SCGPSans-Regular.svg') format('svg');
     font-weight: normal;
     font-style: normal;
     font-display: swap;

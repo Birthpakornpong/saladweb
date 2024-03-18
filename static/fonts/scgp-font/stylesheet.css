@@ -1,0 +1,13 @@
+@font-face {
+    font-family: 'SCGP Sans';
+    src: url('SCGPSans-Regular.eot');
+    src: url('SCGPSans-Regular.eot?#iefix') format('embedded-opentype'),
+        url('SCGPSans-Regular.woff2') format('woff2'),
+        url('SCGPSans-Regular.woff') format('woff'),
+        url('SCGPSans-Regular.ttf') format('truetype'),
+        url('SCGPSans-Regular.svg#SCGPSans-Regular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
