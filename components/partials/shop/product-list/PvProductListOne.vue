@@ -55,12 +55,12 @@
               <!-- <option value="default" selected="default"
                 >Default sorting</option
               > -->
-              <option value="1">เรียง ก-ฮ</option>
-              <option value="2">เรียง ฮ-ก</option>
-              <option value="3">เรียงราคาน้อยไปมาก</option>
-              <option value="4">เรียงราคามากไปน้อย </option>
-              <option value="5">เรียง a-z</option>
-              <option value="6">เรียง z-a</option>
+              <option value="1">จัดลำดับโดย</option>
+              <!-- <option value="2">เรียง ฮ-ก</option> -->
+              <option value="3">ราคา (จากต่ำสุด ไปสูงสุด)</option>
+              <option value="4">ราคา (จากสูงสุด ไปต่ำสุด)</option>
+              <!-- <option value="5">เรียง a-z</option>
+              <option value="6">เรียง z-a</option> -->
             </select>
           </div>
         </div>
@@ -77,12 +77,12 @@
               v-model="orderBy"
               @change="handlerGet"
             >
-              <option value="1">เรียง ก-ฮ</option>
-              <option value="2">เรียง ฮ-ก</option>
-              <option value="3">เรียงราคาน้อยไปมาก</option>
-              <option value="4">เรียงราคามากไปน้อย </option>
-              <option value="5">เรียง a-z</option>
-              <option value="6">เรียง z-a</option>
+              <option value="1">จัดลำดับโดย</option>
+              <!-- <option value="2">เรียง ฮ-ก</option> -->
+              <option value="3">ราคา (จากต่ำสุด ไปสูงสุด)</option>
+              <option value="4">ราคา (จากสูงสุด ไปต่ำสุด) </option>
+              <!-- <option value="5">เรียง a-z</option>
+              <option value="6">เรียง z-a</option> -->
             </select>
           </div>
         </div>

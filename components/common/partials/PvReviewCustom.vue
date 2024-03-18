@@ -27,7 +27,7 @@
           </div>
         </div>
 
-        <div class="col-12 col-md-5 bgimgband">
+        <div class="col-10 col-md-5 bgimgband">
           <div class="row">
             <div class="col-5 paddingmreview">
               <img
@@ -38,11 +38,11 @@
               />
             </div>
             <div class="col-7" style="padding: 3em; padding-top: 2em;">
-              <p style="font-size: 1.5em; font-weight: 900;">
+              <p class="fontsizefull">
                 {{ reviews[0].fullname_th }}
               </p>
               <div
-                style="font-size: 1.3em;"
+                class="fontsizede"
                 v-html="reviews[0].review_detail_th"
               ></div>
             </div>
@@ -51,7 +51,7 @@
           <!-- <inner-image-zoom :src="'./review.png'" /> -->
         </div>
         <div
-          class="col-12 col-md-5 bgimgband2"
+          class="col-10 col-md-5 bgimgband2"
           style="margin-left: 3em;"
           v-if="reviews.length > 1"
         >
@@ -65,11 +65,11 @@
               />
             </div>
             <div class="col-7" style="padding: 3em; padding-top: 2em;">
-              <p style="font-size: 1.5em; font-weight: 900;">
+              <p class="fontsizefull">
                 {{ reviews[1].fullname_th }}
               </p>
               <div
-                style="font-size: 1.3em;"
+                class="fontsizede"
                 v-html="reviews[1].review_detail_th"
               ></div>
             </div>
@@ -156,6 +156,13 @@ export default {
 }
 .mobil-margincate {
 }
+.fontsizefull {
+  font-size: 1.5em;
+  font-weight: 900;
+}
+.fontsizede {
+  font-size: 1.3em;
+}
 @media only screen and (max-width: 600px) {
   .paddingmreview {
     padding-left: 1em;
@@ -184,6 +191,13 @@ export default {
   .mobil-margincate {
     margin-bottom: 0rem !important;
     margin-top: 0rem;
+  }
+  .fontsizefull {
+    font-size: 1.1em;
+    font-weight: 900;
+  }
+  .fontsizede {
+    font-size: 1em;
   }
 }
 </style>

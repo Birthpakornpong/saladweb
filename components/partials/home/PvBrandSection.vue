@@ -86,7 +86,7 @@
             target="_new"
           >
             <div
-              class="grid-items"
+              class="grid-items hide-mobile"
               style="position: relative;"
               @mouseover="show = true"
               @mouseleave="show = false"
@@ -127,13 +127,47 @@
                 {{ categorys[0].categoryName }}
               </div>
             </div>
+            <div
+              class="grid-items show-mobile"
+              style="position: relative;"
+              @mouseover="show = true"
+              @mouseleave="show = false"
+            >
+              <Transition name="slide-fade">
+                <div
+                  style="
+                    width: 100%;
+                    height: 6em;
+                    border-bottom-right-radius: 30px;
+                    border-bottom-left-radius: 30px;
+                    color: rgba(119, 119, 119, 1) !important;
+                    font-size: 1em;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    position: absolute;
+                    top: 0px;
+                  "
+                  class="bgimgcardband"
+                >
+                  {{ categorys[0].categoryTH }}
+                </div>
+              </Transition>
+              <div style="position: absolute; top: 5em;">
+                <img
+                  :src="categorys[0].categoryLink"
+                  style="height: 5em; margin-bottom: 1em;"
+                />
+                {{ categorys[0].categoryName }}
+              </div>
+            </div>
           </nuxt-link>
           <nuxt-link
             :to="{ path: `/shop?category=${categorys[1].id}` }"
             target="_new"
           >
             <div
-              class="grid-items"
+              class="grid-items hide-mobile"
               style="position: relative;"
               @mouseover="show1 = true"
               @mouseleave="show1 = false"
@@ -175,6 +209,41 @@
                 {{ categorys[1].categoryName }}
               </div>
             </div>
+            <div
+              class="grid-items show-mobile"
+              style="position: relative;"
+              @mouseover="show1 = true"
+              @mouseleave="show1 = false"
+            >
+              <Transition name="slide-fade">
+                <!-- <p v-if="show">hello</p> -->
+                <div
+                  style="
+                    width: 100%;
+                    height: 6em;
+                    border-bottom-right-radius: 30px;
+                    border-bottom-left-radius: 30px;
+                    color: rgba(119, 119, 119, 1) !important;
+                    font-size: 1em;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    position: absolute;
+                    top: 0px;
+                  "
+                  class="bgimgcardband"
+                >
+                  {{ categorys[1].categoryTH }}
+                </div>
+              </Transition>
+              <div style="position: absolute; top: 5em;">
+                <img
+                  :src="categorys[1].categoryLink"
+                  style="height: 5em; margin-bottom: 1em;"
+                />
+                {{ categorys[1].categoryName }}
+              </div>
+            </div>
           </nuxt-link>
 
           <nuxt-link
@@ -182,7 +251,7 @@
             target="_new"
           >
             <div
-              class="grid-items"
+              class="grid-items hide-mobile"
               style="position: relative;"
               @mouseover="show2 = true"
               @mouseleave="show2 = false"
@@ -230,6 +299,49 @@
               <div v-if="show2" style="height: 5em; margin-bottom: 1em;"></div>
               {{ categorys[2].categoryName }}
             </div>
+
+            <div
+              class="grid-items show-mobile"
+              style="position: relative;"
+              @mouseover="show2 = true"
+              @mouseleave="show2 = false"
+            >
+              <Transition name="slide-fade">
+                <!-- <p v-if="show">hello</p> -->
+                <div
+                  style="
+                    width: 100%;
+                    height: 6em;
+                    border-bottom-right-radius: 30px;
+                    border-bottom-left-radius: 30px;
+                    color: rgba(119, 119, 119, 1) !important;
+                    font-size: 1em;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    position: absolute;
+                    top: 0px;
+                  "
+                  class="bgimgcardband"
+                >
+                  {{ categorys[2].categoryTH }}
+                </div>
+              </Transition>
+
+              <img
+                style="
+                  position: absolute;
+                  top: 5em;
+                  height: 5em;
+                  margin-bottom: 1em;
+                "
+                :src="categorys[2].categoryLink"
+              />
+              <span>{{ categorys[2].categoryName }}</span>
+
+              <div style="height: 5em; margin-bottom: 1em;"></div>
+              {{ categorys[2].categoryName }}
+            </div>
           </nuxt-link>
 
           <nuxt-link
@@ -237,7 +349,7 @@
             target="_new"
           >
             <div
-              class="grid-items"
+              class="grid-items hide-mobile"
               style="position: relative;"
               @mouseover="show3 = true"
               @mouseleave="show3 = false"
@@ -285,6 +397,48 @@
               <div v-if="show3" style="height: 5em; margin-bottom: 1em;"></div>
               {{ categorys[3].categoryName }}
             </div>
+            <div
+              class="grid-items show-mobile"
+              style="position: relative;"
+              @mouseover="show3 = true"
+              @mouseleave="show3 = false"
+            >
+              <Transition name="slide-fade">
+                <!-- <p v-if="show">hello</p> -->
+                <div
+                  style="
+                    width: 100%;
+                    height: 6em;
+                    border-bottom-right-radius: 30px;
+                    border-bottom-left-radius: 30px;
+                    color: rgba(119, 119, 119, 1) !important;
+                    font-size: 1em;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    position: absolute;
+                    top: 0px;
+                  "
+                  class="bgimgcardband"
+                >
+                  {{ categorys[3].categoryTH }}
+                </div>
+              </Transition>
+
+              <img
+                style="
+                  position: absolute;
+                  top: 5em;
+                  height: 5em;
+                  margin-bottom: 1em;
+                "
+                :src="categorys[3].categoryLink"
+              />
+              <span>{{ categorys[3].categoryName }}</span>
+
+              <div style="height: 65px; margin-bottom: 1em;"></div>
+              {{ categorys[3].categoryName }}
+            </div>
           </nuxt-link>
 
           <nuxt-link
@@ -292,7 +446,7 @@
             target="_new"
           >
             <div
-              class="grid-items"
+              class="grid-items hide-mobile"
               style="position: relative;"
               @mouseover="show4 = true"
               @mouseleave="show4 = false"
@@ -340,6 +494,48 @@
               <div v-if="show4" style="height: 5em; margin-bottom: 1em;"></div>
               {{ categorys[4].categoryName }}
             </div>
+            <div
+              class="grid-items show-mobile"
+              style="position: relative;"
+              @mouseover="show4 = true"
+              @mouseleave="show4 = false"
+            >
+              <Transition name="slide-fade">
+                <!-- <p v-if="show">hello</p> -->
+                <div
+                  style="
+                    width: 100%;
+                    height: 6em;
+                    border-bottom-right-radius: 30px;
+                    border-bottom-left-radius: 30px;
+                    color: rgba(119, 119, 119, 1) !important;
+                    font-size: 1em;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    position: absolute;
+                    top: 0px;
+                  "
+                  class="bgimgcardband"
+                >
+                  {{ categorys[4].categoryTH }}
+                </div>
+              </Transition>
+
+              <img
+                style="
+                  position: absolute;
+                  top: 5em;
+                  height: 5em;
+                  margin-bottom: 1em;
+                "
+                :src="categorys[4].categoryLink"
+              />
+              <span>{{ categorys[4].categoryName }}</span>
+
+              <div style="height: 65px; margin-bottom: 1em;"></div>
+              {{ categorys[4].categoryName }}
+            </div>
           </nuxt-link>
 
           <nuxt-link
@@ -347,7 +543,7 @@
             target="_new"
           >
             <div
-              class="grid-items"
+              class="grid-items hide-mobile"
               style="position: relative;"
               @mouseover="show5 = true"
               @mouseleave="show5 = false"
@@ -392,6 +588,48 @@
                 style="height: 5em; margin-bottom: 1em;"
               />
               <div v-if="show5" style="height: 5em; margin-bottom: 1em;"></div>
+              {{ categorys[5].categoryName }}
+            </div>
+
+            <div
+              class="grid-items show-mobile"
+              style="position: relative;"
+              @mouseover="show5 = true"
+              @mouseleave="show5 = false"
+            >
+              <Transition name="slide-fade">
+                <!-- <p v-if="show">hello</p> -->
+                <div
+                  style="
+                    width: 100%;
+                    height: 6em;
+                    border-bottom-right-radius: 30px;
+                    border-bottom-left-radius: 30px;
+                    color: rgba(119, 119, 119, 1) !important;
+                    font-size: 1em;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    position: absolute;
+                    top: 0px;
+                  "
+                  class="bgimgcardband"
+                >
+                  {{ categorys[5].categoryTH }}
+                </div>
+              </Transition>
+              <img
+                style="
+                  position: absolute;
+                  top: 5em;
+                  height: 5em;
+                  margin-bottom: 1em;
+                "
+                :src="categorys[5].categoryLink"
+              />
+              <span>{{ categorys[5].categoryName }}</span>
+
+              <div style="height: 65px; margin-bottom: 1em;"></div>
               {{ categorys[5].categoryName }}
             </div>
           </nuxt-link>
@@ -520,6 +758,12 @@ export default {
   position: relative;
   font-family: "SCG";
 }
+.hide-mobile {
+  display: flex !important;
+}
+.show-mobile {
+  display: none !important;
+}
 
 @media only screen and (max-width: 600px) {
   .category-section .header-text {
@@ -537,6 +781,20 @@ export default {
     padding-top: 4em;
     background-size: 100% 100%;
     background-repeat: no-repeat;
+  }
+  .bgimgcardband {
+    background-image: url("static/bgcardbrand.png");
+    font-size: 10px;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  .hide-mobile {
+    display: none !important;
+  }
+  .show-mobile {
+    display: flex !important;
   }
 }
 
