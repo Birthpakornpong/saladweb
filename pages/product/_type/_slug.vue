@@ -80,7 +80,8 @@
             v-show="!variable"
             ref="videoPlayers"
             muted
-            controls
+            playsinline
+            autoplay
             style="width: 100%;"
           >
             <source :src="product.videourl" type="video/mp4" />
