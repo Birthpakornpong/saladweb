@@ -85,6 +85,7 @@
               ref="videoPlayers"
               muted
               controls
+              playsinline
               autoplay
               style="max-width: 100%; width: 100%;"
             >
@@ -177,6 +178,7 @@
               ref="videoPlayers"
               muted
               controls
+              playsinline
               autoplay
               style="max-width: 100%; width: 100%;"
             >
