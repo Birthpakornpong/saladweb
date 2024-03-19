@@ -2,32 +2,59 @@
   <main>
     <!-- <img src="~/static/our.png" /> -->
     <!-- <img src="~/static/Our-Story 20240318.png" /> -->
-    <img src="~/static/ourstory/banner.jpg" />
+    <img
+      src="~/static/ourstory/banner.jpg"
+      data-animation-name="fadeInUpShorter"
+      data-animation-delay="1500"
+      v-animate
+    />
     <div>
-      <div class="row">
+      <div
+        class="row"
+        data-animation-name="fadeInUpShorter"
+        data-animation-delay="1500"
+        v-animate
+      >
         <div class="col-12 paddingImg">
           <img src="~/static/ourstory/t1line.png" />
         </div>
       </div>
-      <div class="row">
-        <div class="col-12 col-sm-6 paddingImg2">
+      <div
+        class="row"
+        style="justify-content: center;"
+        data-animation-name="fadeInUpShorter"
+        data-animation-delay="1500"
+        v-animate
+      >
+        <div class="col-10 col-sm-6 paddingImg2 mb-3">
           <img src="~/static/ourstory/td1.png" />
         </div>
-        <div class="col-12 col-sm-5 paddingImg3">
+        <div class="col-10 col-sm-5 paddingImg3 mb-3">
           <img src="~/static/ourstory/t2.png" />
         </div>
       </div>
     </div>
-    <div class="row mt-3" style="justify-content: center;">
-      <div class="col-8">
+    <div
+      class="row"
+      style="justify-content: center;"
+      data-animation-name="fadeInUpShorter"
+      data-animation-delay="1500"
+      v-animate
+    >
+      <div class="col-11 col-sm-8">
         <img src="~/static/ourstory/t3.png" />
       </div>
-      <div class="col-8">
+      <div class="col-11 col-sm-8">
         <img src="~/static/ourstory/t4.png" />
       </div>
     </div>
-    <div class="row paddingImg4">
-      <div class="col-8">
+    <div
+      class="row paddingImg4 mt-4"
+      data-animation-name="fadeInUpShorter"
+      data-animation-delay="1500"
+      v-animate
+    >
+      <div class="col-12 col-sm-8">
         <img src="~/static/ourstory/t5.png" />
       </div>
       <div class="col-12 col-sm-7 mt-3">
@@ -38,21 +65,28 @@
       </div>
     </div>
 
-    <div>
+    <div
+      data-animation-name="fadeInUpShorter"
+      data-animation-delay="1500"
+      v-animate
+    >
       <div class="d-flex" style="justify-content: center;">
-        <img style="height: 400px;" src="~/static/ourstory/d.png" />
-      </div>
-      <div class="row">
-        <div class="col-12">
-          <!-- <img src="~/static/ourstory/dt1.png" /> -->
-        </div>
+        <img class="heightimg" src="~/static/ourstory/d.png" />
       </div>
       <div class="row" style="justify-content: center;">
-        <div class="col-6 padding-holis">
+        <div class="col-11 col-sm-5">
+          <img src="~/static/ourstory/d1text.png" />
+        </div>
+      </div>
+      <div
+        class="row"
+        style="justify-content: center; margin-top: 10rem !important;"
+      >
+        <div class="col-11 col-sm-6 padding-holis">
           <img src="~/static/ourstory/t8.png" />
         </div>
       </div>
-      <div class="row mt-3" style="justify-content: center;">
+      <div class="row mt-3 mb-5" style="justify-content: center;">
         <div class="col-10">
           <img src="~/static/ourstory/product.png" />
         </div>
@@ -143,5 +177,14 @@ export default {
   padding: 4% 7%;
 }
 .padding-holis {
+}
+.heightimg {
+  height: 400px;
+}
+@media only screen and (max-width: 600px) {
+  .heightimg {
+    height: 200px;
+    padding: 10px;
+  }
 }
 </style>
