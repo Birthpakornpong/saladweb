@@ -64,7 +64,7 @@
       >
         <nuxt-link
           :to="'/product/default/' + product.slug"
-          style="width: 35%;"
+          class="widthmobile"
           >{{ product.name }}</nuxt-link
         >
       </div>
@@ -217,3 +217,13 @@ export default {
   },
 };
 </script>
+<style scoped>
+.widthmobile {
+  width: 100%;
+}
+@media only screen and (max-width: 600px) {
+  .widthmobile {
+    width: 35%;
+  }
+}
+</style>
