@@ -78,10 +78,7 @@
           <img src="~/static/ourstory/d1text.png" />
         </div>
       </div>
-      <div
-        class="row"
-        style="justify-content: center; margin-top: 10rem !important;"
-      >
+      <div class="row marginmobile">
         <div class="col-11 col-sm-6 padding-holis">
           <img src="~/static/ourstory/t8.png" />
         </div>
@@ -181,10 +178,18 @@ export default {
 .heightimg {
   height: 400px;
 }
+.marginmobile {
+  justify-content: center;
+  margin-top: 10rem !important;
+}
 @media only screen and (max-width: 600px) {
   .heightimg {
     height: 200px;
     padding: 10px;
+  }
+  .marginmobile {
+    justify-content: center;
+    margin-top: 3rem !important;
   }
 }
 </style>
