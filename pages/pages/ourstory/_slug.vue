@@ -26,10 +26,10 @@
         data-animation-delay="1500"
         v-animate
       >
-        <div class="col-10 col-sm-6 paddingImg2 mb-3">
+        <div class="col-9 col-sm-6 paddingImg2 mb-3">
           <img src="~/static/ourstory/td1.png" />
         </div>
-        <div class="col-10 col-sm-5 paddingImg3 mb-3">
+        <div class="col-7 col-sm-5 paddingImg3 mb-3">
           <img src="~/static/ourstory/t2.png" />
         </div>
       </div>
@@ -41,10 +41,10 @@
       data-animation-delay="1500"
       v-animate
     >
-      <div class="col-11 col-sm-8">
+      <div class="col-10 col-sm-8">
         <img src="~/static/ourstory/t3.png" />
       </div>
-      <div class="col-11 col-sm-8">
+      <div class="col-10 col-sm-8">
         <img src="~/static/ourstory/t4.png" />
       </div>
     </div>
@@ -57,7 +57,7 @@
       <div class="col-12 col-sm-8">
         <img src="~/static/ourstory/t5.png" />
       </div>
-      <div class="col-12 col-sm-7 mt-3">
+      <div class="col-10 col-sm-7 mt-3">
         <img src="~/static/ourstory/t7.png" />
       </div>
       <div class="col-12 col-sm-5 mt-3">
@@ -74,17 +74,17 @@
         <img class="heightimg" src="~/static/ourstory/d.png" />
       </div>
       <div class="row" style="justify-content: center;">
-        <div class="col-11 col-sm-5">
+        <div class="col-9 col-sm-5">
           <img src="~/static/ourstory/d1text.png" />
         </div>
       </div>
       <div class="row marginmobile">
-        <div class="col-11 col-sm-6 padding-holis">
+        <div class="col-10 col-sm-6 padding-holis">
           <img src="~/static/ourstory/t8.png" />
         </div>
       </div>
       <div class="row mt-3 mb-5" style="justify-content: center;">
-        <div class="col-10">
+        <div class="col-12 col-sm-10">
           <img src="~/static/ourstory/product.png" />
         </div>
       </div>
