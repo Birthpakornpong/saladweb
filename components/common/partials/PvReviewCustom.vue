@@ -34,7 +34,7 @@
                 style="width: 100%;"
                 :src="reviews[0].product_review_link"
                 alt="body shape"
-                class="w-auto bg-transparent"
+                class="w-auto bg-transparent imgresize"
               />
             </div>
             <div class="col-7" style="padding: 3em; padding-top: 2em;">
@@ -61,7 +61,7 @@
                 style="width: 100%;"
                 :src="reviews[1].product_review_link"
                 alt="body shape"
-                class="w-auto bg-transparent"
+                class="w-auto bg-transparent imgresize"
               />
             </div>
             <div class="col-7" style="padding: 3em; padding-top: 2em;">
@@ -163,12 +163,19 @@ export default {
 .fontsizede {
   font-size: 1.3em;
 }
+.imgresize {
+}
 @media only screen and (max-width: 600px) {
   .paddingmreview {
     padding-left: 1em;
-    padding-bottom: 0em;
+    padding-bottom: 1em;
     display: flex;
     align-items: center;
+  }
+  .imgresize {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
   }
   .bgimgband {
     background-image: url("static/card1.png");
