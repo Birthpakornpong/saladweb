@@ -1,43 +1,33 @@
 <template>
-  <main class="main skeleton-body bgimgshop">
-    <nav aria-label="breadcrumb" class="breadcrumb-nav">
-      <div class="container">
-        <ol class="breadcrumb">
-          <li class="breadcrumb-item" style="font-size: 1.1em !important;">
-            <nuxt-link to="/">
-              หน้าแรก
-            </nuxt-link>
-          </li>
-          <li
-            v-if="nameCate"
-            class="breadcrumb-item active"
-            style="font-size: 1.1em !important;"
-          >
-            {{ nameCate }}
-          </li>
-          <li
-            v-else
-            class="breadcrumb-item active"
-            style="font-size: 1.1em !important;"
-          >
-            สินค้าทั้งหมด
-          </li>
-        </ol>
-      </div>
-    </nav>
+  <main class="main skeleton-body">
+    <!-- <pv-shop-banner></pv-shop-banner>
 
-    <div
-      class="container"
-      data-animation-name="fadeInUpShorter"
-      data-animation-delay="1000"
-      v-animate
-    >
+		<nav
+			aria-label="breadcrumb"
+			class="breadcrumb-nav"
+		>
+			<div class="container">
+				<ol class="breadcrumb">
+					<li class="breadcrumb-item">
+						<nuxt-link to="/">
+							Home
+						</nuxt-link>
+					</li>
+					<li class="breadcrumb-item active">Shop</li>
+				</ol>
+			</div>
+		</nav> -->
+
+    <div class="container">
       <div class="row">
         <div class="col-lg-9 main-content">
-          <pv-product-list-one></pv-product-list-one>
+          <pv-product-list-one
+            :category-list="categoryList"
+            :items-per-row="1"
+          ></pv-product-list-one>
         </div>
 
-        <div class="sidebar-overlay" @click.prevent="toggleSidebar"></div>
+        <div class="sidebar-overlay" @click="hideSidebar"></div>
         <aside
           class="sidebar-shop col-lg-3 order-lg-first mobile-sidebar"
           sticky-container
@@ -59,7 +49,7 @@
       </div>
     </div>
 
-    <div class="mb-1"></div>
+    <div class="mb-4"></div>
   </main>
 </template>
 
@@ -71,7 +61,6 @@ import PvProductListOne from "~/components/partials/shop/product-list/PvProductL
 import PvShopBanner from "~/components/partials/shop/PvShopBanner";
 import Api, { baseUrl, currentDemo } from "~/api";
 import { sidebarShop } from "~/sidebarShop.js";
-
 export default {
   components: {
     PvSidebarFilterOne,
@@ -86,7 +75,6 @@ export default {
       categoryList: [],
       featuredProducts: [],
       isSticky: false,
-      nameCate: "",
     };
   },
   mounted: function () {
@@ -95,10 +83,6 @@ export default {
     window.addEventListener("resize", this.resizeHandler, {
       passive: true,
     });
-
-    if (this.$router.currentRoute.query.categoryName) {
-      this.nameCate = this.$router.currentRoute.query.categoryName;
-    }
   },
   destroyed: function () {
     window.removeEventListener("resize", this.resizeHandler);
@@ -111,31 +95,9 @@ export default {
     resizeHandler: function () {
       this.isSticky = window.innerWidth > 991 ? true : false;
     },
-    toggleSidebar: function () {
-      if (document.querySelector("body").classList.contains("sidebar-opened")) {
-        document.querySelector("body").classList.remove("sidebar-opened");
-      } else {
-        document.querySelector("body").classList.add("sidebar-opened");
-      }
+    hideSidebar: function () {
+      document.querySelector("body").classList.remove("sidebar-opened");
     },
   },
 };
 </script>
-<style lang="css" scoped>
-.bgimgshop {
-  background-image: url("static/bggrey.jpg");
-  padding-bottom: 12em;
-  background-position: center bottom;
-  background-size: 100% 20em;
-  background-repeat: no-repeat;
-}
-@media only screen and (max-width: 600px) {
-  .bgimgshop {
-    background-image: url("static/bggrey.jpg");
-    padding-bottom: 4em;
-    background-position: center bottom;
-    background-size: 100% 20em;
-    background-repeat: no-repeat;
-  }
-}
-</style>

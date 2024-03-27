@@ -46,7 +46,7 @@
                 <ul :class="{ open: var1Opened }">
                   <li :class="{ open: var1Opened }">
                     <nuxt-link to="" class="sub-menu-link menu-with-ul">
-                      สินค้าทั้งหมด
+                      รายการสินค้า
                       <span
                         class="mmenu-btn"
                         @click="var1Opened = !var1Opened"
@@ -68,6 +68,7 @@
                   <li :class="{ open: var2Opened }">
                     <nuxt-link to="" class="sub-menu-link menu-with-ul">
                       ประเภทสินค้า
+
                       <span
                         class="mmenu-btn"
                         @click="var2Opened = !var2Opened"
@@ -75,6 +76,9 @@
                     </nuxt-link>
 
                     <vue-slide-toggle tag="ul" :open="var2Opened">
+                      <li>
+                        <nuxt-link :to="'/shop-by-category'">ทั้งหมด</nuxt-link>
+                      </li>
                       <li
                         v-for="(item, index) in categorys"
                         :key="'shop2' + index"

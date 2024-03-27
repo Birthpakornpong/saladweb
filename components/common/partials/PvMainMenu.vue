@@ -2,7 +2,9 @@
   <nav class="main-nav d-none d-lg-flex flex-wrap">
     <ul class="menu main-menu menu-arrow">
       <li>
-        <nuxt-link to="/" style="font-size: 1.3em !important;">หน้าหลัก</nuxt-link>
+        <nuxt-link to="/" style="font-size: 1.3em !important;"
+          >หน้าหลัก</nuxt-link
+        >
       </li>
 
       <li>
@@ -17,8 +19,8 @@
         <div class="megamenu megamenu-fixed-width megamenu-3cols">
           <div class="row">
             <div class="col-lg-6">
-              <nuxt-link to="/shop" style="font-size: 1.3em !important;"
-                >สินค้าทั้งหมด</nuxt-link
+              <nuxt-link to="/shop" style="font-size: 1.3em !important;">
+                รายการสินค้า</nuxt-link
               >
 
               <ul class="submenu">
