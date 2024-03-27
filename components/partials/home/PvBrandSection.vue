@@ -84,6 +84,7 @@
           <nuxt-link
             :to="{ path: `/shop?category=${categorys[0].id}` }"
             target="_new"
+            class="hide-mobile"
           >
             <div
               class="grid-items hide-mobile"
@@ -127,14 +128,22 @@
                 {{ categorys[0].categoryName }}
               </div>
             </div>
+          </nuxt-link>
+          <nuxt-link
+            to=""
+            target="_new"
+            class="show-mobile"
+            @click.native="delayLoad(categorys[0].id)"
+          >
             <div
-              class="grid-items show-mobile"
+              class="grid-items"
               style="position: relative;"
               @mouseover="show = true"
               @mouseleave="show = false"
             >
               <Transition name="slide-fade">
                 <div
+                  v-if="show"
                   style="
                     width: 100%;
                     height: 6em;
@@ -153,7 +162,14 @@
                   {{ categorys[0].categoryTH }}
                 </div>
               </Transition>
-              <div style="position: absolute; top: 5em;">
+              <div v-if="show" style="position: absolute; top: 5em;">
+                <img
+                  :src="categorys[0].categoryLink"
+                  style="height: 5em; margin-bottom: 1em;"
+                />
+                {{ categorys[0].categoryName }}
+              </div>
+              <div v-else>
                 <img
                   :src="categorys[0].categoryLink"
                   style="height: 5em; margin-bottom: 1em;"
@@ -165,9 +181,10 @@
           <nuxt-link
             :to="{ path: `/shop?category=${categorys[1].id}` }"
             target="_new"
+            class="hide-mobile"
           >
             <div
-              class="grid-items hide-mobile"
+              class="grid-items"
               style="position: relative;"
               @mouseover="show1 = true"
               @mouseleave="show1 = false"
@@ -209,8 +226,15 @@
                 {{ categorys[1].categoryName }}
               </div>
             </div>
+          </nuxt-link>
+          <nuxt-link
+            to=""
+            target="_new"
+            class="show-mobile"
+            @click.native="delayLoad(categorys[1].id)"
+          >
             <div
-              class="grid-items show-mobile"
+              class="grid-items"
               style="position: relative;"
               @mouseover="show1 = true"
               @mouseleave="show1 = false"
@@ -218,6 +242,7 @@
               <Transition name="slide-fade">
                 <!-- <p v-if="show">hello</p> -->
                 <div
+                  v-if="show1"
                   style="
                     width: 100%;
                     height: 6em;
@@ -236,7 +261,14 @@
                   {{ categorys[1].categoryTH }}
                 </div>
               </Transition>
-              <div style="position: absolute; top: 5em;">
+              <div v-if="show1" style="position: absolute; top: 5em;">
+                <img
+                  :src="categorys[1].categoryLink"
+                  style="height: 5em; margin-bottom: 1em;"
+                />
+                {{ categorys[1].categoryName }}
+              </div>
+              <div v-else>
                 <img
                   :src="categorys[1].categoryLink"
                   style="height: 5em; margin-bottom: 1em;"
@@ -249,9 +281,10 @@
           <nuxt-link
             :to="{ path: `/shop?category=${categorys[2].id}` }"
             target="_new"
+            class="hide-mobile"
           >
             <div
-              class="grid-items hide-mobile"
+              class="grid-items"
               style="position: relative;"
               @mouseover="show2 = true"
               @mouseleave="show2 = false"
@@ -299,9 +332,15 @@
               <div v-if="show2" style="height: 5em; margin-bottom: 1em;"></div>
               {{ categorys[2].categoryName }}
             </div>
-
+          </nuxt-link>
+          <nuxt-link
+            to=""
+            target="_new"
+            class="show-mobile"
+            @click.native="delayLoad(categorys[2].id)"
+          >
             <div
-              class="grid-items show-mobile"
+              class="grid-items"
               style="position: relative;"
               @mouseover="show2 = true"
               @mouseleave="show2 = false"
@@ -309,6 +348,7 @@
               <Transition name="slide-fade">
                 <!-- <p v-if="show">hello</p> -->
                 <div
+                  v-if="show2"
                   style="
                     width: 100%;
                     height: 6em;
@@ -329,6 +369,7 @@
               </Transition>
 
               <img
+                v-if="show2"
                 style="
                   position: absolute;
                   top: 5em;
@@ -337,9 +378,14 @@
                 "
                 :src="categorys[2].categoryLink"
               />
-              <span>{{ categorys[2].categoryName }}</span>
+              <span v-if="show2">{{ categorys[2].categoryName }}</span>
 
-              <div style="height: 5em; margin-bottom: 1em;"></div>
+              <img
+                v-else
+                :src="categorys[2].categoryLink"
+                style="height: 5em; margin-bottom: 1em;"
+              />
+              <div v-if="show2" style="height: 5em; margin-bottom: 1em;"></div>
               {{ categorys[2].categoryName }}
             </div>
           </nuxt-link>
@@ -347,9 +393,10 @@
           <nuxt-link
             :to="{ path: `/shop?category=${categorys[3].id}` }"
             target="_new"
+            class="hide-mobile"
           >
             <div
-              class="grid-items hide-mobile"
+              class="grid-items"
               style="position: relative;"
               @mouseover="show3 = true"
               @mouseleave="show3 = false"
@@ -397,8 +444,15 @@
               <div v-if="show3" style="height: 5em; margin-bottom: 1em;"></div>
               {{ categorys[3].categoryName }}
             </div>
+          </nuxt-link>
+          <nuxt-link
+            to=""
+            target="_new"
+            class="show-mobile"
+            @click.native="delayLoad(categorys[3].id)"
+          >
             <div
-              class="grid-items show-mobile"
+              class="grid-items"
               style="position: relative;"
               @mouseover="show3 = true"
               @mouseleave="show3 = false"
@@ -406,6 +460,7 @@
               <Transition name="slide-fade">
                 <!-- <p v-if="show">hello</p> -->
                 <div
+                  v-if="show3"
                   style="
                     width: 100%;
                     height: 6em;
@@ -426,6 +481,7 @@
               </Transition>
 
               <img
+                v-if="show3"
                 style="
                   position: absolute;
                   top: 5em;
@@ -434,19 +490,26 @@
                 "
                 :src="categorys[3].categoryLink"
               />
-              <span>{{ categorys[3].categoryName }}</span>
+              <span v-if="show3">{{ categorys[3].categoryName }}</span>
 
-              <div style="height: 65px; margin-bottom: 1em;"></div>
+              <img
+                v-else
+                :src="categorys[3].categoryLink"
+                style="height: 5em; margin-bottom: 1em;"
+              />
+              <div v-if="show3" style="height: 5em; margin-bottom: 1em;"></div>
               {{ categorys[3].categoryName }}
             </div>
           </nuxt-link>
 
           <nuxt-link
-            :to="{ path: `/shop?category=${categorys[4].id}` }"
+            to=""
             target="_new"
+            class="show-mobile"
+            @click.native="delayLoad(categorys[4].id)"
           >
             <div
-              class="grid-items hide-mobile"
+              class="grid-items"
               style="position: relative;"
               @mouseover="show4 = true"
               @mouseleave="show4 = false"
@@ -494,8 +557,14 @@
               <div v-if="show4" style="height: 5em; margin-bottom: 1em;"></div>
               {{ categorys[4].categoryName }}
             </div>
+          </nuxt-link>
+          <nuxt-link
+            :to="{ path: `/shop?category=${categorys[4].id}` }"
+            target="_new"
+            class="hide-mobile"
+          >
             <div
-              class="grid-items show-mobile"
+              class="grid-items"
               style="position: relative;"
               @mouseover="show4 = true"
               @mouseleave="show4 = false"
@@ -503,6 +572,7 @@
               <Transition name="slide-fade">
                 <!-- <p v-if="show">hello</p> -->
                 <div
+                  v-if="show4"
                   style="
                     width: 100%;
                     height: 6em;
@@ -523,6 +593,7 @@
               </Transition>
 
               <img
+                v-if="show4"
                 style="
                   position: absolute;
                   top: 5em;
@@ -531,9 +602,14 @@
                 "
                 :src="categorys[4].categoryLink"
               />
-              <span>{{ categorys[4].categoryName }}</span>
+              <span v-if="show4">{{ categorys[4].categoryName }}</span>
 
-              <div style="height: 65px; margin-bottom: 1em;"></div>
+              <img
+                v-else
+                :src="categorys[4].categoryLink"
+                style="height: 5em; margin-bottom: 1em;"
+              />
+              <div v-if="show4" style="height: 5em; margin-bottom: 1em;"></div>
               {{ categorys[4].categoryName }}
             </div>
           </nuxt-link>
@@ -541,9 +617,10 @@
           <nuxt-link
             :to="{ path: `/shop?category=${categorys[5].id}` }"
             target="_new"
+            class="hide-mobile"
           >
             <div
-              class="grid-items hide-mobile"
+              class="grid-items"
               style="position: relative;"
               @mouseover="show5 = true"
               @mouseleave="show5 = false"
@@ -590,9 +667,15 @@
               <div v-if="show5" style="height: 5em; margin-bottom: 1em;"></div>
               {{ categorys[5].categoryName }}
             </div>
-
+          </nuxt-link>
+          <nuxt-link
+            to=""
+            target="_new"
+            class="show-mobile"
+            @click.native="delayLoad(categorys[5].id)"
+          >
             <div
-              class="grid-items show-mobile"
+              class="grid-items"
               style="position: relative;"
               @mouseover="show5 = true"
               @mouseleave="show5 = false"
@@ -600,6 +683,7 @@
               <Transition name="slide-fade">
                 <!-- <p v-if="show">hello</p> -->
                 <div
+                  v-if="show5"
                   style="
                     width: 100%;
                     height: 6em;
@@ -619,6 +703,7 @@
                 </div>
               </Transition>
               <img
+                v-if="show5"
                 style="
                   position: absolute;
                   top: 5em;
@@ -627,9 +712,14 @@
                 "
                 :src="categorys[5].categoryLink"
               />
-              <span>{{ categorys[5].categoryName }}</span>
+              <span v-if="show5">{{ categorys[5].categoryName }}</span>
 
-              <div style="height: 65px; margin-bottom: 1em;"></div>
+              <img
+                v-else
+                :src="categorys[5].categoryLink"
+                style="height: 5em; margin-bottom: 1em;"
+              />
+              <div v-if="show5" style="height: 5em; margin-bottom: 1em;"></div>
               {{ categorys[5].categoryName }}
             </div>
           </nuxt-link>
@@ -707,6 +797,17 @@ export default {
   methods: {
     slideText(hovered) {
       this.isHovered = hovered;
+    },
+    delayLoad(cateId) {
+      setTimeout(() => {
+        console.log("pass");
+        this.$router.push({
+          path: "/shop",
+          query: {
+            category: cateId,
+          },
+        });
+      }, 1000);
     },
   },
 };

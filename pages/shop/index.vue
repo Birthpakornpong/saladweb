@@ -59,7 +59,7 @@
 import { VueTreeList, Tree } from "vue-tree-list";
 import Sticky from "vue-sticky-directive";
 import PvSidebarFilterOne from "~/components/partials/shop/sidebar-filter/PvSidebarFilterOne";
-import PvProductListOne from "~/components/partials/shop/product-list/PvProductListOneCustom";
+import PvProductListOne from "~/components/partials/shop/product-list/PvProductListOne";
 import PvShopBanner from "~/components/partials/shop/PvShopBanner";
 import Api, { baseUrl, currentDemo } from "~/api";
 import { sidebarShop } from "~/sidebarShop.js";
