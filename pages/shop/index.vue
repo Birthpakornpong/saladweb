@@ -14,6 +14,13 @@
           >
             ผลิตภัณฑ์
           </li>
+          <li
+            v-if="nameCate"
+            class="breadcrumb-item active"
+            style="font-size: 1.1em !important;"
+          >
+            {{ nameCate }}
+          </li>
         </ol>
       </div>
     </nav>
@@ -78,6 +85,7 @@ export default {
       categoryList: [],
       featuredProducts: [],
       isSticky: false,
+      nameCate: "",
     };
   },
   mounted: function () {
@@ -86,6 +94,10 @@ export default {
     window.addEventListener("resize", this.resizeHandler, {
       passive: true,
     });
+
+    if (this.$router.currentRoute.query.categoryName) {
+      this.nameCate = this.$router.currentRoute.query.categoryName;
+    }
   },
   destroyed: function () {
     window.removeEventListener("resize", this.resizeHandler);

@@ -82,7 +82,9 @@
           </nuxt-link> -->
 
           <nuxt-link
-            :to="{ path: `/shop?category=${categorys[0].id}` }"
+            :to="{
+              path: `/shop?category=${categorys[0].id}&categoryName=${categorys[0].categoryTH}`,
+            }"
             target="_new"
             class="hide-mobile"
           >
@@ -133,7 +135,7 @@
             to=""
             target="_new"
             class="show-mobile"
-            @click.native="delayLoad(categorys[0].id)"
+            @click.native="delayLoad(categorys[0].id, categorys[0].categoryTH)"
           >
             <div
               class="grid-items"
@@ -179,7 +181,9 @@
             </div>
           </nuxt-link>
           <nuxt-link
-            :to="{ path: `/shop?category=${categorys[1].id}` }"
+            :to="{
+              path: `/shop?category=${categorys[1].id}&categoryName=${categorys[1].categoryTH}`,
+            }"
             target="_new"
             class="hide-mobile"
           >
@@ -231,7 +235,7 @@
             to=""
             target="_new"
             class="show-mobile"
-            @click.native="delayLoad(categorys[1].id)"
+            @click.native="delayLoad(categorys[1].id, categorys[1].categoryTH)"
           >
             <div
               class="grid-items"
@@ -279,7 +283,9 @@
           </nuxt-link>
 
           <nuxt-link
-            :to="{ path: `/shop?category=${categorys[2].id}` }"
+            :to="{
+              path: `/shop?category=${categorys[2].id}&categoryName=${categorys[2].categoryTH}`,
+            }"
             target="_new"
             class="hide-mobile"
           >
@@ -337,7 +343,7 @@
             to=""
             target="_new"
             class="show-mobile"
-            @click.native="delayLoad(categorys[2].id)"
+            @click.native="delayLoad(categorys[2].id, categorys[2].categoryTH)"
           >
             <div
               class="grid-items"
@@ -391,7 +397,9 @@
           </nuxt-link>
 
           <nuxt-link
-            :to="{ path: `/shop?category=${categorys[3].id}` }"
+            :to="{
+              path: `/shop?category=${categorys[3].id}&categoryName=${categorys[3].categoryTH}`,
+            }"
             target="_new"
             class="hide-mobile"
           >
@@ -449,7 +457,7 @@
             to=""
             target="_new"
             class="show-mobile"
-            @click.native="delayLoad(categorys[3].id)"
+            @click.native="delayLoad(categorys[3].id, categorys[3].categoryTH)"
           >
             <div
               class="grid-items"
@@ -506,7 +514,7 @@
             to=""
             target="_new"
             class="show-mobile"
-            @click.native="delayLoad(categorys[4].id)"
+            @click.native="delayLoad(categorys[4].id, categorys[4].categoryTH)"
           >
             <div
               class="grid-items"
@@ -559,7 +567,9 @@
             </div>
           </nuxt-link>
           <nuxt-link
-            :to="{ path: `/shop?category=${categorys[4].id}` }"
+            :to="{
+              path: `/shop?category=${categorys[4].id}&categoryName=${categorys[4].categoryTH}`,
+            }"
             target="_new"
             class="hide-mobile"
           >
@@ -615,7 +625,9 @@
           </nuxt-link>
 
           <nuxt-link
-            :to="{ path: `/shop?category=${categorys[5].id}` }"
+            :to="{
+              path: `/shop?category=${categorys[5].id}&categoryName=${categorys[5].categoryTH}`,
+            }"
             target="_new"
             class="hide-mobile"
           >
@@ -672,7 +684,7 @@
             to=""
             target="_new"
             class="show-mobile"
-            @click.native="delayLoad(categorys[5].id)"
+            @click.native="delayLoad(categorys[5].id, categorys[5].categoryTH)"
           >
             <div
               class="grid-items"
@@ -798,13 +810,14 @@ export default {
     slideText(hovered) {
       this.isHovered = hovered;
     },
-    delayLoad(cateId) {
+    delayLoad(cateId, categoryName) {
       setTimeout(() => {
         console.log("pass");
         this.$router.push({
           path: "/shop",
           query: {
             category: cateId,
+            categoryName,
           },
         });
       }, 1000);

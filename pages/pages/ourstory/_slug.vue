@@ -26,7 +26,7 @@
         data-animation-delay="1500"
         v-animate
       >
-        <div class="col-9 col-sm-6 paddingImg2 mb-3">
+        <div class="col-7 col-sm-6 paddingImg2 mb-3">
           <img src="~/static/ourstory/td1.png" />
         </div>
         <div class="col-7 col-sm-5 paddingImg3 mb-3">
@@ -53,6 +53,7 @@
       data-animation-name="fadeInUpShorter"
       data-animation-delay="1500"
       v-animate
+      style="justify-content: center;"
     >
       <div class="col-12 col-sm-8">
         <img src="~/static/ourstory/t5.png" />
@@ -60,7 +61,8 @@
       <div class="col-10 col-sm-7 mt-3">
         <img src="~/static/ourstory/t7.png" />
       </div>
-      <div class="col-12 col-sm-5 mt-3">
+      <div class="col-2 col-sm-0 mt-3"></div>
+      <div class="col-10 col-sm-5 mt-3">
         <img src="~/static/ourstory/dt7.png" />
       </div>
     </div>
@@ -185,7 +187,7 @@ export default {
 @media only screen and (max-width: 600px) {
   .heightimg {
     height: 200px;
-    padding: 10px;
+    padding: 20px;
   }
   .marginmobile {
     justify-content: center;
