@@ -108,7 +108,7 @@ export default {
   },
 
   build: {
-    publicPath: "https://holisbrand.pappplanner.com/",
+    publicPath: "https://ambitious-hill-07ffc3500.5.azurestaticapps.net/",
   },
 
   generate: {
