@@ -119,6 +119,15 @@ export default {
       }
     },
   },
+  watch: {
+    $route: function () {
+      if (this.$router.currentRoute.query.categoryName) {
+        this.nameCate = this.$router.currentRoute.query.categoryName;
+      } else {
+        this.nameCate = "";
+      }
+    },
+  },
 };
 </script>
 <style lang="css" scoped>
