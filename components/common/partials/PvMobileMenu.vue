@@ -206,7 +206,7 @@ export default {
                 title: item.category_name_th,
                 id: String(item.id),
                 size: String(item.id),
-                url: `/shop?category=${item.id}`,
+                url: `/shop?category=${item.id}&category_name=${item.category_name_th}`,
               });
             });
           } else {
