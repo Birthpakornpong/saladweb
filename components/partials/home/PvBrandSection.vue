@@ -82,6 +82,7 @@
           </nuxt-link> -->
 
           <nuxt-link
+            v-if="categorys[0]"
             :to="{
               path: `/shop?category=${categorys[0].id}&categoryName=${categorys[0].categoryTH}`,
             }"
@@ -132,6 +133,7 @@
             </div>
           </nuxt-link>
           <nuxt-link
+            v-if="categorys[0]"
             to=""
             target="_new"
             class="show-mobile"
@@ -181,6 +183,7 @@
             </div>
           </nuxt-link>
           <nuxt-link
+            v-if="categorys[1]"
             :to="{
               path: `/shop?category=${categorys[1].id}&categoryName=${categorys[1].categoryTH}`,
             }"
@@ -232,6 +235,7 @@
             </div>
           </nuxt-link>
           <nuxt-link
+            v-if="categorys[1]"
             to=""
             target="_new"
             class="show-mobile"
@@ -283,6 +287,7 @@
           </nuxt-link>
 
           <nuxt-link
+            v-if="categorys[2]"
             :to="{
               path: `/shop?category=${categorys[2].id}&categoryName=${categorys[2].categoryTH}`,
             }"
@@ -340,6 +345,7 @@
             </div>
           </nuxt-link>
           <nuxt-link
+            v-if="categorys[2]"
             to=""
             target="_new"
             class="show-mobile"
@@ -397,6 +403,7 @@
           </nuxt-link>
 
           <nuxt-link
+            v-if="categorys[3]"
             :to="{
               path: `/shop?category=${categorys[3].id}&categoryName=${categorys[3].categoryTH}`,
             }"
@@ -454,6 +461,7 @@
             </div>
           </nuxt-link>
           <nuxt-link
+            v-if="categorys[3]"
             to=""
             target="_new"
             class="show-mobile"
@@ -511,6 +519,7 @@
           </nuxt-link>
 
           <nuxt-link
+            v-if="categorys[4]"
             to=""
             target="_new"
             class="show-mobile"
@@ -567,6 +576,7 @@
             </div>
           </nuxt-link>
           <nuxt-link
+            v-if="categorys[4]"
             :to="{
               path: `/shop?category=${categorys[4].id}&categoryName=${categorys[4].categoryTH}`,
             }"
@@ -630,6 +640,7 @@
             }"
             target="_new"
             class="hide-mobile"
+            v-if="categorys[5]"
           >
             <div
               class="grid-items"
@@ -681,6 +692,7 @@
             </div>
           </nuxt-link>
           <nuxt-link
+            v-if="categorys[5]"
             to=""
             target="_new"
             class="show-mobile"
