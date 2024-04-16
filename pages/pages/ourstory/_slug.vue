@@ -87,7 +87,7 @@
       </div>
       <div class="row mt-3 mb-5" style="justify-content: center;">
         <div class="col-12 col-sm-10">
-          <img src="~/static/ourstory/product.png" />
+          <img src="~/static/ourstory/product.jpg" />
         </div>
       </div>
     </div>

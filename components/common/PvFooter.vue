@@ -12,7 +12,7 @@
           </a>
           <div class="row">
             <div class="custom-color-text col-10 ml-4">
-              <div>บริษัท อินวีนิค จำกัด</div>
+              <div>บริษัท อินวินิค จำกัด</div>
               <div>1 ถนนปูนซีเมนต์ไทย</div>
               <div>แขวงบางซื่อ เขตบางซื่อ กรุงเทพมหานคร 10800</div>
             </div>
@@ -95,7 +95,7 @@
                         <i class="bi bi-line pr-1"></i
                       ></a>
                       <a
-                        href="https://www.tiktok.com/@doozyonlinebyscgp?_t=8g3T6UGiEG9&_r=1"
+                        href="https://www.tiktok.com/@holisbyscgp?_t=8lN3Gdlnynn&_r=1"
                         target="_blank"
                       >
                         <i class="bi bi-tiktok"></i>
@@ -125,7 +125,7 @@
             <div class="custom-color-text col-12">
               <div style="text-align: center;">
                 <h4 class="widget-title m-0" style="color: white;">
-                  บริษัท อินวีนิค จำกัด
+                  บริษัท อินวินิค จำกัด
                 </h4>
               </div>
               <div style="text-align: center;">1 ถนนปูนซีเมนต์ไทย</div>
@@ -214,7 +214,7 @@
                         <i class="bi bi-line pr-1"></i
                       ></a>
                       <a
-                        href="https://www.tiktok.com/@doozyonlinebyscgp?_t=8g3T6UGiEG9&_r=1"
+                        href="https://www.tiktok.com/@holisbyscgp?_t=8lN3Gdlnynn&_r=1"
                         target="_blank"
                       >
                         <i class="bi bi-tiktok"></i>

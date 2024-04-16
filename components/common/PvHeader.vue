@@ -34,7 +34,7 @@
               <i class="bi bi-line pr-1"></i
             ></a>
             <a
-              href="https://www.tiktok.com/@doozyonlinebyscgp?_t=8g3T6UGiEG9&_r=1"
+              href="https://www.tiktok.com/@holisbyscgp?_t=8lN3Gdlnynn&_r=1"
               target="_blank"
             >
               <i class="bi bi-tiktok"></i>

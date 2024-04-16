@@ -1,7 +1,7 @@
 export default {
   head: {
-    titleTemplate: "HolisBrand",
-    title: "HolisBrand",
+    titleTemplate: "HOLIS by SCGP",
+    title: "HOLIS by SCGP",
     meta: [
       { charset: "utf-8" },
       {

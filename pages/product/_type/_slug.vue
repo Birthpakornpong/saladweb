@@ -83,6 +83,7 @@
             playsinline
             autoplay
             style="width: 100%;"
+            loop
           >
             <source :src="product.videourl" type="video/mp4" />
           </video>
@@ -92,6 +93,7 @@
             muted
             controls
             style="width: 100%;"
+            loop
           >
             <source :src="product.videourl" type="video/mp4" />
           </video>

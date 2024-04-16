@@ -88,6 +88,7 @@
               playsinline
               autoplay
               style="max-width: 100%; width: 100%;"
+              loop
             >
               <source :src="video[0].url" type="video/mp4" />
             </video>
@@ -97,6 +98,7 @@
               muted
               controls
               style="max-width: 100%; width: 100%;"
+              loop
             >
               <source :src="video[0].url" type="video/mp4" />
             </video>
@@ -181,6 +183,7 @@
               playsinline
               autoplay
               style="max-width: 100%; width: 100%;"
+              loop
             >
               <source :src="video[0].url" type="video/mp4" />
             </video>
@@ -190,6 +193,7 @@
               muted
               controls
               style="max-width: 100%; width: 100%;"
+              loop
             >
               <source :src="video[0].url" type="video/mp4" />
             </video>
@@ -224,6 +228,7 @@
               playsinline
               autoplay
               style="max-width: 100%; width: 100%;"
+              loop
             >
               <source :src="video[0].url" type="video/mp4" />
             </video>
@@ -233,6 +238,7 @@
               muted
               controls
               style="max-width: 100%; width: 100%;"
+              loop
             >
               <source :src="video[0].url" type="video/mp4" />
             </video>

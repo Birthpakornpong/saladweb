@@ -111,10 +111,10 @@
         อายุสินค้า:
         <strong class="ml-1">{{ product.expired }}</strong>
       </li>
-      <li v-if="product.sku" style="font-size: 1.4em;">
+      <!-- <li v-if="product.sku" style="font-size: 1.4em;">
         SKU:
         <strong class="ml-1">{{ product.sku }}</strong>
-      </li>
+      </li> -->
 
       <li v-if="product.category" style="font-size: 1.4em;">
         CATEGORY:
