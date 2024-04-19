@@ -53,7 +53,6 @@
       data-animation-name="fadeInUpShorter"
       data-animation-delay="1500"
       v-animate
-      style="justify-content: center;"
     >
       <div class="col-12 col-sm-8">
         <img src="~/static/ourstory/t5.png" />
@@ -61,7 +60,7 @@
       <div class="col-10 col-sm-7 mt-3">
         <img src="~/static/ourstory/t7.png" />
       </div>
-      <div class="col-2 col-sm-0 mt-3"></div>
+      <div class="col-2 showmobile mt-3"></div>
       <div class="col-7 col-sm-5 mt-3">
         <img src="~/static/ourstory/dt7.png" />
       </div>
@@ -174,6 +173,7 @@ export default {
 }
 .paddingImg4 {
   padding: 4% 7%;
+  justify-content: start;
 }
 .padding-holis {
 }
@@ -183,6 +183,15 @@ export default {
 .marginmobile {
   justify-content: center;
   margin-top: 10rem !important;
+}
+.showmobile {
+  display: none;
+}
+
+@media only screen and (max-width: 600px) {
+  .showmobile {
+    display: flex !important;
+  }
 }
 @media only screen and (max-width: 600px) {
   .heightimg {
@@ -196,6 +205,10 @@ export default {
   }
   .paddingImg2 {
     padding: 0% 0% 0% 0%;
+  }
+  .paddingImg4 {
+    padding: 4% 7%;
+    justify-content: center;
   }
 }
 </style>

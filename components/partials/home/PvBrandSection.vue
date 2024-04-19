@@ -649,7 +649,6 @@
               @mouseleave="show5 = false"
             >
               <Transition name="slide-fade">
-                <!-- <p v-if="show">hello</p> -->
                 <div
                   v-if="show5"
                   style="
@@ -705,7 +704,6 @@
               @mouseleave="show5 = false"
             >
               <Transition name="slide-fade">
-                <!-- <p v-if="show">hello</p> -->
                 <div
                   v-if="show5"
                   style="
@@ -929,16 +927,17 @@ export default {
 }
 
 .category-section .grid-container {
-  display: grid;
   grid: auto auto / auto auto auto;
-  grid-gap: 85px;
-
-  padding: 40px;
+  grid-gap: 100px;
+  padding: 40px 100px;
   justify-content: center;
+  display: flex;
+  flex-wrap: wrap;
 }
 @media only screen and (max-width: 900px) {
   .category-section .grid-container {
-    display: grid;
+    display: flex;
+    flex-wrap: wrap;
     /* grid: none; */
     grid-gap: 4em;
 
@@ -948,7 +947,8 @@ export default {
 }
 @media only screen and (max-width: 600px) {
   .category-section .grid-container {
-    display: grid;
+    display: flex;
+    flex-wrap: wrap;
     /* grid: none; */
     grid-gap: 2em;
     /* background-color: white; */
