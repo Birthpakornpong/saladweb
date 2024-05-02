@@ -497,7 +497,7 @@ figure {
         display: inline-block;
         font-size: 11px;
         letter-spacing: 0.1em;
-        font-family: "SCG";
+        font-family: 'Font Awesome 5 Free';
         font-weight: 900;
     }
 
@@ -578,7 +578,7 @@ figure {
         &.checked:before {
             font-size: 8px;
             content: '\f00c';
-            font-family: "SCG";
+            font-family: 'Font Awesome 5 Free';
             font-weight: 900;
             -webkit-font-smoothing: antialiased;
             text-indent: 0;
@@ -746,7 +746,7 @@ figure {
             left: 50%;
             transform: translateX(-50%) translateY(-50%);
             color: #fff;
-            font-family: "SCG";
+            font-family: 'porto';
             font-size: 1.1rem;
             line-height: 1;
             content: '\e84e';
@@ -974,7 +974,7 @@ figure {
 
     &.product-nav-dots a.active:before {
         content: '\f00c';
-        font-family: "SCG";
+        font-family: 'Font Awesome 5 Free';
         font-weight: 900;
         text-indent: 0;
         position: absolute;

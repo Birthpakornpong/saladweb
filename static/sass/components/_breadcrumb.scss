@@ -71,7 +71,7 @@
 			@include css( content, breadcrumb, divider, content);
 			@include css( font-size, breadcrumb, divider, size);
 			@include css( font-weight, breadcrumb, divider, weight);
-		    font-family: "SCG";
+			font-family: 'porto';
 			vertical-align: middle;
 			margin-top: -2px;
 		}
