@@ -44,7 +44,7 @@
 			right: 2px;
 			transform: translateY(-50%);
 			transition: all .35s;
-			font-family: 'porto';
+		    font-family: "SCG";
 			font-size: 1.7rem;
 			font-weight: 600;
 			color: $primary-color-dark;
@@ -301,7 +301,7 @@
 		&:before {
 			content: '\e81b';
 			margin-right: 1rem;
-			font-family: 'porto';
+			font-family: "SCG";
 			font-size: 2rem;
 			font-weight: 400;
 		}
@@ -338,7 +338,7 @@
 }
 
 .maga-sale-container {
-	font-family: "Oswald", "Poppins";
+    font-family: "SCG";
 	position: relative;
 
 	.mega-content {

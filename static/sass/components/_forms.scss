@@ -161,7 +161,7 @@ label {
 		top: 50%;
 		right: 1.9rem;
 		transform: translateY(-50%);
-		font-family: 'porto';
+		font-family: "SCG";
 		font-size: 1.6rem;
 		content: '\e81c';
 		padding-bottom: 2px;
@@ -262,7 +262,7 @@ label {
 	background: none;
 	color: $primary-color-dark;
 	content: '\e84e';
-	font-family: 'porto';
+    font-family: "SCG";
 }
 
 .custom-checkbox .custom-control-input:indeterminate ~ .custom-control-label:before {
