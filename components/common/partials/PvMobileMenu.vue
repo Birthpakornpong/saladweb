@@ -55,7 +55,7 @@
 
                     <vue-slide-toggle tag="ul" :open="var1Opened">
                       <li>
-                        <nuxt-link :to="'/shop-by-category'">ทั้งหมด</nuxt-link>
+                        <nuxt-link :to="'/shop'">ทั้งหมด</nuxt-link>
                       </li>
                       <li
                         v-for="(item, index) in productNames"
