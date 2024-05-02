@@ -2,13 +2,14 @@
   <div>
     <nav
       class="toolbox sticky-header mobile-sticky"
+      style="background-color: white !important;"
       data-start-top="750"
       data-offset-top="56"
       v-if="!products || (products && products.length > 0)"
       v-sticky
     >
       <div class="toolbox-left">
-        <a
+        <!-- <a
           href="javascript:;"
           class="sidebar-toggle"
           @click="showSidebarFilter"
@@ -40,7 +41,7 @@
             />
           </svg>
           <span>Filter</span>
-        </a>
+        </a> -->
 
         <div class="toolbox-item toolbox-sort" v-if="!isOffCanvas">
           <label>จัดเรียงตาม:</label>
