@@ -28,8 +28,20 @@
         </div>
 
         <div class="col-10 col-md-5 bgimgband">
-          <div class="row">
-            <div class="col-5 paddingmreview">
+          <div class="row" style="display: flex; justify-content: center;">
+            <div
+              class="col-10 showmobile"
+              style="padding: 3em; padding-top: 2em;"
+            >
+              <p class="fontsizefull">
+                {{ reviews[0].fullname_th }}
+              </p>
+              <div
+                class="fontsizede"
+                v-html="reviews[0].review_detail_th"
+              ></div>
+            </div>
+            <div class="col-6 col-md-5 paddingmreview">
               <img
                 style="width: 100%;"
                 :src="reviews[0].product_review_link"
@@ -37,7 +49,10 @@
                 class="w-auto bg-transparent imgresize"
               />
             </div>
-            <div class="col-7" style="padding: 3em; padding-top: 2em;">
+            <div
+              class="col-7 hidemobile"
+              style="padding: 3em; padding-top: 2em;"
+            >
               <p class="fontsizefull">
                 {{ reviews[0].fullname_th }}
               </p>
@@ -55,8 +70,20 @@
           style="margin-left: 3em;"
           v-if="reviews.length > 1"
         >
-          <div class="row">
-            <div class="col-5 paddingmreview">
+          <div class="row" style="display: flex; justify-content: center;">
+            <div
+              class="col-10 showmobile"
+              style="padding: 3em; padding-top: 2em;"
+            >
+              <p class="fontsizefull">
+                {{ reviews[1].fullname_th }}
+              </p>
+              <div
+                class="fontsizede"
+                v-html="reviews[1].review_detail_th"
+              ></div>
+            </div>
+            <div class="col-6 col-md-5 paddingmreview">
               <img
                 style="width: 100%;"
                 :src="reviews[1].product_review_link"
@@ -64,7 +91,10 @@
                 class="w-auto bg-transparent imgresize"
               />
             </div>
-            <div class="col-7" style="padding: 3em; padding-top: 2em;">
+            <div
+              class="col-7 hidemobile"
+              style="padding: 3em; padding-top: 2em;"
+            >
               <p class="fontsizefull">
                 {{ reviews[1].fullname_th }}
               </p>
@@ -205,6 +235,25 @@ export default {
   }
   .fontsizede {
     font-size: 1em;
+  }
+}
+
+.showmobile {
+  display: none;
+}
+
+@media only screen and (max-width: 600px) {
+  .showmobile {
+    display: flex !important;
+  }
+}
+.hidemobile {
+  display: flex;
+}
+
+@media only screen and (max-width: 600px) {
+  .hidemobile {
+    display: none !important;
   }
 }
 </style>
