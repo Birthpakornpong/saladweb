@@ -31,11 +31,11 @@
           <div class="row" style="display: flex; justify-content: center;">
             <div
               class="col-10 showmobile"
-              style="padding: 3em; padding-top: 2em;"
+              style="padding: 2.5em 3em 0em; display: block !important;"
             >
-              <p class="fontsizefull">
+              <span class="fontsizefull">
                 {{ reviews[0].fullname_th }}
-              </p>
+              </span>
               <div
                 class="fontsizede"
                 v-html="reviews[0].review_detail_th"
@@ -73,11 +73,11 @@
           <div class="row" style="display: flex; justify-content: center;">
             <div
               class="col-10 showmobile"
-              style="padding: 3em; padding-top: 2em;"
+              style="padding: 2.5em 3em 0em; display: block !important;"
             >
-              <p class="fontsizefull">
+              <span class="fontsizefull">
                 {{ reviews[1].fullname_th }}
-              </p>
+              </span>
               <div
                 class="fontsizede"
                 v-html="reviews[1].review_detail_th"
@@ -209,7 +209,7 @@ export default {
   }
   .bgimgband {
     background-image: url("static/card1.png");
-    padding-bottom: 2em;
+    padding-bottom: 5em;
     padding-top: 3em;
     background-size: 100% 100%;
     background-repeat: no-repeat;
